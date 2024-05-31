@@ -7,6 +7,8 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.net.Socket;
 
+import fishing4.game.globalConfig;
+
 public final class i implements Runnable {
    private static int F;
    private static byte[] G;
@@ -57,7 +59,7 @@ public final class i implements Runnable {
          try {
             Socket var2 = new Socket("222.122.160.61", 12002);
             l = var2;
-            fishing4.game.p.c = true;
+            globalConfig.c = true;
             l.setSoTimeout(20000);
             DataOutputStream var4 = new DataOutputStream(l.getOutputStream());
             m = var4;

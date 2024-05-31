@@ -164,7 +164,7 @@ public final class am {
       if (!e() && b != -1) {
          if (b >= 0 && b < 24) {
             if (fishing4.game.q.b[b]) {
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.languageId == 0) {
                   a(var0, fishing4.a.y.a(2131165966 + b) + "\n\n\n" + fishing4.a.y.a(2131165990 + b) + "\n\n(완료)", fishing4.a.m.e(), az.s, az.t);
                } else {
                   a(var0, fishing4.a.y.a(2131165966 + b) + "\n\n\n" + fishing4.a.y.a(2131165990 + b) + "\n\n(Complete)", fishing4.a.m.e(), az.s, az.t);
@@ -179,7 +179,7 @@ public final class am {
 
                   fishing4.a.m.a(var0, az.t, fishing4.a.m.c() - 130.0F, fishing4.a.m.d() - 160.0F, 585.0F, 250.0F, 56.0F, 56.0F);
                }
-            } else if (fishing4.game.p.a == 0) {
+            } else if (globalConfig.languageId == 0) {
                a(var0, fishing4.a.y.a(2131165966 + b) + "\n\n\n" + fishing4.a.y.a(2131165990 + b) + "\n\n(도전중)", fishing4.a.m.e(), az.s, az.t);
             } else {
                a(var0, fishing4.a.y.a(2131165966 + b) + "\n\n\n" + fishing4.a.y.a(2131165990 + b) + "\n\n(In progress)", fishing4.a.m.e(), az.s, az.t);
@@ -243,7 +243,7 @@ public final class am {
                var7 = fishing4.game.w.a((Integer)fishing4.game.w.c.get(az.k));
                var8 = fishing4.game.w.b((Integer)fishing4.game.w.c.get(az.k));
                var9 = fishing4.game.w.c((Integer)fishing4.game.w.c.get(az.k));
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.languageId == 0) {
                   a(var0, fishing4.game.w.c.get(az.k) + ". " + var7 + "\n\n" + var8 + "\n\n[보상]\n" + var9 + "\n\n현재 진행중인 퀘스트입니다.", fishing4.a.m.e(), az.s, az.t);
                } else {
                   a(var0, fishing4.game.w.c.get(az.k) + ". " + var7 + "\n\n" + var8 + "\n\n[Reward]\n" + var9 + "\n\nthis quest is already in progress.", fishing4.a.m.e(), az.s, az.t);
@@ -253,7 +253,7 @@ public final class am {
                var7 = fishing4.game.w.a((Integer)fishing4.game.w.d.get(var1));
                var9 = fishing4.game.w.b((Integer)fishing4.game.w.d.get(var1));
                var8 = fishing4.game.w.c((Integer)fishing4.game.w.d.get(var1));
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.languageId == 0) {
                   a(var0, fishing4.game.w.d.get(var1) + ". " + var7 + "\n\n" + var9 + "\n\n[보상]\n" + var8 + "\n\n현재 진행중인 퀘스트입니다.", fishing4.a.m.e(), az.s, az.t);
                } else {
                   a(var0, fishing4.game.w.d.get(var1) + ". " + var7 + "\n\n" + var9 + "\n\n[Reward]\n" + var8 + "\n\nthis quest is already in progress.", fishing4.a.m.e(), az.s, az.t);
@@ -262,7 +262,7 @@ public final class am {
                var9 = fishing4.game.v.a((Integer)fishing4.game.v.c.get(az.k));
                var7 = fishing4.game.v.b((Integer)fishing4.game.v.c.get(az.k));
                var8 = fishing4.game.v.c((Integer)fishing4.game.v.c.get(az.k));
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.languageId == 0) {
                   a(var0, fishing4.game.v.c.get(az.k) + ". " + var9 + "\n\n" + var7 + "\n\n[보상]\n" + var8 + "\n\n현재 진행중인 퀘스트입니다.", fishing4.a.m.e(), az.s, az.t);
                } else {
                   a(var0, fishing4.game.v.c.get(az.k) + ". " + var9 + "\n\n" + var7 + "\n\n[Reward]\n" + var8 + "\n\nthis quest is already in progress.", fishing4.a.m.e(), az.s, az.t);
@@ -272,19 +272,19 @@ public final class am {
                var8 = fishing4.game.v.a((Integer)fishing4.game.v.d.get(var1));
                var9 = fishing4.game.v.b((Integer)fishing4.game.v.d.get(var1));
                var7 = fishing4.game.v.c((Integer)fishing4.game.v.d.get(var1));
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.languageId == 0) {
                   a(var0, fishing4.game.v.d.get(var1) + ". " + var8 + "\n\n" + var9 + "\n\n[보상]\n" + var7 + "\n\n현재 진행중인 퀘스트입니다.", fishing4.a.m.e(), az.s, az.t);
                } else {
                   a(var0, fishing4.game.v.d.get(var1) + ". " + var8 + "\n\n" + var9 + "\n\n[Reward]\n" + var7 + "\n\nthis quest is already in progress.", fishing4.a.m.e(), az.s, az.t);
                }
             } else if (b == 114) {
                if (fishing4.game.r.e() == 0) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, fishing4.game.r.b() + "\n\n가장 긴 " + fishing4.a.y.a(2131165434 + fishing4.game.r.c) + " 잡기\n(출몰지 : " + fishing4.game.m.i(fishing4.game.r.c).split("\n")[0] + ")\n\n현재 1위 : " + fishing4.game.m.a(fishing4.game.r.c(), fishing4.game.r.c) + "cm\n내 점수 : " + fishing4.game.m.a(fishing4.game.r.d, fishing4.game.r.c) + "cm\n\n남은 기간 : " + fishing4.game.r.b + "일\n상금 : " + fishing4.a.y.d(fishing4.game.r.a(0, az.k)), fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, fishing4.game.r.b() + "\n\nCatch the Longest \n" + fishing4.a.y.a(2131165434 + fishing4.game.r.c) + "\n(Habitat : " + fishing4.game.m.i(fishing4.game.r.c).split("\n")[0] + ")\n\nCurrent best scorer : " + k.format((double)fishing4.game.m.a(fishing4.game.r.c(), fishing4.game.r.c) / 2.54) + "in.\nMy score : " + k.format((double)fishing4.game.m.a(fishing4.game.r.d, fishing4.game.r.c) / 2.54) + "in.\n\nDays left : " + fishing4.game.r.b + "\nReward : " + fishing4.a.y.d(fishing4.game.r.a(0, az.k)), fishing4.a.m.e(), az.s, az.t);
                   }
-               } else if (fishing4.game.p.a == 0) {
+               } else if (globalConfig.languageId == 0) {
                   a(var0, fishing4.game.r.b() + "\n\n" + fishing4.game.r.d() + fishing4.a.y.a(2131165434 + fishing4.game.r.c) + " 많이 잡기\n(출몰지 : " + fishing4.game.m.i(fishing4.game.r.c).split("\n")[0] + ")\n\n현재 1위 : " + (int)fishing4.game.r.c() + "마리\n내 점수 : " + (int)fishing4.game.r.d + "마리\n\n남은 기간 : " + fishing4.game.r.b + "일\n상금 : " + fishing4.a.y.d(fishing4.game.r.a(1, az.k)), fishing4.a.m.e(), az.s, az.t);
                } else {
                   a(var0, fishing4.game.r.b() + "\n\n" + fishing4.game.r.d() + fishing4.a.y.a(2131165434 + fishing4.game.r.c) + " Catch most\n(Habitat : " + fishing4.game.m.i(fishing4.game.r.c).split("\n")[0] + ")\n\nCurrent best scorer : " + (int)fishing4.game.r.c() + "Quantity\nMy score : " + (int)fishing4.game.r.d + "Quantity\n\nDays left : " + fishing4.game.r.b + "\nReward : " + fishing4.a.y.d(fishing4.game.r.a(1, az.k)), fishing4.a.m.e(), az.s, az.t);
@@ -354,19 +354,19 @@ public final class am {
                } else if (b == 70) {
                   a(var0, aq.c[az.k]);
                } else if (b == 71) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "인벤토리에 공간이 부족합니다. 공간을 확보해 주세요.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "Not enough inventory space.", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 72) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "구입하였습니다.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "Purchased.", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 73) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "구입을 실패하였습니다.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "Purchase failed.", fishing4.a.m.e(), az.s, az.t);
@@ -374,19 +374,19 @@ public final class am {
                } else if (b == 74) {
                   a(var0, "LGT임직원은 사용이 불가합니다.", fishing4.a.m.e(), az.s, az.t);
                } else if (b == 75) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "더 이상 구매할 수 없습니다.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "You cannot purchase any more.", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 76) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "고객님은 월한도 초과로 인해 더 이상 구매하실 수 없습니다. 다음달에 다시 이용해 주세요.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "You have reached monthly spend limit. Try again next month.", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 77) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "고객님은 일한도 초과로 인해 더 이상 구매하실 수 없습니다. 다음날에 다시 이용해 주세요.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "You have reached daily spend limit. Try again next day.", fishing4.a.m.e(), az.s, az.t);
@@ -394,7 +394,7 @@ public final class am {
                } else if (b == 78) {
                   a(var0, "청소년요금제 혹은 선불한도로 인해 구매하실 수 없습니다.", fishing4.a.m.e(), az.s, az.t);
                } else if (b == 80) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "레이더를 장착할 배를 선택해 주세요.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "Select the ship you want to attach the radar to.", fishing4.a.m.e(), az.s, az.t);
@@ -414,7 +414,7 @@ public final class am {
 
                   a(var0, az.s, az.t, az.A, az.B, az.E, (ag)ad.h.get(az.p), var1, true);
                } else if (b == 82) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "이미 해당 레이더가 장착되어 있습니다.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "This ship alreadt has the selected radar.", fishing4.a.m.e(), az.s, az.t);
@@ -431,67 +431,67 @@ public final class am {
                   fishing4.a.m.a(var0, fishing4.a.m.c(), fishing4.a.m.d(), (float)fishing4.a.m.a(), (float)fishing4.a.m.b(), fishing4.a.aa.a(0.0F, 0.0F, 0.0F, 0.75F));
                   fishing4.a.m.a(var0, bb.g, fishing4.a.m.c(), fishing4.a.m.d());
                } else if (b == 171) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "전송을 실패하였습니다.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "Transfer failed.", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 172) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "이미 전송하였습니다.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "You already made this transfer.", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 173) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "코인이 부족합니다.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "Not enough Coins.", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 174) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "|255000000|<죄송합니다>\n\n에딧프로그램 사용 로그가 발견되었습니다!\n|255255000|타 사용자의 피해를 막기 위해, 네트워크가 차단됩니다.\n문의사항은 아래의 메일로 보내주십시오.\nhelp@pnjmobile.co.kr", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "|255000000|<Sorry!>\n\nIllegal editing program detected!\n|255255000|Network connection will be blocked for safety.\nContact PNJ Support for more info.\nhelp@pnjmobile.co.kr", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 175) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "해당 기능은 게임을 업데이트를 하셔야 이용하실 수 있습니다.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "This feature is only available on the latest version. ", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 96) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "Like 버튼 클릭 보상\n\n|255255000|" + fishing4.a.y.d(10000), fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "Like' reward\n\n|255255000|" + fishing4.a.y.d(10000), fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 92) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "이미 Like하셨습니다. 게임을 시작하시면 보상을 받으실 수 있습니다.\n(튜토리얼 상태이면 튜토리얼이 끝난 후 보상이 지급됩니다)", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "You already 'Liked' this app. You'll receeive the reward when you run the game.\n(If you're playing Tutorial, you'll receive the reward after it.)", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 93) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "이미 Like하셨습니다.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "You already 'Liked' this app.", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 94) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "게임을 시작하시면 보상을 받으실 수 있습니다.\n(튜토리얼 상태이면 튜토리얼이 끝난 후 보상이 지급됩니다)", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "You'll receeive the reward when you run the game.\n(If you're playing Tutorial, you'll receive the reward after it.)", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 95) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "Like에 의한 보상을 이미 받으셨습니다.\n감사합니다.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "You already got 'Like' reward.\nThank you.", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 180) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "코인이 부족합니다. 충전하시겠습니까?", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "Not enough Coins. Do you want to buy more?", fishing4.a.m.e(), az.s, az.t);
@@ -501,61 +501,61 @@ public final class am {
                   fishing4.a.w var11 = az.t;
                   a(var0, var10);
                } else if (b == 182) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "코인 충전을 완료하였습니다.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "Coin purchased.", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 183) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "코인 충전을 실패하였습니다.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "Coin purchase failed.", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 184) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "전송중입니다..", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "Transferring…", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 185) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "200 Coin 충전합니다.\n\n" + fishing4.a.y.b(2000) + "입니다.\n결제하시겠습니까?", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "200 Purchasing Coins.\n\n", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 186) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "515 Coin 충전합니다.\n\n" + fishing4.a.y.b(5000) + "입니다.\n결제하시겠습니까?", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "515 Purchasing Coins.\n\n", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 187) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "840 Coin 충전합니다.\n\n" + fishing4.a.y.b(8000) + "입니다.\n결제하시겠습니까?", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "840 Purchasing Coins.\n\n ", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 188) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "1400 Coin 충전합니다.\n\n" + fishing4.a.y.b(13000) + "입니다.\n결제하시겠습니까?", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "1400 Purchasing Coins.\n\n ", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 189) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "3300 Coin 충전합니다.\n\n" + fishing4.a.y.b(30000) + "입니다.\n결제하시겠습니까?", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "3300 Purchasing Coins.\n\n ", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 190) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "6000 Coin 충전합니다.\n\n" + fishing4.a.y.b(50000) + "입니다.\n결제하시겠습니까?", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "6000 Purchasing Coins.\n\n ", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 200) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "정식판 전환(광고 제거) 상품을 구입하시겠습니까? " + ab.b(2000), fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "Do you want to buy Premium Version with no ads? " + ab.b(2000), fishing4.a.m.e(), az.s, az.t);
@@ -571,7 +571,7 @@ public final class am {
                } else if (b == 205) {
                   a(var0, "청소년 요금제 사용자입니다", fishing4.a.m.e(), az.s, az.t);
                } else if (b == 46) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "네트워크 사용이 원활하지 않습니다. 고객센터로 문의주시기 바랍니다.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "Your network connection is unstable. Please contact support center.", fishing4.a.m.e(), az.s, az.t);
@@ -597,19 +597,19 @@ public final class am {
                } else if (b == 213) {
                   a(var0, "대물낚시터는 기존 낚시터보다 큰 물고기, 유료 코스튬 그리고 대물낚시터만의 특별한 낚싯대와 더 많은 코인을 얻을 수 있습니다.\n\n입장하시겠습니까?", fishing4.a.m.e(), az.s, az.t);
                } else if (b == 214) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "만선이라 출항할 수 없습니다. 선적정보를 확인해주세요.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "Your ship is full! Check your ship before departure!", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 215) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "출항하면 대회일이 1일 소요됩니다. 그래도 출항 하시겠습니까? 출항하면 " + (fishing4.game.r.b - 1) + "일이 남습니다.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "1 competition day will be spent for 1 departure. Do you want to proceed? " + (fishing4.game.r.b - 1) + " days will be left if you do.", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 216) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "대회기간이 만료되어 출항이 불가능합니다. 협회를 방문해주세요.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "Competition is over. Visit the team.", fishing4.a.m.e(), az.s, az.t);
@@ -620,38 +620,38 @@ public final class am {
                } else if (b == 218) {
                   a(var0, "입장 실패하였습니다.", fishing4.a.m.e(), az.s, az.t);
                } else if (b == 219) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "해당 기능은 게임을 업데이트를 하셔야 이용하실 수 있습니다.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "This feature is only available on the latest version. ", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 221) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "상품목록을 받아왔습니다.\n\nTIP : 유료 아이템은 착용 제한이 없습니다.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "received list of products.\n\nTIP : Cash items do not have Level restrictions.", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 222) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "상품목록을 받아왔습니다.\n\nTIP : 유료 낚싯대는 강화 및 수리가 가능합니다.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "received list of \nproducts.\n\nTIP : Cash rods can be \nrepaired / upgraded.", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 223) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "상품목록을 받아왔습니다.\n\nTIP : 와이어는 장력 제한이 없습니다.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "received list of products.\n\nTIP : Wire has unlimited tension.", fishing4.a.m.e(), az.s, az.t);
                   }
                } else if (b == 224) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      a(var0, "상품목록을 받아왔습니다.\n\nTIP : 코스튬은 부가적인 능력치를 상승시킵니다.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      a(var0, "received list of products.\n\nTIP : Costumes increase your stats.", fishing4.a.m.e(), az.s, az.t);
                   }
                }
             } else {
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.languageId == 0) {
                   var8 = new String("받은 선물 목록\n\n");
                   var1 = var3;
                } else {
@@ -661,7 +661,7 @@ public final class am {
 
                while(var1 < fishing4.a.r.J) {
                   if (var1 >= 7) {
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         var8 = var8 + "\n..외에 " + (fishing4.a.r.J - var1) + "종류를 선물받았습니다.";
                      } else {
                         var8 = var8 + "\n..You received following item(s) " + (fishing4.a.r.J - var1);
@@ -669,7 +669,7 @@ public final class am {
                      break;
                   }
 
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      var7 = var8;
                      switch (fishing4.a.r.K[var1]) {
                         case 0:
@@ -881,7 +881,7 @@ public final class am {
             fishing4.game.m.a(var0, var1, var2, false, var3, var4, az.s, az.v, fishing4.a.m.c(), var11.b + 150.0F, var5);
             fishing4.a.ae.a(var0, fishing4.game.m.c(var1), fishing4.a.m.c(), var11.b, 350.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
             fishing4.a.m.a(var0, az.s, fishing4.a.m.c(), var11.b - 20.0F - 22.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
-            if (fishing4.game.p.a == 0) {
+            if (globalConfig.languageId == 0) {
                fishing4.a.ae.a(var0, "크기 : " + fishing4.game.m.a(var2, var1) + "cm (" + fishing4.game.m.e(var1) + "등급)", fishing4.a.m.c(), var11.b - 70.0F, 350.0F, 60.0F, 26.0F, 4);
             } else {
                fishing4.a.ae.a(var0, "Length : " + k.format((double)fishing4.game.m.a(var2, var1) / 2.54) + "in. (Grade " + fishing4.game.m.e(var1) + ")", fishing4.a.m.c(), var11.b - 70.0F, 350.0F, 60.0F, 26.0F, 4);
@@ -903,7 +903,7 @@ public final class am {
             a(var0, az.s, az.t, var11);
             if (b != 62 && b != 64) {
                fishing4.a.m.a(var0, az.t, fishing4.a.m.c() - 175.0F, var11.b - 240.0F, 585.0F, 250.0F, 56.0F, 56.0F);
-            } else if (fishing4.game.p.a == 0) {
+            } else if (globalConfig.languageId == 0) {
                fishing4.a.ae.a(var0, fishing4.a.r.aa[az.p] + "님\n(" + fishing4.game.t.a(fishing4.a.r.ab[az.p], false) + ")", fishing4.a.m.c() - 120.0F, var11.b - 160.0F, 200.0F, 60.0F, 24.0F, 4, fishing4.a.aa.d());
             } else {
                fishing4.a.ae.a(var0, fishing4.a.r.aa[az.p] + "\n(" + fishing4.game.t.a(fishing4.a.r.ab[az.p], false) + ")", fishing4.a.m.c() - 120.0F, var11.b - 160.0F, 200.0F, 60.0F, 24.0F, 4, fishing4.a.aa.d());
@@ -934,7 +934,7 @@ public final class am {
             a(var0, az.s, var3, l);
          } else {
             a(var0, az.s, var3, l);
-            if (fishing4.game.p.a == 0) {
+            if (globalConfig.languageId == 0) {
                fishing4.a.ae.a(var0, "축하합니다. 강화에 성공했습니다.", fishing4.a.m.c(), 80.0F + fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
                fishing4.a.ae.a(var0, "[결과]", fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
                if (var1 == 0) {
@@ -996,7 +996,7 @@ public final class am {
          } else {
             a(var0, az.s, var3, l);
             if (var1 == 71) {
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.languageId == 0) {
                   fishing4.a.ae.a(var0, "선적을 개조하시겠습니까?", fishing4.a.m.c(), 120.0F + fishing4.a.m.d(), 325.0F, 60.0F, 26.0F, 4);
                   fishing4.a.ae.a(var0, "[개조]", fishing4.a.m.c(), 50.0F + fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
                   fishing4.a.ae.a(var0, "레벨\n선적", fishing4.a.m.c() - 85.0F, fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
@@ -1022,7 +1022,7 @@ public final class am {
                   }
                }
             } else if (var1 == 76) {
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.languageId == 0) {
                   fishing4.a.ae.a(var0, "적재길이를 개조하시겠습니까?", fishing4.a.m.c(), 120.0F + fishing4.a.m.d(), 325.0F, 60.0F, 26.0F, 4);
                   fishing4.a.ae.a(var0, "[개조]", fishing4.a.m.c(), 50.0F + fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
                   fishing4.a.ae.a(var0, "레벨\n길이", fishing4.a.m.c() - 120.0F, fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
@@ -1145,7 +1145,7 @@ public final class am {
             a(var0, az.s, var3, l);
          } else {
             a(var0, az.s, var3, l);
-            if (fishing4.game.p.a == 0) {
+            if (globalConfig.languageId == 0) {
                fishing4.a.ae.a(var0, "개수를 입력하세요", fishing4.a.m.c(), 50.0F + fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
             } else {
                fishing4.a.ae.a(var0, "Enter the quantity", fishing4.a.m.c(), 50.0F + fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
@@ -1287,7 +1287,7 @@ public final class am {
             a(var0, az.s, var2, l);
          } else {
             a(var0, az.s, var2, l);
-            if (fishing4.game.p.a == 0) {
+            if (globalConfig.languageId == 0) {
                fishing4.a.ae.a(var0, var1.u() + " 강화하시겠습니까?", fishing4.a.m.c(), 120.0F + fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
                fishing4.a.ae.a(var0, "[강화]", fishing4.a.m.c(), 50.0F + fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
                fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), 15.0F + fishing4.a.m.d(), 824.0F, 477.0F, 16.0F, 16.0F);
@@ -1452,7 +1452,7 @@ public final class am {
             a(var0, az.s, var3, l);
          } else {
             a(var0, az.s, var3, l);
-            if (fishing4.game.p.a == 0) {
+            if (globalConfig.languageId == 0) {
                if (var1 == 73) {
                   fishing4.a.ae.a(var0, "선적이 개조되었습니다.", fishing4.a.m.c(), fishing4.a.m.d() + 80.0F, 325.0F, 60.0F, 26.0F, 4);
                   fishing4.a.ae.a(var0, "[결과]", fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);

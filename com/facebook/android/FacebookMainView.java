@@ -9,7 +9,7 @@ import android.widget.TextView;
 import fishing4.a.y;
 import fishing4.game.MyWebView;
 import fishing4.game.am;
-import fishing4.game.p;
+import fishing4.game.globalConfig;
 import fishing4.game.u;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -105,7 +105,7 @@ public class FacebookMainView extends Activity {
       this.requestWindowFeature(2);
       this.setContentView(2130903043);
       a = this;
-      if (p.a == 0) {
+      if (globalConfig.a == 0) {
          this.e = new Facebook("242780459104417");
       } else {
          this.e = new Facebook("271037549653898");

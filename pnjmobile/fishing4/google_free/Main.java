@@ -31,6 +31,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import com.facebook.android.FacebookMainView;
 import fishing4.game.AgreementView;
+import fishing4.game.globalConfig;
 import fishing4.game.userIDview;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -169,13 +170,13 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
    }
 
    public static void a() {
-      fishing4.game.p.m = false;
+      globalConfig.m = false;
       ConnectivityManager var0 = (ConnectivityManager)u.getSystemService("connectivity");
       if (var0.getActiveNetworkInfo() != null && var0.getActiveNetworkInfo().isConnectedOrConnecting()) {
          u.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://wap.pnjmobile.co.kr/Link/Google_play/?game=Fish4_google_fullversion")));
       } else {
          String var1;
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.a == 0) {
             var1 = "인터넷 연결 상태를 확인하세요.";
          } else {
             var1 = "Check network connection.";
@@ -267,7 +268,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       }
 
       String var12;
-      if (fishing4.game.p.a == 0) {
+      if (globalConfig.a == 0) {
          var12 = "ko";
       } else {
          var12 = "en";
@@ -707,7 +708,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       LinearLayout var3 = (LinearLayout)View.inflate(this, 2130903041, (ViewGroup)null);
       TextView var2 = (TextView)var3.findViewById(2131099658);
       String var4;
-      if (fishing4.game.p.a == 0) {
+      if (globalConfig.a == 0) {
          var2.setText(var1 + " 골드를 얻었습니다.");
          var4 = "확인";
       } else {
@@ -729,12 +730,12 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
    public final void b(String var1) {
       ConnectivityManager var2 = (ConnectivityManager)this.getSystemService("connectivity");
       if (var2.getActiveNetworkInfo() != null && var2.getActiveNetworkInfo().isConnectedOrConnecting()) {
-         fishing4.game.p.n = null;
-         fishing4.game.p.n = new String(var1);
+         globalConfig.n = null;
+         globalConfig.n = new String(var1);
          FacebookMainView.b = 0;
          this.startActivity(new Intent(this, FacebookMainView.class));
       } else {
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.a == 0) {
             var1 = "인터넷 연결 상태를 확인하세요.";
          } else {
             var1 = "Check network connection.";
@@ -750,7 +751,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       LinearLayout var3 = (LinearLayout)View.inflate(this, 2130903041, (ViewGroup)null);
       TextView var2 = (TextView)var3.findViewById(2131099658);
       String var4;
-      if (fishing4.game.p.a == 0) {
+      if (globalConfig.a == 0) {
          var2.setText(var1 + "일차 출석하셨습니다. 내일 더 많은 골드를 받아가세요~");
          var4 = "확인";
       } else {
@@ -769,7 +770,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       String var1;
       String var2;
       String var3;
-      if (fishing4.game.p.a == 0) {
+      if (globalConfig.a == 0) {
          var2 = "선물 알림";
          var3 = "선물 " + fishing4.a.r.J + "개가 도착하였습니다.\n이벤트 메뉴에서 선물을 확인해 주세요.";
          var1 = "확인";
@@ -802,7 +803,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       }
 
       AlertDialog var3;
-      if (fishing4.game.p.a == 0) {
+      if (globalConfig.a == 0) {
          if (l == 5) {
             var3 = (new AlertDialog.Builder(this)).setCancelable(false).setView(var2).setPositiveButton("수락", new t(this)).create();
          } else {
@@ -822,7 +823,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       AlertDialog var3;
       if (!fishing4.a.r.G.equals("")) {
          String var2;
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.a == 0) {
             var2 = "예";
             var1 = "아니오";
          } else {
@@ -832,7 +833,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
 
          var3 = (new AlertDialog.Builder(this)).setCancelable(false).setMessage(Html.fromHtml(fishing4.a.r.D[0])).setPositiveButton(var2, new aa(this)).setNegativeButton(var1, new ab(this)).create();
       } else {
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.a == 0) {
             var1 = "예";
          } else {
             var1 = "Confirm";
@@ -1008,7 +1009,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       if (var1 == 57 && var2.getRepeatCount() == 0) {
          switch (fishing4.game.k.j) {
             case 0:
-               var3 = fishing4.game.p.j;
+               var3 = globalConfig.j;
                break;
             case 1:
                if (fishing4.a.r.J > 0) {
@@ -1039,7 +1040,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
                   String var6;
                   String var7;
                   String var8;
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.a == 0) {
                      var6 = "안내";
                      var8 = "새로운 버전이 있습니다. 버전업 하시겠습니까?";
                      var5 = "확인";
@@ -1126,7 +1127,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       this.setContentView(this.T);
       this.addContentView(z, new LinearLayout.LayoutParams(-1, -1));
       this.addContentView(A, new LinearLayout.LayoutParams(-1, -2));
-      boolean var1 = fishing4.game.p.j;
+      boolean var1 = globalConfig.j;
       this.T.onResume();
       if (fishing4.game.z.b() == 3) {
          if (fishing4.game.aa.c == 1 && fishing4.game.az.e) {
@@ -1268,34 +1269,34 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
             String var13;
             if (fishing4.game.am.e && fishing4.game.am.b == 121 && fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 175.0F, fishing4.a.m.d() - 35.0F - 240.0F), fishing4.a.h.a(60.0F, 60.0F), fishing4.a.e.a(var5, var6))) {
                var13 = new String(fishing4.game.m.c(fishing4.game.az.p));
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.a == 0) {
                   var12 = fishing4.game.m.a(fishing4.game.s.a[fishing4.game.az.p], fishing4.game.az.p) + "cm";
                } else {
                   var12 = o.format((double)fishing4.game.m.a(fishing4.game.s.a[fishing4.game.az.p], fishing4.game.az.p) / 2.54) + "in.";
                }
 
                var10 = new String(fishing4.game.m.a(fishing4.game.s.a[fishing4.game.az.p]));
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.a == 0) {
                   this.b(var13 + "(" + fishing4.game.m.e(fishing4.game.az.p) + ") / " + var12 + " / " + var10 + " / 월척도감");
                } else {
                   this.b(var13 + "(" + fishing4.game.m.e(fishing4.game.az.p) + ") / " + var12 + " / " + var10 + " / BIG FISH");
                }
             } else if (fishing4.game.am.e && fishing4.game.am.b == 123 && fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 175.0F, fishing4.a.m.d() - 35.0F - 240.0F), fishing4.a.h.a(60.0F, 60.0F), fishing4.a.e.a(var5, var6))) {
                var13 = new String(fishing4.game.m.c(fishing4.game.az.p));
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.a == 0) {
                   var12 = fishing4.game.m.a(fishing4.game.s.b[fishing4.game.az.p], fishing4.game.az.p) + "cm";
                } else {
                   var12 = o.format((double)fishing4.game.m.a(fishing4.game.s.b[fishing4.game.az.p], fishing4.game.az.p) / 2.54) + "in.";
                }
 
                var10 = new String(fishing4.game.m.a(fishing4.game.s.b[fishing4.game.az.p]));
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.a == 0) {
                   this.b(var13 + "(" + fishing4.game.m.e(fishing4.game.az.p) + ") / " + var12 + " / " + var10 + " / 희귀어도감");
                } else {
                   this.b(var13 + "(" + fishing4.game.m.e(fishing4.game.az.p) + ") / " + var12 + " / " + var10 + " / RARE FISH");
                }
             } else if (fishing4.game.am.e && fishing4.game.am.b >= 0 && fishing4.game.am.b <= 23 && fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 130.0F, fishing4.a.m.d() - 160.0F), fishing4.a.h.a(60.0F, 60.0F), fishing4.a.e.a(var5, var6))) {
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.a == 0) {
                   var12 = fishing4.a.y.a(2131165966 + fishing4.game.am.b) + " 업적 달성!! 축하해주세요~";
                } else {
                   var12 = "[" + fishing4.a.y.a(2131165966 + fishing4.game.am.b) + "] Achievement completed!";
@@ -1304,14 +1305,14 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
                this.b(var12);
             } else if (fishing4.game.z.b() == 4 && fishing4.game.aw.c == 4 && fishing4.game.l.d == 43 && fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 175.0F, fishing4.a.m.d() - 35.0F - 240.0F), fishing4.a.h.a(60.0F, 60.0F), fishing4.a.e.a(var5, var6))) {
                var13 = new String(fishing4.game.m.c(fishing4.game.i.b));
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.a == 0) {
                   var12 = fishing4.game.m.a(fishing4.game.aw.i, fishing4.game.i.b) + "cm";
                } else {
                   var12 = o.format((double)fishing4.game.m.a(fishing4.game.aw.i, fishing4.game.i.b) / 2.54) + "in.";
                }
 
                var10 = new String(fishing4.game.m.a(fishing4.game.aw.i));
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.a == 0) {
                   this.b(var13 + "(" + fishing4.game.m.e(fishing4.game.i.b) + ") / " + var12 + " / " + var10 + " / 낚시 성공");
                } else {
                   this.b(var13 + "(" + fishing4.game.m.e(fishing4.game.i.b) + ") / " + var12 + " / " + var10 + " / \tSuccessful Catch!");
@@ -1320,14 +1321,14 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
                var3 = ((fishing4.game.m)((fishing4.game.ag)fishing4.game.ad.h.get(fishing4.game.az.k)).b.get(fishing4.game.az.p)).a();
                var7 = ((fishing4.game.m)((fishing4.game.ag)fishing4.game.ad.h.get(fishing4.game.az.k)).b.get(fishing4.game.az.p)).b();
                var13 = new String(fishing4.game.m.c(var7));
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.a == 0) {
                   var12 = fishing4.game.m.a(var3, var7) + "cm";
                } else {
                   var12 = o.format((double)fishing4.game.m.a(var3, var7) / 2.54) + "in.";
                }
 
                var10 = new String(fishing4.game.m.a(var3));
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.a == 0) {
                   this.b(var13 + "(" + fishing4.game.m.e(var7) + ") / " + var12 + " / " + var10 + " / 선적 정보");
                } else {
                   this.b(var13 + "(" + fishing4.game.m.e(var7) + ") / " + var12 + " / " + var10 + " / Ship infomation");
@@ -1343,7 +1344,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
                      if (var11.getActiveNetworkInfo() != null && var11.getActiveNetworkInfo().isConnectedOrConnecting()) {
                         this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://www.pnjmobile.com/l/fishing4/fishing4_comment_event.php?kind=free")));
                      } else {
-                        if (fishing4.game.p.a == 0) {
+                        if (globalConfig.a == 0) {
                            var12 = "인터넷 연결 상태를 확인하세요.";
                         } else {
                            var12 = "Check network connection.";
@@ -1369,7 +1370,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
                   if (var11.getActiveNetworkInfo() != null && var11.getActiveNetworkInfo().isConnectedOrConnecting()) {
                      this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://m.pnjm.com")));
                   } else {
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.a == 0) {
                         var12 = "인터넷 연결 상태를 확인하세요.";
                      } else {
                         var12 = "Check network connection.";
@@ -1385,7 +1386,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
                      fishing4.a.t.l = 3;
                      fishing4.a.t.i = true;
                   } else {
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.a == 0) {
                         var12 = "인터넷 연결 상태를 확인하세요.";
                      } else {
                         var12 = "Check network connection.";
@@ -1400,7 +1401,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
                      FacebookMainView.b = 1;
                      this.startActivity(new Intent(this, FacebookMainView.class));
                   } else {
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.a == 0) {
                         var12 = "인터넷 연결 상태를 확인하세요.";
                      } else {
                         var12 = "Check network connection.";
@@ -1409,15 +1410,15 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
                      Toast.makeText(this, var12, 0).show();
                   }
                } else if (!s) {
-                  if (fishing4.game.p.m) {
+                  if (globalConfig.m) {
                      a();
-                  } else if (fishing4.game.p.o) {
-                     fishing4.game.p.o = false;
+                  } else if (globalConfig.o) {
+                     globalConfig.o = false;
                      var11 = (ConnectivityManager)this.getSystemService("connectivity");
                      if (var11.getActiveNetworkInfo() != null && var11.getActiveNetworkInfo().isConnectedOrConnecting()) {
                         this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://www.pnjmobile.com/l/fishing4")));
                      } else {
-                        if (fishing4.game.p.a == 0) {
+                        if (globalConfig.a == 0) {
                            var12 = "인터넷 연결 상태를 확인하세요.";
                         } else {
                            var12 = "Check network connection.";

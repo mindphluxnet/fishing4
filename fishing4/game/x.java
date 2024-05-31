@@ -378,7 +378,7 @@ public final class x {
       DecimalFormat var0 = new DecimalFormat();
       String var1;
       if (l() < 0) {
-         if (p.a == 0) {
+         if (globalConfig.languageId == 0) {
             var1 = var0.format(e.c()) + " / 없음";
          } else {
             var1 = var0.format(e.c()) + " / None";

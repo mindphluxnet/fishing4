@@ -8,6 +8,8 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.net.Socket;
 
+import fishing4.game.globalConfig;
+
 public final class ab implements af, Runnable {
    private static int H;
    private static byte[] I;
@@ -181,7 +183,7 @@ public final class ab implements af, Runnable {
          try {
             Socket var2 = new Socket("222.122.160.61", 12002);
             m = var2;
-            fishing4.game.p.c = true;
+            globalConfig.c = true;
             m.setSoTimeout(20000);
             DataOutputStream var4 = new DataOutputStream(m.getOutputStream());
             n = var4;
@@ -280,7 +282,7 @@ public final class ab implements af, Runnable {
       return var1;
    }
 
-   private static byte[] c(int var0) {
+   private static byte[] c(int var0) throws IOException {
       byte[] var1 = null;
       if (a) {
          try {

@@ -53,9 +53,9 @@ public final class u {
       System.arraycopy(fishing4.a.a.a(o), 0, var0, 14, 1);
       System.arraycopy(fishing4.a.a.a(h), 0, var0, 15, 1);
       System.arraycopy(fishing4.a.a.a(ad.p.b()), 0, var0, 16, 8);
-      System.arraycopy(fishing4.a.a.a(fishing4.game.p.g.b()), 0, var0, 24, 8);
+      System.arraycopy(fishing4.a.a.a(globalConfig.g.b()), 0, var0, 24, 8);
       System.arraycopy(fishing4.a.a.a(g), 0, var0, 32, 1);
-      System.arraycopy(fishing4.game.p.b.getBytes(), 0, var0, 33, fishing4.game.p.b.getBytes().length);
+      System.arraycopy(globalConfig.b.getBytes(), 0, var0, 33, globalConfig.b.getBytes().length);
       fishing4.a.i.a("f4option.data", var0);
       fishing4.a.i.b("new_f4option.data", var0);
    }
@@ -200,7 +200,7 @@ public final class u {
             try {
                h = var0;
                ad.p.b(fishing4.a.a.b(var2, 16));
-               fishing4.game.p.g.a(fishing4.a.a.b(var2, 24));
+               globalConfig.g.a(fishing4.a.a.b(var2, 24));
             } catch (Exception var7) {
                var10000 = var7;
                var10001 = false;
@@ -219,7 +219,7 @@ public final class u {
                   byte[] var20 = new byte[21];
                   System.arraycopy(var2, 33, var20, 0, 20);
                   String var18 = new String(var20, "KSC5601");
-                  fishing4.game.p.b = var18.trim();
+                  globalConfig.b = var18.trim();
                   if (a) {
                      fishing4.b.d.a().b(0.5F);
                      break label160;
@@ -262,7 +262,7 @@ public final class u {
 
             try {
                if (h) {
-                  fishing4.game.p.j = true;
+                  globalConfig.j = true;
                   return;
                }
             } catch (Exception var15) {
@@ -272,7 +272,7 @@ public final class u {
             }
 
             try {
-               fishing4.game.p.j = true;
+               globalConfig.j = true;
                return;
             } catch (Exception var4) {
                var10000 = var4;

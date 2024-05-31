@@ -68,35 +68,35 @@ public final class aq {
                   if (fishing4.a.r.b()) {
                      switch (b) {
                         case 10:
-                           p.h.a(200L);
+                           globalConfig.h.a(200L);
                            break;
                         case 11:
-                           p.h.a(515L);
+                           globalConfig.h.a(515L);
                            break;
                         case 12:
-                           p.h.a(840L);
+                           globalConfig.h.a(840L);
                            break;
                         case 13:
-                           p.h.a(1400L);
+                           globalConfig.h.a(1400L);
                            break;
                         case 14:
-                           p.h.a(3300L);
+                           globalConfig.h.a(3300L);
                            break;
                         case 15:
-                           p.h.a(6000L);
+                           globalConfig.h.a(6000L);
                            break;
                         case 16:
-                           p.h.a(0L);
+                           globalConfig.h.a(0L);
                            break;
                         default:
-                           p.h.a((long)(b() * -1));
+                           globalConfig.h.a((long)(b() * -1));
                      }
 
-                     p.i = null;
+                     globalConfig.i = null;
                      if (z.b() == 4) {
-                        p.i = new String("바다 넷상점 이용");
+                        globalConfig.i = new String("바다 넷상점 이용");
                      } else {
-                        p.i = new String("마을 넷상점 이용");
+                        globalConfig.i = new String("마을 넷상점 이용");
                      }
 
                      this.e.b(4);
@@ -219,7 +219,7 @@ public final class aq {
 
    public static void a(GL10 var0, float var1) {
       if (am.b == -1) {
-         if (p.a == 0) {
+         if (globalConfig.languageId == 0) {
             fishing4.a.m.a(var0, az.w, var1, 70.0F, 373.0F, 130.0F, 128.0F, 128.0F);
          } else {
             fishing4.a.m.a(var0, az.w, var1, 70.0F, 373.0F, 0.0F, 128.0F, 128.0F);
@@ -313,7 +313,7 @@ public final class aq {
    }
 
    public static void b(GL10 var0, float var1) {
-      if (p.a == 0) {
+      if (globalConfig.languageId == 0) {
          fishing4.a.m.a(var0, az.w, var1, 70.0F, 372.0F, 387.0F, 124.0F, 124.0F);
       } else {
          fishing4.a.m.a(var0, az.w, var1, 70.0F, 372.0F, 260.0F, 124.0F, 124.0F);

@@ -185,7 +185,7 @@ public final class bf {
          fishing4.a.m.a(var1, var2, var14, var13 + var5 + var9 - var8, var16);
          if (var3) {
             fishing4.a.m.a(var1, var2, this.a.a, var11 + var5 + var12 + 18.0F - var10, this.a());
-            if (p.a == 0) {
+            if (globalConfig.languageId == 0) {
                var8 = this.a.a;
                switch (this.b) {
                   case 0:

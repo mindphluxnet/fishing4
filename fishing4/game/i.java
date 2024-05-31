@@ -254,13 +254,13 @@ public final class i {
          fishing4.a.m.a(var1, m, var12, fishing4.a.aa.b());
       }
 
-      if (fishing4.game.p.j) {
-         fishing4.a.m.a(var1, var6, fishing4.a.m.c(), (float)(fishing4.a.m.b() - fishing4.game.p.k / 2), fishing4.a.g.c((float)fishing4.game.p.k / var6.c.b));
+      if (globalConfig.j) {
+         fishing4.a.m.a(var1, var6, fishing4.a.m.c(), (float)(fishing4.a.m.b() - globalConfig.k / 2), fishing4.a.g.c((float) globalConfig.k / var6.c.b));
       }
 
       var8 = (float)fishing4.a.m.b();
-      if (fishing4.game.p.j) {
-         var8 -= (float)fishing4.game.p.k;
+      if (globalConfig.j) {
+         var8 -= (float) globalConfig.k;
       }
 
       fishing4.a.m.a(var1, var3, 223.0F, var8 - 42.0F, 0.0F, 164.0F, 446.0F, 84.0F, '\b');

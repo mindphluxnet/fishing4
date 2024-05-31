@@ -52,7 +52,7 @@ public class userIDview extends Activity {
 
    private void c() {
       AlertDialog.Builder var1;
-      if (p.a == 0) {
+      if (globalConfig.languageId == 0) {
          var1 = new AlertDialog.Builder(this);
          var1.setMessage("종료하시겠습니까?").setCancelable(false).setPositiveButton("예", new bl(this)).setNegativeButton("아니오", new bm(this));
          var1.create().show();

@@ -124,41 +124,41 @@ public final class bg {
                if (fishing4.a.r.b()) {
                   switch (aq.b) {
                      case 10:
-                        fishing4.game.p.h.a(200L);
+                        globalConfig.h.a(200L);
                         break;
                      case 11:
-                        fishing4.game.p.h.a(515L);
+                        globalConfig.h.a(515L);
                         break;
                      case 12:
-                        fishing4.game.p.h.a(840L);
+                        globalConfig.h.a(840L);
                         break;
                      case 13:
-                        fishing4.game.p.h.a(1400L);
+                        globalConfig.h.a(1400L);
                         break;
                      case 14:
-                        fishing4.game.p.h.a(3300L);
+                        globalConfig.h.a(3300L);
                         break;
                      case 15:
-                        fishing4.game.p.h.a(6000L);
+                        globalConfig.h.a(6000L);
                         break;
                      case 16:
-                        fishing4.game.p.h.a(0L);
+                        globalConfig.h.a(0L);
                         break;
                      default:
-                        fishing4.game.p.h.a((long)(aq.b() * -1));
+                        globalConfig.h.a((long)(aq.b() * -1));
                   }
 
-                  fishing4.game.p.i = null;
+                  globalConfig.i = null;
                   if (b == 21) {
                      String var3 = new String("낚싯대 수리");
-                     fishing4.game.p.i = var3;
+                     globalConfig.i = var3;
                      var3.concat(" (" + ((ac)ad.i.get(m)).u() + ")");
                   } else {
-                     fishing4.game.p.i = new String("슈퍼보트 개조");
+                     globalConfig.i = new String("슈퍼보트 개조");
                      if (b == 72) {
-                        fishing4.game.p.i.concat(" (선적)");
+                        globalConfig.i.concat(" (선적)");
                      } else if (b == 72) {
-                        fishing4.game.p.i.concat(" (적재)");
+                        globalConfig.i.concat(" (적재)");
                      }
                   }
 
@@ -686,12 +686,12 @@ public final class bg {
       fishing4.a.ae.a(var1, var15.getString(var7).trim(), var14.a, var14.b - 66.0F, var4.c.a - 40.0F, var4.c.b, 24.0F, 4);
       this.s.a(var1, var2, var3, fishing4.a.e.a(var14.a, 55.0F));
       if (l != 0 && l != 1 && l != 2) {
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.languageId == 0) {
             fishing4.a.m.a(var1, var6, this.f[0].a + 160.0F, this.f[0].b - 50.0F, 220.0F, 0.0F, 108.0F, 90.0F);
          } else {
             fishing4.a.m.a(var1, var6, this.f[0].a + 160.0F, this.f[0].b - 50.0F, 328.0F, 0.0F, 108.0F, 90.0F);
          }
-      } else if (fishing4.game.p.a == 0) {
+      } else if (globalConfig.languageId == 0) {
          fishing4.a.m.a(var1, var6, this.f[0].a + 160.0F, this.f[0].b - 50.0F, 0.0F, 0.0F, 108.0F, 90.0F);
       } else {
          fishing4.a.m.a(var1, var6, this.f[0].a + 160.0F, this.f[0].b - 50.0F, 108.0F, 0.0F, 108.0F, 90.0F);
@@ -798,7 +798,7 @@ public final class bg {
          String var16;
          m var17;
          ag var18;
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.languageId == 0) {
             if (this.j == 4) {
                if (b == 100) {
                   if (m < fishing4.game.w.b.size()) {
@@ -1675,7 +1675,7 @@ public final class bg {
       fishing4.a.f var2;
       switch (this.j) {
          case 0:
-            if (fishing4.game.p.a == 0) {
+            if (globalConfig.languageId == 0) {
                if (var1 == 0) {
                   var2 = fishing4.a.f.a(840.0F, 243.0F, 64.0F, 18.0F);
                   return var2;
@@ -1762,7 +1762,7 @@ public final class bg {
          default:
             break;
          case 2:
-            if (fishing4.game.p.a == 0) {
+            if (globalConfig.languageId == 0) {
                if (k != 0 && k != 1) {
                   if (var1 == 0) {
                      var2 = fishing4.a.f.a(0.0F, 494.0F, 54.0F, 16.0F);
@@ -1818,7 +1818,7 @@ public final class bg {
             break;
          case 3:
             if (var1 == 0) {
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.languageId == 0) {
                   var2 = fishing4.a.f.a(264.0F, 426.0F, 38.0F, 16.0F);
                } else {
                   var2 = fishing4.a.f.a(308.0F, 425.0F, 40.0F, 16.0F);
@@ -1828,7 +1828,7 @@ public final class bg {
             }
 
             if (var1 == 1) {
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.languageId == 0) {
                   var2 = fishing4.a.f.a(255.0F, 443.0F, 38.0F, 16.0F);
                } else {
                   var2 = fishing4.a.f.a(300.0F, 442.0F, 56.0F, 16.0F);
@@ -1838,7 +1838,7 @@ public final class bg {
             }
 
             if (var1 == 2) {
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.languageId == 0) {
                   var2 = fishing4.a.f.a(262.0F, 460.0F, 38.0F, 16.0F);
                } else {
                   var2 = fishing4.a.f.a(307.0F, 459.0F, 48.0F, 16.0F);
@@ -2105,7 +2105,7 @@ public final class bg {
    private fishing4.a.e h(int var1) {
       fishing4.a.e var2;
       if (var1 == k) {
-         if (!fishing4.game.p.j || this.j != 3 && this.j != 2) {
+         if (!globalConfig.j || this.j != 3 && this.j != 2) {
             var2 = fishing4.a.e.a(70.0F, (float)(fishing4.a.m.b() - 126));
          } else {
             var2 = fishing4.a.e.a(70.0F, (float)(fishing4.a.m.b() - 126 - 15));
@@ -2439,7 +2439,7 @@ public final class bg {
       this.f = new fishing4.a.e[var1];
 
       for(int var2 = 0; var2 < var1; ++var2) {
-         if (!fishing4.game.p.j || this.j != 3 && this.j != 2) {
+         if (!globalConfig.j || this.j != 3 && this.j != 2) {
             this.f[var2] = fishing4.a.e.a(-66.0F, (float)(fishing4.a.m.b() - 126) - 10.0F);
          } else {
             this.f[var2] = fishing4.a.e.a(-66.0F, (float)(fishing4.a.m.b() - 126) - 10.0F - 15.0F);
@@ -2874,7 +2874,7 @@ public final class bg {
             switch (this.j) {
                case 0:
                   if (var14 == 0) {
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         var29 = fishing4.a.f.a(141.0F, 407.0F, 40.0F, 16.0F);
                      } else {
                         var29 = fishing4.a.f.a(189.0F, 407.0F, 90.0F, 16.0F);
@@ -2883,7 +2883,7 @@ public final class bg {
                   }
 
                   if (var14 == 1) {
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         var29 = fishing4.a.f.a(0.0F, 425.0F, 106.0F, 16.0F);
                      } else {
                         var29 = fishing4.a.f.a(116.0F, 425.0F, 112.0F, 16.0F);
@@ -2893,7 +2893,7 @@ public final class bg {
                   break;
                case 1:
                   if (var14 == 0) {
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         var29 = fishing4.a.f.a(0.0F, 443.0F, 78.0F, 16.0F);
                      } else {
                         var29 = fishing4.a.f.a(0.0F, 461.0F, 92.0F, 16.0F);
@@ -2902,7 +2902,7 @@ public final class bg {
                   }
 
                   if (var14 == 1) {
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         var29 = fishing4.a.f.a(89.0F, 443.0F, 76.0F, 16.0F);
                      } else {
                         var29 = fishing4.a.f.a(105.0F, 461.0F, 106.0F, 16.0F);
@@ -2911,7 +2911,7 @@ public final class bg {
                   }
 
                   if (var14 == 2) {
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         var29 = fishing4.a.f.a(177.0F, 443.0F, 76.0F, 16.0F);
                      } else {
                         var29 = fishing4.a.f.a(285.0F, 494.0F, 70.0F, 16.0F);
@@ -2921,7 +2921,7 @@ public final class bg {
                   break;
                case 2:
                   if (var14 == 0) {
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         var29 = fishing4.a.f.a(0.0F, 369.0F, 38.0F, 16.0F);
                      } else {
                         var29 = fishing4.a.f.a(47.0F, 369.0F, 44.0F, 16.0F);
@@ -2930,7 +2930,7 @@ public final class bg {
                   }
 
                   if (var14 == 1) {
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         var29 = fishing4.a.f.a(99.0F, 369.0F, 38.0F, 16.0F);
                      } else {
                         var29 = fishing4.a.f.a(146.0F, 369.0F, 54.0F, 16.0F);
@@ -2939,7 +2939,7 @@ public final class bg {
                   }
 
                   if (var14 == 2) {
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         var29 = fishing4.a.f.a(208.0F, 369.0F, 38.0F, 16.0F);
                      } else {
                         var29 = fishing4.a.f.a(257.0F, 369.0F, 78.0F, 16.0F);
@@ -2948,7 +2948,7 @@ public final class bg {
                   }
 
                   if (var14 == 3) {
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         var29 = fishing4.a.f.a(0.0F, 387.0F, 40.0F, 18.0F);
                      } else {
                         var29 = fishing4.a.f.a(48.0F, 388.0F, 96.0F, 16.0F);
@@ -2958,7 +2958,7 @@ public final class bg {
                   break;
                case 3:
                   if (var14 == 0) {
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         var29 = fishing4.a.f.a(0.0F, 369.0F, 38.0F, 16.0F);
                      } else {
                         var29 = fishing4.a.f.a(47.0F, 369.0F, 44.0F, 16.0F);
@@ -2967,7 +2967,7 @@ public final class bg {
                   }
 
                   if (var14 == 1) {
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         var29 = fishing4.a.f.a(99.0F, 369.0F, 38.0F, 16.0F);
                      } else {
                         var29 = fishing4.a.f.a(146.0F, 369.0F, 54.0F, 16.0F);
@@ -2976,7 +2976,7 @@ public final class bg {
                   }
 
                   if (var14 == 2) {
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         var29 = fishing4.a.f.a(208.0F, 369.0F, 38.0F, 16.0F);
                      } else {
                         var29 = fishing4.a.f.a(257.0F, 369.0F, 78.0F, 16.0F);
@@ -2987,7 +2987,7 @@ public final class bg {
                case 4:
                case 5:
                   if (var14 == 0) {
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         var29 = fishing4.a.f.a(152.0F, 387.0F, 60.0F, 16.0F);
                      } else {
                         var29 = fishing4.a.f.a(219.0F, 388.0F, 70.0F, 16.0F);
@@ -2996,7 +2996,7 @@ public final class bg {
                   }
 
                   if (var14 == 1) {
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         var29 = fishing4.a.f.a(0.0F, 407.0F, 38.0F, 16.0F);
                      } else {
                         var29 = fishing4.a.f.a(48.0F, 407.0F, 92.0F, 16.0F);
@@ -3033,7 +3033,7 @@ public final class bg {
 
                      am.a(var1, fishing4.a.m.d() - 40.0F, var14 % 10);
                      if (var24.b.size() <= 0) {
-                        if (fishing4.game.p.a == 0) {
+                        if (globalConfig.languageId == 0) {
                            fishing4.a.ae.a(var1, "이 배에는 물고기가 없습니다", fishing4.a.m.c(), 110.0F + fishing4.a.m.d(), 350.0F, 28.0F, 26.0F, 4, fishing4.a.aa.a(1.0F, 1.0F, 1.0F, 1.0F));
                         } else {
                            fishing4.a.ae.a(var1, "There's no fish on board", fishing4.a.m.c(), 110.0F + fishing4.a.m.d(), 350.0F, 28.0F, 26.0F, 4, fishing4.a.aa.a(1.0F, 1.0F, 1.0F, 1.0F));
@@ -3057,7 +3057,7 @@ public final class bg {
                            ad.o.a(var1, fishing4.a.e.a(var25.a, 100.0F), var3);
                            fishing4.a.m.a(var1, var2, var25.a, 130.0F, 493.0F, 496.0F, 352.0F, 4.0F, fishing4.a.g.b(0.6F), '\u0001');
                            fishing4.a.ae.a(var1, fishing4.a.y.a(2131165237), var25.a, 260.0F, var5.c.a - 50.0F, 30.0F, 24.0F, 0);
-                           if (fishing4.game.p.a == 0) {
+                           if (globalConfig.languageId == 0) {
                               fishing4.a.ae.a(var1, ((m)var24.b.get(m)).i() + "cm (" + ((m)var24.b.get(m)).g() + ")", var25.a, 260.0F, var5.c.a - 50.0F, 30.0F, 24.0F, 1, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
                            } else {
                               fishing4.a.ae.a(var1, bb.i.format((double)((m)var24.b.get(m)).i() / 2.54) + "in. (" + ((m)var24.b.get(m)).g() + ")", var25.a, 260.0F, var5.c.a - 50.0F, 30.0F, 24.0F, 1, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
@@ -3088,7 +3088,7 @@ public final class bg {
                      var26.a(var1, var7, var10, var25.a, var25.b);
                      fishing4.game.k.a(var1, var25, 180.0F, var11);
                      if (ad.c(var26.a)) {
-                        if (fishing4.game.p.a == 0) {
+                        if (globalConfig.languageId == 0) {
                            fishing4.a.ae.a(var1, ab.c(var26.a) + " (보유중)", var23.a, 150.0F + var23.b, var12 - 60.0F, var5.c.b, 26.0F, 4, fishing4.a.aa.a(1.0F, 1.0F, 0.0F, 1.0F));
                         } else {
                            fishing4.a.ae.a(var1, ab.c(var26.a) + " (In possession)", var23.a, 150.0F + var23.b, var12 - 60.0F, var5.c.b, 26.0F, 4, fishing4.a.aa.a(1.0F, 1.0F, 0.0F, 1.0F));
@@ -3099,7 +3099,7 @@ public final class bg {
 
                      fishing4.a.m.a(var1, var2, var23.a, var23.b + 120.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
                      fishing4.a.ae.a(var1, fishing4.a.y.a(2131165235) + " (Lv." + var26.c + ")", var23.a, 90.0F + var23.b, var12 - 60.0F, var5.c.b, 24.0F, 0, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         fishing4.a.ae.a(var1, var26.j() + "마리", var23.a, 90.0F + var23.b, var12 - 60.0F, var5.c.b, 24.0F, 1);
                      } else {
                         fishing4.a.ae.a(var1, String.valueOf(var26.j()), var23.a, 90.0F + var23.b, var12 - 60.0F, var5.c.b, 24.0F, 1);
@@ -3128,7 +3128,7 @@ public final class bg {
                      fishing4.a.ae.a(var1, ab.c(var26.a), var23.a, 150.0F + var23.b, var12 - 60.0F, var5.c.b, 26.0F, 4, fishing4.a.aa.a(1.0F, 1.0F, 0.0F, 1.0F));
                      fishing4.a.m.a(var1, var2, var23.a, var23.b + 120.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
                      fishing4.a.ae.a(var1, fishing4.a.y.a(2131165235) + " (Lv." + var26.c + ")", var23.a, 90.0F + var23.b, var12 - 60.0F, var5.c.b, 24.0F, 0, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         fishing4.a.ae.a(var1, var26.j() + "마리", var23.a, 90.0F + var23.b, var12 - 60.0F, var5.c.b, 24.0F, 1);
                      } else {
                         fishing4.a.ae.a(var1, String.valueOf(var26.j()), var23.a, 90.0F + var23.b, var12 - 60.0F, var5.c.b, 24.0F, 1);

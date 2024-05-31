@@ -2,7 +2,7 @@ package fishing4.game;
 
 import java.text.DecimalFormat;
 
-public final class p {
+public final class globalConfig {
    public static final int languageId = fishing4.game.k.getLanguageId();
    public static String b = new String();
    public static boolean c = false;

@@ -10,7 +10,7 @@ final class c implements DialogInterface.OnClickListener {
    }
 
    public final void onClick(DialogInterface var1, int var2) {
-      p.d = true;
+      globalConfig.d = true;
       az.f = true;
       this.a.finish();
    }

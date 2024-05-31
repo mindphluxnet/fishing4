@@ -48,7 +48,7 @@ public final class ab {
 
    public static String a(int var0, int var1) {
       String var2;
-      if (p.a == 0) {
+      if (globalConfig.languageId == 0) {
          if (var0 != 6) {
             if (var0 == 0) {
                switch (var1) {
@@ -267,7 +267,7 @@ public final class ab {
                case 1:
                   switch (var3) {
                      case 200:
-                        if (p.a == 0) {
+                        if (globalConfig.languageId == 0) {
                            var4 = "F등급";
                         } else {
                            var4 = "F";
@@ -276,7 +276,7 @@ public final class ab {
                         return var4;
                      case 201:
                      case 202:
-                        if (p.a == 0) {
+                        if (globalConfig.languageId == 0) {
                            var4 = "F~E등급";
                         } else {
                            var4 = "F~E";
@@ -286,7 +286,7 @@ public final class ab {
                      case 203:
                      case 204:
                      case 205:
-                        if (p.a == 0) {
+                        if (globalConfig.languageId == 0) {
                            var4 = "F~D등급";
                         } else {
                            var4 = "F~D";
@@ -296,7 +296,7 @@ public final class ab {
                      case 206:
                      case 207:
                      case 208:
-                        if (p.a == 0) {
+                        if (globalConfig.languageId == 0) {
                            var4 = "F~C등급";
                         } else {
                            var4 = "F~C";
@@ -306,7 +306,7 @@ public final class ab {
                      case 209:
                      case 210:
                      case 211:
-                        if (p.a == 0) {
+                        if (globalConfig.languageId == 0) {
                            var4 = "F~B등급";
                         } else {
                            var4 = "F~B";
@@ -316,7 +316,7 @@ public final class ab {
                      case 212:
                      case 213:
                      case 214:
-                        if (p.a == 0) {
+                        if (globalConfig.languageId == 0) {
                            var4 = "F~A등급";
                         } else {
                            var4 = "F~A";
@@ -325,7 +325,7 @@ public final class ab {
                         return var4;
                      case 215:
                      case 216:
-                        if (p.a == 0) {
+                        if (globalConfig.languageId == 0) {
                            var4 = "F~S등급";
                         } else {
                            var4 = "F~S";
@@ -335,7 +335,7 @@ public final class ab {
                      case 217:
                      case 218:
                      case 219:
-                        if (p.a == 0) {
+                        if (globalConfig.languageId == 0) {
                            var4 = "F~SS등급";
                         } else {
                            var4 = "F~SS";
@@ -355,7 +355,7 @@ public final class ab {
                case 0:
                   var1 = var0.t();
                   if (var1 < 0) {
-                     if (p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         var4 = "무제한";
                      } else {
                         var4 = "Unlimited";
@@ -367,7 +367,7 @@ public final class ab {
                      return var4;
                   }
                case 1:
-                  if (p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      var4 = Integer.toString(ac.j(var3)) + "(m)";
                   } else {
                      var4 = Integer.toString(ac.j(var3)) + "(yd)";
@@ -450,7 +450,7 @@ public final class ab {
 
    public static String b(int var0) {
       String var1;
-      if (p.a == 0) {
+      if (globalConfig.languageId == 0) {
          if (am.b == 200) {
             var1 = "\n\n" + fishing4.a.y.b(var0) + "입니다.\n결제하시겠습니까?";
          } else {

@@ -46,7 +46,7 @@ final class h extends View implements Runnable {
             AppStart.a(this.b);
             if (fishing4.a.r.f() == 99) {
                String var2;
-               if (p.a == 0) {
+               if (globalConfig.languageId == 0) {
                   var2 = "비정상적인 게임 진행 이력이 발견되었습니다. 프로그램을 종료합니다.";
                } else {
                   var2 = "Suspicious record detected. Closing the app.";

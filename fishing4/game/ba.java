@@ -36,7 +36,7 @@ public final class ba extends aa {
    private void a() {
       if (fishing4.a.r.af) {
          fishing4.a.r.E = 1;
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.languageId == 0) {
             fishing4.a.r.F = 0;
          } else {
             fishing4.a.r.F = 1;
@@ -47,7 +47,7 @@ public final class ba extends aa {
          f = 0;
       } else {
          fishing4.a.r.E = 1;
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.languageId == 0) {
             fishing4.a.r.F = 0;
          } else {
             fishing4.a.r.F = 1;
@@ -90,7 +90,7 @@ public final class ba extends aa {
    private static void b(GL10 var0, float var1) {
       DecimalFormat var3 = new DecimalFormat();
       int var2;
-      if (fishing4.game.p.a == 0) {
+      if (globalConfig.languageId == 0) {
          for(var2 = 0; var2 < 5; ++var2) {
             fishing4.a.ae.a(var0, var2 + 1 + "위\n" + fishing4.game.t.a(fishing4.a.r.U[var2], false), fishing4.a.m.c(), 200.0F + var1 - (float)(var2 * 80), 300.0F, 100.0F, 26.0F, 0);
             fishing4.a.ae.a(var0, var3.format((long)fishing4.a.r.T[var2]) + " exp\n(" + fishing4.a.r.S[var2] + ")", fishing4.a.m.c(), 200.0F + var1 - (float)(var2 * 80), 300.0F, 100.0F, 26.0F, 1);
@@ -311,7 +311,7 @@ public final class ba extends aa {
             fishing4.a.m.a(var1, this.n, this.r.a, this.r.b);
             fishing4.a.m.a(var1, this.n, this.s.a, this.s.b);
             fishing4.a.m.a(var1, this.n, this.t.a, this.t.b);
-            if (fishing4.game.p.a == 0) {
+            if (globalConfig.languageId == 0) {
                fishing4.a.m.a(var1, this.l, this.p.a, this.p.b, 0.0F, 0.0F, 122.0F, 24.0F);
                fishing4.a.m.a(var1, this.l, this.q.a, this.q.b, 0.0F, 29.0F, 122.0F, 24.0F);
                fishing4.a.m.a(var1, this.l, this.r.a, this.r.b, 0.0F, 60.0F, 122.0F, 24.0F);
@@ -326,16 +326,16 @@ public final class ba extends aa {
             }
 
             fishing4.a.aa var3 = fishing4.a.aa.a(0.0F, 0.0F, 0.0F, 1.0F);
-            fishing4.a.ae.a(var1, "id:" + fishing4.game.p.b, this.q.a + 2.0F, this.t.b - 102.0F, var3);
+            fishing4.a.ae.a(var1, "id:" + globalConfig.b, this.q.a + 2.0F, this.t.b - 102.0F, var3);
             var3 = fishing4.a.aa.a(1.0F, 1.0F, 1.0F, 1.0F);
-            fishing4.a.ae.a(var1, "id:" + fishing4.game.p.b, this.q.a + 0.0F, this.t.b - 100.0F, var3);
+            fishing4.a.ae.a(var1, "id:" + globalConfig.b, this.q.a + 0.0F, this.t.b - 100.0F, var3);
             am.a(var1, e);
             break;
          case 3:
          case 4:
             fishing4.a.m.a(var1, this.n, this.p.a, this.p.b);
             fishing4.a.m.a(var1, this.n, this.q.a, this.q.b);
-            if (fishing4.game.p.a == 0) {
+            if (globalConfig.languageId == 0) {
                fishing4.a.m.a(var1, this.l, this.p.a, this.p.b, 290.0F, 30.0F, 122.0F, 24.0F);
                fishing4.a.m.a(var1, this.l, this.q.a, this.q.b, 290.0F, 0.0F, 122.0F, 24.0F);
             } else {
@@ -350,7 +350,7 @@ public final class ba extends aa {
             fishing4.a.m.a(var1, this.n, this.p.a, this.p.b);
             fishing4.a.m.a(var1, this.n, this.q.a, this.q.b);
             fishing4.a.m.a(var1, this.n, this.r.a, this.r.b);
-            if (fishing4.game.p.a == 0) {
+            if (globalConfig.languageId == 0) {
                fishing4.a.m.a(var1, this.l, this.p.a, this.p.b, 124.0F, 0.0F, 122.0F, 24.0F);
                fishing4.a.m.a(var1, this.l, this.q.a, this.q.b, 124.0F, 31.0F, 122.0F, 24.0F);
                fishing4.a.m.a(var1, this.l, this.r.a, this.r.b, 124.0F, 61.0F, 164.0F, 24.0F);
@@ -371,7 +371,7 @@ public final class ba extends aa {
             break;
          case 9:
             fishing4.a.m.a(var1, this.n, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 100));
-            if (fishing4.game.p.a == 0) {
+            if (globalConfig.languageId == 0) {
                fishing4.a.m.a(var1, this.l, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 100), 124.0F, 90.0F, 90.0F, 24.0F);
             } else {
                fishing4.a.m.a(var1, this.m, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 100), 170.0F, 90.0F, 102.0F, 22.0F);
@@ -385,7 +385,7 @@ public final class ba extends aa {
             break;
          case 10:
             fishing4.a.m.a(var1, this.n, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 100));
-            if (fishing4.game.p.a == 0) {
+            if (globalConfig.languageId == 0) {
                fishing4.a.m.a(var1, this.l, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 100), 124.0F, 0.0F, 122.0F, 24.0F);
             } else {
                fishing4.a.m.a(var1, this.m, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 100), 171.0F, 0.0F, 168.0F, 22.0F);
@@ -398,7 +398,7 @@ public final class ba extends aa {
             break;
          case 11:
             fishing4.a.m.a(var1, this.n, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 100));
-            if (fishing4.game.p.a == 0) {
+            if (globalConfig.languageId == 0) {
                fishing4.a.m.a(var1, this.l, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 100), 124.0F, 31.0F, 122.0F, 24.0F);
             } else {
                fishing4.a.m.a(var1, this.m, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 100), 171.0F, 30.0F, 188.0F, 22.0F);
@@ -408,7 +408,7 @@ public final class ba extends aa {
             break;
          case 12:
             fishing4.a.m.a(var1, this.n, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 100));
-            if (fishing4.game.p.a == 0) {
+            if (globalConfig.languageId == 0) {
                fishing4.a.m.a(var1, this.l, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 100), 124.0F, 61.0F, 164.0F, 24.0F);
             } else {
                fishing4.a.m.a(var1, this.m, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 100), 171.0F, 60.0F, 238.0F, 22.0F);
@@ -428,7 +428,7 @@ public final class ba extends aa {
                   if (f == 1) {
                      if (this.v == 0) {
                         fishing4.game.k.a();
-                        if (fishing4.game.p.h.b() > 0L) {
+                        if (globalConfig.h.b() > 0L) {
                            this.u.a(4);
                         } else {
                            this.u.a(103);
@@ -441,9 +441,9 @@ public final class ba extends aa {
                      if (this.v == 1) {
                         var4 = this.u;
                         if (fishing4.a.r.b()) {
-                           if (fishing4.game.p.h.b() > 0L) {
-                              fishing4.game.p.i = null;
-                              fishing4.game.p.i = new String("코인선물 받기");
+                           if (globalConfig.h.b() > 0L) {
+                              globalConfig.i = null;
+                              globalConfig.i = new String("코인선물 받기");
                               this.u.b(4);
                            } else {
                               this.u.b(103);
@@ -470,8 +470,8 @@ public final class ba extends aa {
                         break;
                      }
                   } else if (f == 2) {
-                     if (fishing4.game.p.h.b() > 0L) {
-                        fishing4.game.p.h.a(0L);
+                     if (globalConfig.h.b() > 0L) {
+                        globalConfig.h.a(0L);
                         return;
                      } else if (fishing4.a.r.J > 0) {
                         am.a(54);
@@ -768,7 +768,7 @@ public final class ba extends aa {
    }
 
    public final void b(GL10 var1) {
-      if (fishing4.game.p.j) {
+      if (globalConfig.j) {
          fishing4.game.k.j();
       }
 
@@ -913,11 +913,11 @@ public final class ba extends aa {
                      } else if (fishing4.a.f.a(this.t, this.n.c, var1)) {
                         if (fishing4.game.k.e()) {
                            fishing4.a.r.M.a(0L);
-                           fishing4.game.p.h.a(0L);
+                           globalConfig.h.a(0L);
                            aa.d = 9;
                            am.b();
                            fishing4.a.r.E = 0;
-                           if (fishing4.game.p.a == 0) {
+                           if (globalConfig.languageId == 0) {
                               fishing4.a.r.F = 0;
                            } else {
                               fishing4.a.r.F = 1;
@@ -1000,9 +1000,9 @@ public final class ba extends aa {
                            if (fishing4.a.r.M.b() > 0L) {
                               fishing4.a.r.J = 0;
                               if (ad.p.b() + fishing4.a.r.M.b() > 99999L) {
-                                 fishing4.game.p.h.a(99999L);
+                                 globalConfig.h.a(99999L);
                               } else {
-                                 fishing4.game.p.h.a(fishing4.a.r.M.b());
+                                 globalConfig.h.a(fishing4.a.r.M.b());
                               }
 
                               fishing4.a.r.M.a(0L);
@@ -1116,7 +1116,7 @@ public final class ba extends aa {
       this.l = fishing4.a.w.a(var1, "img/title/text1.png");
       this.m = fishing4.a.w.a(var1, "img/title/text2.png");
       this.n = fishing4.a.w.a(var1, "img/title/bar.png");
-      if (fishing4.game.p.a == 0) {
+      if (globalConfig.languageId == 0) {
          this.o = fishing4.a.w.a(var1, "img/title/plusdown_bigfish.png");
       } else {
          this.o = fishing4.a.w.a(var1, "img/title/plusdown_bigfishen.png");
@@ -1160,7 +1160,7 @@ public final class ba extends aa {
          }
 
          this.g(var1);
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.languageId == 0) {
             switch (var2) {
                case 0:
                   fishing4.a.m.a(var1, this.j, fishing4.a.m.c() - 30.0F, fishing4.a.m.d(), 0.0F, 118.0F, 400.0F, 116.0F);

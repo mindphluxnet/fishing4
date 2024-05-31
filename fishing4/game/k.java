@@ -58,7 +58,7 @@ public final class k {
             var1 = fishing4.a.f.a(256.0F, 212.0F, 18.0F, 22.0F);
             break;
          case 'm':
-            if (p.a == 0) {
+            if (globalConfig.languageId == 0) {
                var1 = fishing4.a.f.a(278.0F, 212.0F, 30.0F, 32.0F);
             } else {
                var1 = fishing4.a.f.a(308.0F, 212.0F, 39.0F, 32.0F);
@@ -194,7 +194,7 @@ public final class k {
       (new StringBuilder("&main=")).append(Integer.toString(u.m)).toString();
       (new StringBuilder("&game=")).append(Integer.toString(u.n)).toString();
       String var14;
-      if (p.a == 0) {
+      if (globalConfig.languageId == 0) {
          var14 = "&location=kr";
       } else {
          var14 = "&location=en";
@@ -1366,7 +1366,7 @@ public final class k {
       (new StringBuilder("&main=")).append(Integer.toString(u.m)).toString();
       (new StringBuilder("&game=")).append(Integer.toString(u.n)).toString();
       String var15;
-      if (p.a == 0) {
+      if (globalConfig.languageId == 0) {
          var15 = "&location=kr";
       } else {
          var15 = "&location=en";
@@ -1482,7 +1482,7 @@ public final class k {
       (new StringBuilder("&main=")).append(Integer.toString(u.m)).toString();
       (new StringBuilder("&game=")).append(Integer.toString(u.n)).toString();
       String var16;
-      if (p.a == 0) {
+      if (globalConfig.languageId == 0) {
          var16 = "&location=kr";
       } else {
          var16 = "&location=en";
@@ -1772,430 +1772,430 @@ public final class k {
       int var0 = x.c();
       if (var0 >= 60) {
          if (var0 < 140) {
-            if (p.g.b() < 1L) {
+            if (globalConfig.g.b() < 1L) {
                var1 = true;
             }
          } else if (var0 < 240) {
-            if (p.g.b() < 2L) {
+            if (globalConfig.g.b() < 2L) {
                var1 = true;
             }
          } else if (var0 < 400) {
-            if (p.g.b() < 3L) {
+            if (globalConfig.g.b() < 3L) {
                var1 = true;
             }
          } else if (var0 < 600) {
-            if (p.g.b() < 4L) {
+            if (globalConfig.g.b() < 4L) {
                var1 = true;
             }
          } else if (var0 < 800) {
-            if (p.g.b() < 5L) {
+            if (globalConfig.g.b() < 5L) {
                var1 = true;
             }
          } else if (var0 < 1000) {
-            if (p.g.b() < 6L) {
+            if (globalConfig.g.b() < 6L) {
                var1 = true;
             }
          } else if (var0 < 1200) {
-            if (p.g.b() < 7L) {
+            if (globalConfig.g.b() < 7L) {
                var1 = true;
             }
          } else if (var0 < 1400) {
-            if (p.g.b() < 8L) {
+            if (globalConfig.g.b() < 8L) {
                var1 = true;
             }
          } else if (var0 < 1600) {
-            if (p.g.b() < 9L) {
+            if (globalConfig.g.b() < 9L) {
                var1 = true;
             }
          } else if (var0 < 1800) {
-            if (p.g.b() < 10L) {
+            if (globalConfig.g.b() < 10L) {
                var1 = true;
             }
          } else if (var0 < 2000) {
-            if (p.g.b() < 11L) {
+            if (globalConfig.g.b() < 11L) {
                var1 = true;
             }
          } else if (var0 < 2400) {
-            if (p.g.b() < 12L) {
+            if (globalConfig.g.b() < 12L) {
                var1 = true;
             }
          } else if (var0 < 2800) {
-            if (p.g.b() < 13L) {
+            if (globalConfig.g.b() < 13L) {
                var1 = true;
             }
          } else if (var0 < 3000) {
-            if (p.g.b() < 14L) {
+            if (globalConfig.g.b() < 14L) {
                var1 = true;
             }
          } else if (var0 < 3500) {
-            if (p.g.b() < 15L) {
+            if (globalConfig.g.b() < 15L) {
                var1 = true;
             }
          } else if (var0 < 3900) {
-            if (p.g.b() < 16L) {
+            if (globalConfig.g.b() < 16L) {
                var1 = true;
             }
          } else if (var0 < 4200) {
-            if (p.g.b() < 17L) {
+            if (globalConfig.g.b() < 17L) {
                var1 = true;
             }
          } else if (var0 < 4400) {
-            if (p.g.b() < 18L) {
+            if (globalConfig.g.b() < 18L) {
                var1 = true;
             }
          } else if (var0 < 5000) {
-            if (p.g.b() < 19L) {
+            if (globalConfig.g.b() < 19L) {
                var1 = true;
             }
          } else if (var0 < 5600) {
-            if (p.g.b() < 20L) {
+            if (globalConfig.g.b() < 20L) {
                var1 = true;
             }
          } else if (var0 < 6200) {
-            if (p.g.b() < 21L) {
+            if (globalConfig.g.b() < 21L) {
                var1 = true;
             }
          } else if (var0 < 7000) {
-            if (p.g.b() < 22L) {
+            if (globalConfig.g.b() < 22L) {
                var1 = true;
             }
          } else if (var0 < 7800) {
-            if (p.g.b() < 23L) {
+            if (globalConfig.g.b() < 23L) {
                var1 = true;
             }
          } else if (var0 < 8600) {
-            if (p.g.b() < 24L) {
+            if (globalConfig.g.b() < 24L) {
                var1 = true;
             }
          } else if (var0 < 9800) {
-            if (p.g.b() < 25L) {
+            if (globalConfig.g.b() < 25L) {
                var1 = true;
             }
          } else if (var0 < 11000) {
-            if (p.g.b() < 26L) {
+            if (globalConfig.g.b() < 26L) {
                var1 = true;
             }
          } else if (var0 < 12000) {
-            if (p.g.b() < 27L) {
+            if (globalConfig.g.b() < 27L) {
                var1 = true;
             }
          } else if (var0 < 13000) {
-            if (p.g.b() < 28L) {
+            if (globalConfig.g.b() < 28L) {
                var1 = true;
             }
          } else if (var0 < 14000) {
-            if (p.g.b() < 29L) {
+            if (globalConfig.g.b() < 29L) {
                var1 = true;
             }
          } else if (var0 < 16000) {
-            if (p.g.b() < 30L) {
+            if (globalConfig.g.b() < 30L) {
                var1 = true;
             }
          } else if (var0 < 18000) {
-            if (p.g.b() < 31L) {
+            if (globalConfig.g.b() < 31L) {
                var1 = true;
             }
          } else if (var0 < 20000) {
-            if (p.g.b() < 32L) {
+            if (globalConfig.g.b() < 32L) {
                var1 = true;
             }
          } else if (var0 < 22000) {
-            if (p.g.b() < 33L) {
+            if (globalConfig.g.b() < 33L) {
                var1 = true;
             }
          } else if (var0 < 24000) {
-            if (p.g.b() < 34L) {
+            if (globalConfig.g.b() < 34L) {
                var1 = true;
             }
          } else if (var0 < 25000) {
-            if (p.g.b() < 35L) {
+            if (globalConfig.g.b() < 35L) {
                var1 = true;
             }
          } else if (var0 < 27000) {
-            if (p.g.b() < 36L) {
+            if (globalConfig.g.b() < 36L) {
                var1 = true;
             }
          } else if (var0 < 30000) {
-            if (p.g.b() < 37L) {
+            if (globalConfig.g.b() < 37L) {
                var1 = true;
             }
          } else if (var0 < 33000) {
-            if (p.g.b() < 38L) {
+            if (globalConfig.g.b() < 38L) {
                var1 = true;
             }
          } else if (var0 < 36000) {
-            if (p.g.b() < 39L) {
+            if (globalConfig.g.b() < 39L) {
                var1 = true;
             }
          } else if (var0 < 38000) {
-            if (p.g.b() < 40L) {
+            if (globalConfig.g.b() < 40L) {
                var1 = true;
             }
          } else if (var0 < 41000) {
-            if (p.g.b() < 41L) {
+            if (globalConfig.g.b() < 41L) {
                var1 = true;
             }
          } else if (var0 < 44000) {
-            if (p.g.b() < 42L) {
+            if (globalConfig.g.b() < 42L) {
                var1 = true;
             }
          } else if (var0 < 47000) {
-            if (p.g.b() < 43L) {
+            if (globalConfig.g.b() < 43L) {
                var1 = true;
             }
          } else if (var0 < 50000) {
-            if (p.g.b() < 44L) {
+            if (globalConfig.g.b() < 44L) {
                var1 = true;
             }
          } else if (var0 < 54000) {
-            if (p.g.b() < 45L) {
+            if (globalConfig.g.b() < 45L) {
                var1 = true;
             }
          } else if (var0 < 56000) {
-            if (p.g.b() < 46L) {
+            if (globalConfig.g.b() < 46L) {
                var1 = true;
             }
          } else if (var0 < 58000) {
-            if (p.g.b() < 47L) {
+            if (globalConfig.g.b() < 47L) {
                var1 = true;
             }
          } else if (var0 < 61000) {
-            if (p.g.b() < 48L) {
+            if (globalConfig.g.b() < 48L) {
                var1 = true;
             }
          } else if (var0 < 64000) {
-            if (p.g.b() < 49L) {
+            if (globalConfig.g.b() < 49L) {
                var1 = true;
             }
          } else if (var0 < 67000) {
-            if (p.g.b() < 50L) {
+            if (globalConfig.g.b() < 50L) {
                var1 = true;
             }
          } else if (var0 < 70000) {
-            if (p.g.b() < 51L) {
+            if (globalConfig.g.b() < 51L) {
                var1 = true;
             }
          } else if (var0 < 74000) {
-            if (p.g.b() < 52L) {
+            if (globalConfig.g.b() < 52L) {
                var1 = true;
             }
          } else if (var0 < 77000) {
-            if (p.g.b() < 53L) {
+            if (globalConfig.g.b() < 53L) {
                var1 = true;
             }
          } else if (var0 < 81000) {
-            if (p.g.b() < 54L) {
+            if (globalConfig.g.b() < 54L) {
                var1 = true;
             }
          } else if (var0 < 85000) {
-            if (p.g.b() < 55L) {
+            if (globalConfig.g.b() < 55L) {
                var1 = true;
             }
          } else if (var0 < 89000) {
-            if (p.g.b() < 56L) {
+            if (globalConfig.g.b() < 56L) {
                var1 = true;
             }
          } else if (var0 < 93000) {
-            if (p.g.b() < 57L) {
+            if (globalConfig.g.b() < 57L) {
                var1 = true;
             }
          } else if (var0 < 97000) {
-            if (p.g.b() < 58L) {
+            if (globalConfig.g.b() < 58L) {
                var1 = true;
             }
          } else if (var0 < 101000) {
-            if (p.g.b() < 59L) {
+            if (globalConfig.g.b() < 59L) {
                var1 = true;
             }
          } else if (var0 < 104000) {
-            if (p.g.b() < 60L) {
+            if (globalConfig.g.b() < 60L) {
                var1 = true;
             }
          } else if (var0 < 107000) {
-            if (p.g.b() < 61L) {
+            if (globalConfig.g.b() < 61L) {
                var1 = true;
             }
          } else if (var0 < 112000) {
-            if (p.g.b() < 62L) {
+            if (globalConfig.g.b() < 62L) {
                var1 = true;
             }
          } else if (var0 < 117000) {
-            if (p.g.b() < 63L) {
+            if (globalConfig.g.b() < 63L) {
                var1 = true;
             }
          } else if (var0 < 122000) {
-            if (p.g.b() < 64L) {
+            if (globalConfig.g.b() < 64L) {
                var1 = true;
             }
          } else if (var0 < 127000) {
-            if (p.g.b() < 65L) {
+            if (globalConfig.g.b() < 65L) {
                var1 = true;
             }
          } else if (var0 < 132000) {
-            if (p.g.b() < 66L) {
+            if (globalConfig.g.b() < 66L) {
                var1 = true;
             }
          } else if (var0 < 137000) {
-            if (p.g.b() < 67L) {
+            if (globalConfig.g.b() < 67L) {
                var1 = true;
             }
          } else if (var0 < 142000) {
-            if (p.g.b() < 68L) {
+            if (globalConfig.g.b() < 68L) {
                var1 = true;
             }
          } else if (var0 < 147000) {
-            if (p.g.b() < 69L) {
+            if (globalConfig.g.b() < 69L) {
                var1 = true;
             }
          } else if (var0 < 152000) {
-            if (p.g.b() < 70L) {
+            if (globalConfig.g.b() < 70L) {
                var1 = true;
             }
          } else if (var0 < 157000) {
-            if (p.g.b() < 71L) {
+            if (globalConfig.g.b() < 71L) {
                var1 = true;
             }
          } else if (var0 < 162000) {
-            if (p.g.b() < 72L) {
+            if (globalConfig.g.b() < 72L) {
                var1 = true;
             }
          } else if (var0 < 169000) {
-            if (p.g.b() < 73L) {
+            if (globalConfig.g.b() < 73L) {
                var1 = true;
             }
          } else if (var0 < 177000) {
-            if (p.g.b() < 74L) {
+            if (globalConfig.g.b() < 74L) {
                var1 = true;
             }
          } else if (var0 < 183000) {
-            if (p.g.b() < 75L) {
+            if (globalConfig.g.b() < 75L) {
                var1 = true;
             }
          } else if (var0 < 189000) {
-            if (p.g.b() < 76L) {
+            if (globalConfig.g.b() < 76L) {
                var1 = true;
             }
          } else if (var0 < 197000) {
-            if (p.g.b() < 77L) {
+            if (globalConfig.g.b() < 77L) {
                var1 = true;
             }
          } else if (var0 < 203000) {
-            if (p.g.b() < 78L) {
+            if (globalConfig.g.b() < 78L) {
                var1 = true;
             }
          } else if (var0 < 209000) {
-            if (p.g.b() < 79L) {
+            if (globalConfig.g.b() < 79L) {
                var1 = true;
             }
          } else if (var0 < 217000) {
-            if (p.g.b() < 80L) {
+            if (globalConfig.g.b() < 80L) {
                var1 = true;
             }
          } else if (var0 < 223000) {
-            if (p.g.b() < 81L) {
+            if (globalConfig.g.b() < 81L) {
                var1 = true;
             }
          } else if (var0 < 229000) {
-            if (p.g.b() < 82L) {
+            if (globalConfig.g.b() < 82L) {
                var1 = true;
             }
          } else if (var0 < 233000) {
-            if (p.g.b() < 83L) {
+            if (globalConfig.g.b() < 83L) {
                var1 = true;
             }
          } else if (var0 < 239000) {
-            if (p.g.b() < 84L) {
+            if (globalConfig.g.b() < 84L) {
                var1 = true;
             }
          } else if (var0 < 245000) {
-            if (p.g.b() < 85L) {
+            if (globalConfig.g.b() < 85L) {
                var1 = true;
             }
          } else if (var0 < 251000) {
-            if (p.g.b() < 86L) {
+            if (globalConfig.g.b() < 86L) {
                var1 = true;
             }
          } else if (var0 < 257000) {
-            if (p.g.b() < 87L) {
+            if (globalConfig.g.b() < 87L) {
                var1 = true;
             }
          } else if (var0 < 263000) {
-            if (p.g.b() < 88L) {
+            if (globalConfig.g.b() < 88L) {
                var1 = true;
             }
          } else if (var0 < 269000) {
-            if (p.g.b() < 89L) {
+            if (globalConfig.g.b() < 89L) {
                var1 = true;
             }
          } else if (var0 < 276000) {
-            if (p.g.b() < 90L) {
+            if (globalConfig.g.b() < 90L) {
                var1 = true;
             }
          } else if (var0 < 283000) {
-            if (p.g.b() < 91L) {
+            if (globalConfig.g.b() < 91L) {
                var1 = true;
             }
          } else if (var0 < 289000) {
-            if (p.g.b() < 92L) {
+            if (globalConfig.g.b() < 92L) {
                var1 = true;
             }
          } else if (var0 < 294000) {
-            if (p.g.b() < 93L) {
+            if (globalConfig.g.b() < 93L) {
                var1 = true;
             }
          } else if (var0 < 299000) {
-            if (p.g.b() < 94L) {
+            if (globalConfig.g.b() < 94L) {
                var1 = true;
             }
          } else if (var0 < 313000) {
-            if (p.g.b() < 95L) {
+            if (globalConfig.g.b() < 95L) {
                var1 = true;
             }
          } else if (var0 < 319000) {
-            if (p.g.b() < 96L) {
+            if (globalConfig.g.b() < 96L) {
                var1 = true;
             }
          } else if (var0 < 328000) {
-            if (p.g.b() < 97L) {
+            if (globalConfig.g.b() < 97L) {
                var1 = true;
             }
          } else if (var0 < 336000) {
-            if (p.g.b() < 98L) {
+            if (globalConfig.g.b() < 98L) {
                var1 = true;
             }
          } else if (var0 < 345000) {
-            if (p.g.b() < 99L) {
+            if (globalConfig.g.b() < 99L) {
                var1 = true;
             }
          } else if (var0 < 354000) {
-            if (p.g.b() < 100L) {
+            if (globalConfig.g.b() < 100L) {
                var1 = true;
             }
          } else if (var0 < 363000) {
-            if (p.g.b() < 101L) {
+            if (globalConfig.g.b() < 101L) {
                var1 = true;
             }
          } else if (var0 < 372000) {
-            if (p.g.b() < 102L) {
+            if (globalConfig.g.b() < 102L) {
                var1 = true;
             }
          } else if (var0 < 380000) {
-            if (p.g.b() < 103L) {
+            if (globalConfig.g.b() < 103L) {
                var1 = true;
             }
          } else if (var0 < 387000) {
-            if (p.g.b() < 104L) {
+            if (globalConfig.g.b() < 104L) {
                var1 = true;
             }
          } else if (var0 < 394000) {
-            if (p.g.b() < 105L) {
+            if (globalConfig.g.b() < 105L) {
                var1 = true;
             }
          } else if (var0 < 400000) {
-            if (p.g.b() < 106L) {
+            if (globalConfig.g.b() < 106L) {
                var1 = true;
             }
-         } else if (p.g.b() < 107L) {
+         } else if (globalConfig.g.b() < 107L) {
             var1 = true;
          }
       }

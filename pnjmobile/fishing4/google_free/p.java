@@ -4,6 +4,8 @@ import android.content.DialogInterface;
 import android.net.ConnectivityManager;
 import android.widget.Toast;
 
+import fishing4.game.globalConfig;
+
 final class p implements DialogInterface.OnClickListener {
    final Main a;
 
@@ -17,7 +19,7 @@ final class p implements DialogInterface.OnClickListener {
          this.a.c();
       } else {
          String var4;
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.a == 0) {
             var4 = "인터넷 연결 상태를 확인하세요.";
          } else {
             var4 = "Check network connection.";

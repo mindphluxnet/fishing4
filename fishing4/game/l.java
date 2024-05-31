@@ -510,11 +510,11 @@ public final class l {
             break;
          case 80:
             if (am.b != 46) {
-               am.a(var0, var3, fishing4.a.y.a(2131165192), fishing4.a.y.a(2131165193) + " " + Long.toString(p.h.c()) + fishing4.a.y.a(2131165194));
+               am.a(var0, var3, fishing4.a.y.a(2131165192), fishing4.a.y.a(2131165193) + " " + Long.toString(globalConfig.h.c()) + fishing4.a.y.a(2131165194));
             }
             break;
          case 81:
-            if (p.a == 0) {
+            if (globalConfig.languageId == 0) {
                am.a(var0, var3, fishing4.a.y.a(2131165192), fishing4.a.y.a(2131165195) + "\n\n|255255000|보유코인 " + ad.p.b() + "Coin");
             } else {
                am.a(var0, var3, fishing4.a.y.a(2131165192), fishing4.a.y.a(2131165195) + "\n\n|255255000|Current " + ad.p.b() + "Coin");

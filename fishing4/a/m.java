@@ -5,6 +5,8 @@ import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 import javax.microedition.khronos.opengles.GL10;
 
+import fishing4.game.globalConfig;
+
 public final class m {
    public static int a;
    public static int b;
@@ -36,7 +38,7 @@ public final class m {
       boolean var1 = true;
       c = a;
       d = b;
-      fishing4.game.p.k = 73;
+      globalConfig.k = 73;
       if (a != 480) {
          if (a != 540 && a != 960) {
             if (a != 600 && a != 1024) {
@@ -45,7 +47,7 @@ public final class m {
                      a = 480;
                      b = 800;
                   } else {
-                     fishing4.game.p.k = 61;
+                     globalConfig.k = 61;
                      a = 480;
                      b = 768;
                   }

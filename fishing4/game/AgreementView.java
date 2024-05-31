@@ -43,7 +43,7 @@ public class AgreementView extends Activity {
 
    private void quitApplication() {
       AlertDialog.Builder alertDialogBuilder;
-      if (p.languageId == 0) {
+      if (globalConfig.languageId == 0) {
          alertDialogBuilder = new AlertDialog.Builder(this);
          alertDialogBuilder.setMessage("종료하시겠습니까?").setCancelable(false).setPositiveButton("예", new c(this)).setNegativeButton("아니오", new d(this));
          alertDialogBuilder.create().show();
@@ -98,7 +98,7 @@ public class AgreementView extends Activity {
    }
 
    // $FF: synthetic method
-   static void e(AgreementView agreementView) {
+   static void exitApplication(AgreementView agreementView) {
       agreementView.quitApplication();
    }
 
@@ -106,16 +106,16 @@ public class AgreementView extends Activity {
       this.quitApplication();
    }
 
-   public void onCreate(Bundle var1) {
-      super.onCreate(var1);
-      Window var3 = this.getWindow();
+   public void onCreate(Bundle bundle) {
+      super.onCreate(bundle);
+      Window window = this.getWindow();
       this.setRequestedOrientation(1);
-      var3.setFlags(1024, 1024);
-      var3.addFlags(128);
+      window.setFlags(1024, 1024);
+      window.addFlags(128);
       this.requestWindowFeature(1);
       this.requestWindowFeature(2);
       this.setRequestedOrientation(1);
-      if (p.languageId == 0) {
+      if (globalConfig.languageId == 0) {
          this.setContentView(2130903045);
       } else {
          this.setContentView(2130903040);

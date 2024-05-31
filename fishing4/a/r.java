@@ -1,11 +1,13 @@
 package fishing4.a;
 
 import android.util.Log;
-import fishing4.game.am;
+
 import fishing4.game.aq;
 import fishing4.game.aw;
 import fishing4.game.az;
 import fishing4.game.bg;
+import fishing4.game.globalConfig;
+
 import javax.microedition.khronos.opengles.GL10;
 
 public final class r implements Runnable {
@@ -95,7 +97,7 @@ public final class r implements Runnable {
       if (fishing4.game.z.b() != 2) {
          fishing4.game.am.a(var1, az.s, fishing4.a.m.e(), fishing4.a.g.a(18.0F));
          fishing4.a.ae.a(var1, var2, fishing4.a.m.c(), fishing4.a.m.d() + 70.0F, 300.0F, 80.0F, 26.0F, 4);
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.a == 0) {
             fishing4.a.ae.a(var1, "강제종료시 데이터가 손상될 수 있으니 절대 강제종료하지 마시기 바랍니다.", fishing4.a.m.c(), fishing4.a.m.d() - 100.0F, 300.0F, 90.0F, 24.0F, 4, fishing4.a.aa.c());
          } else {
             fishing4.a.ae.a(var1, "Do not close the app\nsuddenly as it can \nresult data crash.", fishing4.a.m.c(), fishing4.a.m.d() - 100.0F, 300.0F, 90.0F, 24.0F, 4, fishing4.a.aa.c());
@@ -540,7 +542,7 @@ public final class r implements Runnable {
                break;
             case 17:
                M.a((long)L[var0]);
-               fishing4.game.p.f = true;
+               globalConfig.f = true;
                break;
             case 18:
                fishing4.game.ad.i.add(fishing4.game.ac.a(123));
@@ -613,13 +615,13 @@ public final class r implements Runnable {
 
    public final void a(GL10 var1) {
       if (l == 0) {
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.a == 0) {
             this.a(var1, "전송중");
          } else {
             this.a(var1, "Transferring…");
          }
       } else if (l == 1) {
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.a == 0) {
             this.a(var1, "전송중");
          } else {
             this.a(var1, "Transferring…");
@@ -629,7 +631,7 @@ public final class r implements Runnable {
             l = 99;
          }
       } else if (l == 2) {
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.a == 0) {
             this.a(var1, "전송중");
          } else {
             this.a(var1, "Transferring…");
@@ -640,13 +642,13 @@ public final class r implements Runnable {
          }
       } else if (l != 6 && l != 7) {
          if (l == 8) {
-            if (fishing4.game.p.a == 0) {
+            if (globalConfig.a == 0) {
                this.a(var1, "전송중");
             } else {
                this.a(var1, "Transferring…");
             }
          } else if (l == 3) {
-            if (fishing4.game.p.a == 0) {
+            if (globalConfig.a == 0) {
                this.a(var1, "전송중");
             } else {
                this.a(var1, "Transferring…");
@@ -658,7 +660,7 @@ public final class r implements Runnable {
          } else if (l != 4 && l != 5) {
             if (l != 99 && l != 100) {
                if (l != 100 && l != 0) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.a == 0) {
                      fishing4.game.am.a(var1, "네트워크 장애입니다.", fishing4.a.m.e(), az.s, az.t);
                   } else {
                      fishing4.game.am.a(var1, "Network error. ", fishing4.a.m.e(), az.s, az.t);
@@ -670,7 +672,7 @@ public final class r implements Runnable {
                   l = 99;
                }
 
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.a == 0) {
                   fishing4.game.am.a(var1, "네트워크 오류입니다. 다시 접속하시겠습니까?", fishing4.a.m.e(), az.s, az.t);
                } else {
                   fishing4.game.am.a(var1, "Network error. \nTry again?", fishing4.a.m.e(), az.s, az.t);
@@ -678,7 +680,7 @@ public final class r implements Runnable {
             }
          }
       } else {
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.a == 0) {
             this.a(var1, "전송중");
          } else {
             this.a(var1, "Transferring…");

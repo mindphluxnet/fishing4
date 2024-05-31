@@ -359,7 +359,7 @@ public final class ag {
       if (this.a != 82 && this.a != 83 && this.a != 84 && this.a != 85 && this.a != 86) {
          if (this.a != 80 && this.a != 81) {
             if (this.a == 87) {
-               if (p.a == 0) {
+               if (globalConfig.languageId == 0) {
                   fishing4.a.m.a(var1, var3, var4 + 180.0F, var5 - 50.0F, 220.0F, 0.0F, 108.0F, 90.0F);
                   fishing4.a.m.a(var1, var3, var4 + 100.0F, var5 - 50.0F, 0.0F, 0.0F, 108.0F, 90.0F);
                } else {
@@ -367,18 +367,18 @@ public final class ag {
                   fishing4.a.m.a(var1, var3, var4 + 100.0F, var5 - 50.0F, 108.0F, 0.0F, 108.0F, 90.0F);
                }
             } else if (this.a == 88) {
-               if (p.a == 0) {
+               if (globalConfig.languageId == 0) {
                   fishing4.a.m.a(var1, var3, var4 + 140.0F, var5 - 50.0F, 0.0F, 94.0F, 108.0F, 90.0F);
                } else {
                   fishing4.a.m.a(var1, var3, var4 + 140.0F, var5 - 50.0F, 110.0F, 94.0F, 108.0F, 90.0F);
                }
             }
-         } else if (p.a == 0) {
+         } else if (globalConfig.languageId == 0) {
             fishing4.a.m.a(var1, var3, var4 + 140.0F, var5 - 50.0F, 0.0F, 0.0F, 108.0F, 90.0F);
          } else {
             fishing4.a.m.a(var1, var3, var4 + 140.0F, var5 - 50.0F, 108.0F, 0.0F, 108.0F, 90.0F);
          }
-      } else if (p.a == 0) {
+      } else if (globalConfig.languageId == 0) {
          fishing4.a.m.a(var1, var3, var4 + 140.0F, var5 - 50.0F, 220.0F, 0.0F, 108.0F, 90.0F);
       } else {
          fishing4.a.m.a(var1, var3, var4 + 140.0F, var5 - 50.0F, 328.0F, 0.0F, 108.0F, 90.0F);
@@ -415,12 +415,12 @@ public final class ag {
    public final String c(int var1) {
       String var2;
       if (a(this.a, var1) < 0) {
-         if (p.a == 0) {
+         if (globalConfig.languageId == 0) {
             var2 = "무제한";
          } else {
             var2 = "Unlimited";
          }
-      } else if (p.a == 0) {
+      } else if (globalConfig.languageId == 0) {
          var2 = a(this.a, var1) + "cm";
       } else {
          var2 = ab.a.format((double)a(this.a, var1) / 2.54) + "in.";
@@ -491,12 +491,12 @@ public final class ag {
    public final String h() {
       String var1;
       if (a(this.a, this.d) < 0) {
-         if (p.a == 0) {
+         if (globalConfig.languageId == 0) {
             var1 = "무제한";
          } else {
             var1 = "Unlimited";
          }
-      } else if (p.a == 0) {
+      } else if (globalConfig.languageId == 0) {
          var1 = a(this.a, this.d) + "cm";
       } else {
          var1 = ab.a.format((double)a(this.a, this.d) / 2.54) + "in.";
@@ -568,7 +568,7 @@ public final class ag {
       String var1;
       if (this.a != 80 && this.a != 88) {
          var1 = fishing4.a.y.d(this.s());
-      } else if (p.a == 0) {
+      } else if (globalConfig.languageId == 0) {
          var1 = "|255000000|판매불가";
       } else {
          var1 = "|255000000|Untradable";

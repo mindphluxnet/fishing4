@@ -14,6 +14,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.net.ssl.HttpsURLConnection;
 
+import fishing4.game.globalConfig;
+
 public final class y {
    static final char[] a = new char[]{'0', 'ㄱ', 'ㄲ', 'ㄳ', 'ㄴ', 'ㄵ', 'ㄶ', 'ㄷ', 'ㄹ', 'ㄺ', 'ㄻ', 'ㄼ', 'ㄽ', 'ㄾ', 'ㄿ', 'ㅀ', 'ㅁ', 'ㅂ', 'ㅄ', 'ㅅ', 'ㅆ', 'ㅇ', 'ㅈ', 'ㅊ', 'ㅋ', 'ㅌ', 'ㅍ', 'ㅎ'};
    private static Runtime b = Runtime.getRuntime();
@@ -191,7 +193,7 @@ public final class y {
    public static String b(int var0) {
       DecimalFormat var1 = new DecimalFormat();
       String var2;
-      if (fishing4.game.p.a == 0) {
+      if (globalConfig.a == 0) {
          var2 = var1.format((long)var0) + "원";
       } else {
          var2 = var1.format((long)var0);
@@ -240,7 +242,7 @@ public final class y {
    public static String c(int var0) {
       DecimalFormat var1 = new DecimalFormat();
       String var2;
-      if (fishing4.game.p.a == 0) {
+      if (globalConfig.a == 0) {
          var2 = var1.format((long)var0) + "Coin";
       } else {
          var2 = var1.format((long)var0);
@@ -257,7 +259,7 @@ public final class y {
       DecimalFormat var1 = new DecimalFormat();
       String var2;
       if (var0 <= 0) {
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.a == 0) {
             var2 = "무료";
          } else {
             var2 = "Free";

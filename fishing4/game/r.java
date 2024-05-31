@@ -245,18 +245,18 @@ public final class r {
       String var0;
       if (e() == 1) {
          if (a <= 4) {
-            if (p.a == 0) {
+            if (globalConfig.languageId == 0) {
                var0 = "희귀도 ★★이상 ";
             } else {
                var0 = "Rarty ★★ and over ";
             }
          } else if (a <= 10) {
-            if (p.a == 0) {
+            if (globalConfig.languageId == 0) {
                var0 = "희귀도 ★★★이상 ";
             } else {
                var0 = "Rarty ★★★ and over ";
             }
-         } else if (p.a == 0) {
+         } else if (globalConfig.languageId == 0) {
             var0 = "희귀도 ★★★★이상 ";
          } else {
             var0 = "Rarty ★★★★ and over ";

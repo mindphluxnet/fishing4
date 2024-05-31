@@ -86,7 +86,7 @@ public final class au extends aa {
                var2 = var3;
             } else if (var2 == 11) {
                if (c == 0) {
-                  if (p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      this.a(var1, 1);
                   } else {
                      z.a(2);

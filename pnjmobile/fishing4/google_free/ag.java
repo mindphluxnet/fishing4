@@ -4,6 +4,8 @@ import android.app.ProgressDialog;
 import android.os.Handler;
 import android.os.Message;
 
+import fishing4.game.globalConfig;
+
 final class ag extends Handler {
    public final void handleMessage(Message var1) {
       if (fishing4.game.k.m != null) {
@@ -16,7 +18,7 @@ final class ag extends Handler {
       }
 
       try {
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.a == 0) {
             fishing4.game.k.m = ProgressDialog.show(Main.u, "로딩중", "Loading. Please wait...", true, false);
          } else {
             fishing4.game.k.m = ProgressDialog.show(Main.u, "Loading...", "Loading. Please wait...", true, false);

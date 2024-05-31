@@ -33,7 +33,7 @@ public final class ah {
 
    static {
       fishing4.a.f var0;
-      if (fishing4.game.p.j) {
+      if (globalConfig.j) {
          var0 = fishing4.a.f.a(40.0F, 180.0F, 400.0F, 530.0F);
       } else {
          var0 = fishing4.a.f.a(40.0F, 230.0F, 400.0F, 530.0F);

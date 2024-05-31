@@ -65,7 +65,7 @@ public final class aw extends aa {
 
                if (!bh.a() && fishing4.game.j.a == 0) {
                   boolean var2;
-                  if (fishing4.game.p.j) {
+                  if (globalConfig.j) {
                      var2 = fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), 40.0F), fishing4.a.h.a(120.0F, 120.0F), var1);
                   } else {
                      var2 = fishing4.a.f.a(fishing4.a.e.a(40.0F, (float)(fishing4.a.m.b() - 40)), fishing4.a.h.a(120.0F, 120.0F), var1);
@@ -784,7 +784,7 @@ public final class aw extends aa {
                                  } else if (fishing4.game.l.d == 66) {
                                     fishing4.game.u.o = true;
                                     fishing4.game.u.d();
-                                    fishing4.game.p.o = true;
+                                    globalConfig.o = true;
                                     fishing4.game.l.a(62);
                                  }
                               } else {
@@ -798,7 +798,7 @@ public final class aw extends aa {
                               if (fishing4.game.l.d == 61) {
                                  fishing4.game.l.a(64);
                               } else if (fishing4.game.l.d == 80) {
-                                 fishing4.game.p.h.a(0L);
+                                 globalConfig.h.a(0L);
                                  fishing4.game.l.a(82);
                               } else if (fishing4.game.l.d == 55) {
                                  fishing4.game.l.a(44);
@@ -920,16 +920,16 @@ public final class aw extends aa {
                                                          }
 
                                                          if (fishing4.a.z.a(100) < 5) {
-                                                            fishing4.game.p.h.a(1L);
+                                                            globalConfig.h.a(1L);
                                                             fishing4.game.l.a(80);
                                                             return;
                                                          }
 
                                                          if (fishing4.game.k.n()) {
-                                                            fishing4.game.p.h.a(1L);
+                                                            globalConfig.h.a(1L);
 
                                                             while(fishing4.game.k.n()) {
-                                                               fishing4.game.p.g.b(1L);
+                                                               globalConfig.g.b(1L);
                                                             }
 
                                                             fishing4.game.l.a(80);
@@ -937,16 +937,16 @@ public final class aw extends aa {
                                                          }
                                                       } else {
                                                          if (fishing4.a.z.a(100) < 5) {
-                                                            fishing4.game.p.h.a(1L);
+                                                            globalConfig.h.a(1L);
                                                             fishing4.game.l.a(80);
                                                             return;
                                                          }
 
                                                          if (fishing4.game.k.n()) {
-                                                            fishing4.game.p.h.a(1L);
+                                                            globalConfig.h.a(1L);
 
                                                             while(fishing4.game.k.n()) {
-                                                               fishing4.game.p.g.b(1L);
+                                                               globalConfig.g.b(1L);
                                                             }
 
                                                             fishing4.game.l.a(80);
@@ -1440,12 +1440,12 @@ public final class aw extends aa {
                      if (this.L == 1) {
                         var12 = this.K;
                         if (fishing4.a.r.b()) {
-                           long var7 = fishing4.game.p.h.b();
-                           fishing4.game.p.i = null;
+                           long var7 = globalConfig.h.b();
+                           globalConfig.i = null;
                            if (var7 >= 2L && var7 <= 10L) {
-                              fishing4.game.p.i = new String("네트워크낚시터 코인 획득");
+                              globalConfig.i = new String("네트워크낚시터 코인 획득");
                            } else {
-                              fishing4.game.p.i = new String("코인물고기 획득");
+                              globalConfig.i = new String("코인물고기 획득");
                            }
 
                            aq.b = 23;
@@ -1515,38 +1515,38 @@ public final class aw extends aa {
                         if (fishing4.a.r.b()) {
                            switch (aq.b) {
                               case 10:
-                                 fishing4.game.p.h.a(200L);
+                                 globalConfig.h.a(200L);
                                  break;
                               case 11:
-                                 fishing4.game.p.h.a(515L);
+                                 globalConfig.h.a(515L);
                                  break;
                               case 12:
-                                 fishing4.game.p.h.a(840L);
+                                 globalConfig.h.a(840L);
                                  break;
                               case 13:
-                                 fishing4.game.p.h.a(1400L);
+                                 globalConfig.h.a(1400L);
                                  break;
                               case 14:
-                                 fishing4.game.p.h.a(3300L);
+                                 globalConfig.h.a(3300L);
                                  break;
                               case 15:
-                                 fishing4.game.p.h.a(6000L);
+                                 globalConfig.h.a(6000L);
                                  break;
                               case 16:
-                                 fishing4.game.p.h.a(0L);
+                                 globalConfig.h.a(0L);
                                  break;
                               default:
-                                 fishing4.game.p.h.a((long)(aq.b() * -1));
+                                 globalConfig.h.a((long)(aq.b() * -1));
                            }
 
                            if (aq.b >= 10 && aq.b <= 15) {
-                              fishing4.game.p.i = null;
-                              fishing4.game.p.i = new String("낚시터 아이템 부활");
+                              globalConfig.i = null;
+                              globalConfig.i = new String("낚시터 아이템 부활");
                               this.K.b(3);
                               this.L = 2;
                            } else {
-                              fishing4.game.p.i = null;
-                              fishing4.game.p.i = new String("낚시터 아이템 부활");
+                              globalConfig.i = null;
+                              globalConfig.i = new String("낚시터 아이템 부활");
                               this.K.b(4);
                               this.L = 2;
                            }
@@ -1649,7 +1649,7 @@ public final class aw extends aa {
          }
 
          fishing4.a.m.a(var1, az.s, fishing4.a.m.c(), (float)(var4 - 5), 0.0F, 527.0F, 332.0F, 46.0F, var5);
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.languageId == 0) {
             fishing4.a.ae.a(var1, "공인협회 " + fishing4.a.y.a(2131165318), fishing4.a.m.c(), (float)(var4 - 5), (float)var5);
          } else {
             fishing4.a.ae.a(var1, "Public " + fishing4.a.y.a(2131165318), fishing4.a.m.c(), (float)(var4 - 5), (float)var5);
@@ -1668,7 +1668,7 @@ public final class aw extends aa {
          }
 
          fishing4.a.m.a(var1, az.s, fishing4.a.m.c(), (float)(var4 - 5), 0.0F, 527.0F, 332.0F, 46.0F, var5);
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.languageId == 0) {
             fishing4.a.ae.a(var1, "민간협회 " + fishing4.a.y.a(2131165318), fishing4.a.m.c(), (float)(var4 - 5), (float)var5);
          } else {
             fishing4.a.ae.a(var1, "Private " + fishing4.a.y.a(2131165318), fishing4.a.m.c(), (float)(var4 - 5), (float)var5);
@@ -1684,7 +1684,7 @@ public final class aw extends aa {
             var4 = e;
             float var2;
             float var3;
-            if (fishing4.game.p.j) {
+            if (globalConfig.j) {
                var2 = fishing4.a.m.c();
                var3 = 40.0F;
             } else {

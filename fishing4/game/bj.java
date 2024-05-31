@@ -21,14 +21,14 @@ final class bj implements View.OnClickListener {
       userIDview var2 = this.a;
       if (userIDview.a(var3)) {
          this.a.a = 0;
-         p.b = var3;
+         globalConfig.b = var3;
          userIDview.b(this.a);
          fishing4.a.r.a();
          ConnectivityManager var4 = (ConnectivityManager)this.a.getApplicationContext().getSystemService("connectivity");
          if (var4.getActiveNetworkInfo() != null && var4.getActiveNetworkInfo().isConnectedOrConnecting()) {
             this.a.setContentView(this.c);
          } else {
-            if (p.a == 0) {
+            if (globalConfig.languageId == 0) {
                var3 = "인터넷 연결 상태를 확인하세요.";
             } else {
                var3 = "Check network connection.";
@@ -37,7 +37,7 @@ final class bj implements View.OnClickListener {
             Toast.makeText(this.a.getApplicationContext(), var3, 0).show();
          }
       } else {
-         if (p.a == 0) {
+         if (globalConfig.languageId == 0) {
             var3 = "영문 20자 이내로 입력해 주세요.";
          } else {
             var3 = "ID must be lesser than 20 characters, in alphabet.";

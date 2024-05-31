@@ -38,7 +38,7 @@ public final class ac {
       var0 = d(var0) * var2;
       String var4;
       if (var0 <= 0 && var1) {
-         if (p.a == 0) {
+         if (globalConfig.languageId == 0) {
             var4 = "무료";
          } else {
             var4 = "Free";
@@ -56,7 +56,7 @@ public final class ac {
       String var3;
       if (var0.a != 120 && var0.a != 121 && var0.a != 122) {
          if (var1 <= 0) {
-            if (p.a == 0) {
+            if (globalConfig.languageId == 0) {
                var3 = "무료";
             } else {
                var3 = "Free";
@@ -474,7 +474,7 @@ public final class ac {
       int var1 = e(var0);
       String var3;
       if (var1 <= 0) {
-         if (p.a == 0) {
+         if (globalConfig.languageId == 0) {
             var3 = "무료";
          } else {
             var3 = "Free";
@@ -1968,7 +1968,7 @@ public final class ac {
    public final String i() {
       String var2;
       if (m(this.a) == -1) {
-         if (p.a == 0) {
+         if (globalConfig.languageId == 0) {
             var2 = "무한";
          } else {
             var2 = "Unlimited";

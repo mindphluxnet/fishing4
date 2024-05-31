@@ -152,7 +152,7 @@ public class ae {
       }
 
       var2 = fishing4.a.e.c(var2.a + 37.0F - this.b.a / 2.0F, var2.b);
-      if (p.a == 0) {
+      if (globalConfig.languageId == 0) {
          fishing4.a.m.a(var1, var3, var2, fishing4.a.f.a(697.0F, 219.0F, 74.0F, 20.0F));
       } else {
          fishing4.a.m.a(var1, var3, var2, fishing4.a.f.a(369.0F, 402.0F, 74.0F, 20.0F));

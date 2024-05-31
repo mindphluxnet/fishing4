@@ -48,7 +48,7 @@ public final class az {
 
    static {
       byte var0;
-      if (fishing4.game.p.a == 0) {
+      if (globalConfig.languageId == 0) {
          fishing4.game.k.q();
          var0 = 21;
       } else {
@@ -254,7 +254,7 @@ public final class az {
    public static void a(GL10 var0, float var1, int var2) {
       if (j == 0) {
          fishing4.a.m.a(var0, s, fishing4.a.m.c(), var1 + 150.0F, 794.0F, 577.0F, 140.0F, 64.0F);
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.languageId == 0) {
             fishing4.a.m.a(var0, t, fishing4.a.m.c() - 25.0F, var1 + 100.0F, 385.0F, 488.0F, 46.0F, 20.0F);
             fishing4.a.m.a(var0, t, 25.0F + fishing4.a.m.c(), var1 + 100.0F, 523.0F, 488.0F, 46.0F, 20.0F);
          } else {
@@ -263,7 +263,7 @@ public final class az {
          }
 
          fishing4.a.m.a(var0, s, fishing4.a.m.c(), var1 - 50.0F, 821.0F, 645.0F, 112.0F, 86.0F);
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.languageId == 0) {
             fishing4.a.m.a(var0, t, fishing4.a.m.c() - 35.0F, var1 - 120.0F, 441.0F, 488.0F, 70.0F, 20.0F);
             fishing4.a.m.a(var0, t, 30.0F + fishing4.a.m.c(), var1 - 120.0F, 523.0F, 488.0F, 46.0F, 20.0F);
          } else {
@@ -279,7 +279,7 @@ public final class az {
          fishing4.a.w var8;
          String var9;
          if (j >= 10 && j <= 12) {
-            if (fishing4.game.p.a == 0) {
+            if (globalConfig.languageId == 0) {
                fishing4.a.m.a(var0, t, fishing4.a.m.c() - 25.0F, var1 + 220.0F, 385.0F, 488.0F, 46.0F, 20.0F);
                fishing4.a.m.a(var0, t, 25.0F + fishing4.a.m.c(), var1 + 220.0F, 523.0F, 488.0F, 46.0F, 20.0F);
                var8 = t;
@@ -364,7 +364,7 @@ public final class az {
             fishing4.game.k.b(var0, fishing4.a.e.a(fishing4.a.m.c(), var1 - 40.0F), 160.0F, var2);
             fishing4.a.ae.a(var0, fishing4.game.s.c + " / 187", fishing4.a.m.c(), var1 - 200.0F, 330.0F, 50.0F, 26.0F, 1, fishing4.a.aa.d());
          } else if (j >= 20 && j <= 22) {
-            if (fishing4.game.p.a == 0) {
+            if (globalConfig.languageId == 0) {
                fishing4.a.m.a(var0, t, fishing4.a.m.c() - 35.0F, var1 + 220.0F, 441.0F, 488.0F, 70.0F, 20.0F);
                fishing4.a.m.a(var0, t, 30.0F + fishing4.a.m.c(), var1 + 220.0F, 523.0F, 488.0F, 46.0F, 20.0F);
                var8 = t;
@@ -456,7 +456,7 @@ public final class az {
    public static void a(GL10 var0, float var1, int var2, int var3) {
       float var4;
       float var5;
-      if (fishing4.game.p.a == 0) {
+      if (globalConfig.languageId == 0) {
          if (var2 == 0) {
             fishing4.a.ae.a(var0, fishing4.a.y.a(2131165921), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
             fishing4.a.ae.a(var0, fishing4.a.y.a(2131165922), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
@@ -816,7 +816,7 @@ public final class az {
                fishing4.a.m.a(var0, var13, 138.0F + var2, var3 + 280.0F, 218.0F, 843.0F, 86.0F, 18.0F, var12);
                fishing4.a.w var17;
                if (i == 0) {
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      fishing4.a.ae.a(var0, fishing4.game.x.j(), fishing4.a.m.c(), var3 + 220.0F, 400.0F, 50.0F, 26.0F, 4, fishing4.a.aa.d());
                      fishing4.a.ae.a(var0, "명성 Exp", fishing4.a.m.c() - 115.0F, var3 + 185.0F, 400.0F, 40.0F, 24.0F, 4, fishing4.a.aa.e());
                      fishing4.a.ae.a(var0, fishing4.game.x.e(), 70.0F + fishing4.a.m.c(), var3 + 185.0F, 400.0F, 40.0F, 24.0F, 4, fishing4.a.aa.e());
@@ -852,7 +852,7 @@ public final class az {
                   } else {
                      var5 = ((ac)ad.i.get(ad.a)).h() * 100 / ((ac)ad.i.get(ad.a)).j();
                      ac.a(var0, C, fishing4.a.m.c() - 160.0F, var3 + 75.0F, ((ac)ad.i.get(ad.a)).f(), var5);
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         fishing4.a.ae.a(var0, ((ac)ad.i.get(ad.a)).u(), fishing4.a.m.c() - 60.0F, var3 + 75.0F, 120.0F, 60.0F, 22.0F, 4);
                      } else {
                         fishing4.a.ae.a(var0, "FISHING ROD", fishing4.a.m.c() - 60.0F, var3 + 75.0F, 120.0F, 60.0F, 19.0F, 4);
@@ -863,7 +863,7 @@ public final class az {
                      ac.a(var0, C, fishing4.a.m.c() - 160.0F, var3 - 5.0F, -1);
                   } else {
                      ac.a(var0, C, fishing4.a.m.c() - 160.0F, var3 - 5.0F, ((ac)ad.j.get(ad.c)).f());
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         fishing4.a.ae.a(var0, ((ac)ad.j.get(ad.c)).u(), fishing4.a.m.c() - 60.0F, var3 - 5.0F, 120.0F, 60.0F, 22.0F, 4);
                      } else {
                         fishing4.a.ae.a(var0, "LURE", fishing4.a.m.c() - 60.0F, var3 - 5.0F, 120.0F, 60.0F, 22.0F, 4);
@@ -875,7 +875,7 @@ public final class az {
                   } else {
                      var5 = ((ac)ad.k.get(ad.b)).h() * 100 / ((ac)ad.k.get(ad.b)).j();
                      ac.a(var0, C, fishing4.a.m.c() - 160.0F, var3 - 85.0F, ((ac)ad.k.get(ad.b)).f(), var5);
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         fishing4.a.ae.a(var0, ((ac)ad.k.get(ad.b)).u(), fishing4.a.m.c() - 60.0F, var3 - 85.0F, 120.0F, 60.0F, 22.0F, 4);
                      } else {
                         fishing4.a.ae.a(var0, "FISHING LINE", fishing4.a.m.c() - 60.0F, var3 - 85.0F, 120.0F, 60.0F, 19.0F, 4);
@@ -887,7 +887,7 @@ public final class az {
                   } else {
                      var5 = ((ac)ad.m.get(ad.f)).h() * 100 / ((ac)ad.m.get(ad.f)).j();
                      ac.a(var0, C, 40.0F + fishing4.a.m.c(), var3 + 75.0F, ((ac)ad.m.get(ad.f)).f(), var5);
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         fishing4.a.ae.a(var0, ((ac)ad.m.get(ad.f)).u(), 140.0F + fishing4.a.m.c(), var3 + 75.0F, 120.0F, 60.0F, 22.0F, 4);
                      } else {
                         fishing4.a.ae.a(var0, "CAP", 140.0F + fishing4.a.m.c(), var3 + 75.0F, 120.0F, 60.0F, 22.0F, 4);
@@ -899,7 +899,7 @@ public final class az {
                   } else {
                      var5 = ((ac)ad.l.get(ad.e)).h() * 100 / ((ac)ad.l.get(ad.e)).j();
                      ac.a(var0, C, 40.0F + fishing4.a.m.c(), var3 - 5.0F, ((ac)ad.l.get(ad.e)).f(), var5);
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         fishing4.a.ae.a(var0, ((ac)ad.l.get(ad.e)).u(), 140.0F + fishing4.a.m.c(), var3 - 5.0F, 120.0F, 60.0F, 22.0F, 4);
                      } else {
                         fishing4.a.ae.a(var0, "SHIRT", 140.0F + fishing4.a.m.c(), var3 - 5.0F, 120.0F, 60.0F, 22.0F, 4);
@@ -911,7 +911,7 @@ public final class az {
                   } else {
                      var5 = ((ac)ad.n.get(ad.d)).h() * 100 / ((ac)ad.n.get(ad.d)).j();
                      ac.a(var0, C, 40.0F + fishing4.a.m.c(), var3 - 85.0F, ((ac)ad.n.get(ad.d)).f(), var5);
-                     if (fishing4.game.p.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         fishing4.a.ae.a(var0, ((ac)ad.n.get(ad.d)).u(), 140.0F + fishing4.a.m.c(), var3 - 85.0F, 120.0F, 60.0F, 22.0F, 4);
                      } else {
                         fishing4.a.ae.a(var0, "VEST", 140.0F + fishing4.a.m.c(), var3 - 85.0F, 120.0F, 60.0F, 22.0F, 4);
@@ -1232,7 +1232,7 @@ public final class az {
                fishing4.a.m.a(var0, t, fishing4.a.m.c() - 65.0F, var3 + 352.0F, 162.0F, 300.0F, 90.0F, 32.0F);
                fishing4.a.m.a(var0, t, fishing4.a.m.c() - 10.0F, var3 + 352.0F, 372.0F, 300.0F, 30.0F, 32.0F);
                fishing4.a.m.a(var0, t, 63.0F + fishing4.a.m.c(), var3 + 352.0F, 0.0F, 335.0F, 126.0F, 32.0F);
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.languageId == 0) {
                   var13 = s;
                   var2 = fishing4.a.m.c();
                   if (i == 0) {
@@ -1482,7 +1482,7 @@ public final class az {
                break;
             case 5:
                fishing4.a.m.a(var0, t, fishing4.a.m.c(), var3 + 352.0F, 259.0F, 300.0F, 110.0F, 32.0F);
-               if (fishing4.game.p.a == 0) {
+               if (globalConfig.languageId == 0) {
                   var13 = t;
                   var2 = fishing4.a.m.c();
                   if (i == 0) {
@@ -2138,7 +2138,7 @@ public final class az {
    public static void b(GL10 var0, float var1, int var2) {
       if (j == 0) {
          fishing4.a.m.a(var0, s, fishing4.a.m.c(), var1 + 150.0F, 794.0F, 577.0F, 140.0F, 64.0F);
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.languageId == 0) {
             fishing4.a.m.a(var0, t, fishing4.a.m.c() - 25.0F, var1 + 100.0F, 385.0F, 488.0F, 46.0F, 20.0F);
             fishing4.a.m.a(var0, t, 25.0F + fishing4.a.m.c(), var1 + 100.0F, 523.0F, 488.0F, 46.0F, 20.0F);
          } else {
@@ -2147,7 +2147,7 @@ public final class az {
          }
 
          fishing4.a.m.a(var0, s, fishing4.a.m.c(), var1 - 50.0F, 821.0F, 645.0F, 112.0F, 86.0F);
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.languageId == 0) {
             fishing4.a.m.a(var0, t, fishing4.a.m.c() - 35.0F, var1 - 120.0F, 441.0F, 488.0F, 70.0F, 20.0F);
             fishing4.a.m.a(var0, t, 30.0F + fishing4.a.m.c(), var1 - 120.0F, 523.0F, 488.0F, 46.0F, 20.0F);
          } else {
@@ -2162,7 +2162,7 @@ public final class az {
          fishing4.a.aa var7;
          fishing4.a.w var8;
          if (j >= 10 && j <= 12) {
-            if (fishing4.game.p.a == 0) {
+            if (globalConfig.languageId == 0) {
                fishing4.a.m.a(var0, t, fishing4.a.m.c() - 25.0F, var1 + 220.0F, 385.0F, 488.0F, 46.0F, 20.0F);
                fishing4.a.m.a(var0, t, 25.0F + fishing4.a.m.c(), var1 + 220.0F, 523.0F, 488.0F, 46.0F, 20.0F);
                var8 = t;
@@ -2249,7 +2249,7 @@ public final class az {
             fishing4.game.k.b(var0, fishing4.a.e.a(fishing4.a.m.c(), var1 - 40.0F), 160.0F, var2);
             fishing4.game.k.b();
          } else if (j >= 20 && j <= 22) {
-            if (fishing4.game.p.a == 0) {
+            if (globalConfig.languageId == 0) {
                fishing4.a.m.a(var0, t, fishing4.a.m.c() - 35.0F, var1 + 220.0F, 441.0F, 488.0F, 70.0F, 20.0F);
                fishing4.a.m.a(var0, t, 30.0F + fishing4.a.m.c(), var1 + 220.0F, 523.0F, 488.0F, 46.0F, 20.0F);
                var8 = t;

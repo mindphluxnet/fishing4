@@ -22,7 +22,7 @@ final class a implements View.OnClickListener {
          this.a.setContentView(this.b);
       } else {
          String var3;
-         if (p.a == 0) {
+         if (globalConfig.languageId == 0) {
             var3 = "인터넷 연결 상태를 확인하세요.";
          } else {
             var3 = "Check network connection.";

@@ -10,6 +10,8 @@ import android.os.Bundle;
 import android.util.Log;
 import com.google.android.gcm.GCMBaseIntentService;
 import fishing4.Push.WakeUpActivity;
+import fishing4.game.globalConfig;
+
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.net.HttpURLConnection;
@@ -162,7 +164,7 @@ public class GCMIntentService extends GCMBaseIntentService {
          StringBuilder var2;
          URL var3;
          HttpURLConnection var5;
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.a == 0) {
             var2 = new StringBuilder("http://211.35.49.162/PNJ_programs/Android/c2dm/c2dm_ID_in.php?tokenid=");
             var3 = new URL(var2.append(var1).append("&gameid=101442&os=android&nation=ko").toString());
             var5 = (HttpURLConnection)var3.openConnection();

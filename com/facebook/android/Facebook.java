@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.webkit.CookieSyncManager;
-import fishing4.game.p;
+import fishing4.game.globalConfig;
 
 public class Facebook {
    public static String a = "";
@@ -55,17 +55,17 @@ public class Facebook {
          var3.putString("client_id", this.g);
       } else {
          var3.putString("app_id", this.g);
-         int var5 = p.a;
+         int var5 = globalConfig.a;
          var3.putString("link", "http://pnjmobile.co.kr/l/s.php?g=200&k=fk");
          var3.putString("picture", "http://www.pnjmobile.com/icon_img/Fish4.png");
-         if (p.a == 0) {
+         if (globalConfig.a == 0) {
             var3.putString("name", "리얼한 낚시!! 원조낚시광4의 매력 속으로~");
          } else {
             var3.putString("name", "Real Fishing!! Fall in the charm of Extreme Fishing 2.");
          }
 
          var3.putString("caption", "www.pnjmobile.com");
-         var3.putString("description", p.n);
+         var3.putString("description", globalConfig.n);
       }
 
       if (this.a()) {

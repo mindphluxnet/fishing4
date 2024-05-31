@@ -49,7 +49,7 @@ public final class bb extends aa {
    public static boolean d(int var0) {
       boolean var2 = false;
       boolean var1 = var2;
-      if (fishing4.game.p.j) {
+      if (globalConfig.j) {
          switch (var0) {
             case 0:
                var1 = fishing4.game.k.c;
@@ -78,7 +78,7 @@ public final class bb extends aa {
    }
 
    public static void e(int var0) {
-      if (fishing4.game.p.j) {
+      if (globalConfig.j) {
          switch (var0) {
             case 0:
                fishing4.game.k.c = false;
@@ -232,7 +232,7 @@ public final class bb extends aa {
                fishing4.game.q.c = System.currentTimeMillis();
                fishing4.a.ae.j = 1;
                fishing4.game.x.d = System.currentTimeMillis();
-               if (fishing4.game.p.j) {
+               if (globalConfig.j) {
                   fishing4.game.k.k();
                }
             } catch (Exception var13) {
@@ -706,7 +706,7 @@ public final class bb extends aa {
          this.r = fishing4.a.w.a(var1, "img/town/ship.png");
          this.s = fishing4.a.w.a(var1, "img/sea/s_map.png");
          this.t = fishing4.a.w.a(var1, "img/town/choice_icon.png");
-         if (fishing4.game.p.a == 0) {
+         if (globalConfig.languageId == 0) {
             this.u = fishing4.a.w.a(var1, "img/town/plusdown_bigfish.png");
          } else {
             this.u = fishing4.a.w.a(var1, "img/town/plusdown_bigfishen.png");
@@ -806,42 +806,42 @@ public final class bb extends aa {
             fishing4.a.m.a(var1, az.s, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 33), 1.0F, 866.0F, 356.0F, 64.0F, '\u0002');
             switch (f) {
                case 0:
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      fishing4.a.m.a(var1, az.t, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 33), 0.0F, 100.0F, 84.0F, 48.0F);
                   } else {
                      fishing4.a.m.a(var1, az.t, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 33), 95.0F, 103.0F, 139.0F, 40.0F);
                   }
                   break;
                case 1:
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      fishing4.a.m.a(var1, az.t, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 33), 0.0F, 150.0F, 120.0F, 48.0F);
                   } else {
                      fishing4.a.m.a(var1, az.t, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 33), 133.0F, 153.0F, 190.0F, 46.0F);
                   }
                   break;
                case 2:
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      fishing4.a.m.a(var1, az.t, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 33), 0.0F, 0.0F, 120.0F, 48.0F);
                   } else {
                      fishing4.a.m.a(var1, az.t, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 33), 133.0F, 1.0F, 130.0F, 44.0F);
                   }
                   break;
                case 3:
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      fishing4.a.m.a(var1, az.t, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 33), 0.0F, 50.0F, 120.0F, 48.0F);
                   } else {
                      fishing4.a.m.a(var1, az.t, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 33), 135.0F, 53.0F, 150.0F, 40.0F);
                   }
                   break;
                case 4:
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      fishing4.a.m.a(var1, az.t, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 33), 0.0F, 250.0F, 160.0F, 48.0F);
                   } else {
                      fishing4.a.m.a(var1, az.t, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 33), 166.0F, 253.0F, 260.0F, 40.0F);
                   }
                   break;
                case 5:
-                  if (fishing4.game.p.a == 0) {
+                  if (globalConfig.languageId == 0) {
                      fishing4.a.m.a(var1, az.t, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 33), 0.0F, 200.0F, 160.0F, 48.0F);
                   } else {
                      fishing4.a.m.a(var1, az.t, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 33), 170.0F, 203.0F, 260.0F, 40.0F);

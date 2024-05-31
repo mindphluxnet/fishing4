@@ -10,6 +10,6 @@ final class b implements View.OnClickListener {
    }
 
    public final void onClick(View var1) {
-      AgreementView.e(this.a);
+      AgreementView.exitApplication(this.a);
    }
 }

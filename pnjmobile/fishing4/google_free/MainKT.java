@@ -21,6 +21,7 @@ import android.view.Window;
 import android.widget.Toast;
 import com.facebook.android.FacebookMainView;
 import fishing4.game.AgreementView;
+import fishing4.game.globalConfig;
 
 public class MainKT extends Activity implements View.OnTouchListener {
    public static boolean d = false;
@@ -38,8 +39,8 @@ public class MainKT extends Activity implements View.OnTouchListener {
    private void a(String var1) {
       ConnectivityManager var2 = (ConnectivityManager)this.getSystemService("connectivity");
       if (var2.getActiveNetworkInfo() != null && var2.getActiveNetworkInfo() != null && var2.getActiveNetworkInfo().isConnectedOrConnecting()) {
-         fishing4.game.p.n = null;
-         fishing4.game.p.n = new String(var1);
+         globalConfig.n = null;
+         globalConfig.n = new String(var1);
          b = 0;
          this.startActivity(new Intent(this, FacebookMainView.class));
       } else {
@@ -153,7 +154,7 @@ public class MainKT extends Activity implements View.OnTouchListener {
       if (var1 == 57 && var2.getRepeatCount() == 0) {
          switch (fishing4.game.k.j) {
             case 0:
-               var3 = fishing4.game.p.j;
+               var3 = globalConfig.j;
                break;
             case 1:
                if (fishing4.a.r.J > 0) {
@@ -401,8 +402,8 @@ public class MainKT extends Activity implements View.OnTouchListener {
                      } else {
                         Toast.makeText(this, "인터넷 연결 상태를 확인하세요.", 0).show();
                      }
-                  } else if (!d && fishing4.game.p.m) {
-                     fishing4.game.p.m = false;
+                  } else if (!d && globalConfig.m) {
+                     globalConfig.m = false;
                      var11 = (ConnectivityManager)this.getSystemService("connectivity");
                      if (var11.getActiveNetworkInfo() != null && var11.getActiveNetworkInfo() != null && var11.getActiveNetworkInfo().isConnectedOrConnecting()) {
                         fishing4.game.k.l();
