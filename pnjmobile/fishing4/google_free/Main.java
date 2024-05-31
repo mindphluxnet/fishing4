@@ -30,6 +30,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.facebook.android.FacebookMainView;
+
+import fishing4.a.SaveLoadManager;
 import fishing4.game.AgreementView;
 import fishing4.game.am;
 import fishing4.game.aw;
@@ -103,7 +105,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
    final int p = 101;
    final int q = 101;
    final String r = "sBNR003167";
-   fishing4.a.i v = null;
+   SaveLoadManager v = null;
    boolean y = false;
 
    private static String a(URL var0) {
@@ -877,9 +879,9 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
          this.setVolumeControlStream(3);
          OptionsManager.p = (Vibrator)this.getSystemService("vibrator");
          if (!this.aa) {
-            this.v = fishing4.a.i.a();
-            fishing4.a.i var10 = this.v;
-            fishing4.a.i.a((Context)this);
+            this.v = SaveLoadManager.a();
+            SaveLoadManager var10 = this.v;
+            SaveLoadManager.a((Context)this);
             this.aa = true;
          }
 
@@ -1062,7 +1064,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       }
 
       this.ab = 0;
-      this.v = fishing4.a.i.a();
+      this.v = SaveLoadManager.a();
       (new Thread(this)).start();
    }
 
@@ -1121,7 +1123,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       } else {
          this.ab = 1;
          if (!this.aa) {
-            this.v = fishing4.a.i.a();
+            this.v = SaveLoadManager.a();
          }
 
          (new Thread(this)).start();
@@ -1407,8 +1409,8 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
 
    public void run() {
       if (!this.aa) {
-         fishing4.a.i var1 = this.v;
-         fishing4.a.i.a((Context)this);
+         SaveLoadManager var1 = this.v;
+         SaveLoadManager.a((Context)this);
          this.aa = true;
       }
 

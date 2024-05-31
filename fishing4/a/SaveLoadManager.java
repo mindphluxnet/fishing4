@@ -22,20 +22,26 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Iterator;
 import java.util.List;
 import java.util.StringTokenizer;
+
+import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.KeyGenerator;
+import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
 
-public final class i {
+public final class SaveLoadManager { // TODO: possible candidate for rename
    private static String f;
    private static String g;
    private static int h;
-   private static Context i;
-   private static i k = null;
+   private static Context context;
+   private static SaveLoadManager saveLoadManager = null;
    private static final byte[] l = "18encrypt18".getBytes();
    private static String[] m;
    Handler a = new j(this);
@@ -45,16 +51,16 @@ public final class i {
    private final int e = 1;
    private String[] j = null;
 
-   public static i a() {
-      if (k == null) {
-         k = new i();
+   public static SaveLoadManager a() {
+      if (saveLoadManager == null) {
+         saveLoadManager = new SaveLoadManager();
       }
 
-      return k;
+      return saveLoadManager;
    }
 
    public static boolean a(Context var0) {
-      i = var0;
+      context = var0;
 
       boolean var1;
       label53: {
@@ -111,7 +117,7 @@ public final class i {
 
    private static boolean a(Context var0, String[] var1) {
       boolean var5 = false;
-      i = var0;
+      context = var0;
       PackageManager var8 = var0.getApplicationContext().getPackageManager();
       List var7 = var8.getInstalledApplications(8192);
       ActivityManager var24 = (ActivityManager)var0.getSystemService("activity");
@@ -333,11 +339,11 @@ public final class i {
             var5 = "/" + var0;
          }
 
-         File var8 = new File("" + i.getFilesDir().getAbsolutePath() + var5);
+         File var8 = new File("" + context.getFilesDir().getAbsolutePath() + var5);
 
          try {
             byte[] var9 = c(var1, l);
-            byte[] var6 = a(b(var9));
+            byte[] var6 = makeBigEndian(b(var9));
             var1 = new byte[var9.length + 4];
             System.arraycopy(var9, 0, var1, 0, var9.length);
             System.arraycopy(var6, 0, var1, var9.length, 4);
@@ -359,53 +365,51 @@ public final class i {
       return var3;
    }
 
-   private static byte[] a(int var0) {
-      ByteBuffer var1 = ByteBuffer.allocate(4);
-      var1.putInt(var0);
-      var1.order(ByteOrder.BIG_ENDIAN);
-      return var1.array();
+   private static byte[] makeBigEndian(int value) {
+      ByteBuffer buffer = ByteBuffer.allocate(4);
+      buffer.putInt(value);
+      buffer.order(ByteOrder.BIG_ENDIAN);
+      return buffer.array();
    }
 
-   public static byte[] a(String var0) {
-      Object var3 = null;
-      String var4 = i.getFilesDir().getAbsolutePath();
-      String var2 = var0;
-      if (var0.charAt(0) != '/') {
-         var2 = "/" + var0;
+   public static byte[] loadFile(String fileName) {
+      Object obj = null;
+      String absolutePath = context.getFilesDir().getAbsolutePath();
+      String tmpFileName = fileName;
+      if (fileName.charAt(0) != '/') {
+         tmpFileName = "/" + fileName;
       }
 
-      var0 = var4 + var2;
-      Log.w("LOADPATH", "LoadFilePath : " + var0);
-      File var8 = new File(var0);
-      byte[] var6 = (byte[])var3;
-      if (var8.exists()) {
+      fileName = absolutePath + tmpFileName;
+      Log.w("LOADPATH", "LoadFilePath : " + fileName);
+      File file = new File(fileName);
+      byte[] fileData = null;
+      if (file.exists()) {
          try {
-            FileInputStream var7 = new FileInputStream(var8);
-            int var1 = var7.available();
-            byte[] var9 = new byte[var1 - 4];
-            var7.read(var9, 0, var1 - 4);
+            FileInputStream stream = new FileInputStream(file);
+            int remainingBytes = stream.available();
+            byte[] readBuf = new byte[remainingBytes - 4];
+            stream.read(readBuf, 0, remainingBytes - 4);
             byte[] var10 = new byte[4];
-            var7.read(var10, 0, 4);
-            var7.close();
-            var1 = c(var10);
-            if (b(var9) == var1) {
-               var6 = c(var9, l);
-               return var6;
+            stream.read(var10, 0, 4);
+            stream.close();
+            remainingBytes = c(var10);
+            if (b(readBuf) == remainingBytes) {
+               fileData = c(readBuf, l);
+               return fileData;
             }
-         } catch (Exception var5) {
-            Log.e("ERROR", "File Load Exception  : " + var5.toString());
-            var5.printStackTrace();
-            var6 = (byte[])var3;
-            return var6;
+         } catch (Exception ex) {
+            Log.e("ERROR", "File Load Exception  : " + ex.toString());
+            ex.printStackTrace();
+            return fileData;
          }
 
-         var6 = (byte[])var3;
       }
 
-      return var6;
+      return fileData;
    }
 
-   private static byte[] a(byte[] var0) {
+   private static byte[] a(byte[] var0) throws NoSuchAlgorithmException {
       KeyGenerator var2 = KeyGenerator.getInstance("AES");
       SecureRandom var1 = SecureRandom.getInstance("SHA1PRNG");
       var1.setSeed(var0);
@@ -413,7 +417,7 @@ public final class i {
       return var2.generateKey().getEncoded();
    }
 
-   private static byte[] a(byte[] var0, byte[] var1) {
+   private static byte[] a(byte[] var0, byte[] var1) throws NoSuchPaddingException, NoSuchAlgorithmException, IllegalBlockSizeException, BadPaddingException, InvalidKeyException {
       SecretKeySpec var3 = new SecretKeySpec(a(var0), "AES");
       Cipher var2 = Cipher.getInstance("AES");
       var2.init(1, var3);
@@ -432,7 +436,7 @@ public final class i {
 
    private static boolean b(Context var0) {
       boolean var3 = false;
-      i = var0;
+      context = var0;
 
       int var1;
       int var2;
@@ -484,7 +488,7 @@ public final class i {
          Exception var30 = var10000;
          var30.printStackTrace();
          az.d();
-         Toast.makeText(i, "데이터 조작이 발견되었습니다. 프로그램을 종료합니다.", 1).show();
+         Toast.makeText(context, "데이터 조작이 발견되었습니다. 프로그램을 종료합니다.", 1).show();
       }
 
       PackageManager var32 = var0.getApplicationContext().getPackageManager();
@@ -703,7 +707,7 @@ public final class i {
          label44: {
             Exception var10000;
             label34: {
-               var4 = "" + i.getFilesDir().getAbsolutePath() + var4;
+               var4 = "" + context.getFilesDir().getAbsolutePath() + var4;
                Log.w("SAVEPATH", "SaveFilePath : " + var4);
                File var5 = new File(var4);
                var0 = null;
@@ -732,7 +736,7 @@ public final class i {
                   var11.write(var1);
                   var11.flush();
                   var11.close();
-                  byte[] var13 = a(var2);
+                  byte[] var13 = makeBigEndian(var2);
                   var13 = a("588212698009923".getBytes(), var13);
                   StringBuilder var10 = new StringBuilder(String.valueOf(var4.substring(0, var4.length() - 3)));
                   var4 = var10.append("key").toString();
@@ -762,7 +766,7 @@ public final class i {
 
    public static byte[] b(String var0) {
       Object var4 = null;
-      String var5 = i.getFilesDir().getAbsolutePath();
+      String var5 = context.getFilesDir().getAbsolutePath();
       String var3 = var0;
       if (var0.charAt(0) != '/') {
          var3 = "/" + var0;
@@ -845,7 +849,7 @@ public final class i {
       return var11;
    }
 
-   private static byte[] b(byte[] var0, byte[] var1) {
+   private static byte[] b(byte[] var0, byte[] var1) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
       SecretKeySpec var2 = new SecretKeySpec(a(var0), "AES");
       Cipher var3 = Cipher.getInstance("AES");
       var3.init(2, var2);
@@ -871,7 +875,7 @@ public final class i {
 
    private static byte[] c(String var0) {
       Object var2 = null;
-      AssetManager var3 = i.getAssets();
+      AssetManager var3 = context.getAssets();
 
       byte[] var6;
       try {
@@ -919,13 +923,13 @@ public final class i {
 
    // $FF: synthetic method
    static Context d() {
-      return i;
+      return context;
    }
 
    public final void b() {
       this.b = false;
       this.c = true;
-      if (b(i)) {
+      if (b(context)) {
          this.c = false;
       }
 
@@ -938,13 +942,13 @@ public final class i {
             InputStreamReader var5 = new InputStreamReader(var2.getInputStream(), "EUC-KR");
             BufferedReader var6 = new BufferedReader(var5);
             this.j = var6.readLine().split("/");
-            if (!a(i, this.j)) {
+            if (!a(context, this.j)) {
                this.c = false;
             }
          } catch (Exception var3) {
             Log.e("Crypto", var3.toString());
             if (this.j != null) {
-               if (!a(i, this.j)) {
+               if (!a(context, this.j)) {
                   this.c = false;
                }
             } else if (this.j == null) {
@@ -967,7 +971,7 @@ public final class i {
    public final void c() {
       this.b = false;
       this.c = true;
-      if (this.j != null && !a(i, this.j)) {
+      if (this.j != null && !a(context, this.j)) {
          this.c = false;
       }
 

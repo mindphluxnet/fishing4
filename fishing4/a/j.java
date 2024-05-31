@@ -6,9 +6,9 @@ import android.os.Message;
 import java.util.Locale;
 
 final class j extends Handler {
-   final i a;
+   final SaveLoadManager a;
 
-   j(i var1) {
+   j(SaveLoadManager var1) {
       this.a = var1;
    }
 
@@ -41,6 +41,6 @@ final class j extends Handler {
          }
       }
 
-      (new AlertDialog.Builder(i.d())).setCancelable(false).setMessage(var3).setPositiveButton(var2, new k(this)).create().show();
+      (new AlertDialog.Builder(SaveLoadManager.d())).setCancelable(false).setMessage(var3).setPositiveButton(var2, new k(this)).create().show();
    }
 }

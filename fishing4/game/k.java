@@ -7,6 +7,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Locale;
 import javax.microedition.khronos.opengles.GL10;
+
+import fishing4.a.SaveLoadManager;
 import pnjmobile.fishing4.google_free.Main;
 
 public final class k {
@@ -310,9 +312,9 @@ public final class k {
             x.d = System.currentTimeMillis();
             byte[] var11;
             if (fishing4.a.y.b("new_f4save.data")) {
-               var11 = fishing4.a.i.a("new_f4save.data");
+               var11 = SaveLoadManager.loadFile("new_f4save.data");
             } else {
-               var11 = fishing4.a.i.b("f4save.data");
+               var11 = SaveLoadManager.b("f4save.data");
             }
 
             Exception var10000;
@@ -1725,8 +1727,8 @@ public final class k {
       var0 += 4;
       System.arraycopy(fishing4.a.a.a(Main.k), 0, var3, var0, 4);
       System.arraycopy(fishing4.a.a.a(Main.l), 0, var3, var0 + 4, 4);
-      fishing4.a.i.a("f4save.data", var3);
-      fishing4.a.i.b("new_f4save.data", var3);
+      SaveLoadManager.a("f4save.data", var3);
+      SaveLoadManager.b("new_f4save.data", var3);
    }
 
    public static final boolean g() {

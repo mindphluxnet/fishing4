@@ -3,6 +3,8 @@ package fishing4.game;
 import android.os.Vibrator;
 import android.util.Log;
 
+import fishing4.a.SaveLoadManager;
+
 public final class OptionsManager {
    public static boolean a;
    public static boolean b;
@@ -56,8 +58,8 @@ public final class OptionsManager {
       System.arraycopy(fishing4.a.a.a(globalConfig.g.encrypt()), 0, buf, 24, 8);
       System.arraycopy(fishing4.a.a.a(g), 0, buf, 32, 1);
       System.arraycopy(globalConfig.userName.getBytes(), 0, buf, 33, globalConfig.userName.getBytes().length);
-      fishing4.a.i.a("f4option.data", buf);
-      fishing4.a.i.b("new_f4option.data", buf);
+      SaveLoadManager.a("f4option.data", buf);
+      SaveLoadManager.b("new_f4option.data", buf);
    }
 
    public static void loadOptions() {
@@ -80,9 +82,9 @@ public final class OptionsManager {
          x.d = System.currentTimeMillis();
          byte[] var2;
          if (fishing4.a.y.b("new_f4option.data")) {
-            var2 = fishing4.a.i.a("new_f4option.data");
+            var2 = SaveLoadManager.loadFile("new_f4option.data");
          } else {
-            var2 = fishing4.a.i.b("f4option.data");
+            var2 = SaveLoadManager.b("f4option.data");
          }
 
          boolean var0;
