@@ -59,7 +59,7 @@ public final class i {
       this.i = fishing4.game.m.d(b);
       this.j = fishing4.a.y.a();
       this.k = fishing4.a.y.a();
-      this.a = fishing4.a.o.a(fishing4.a.e.a(fishing4.game.u.k, fishing4.game.u.l));
+      this.a = fishing4.a.o.a(fishing4.a.e.a(OptionsManager.k, OptionsManager.l));
       m = fishing4.a.e.a(fishing4.a.m.c(), 0.0F);
       this.n = 0L;
       this.o = false;
@@ -109,7 +109,7 @@ public final class i {
             this.o = true;
             if (c && fishing4.a.e.d(var1, this.p) < this.a.c()) {
                this.a.b(fishing4.a.e.a(132.0F, 120.0F));
-               fishing4.game.u.j = 1.0F;
+               OptionsManager.j = 1.0F;
             }
          } else {
             this.o = false;
@@ -488,7 +488,7 @@ public final class i {
                var1 = 0.0F;
             } else {
                if (this.g.c == 0 && this.a.b == 1 || this.g.c == 1 && this.a.b == 0 || this.g.c == 2 && this.a.b == 3 || this.g.c == 3 && this.a.b == 2 || this.g.c == 4 && this.a.b == 7 || this.g.c == 5 && this.a.b == 6 || this.g.c == 6 && this.a.b == 5 || this.g.c == 7 && this.a.b == 4) {
-                  fishing4.game.u.a(500);
+                  OptionsManager.a(500);
                   var2 = (var3 + var6) * 3.0F * (1.5F - this.v / this.z);
                   var1 = var2;
                   if (var2 > this.z * 0.1F) {
@@ -582,7 +582,7 @@ public final class i {
             }
          } else if (this.h == 1) {
             if (this.o) {
-               fishing4.game.u.a(750);
+               OptionsManager.a(750);
                var2 = (var3 + var6) * 3.0F * (1.5F - this.v / this.z);
                var1 = var2;
                if (var2 > this.z * 0.1F) {

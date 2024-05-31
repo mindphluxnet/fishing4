@@ -167,10 +167,10 @@ public final class bb extends aa {
 
                   fishing4.b.d.a().a(fishing4.a.s.a(), 2131034133);
                   Thread.sleep(500L);
-                  if (fishing4.game.u.i == 1) {
+                  if (OptionsManager.i == 1) {
                      ad.o.c(10000L);
-                     fishing4.game.u.i = 2;
-                     fishing4.game.u.b();
+                     OptionsManager.i = 2;
+                     OptionsManager.b();
                      fishing4.b.d.a().b(fishing4.a.s.a(), 2131034133);
                      am.a(96);
                      break label186;
@@ -197,7 +197,7 @@ public final class bb extends aa {
                } else {
                   label188: {
                      try {
-                        if (fishing4.game.x.a(false) <= 0 || fishing4.game.u.f || az.e) {
+                        if (fishing4.game.x.a(false) <= 0 || OptionsManager.f || az.e) {
                            break label188;
                         }
 

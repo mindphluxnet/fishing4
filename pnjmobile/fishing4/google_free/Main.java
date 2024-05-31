@@ -34,6 +34,7 @@ import fishing4.game.AgreementView;
 import fishing4.game.am;
 import fishing4.game.aw;
 import fishing4.game.globalConfig;
+import fishing4.game.OptionsManager;
 import fishing4.game.userIDview;
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -874,7 +875,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
          com.pnjmobile.tnk.a.a(this, fishing4.a.r.a);
          fishing4.a.r.a(fishing4.a.r.a);
          this.setVolumeControlStream(3);
-         fishing4.game.u.p = (Vibrator)this.getSystemService("vibrator");
+         OptionsManager.p = (Vibrator)this.getSystemService("vibrator");
          if (!this.aa) {
             this.v = fishing4.a.i.a();
             fishing4.a.i var10 = this.v;
@@ -882,9 +883,9 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
             this.aa = true;
          }
 
-         fishing4.game.u.e();
-         fishing4.game.u.c();
-         fishing4.game.u.a();
+         OptionsManager.loadOptions();
+         OptionsManager.c();
+         OptionsManager.a();
          Thread var11;
          if (this.F == null) {
             this.F = new i();
@@ -900,9 +901,9 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
             var11.start();
          }
 
-         if (!fishing4.game.az.f && !fishing4.game.u.e) {
+         if (!fishing4.game.az.f && !OptionsManager.hasConfirmedAgreement) {
             this.startActivity(new Intent(this, AgreementView.class));
-         } else if (!fishing4.game.u.g) {
+         } else if (!OptionsManager.g) {
             this.startActivity(new Intent(this, userIDview.class));
          }
 
@@ -1074,9 +1075,9 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       var2.start();
       if (d && !e) {
          d = false;
-         if (!fishing4.game.az.f && !fishing4.game.u.e) {
+         if (!fishing4.game.az.f && !OptionsManager.hasConfirmedAgreement) {
             this.startActivity(new Intent(this, AgreementView.class));
-         } else if (!fishing4.game.u.g) {
+         } else if (!OptionsManager.g) {
             this.startActivity(new Intent(this, userIDview.class));
          }
       }
@@ -1296,8 +1297,8 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
                ConnectivityManager var11;
                if (fishing4.game.am.e && fishing4.game.am.b == 170) {
                   if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 72.0F, fishing4.a.m.d() - 288.0F), fishing4.a.h.a(150.0F, 50.0F), fishing4.a.e.a(var5, var6))) {
-                     fishing4.game.u.f = true;
-                     fishing4.game.u.d();
+                     OptionsManager.f = true;
+                     OptionsManager.saveOptions();
                      fishing4.game.am.b();
                      var11 = (ConnectivityManager)this.getSystemService("connectivity");
                      if (var11.getActiveNetworkInfo() != null && var11.getActiveNetworkInfo().isConnectedOrConnecting()) {

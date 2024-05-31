@@ -3,7 +3,7 @@ package fishing4.b;
 import android.content.Context;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
-import fishing4.game.u;
+import fishing4.game.OptionsManager;
 import java.util.Iterator;
 
 public class d {
@@ -73,7 +73,7 @@ public class d {
    }
 
    public final void a(Context var1, int var2, int var3) {
-      if (u.b) {
+      if (OptionsManager.b) {
          a var6 = this.a;
          synchronized(var6){}
 

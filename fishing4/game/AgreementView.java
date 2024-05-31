@@ -64,7 +64,7 @@ public class AgreementView extends Activity {
    static void d(AgreementView agreementView) {
       agreementView.c.dismiss();
       agreementView.c = null;
-      u.e = true;
+      OptionsManager.hasConfirmedAgreement = true;
       Thread newThread = new Thread(new fishing4.a.ac());
       Main.R = newThread;
       newThread.start();
@@ -88,9 +88,9 @@ public class AgreementView extends Activity {
             Log.v("GCMRegist", "이미 등록 되었음." + var5);
          }
 
-         u.d();
+         OptionsManager.saveOptions();
          agreementView.a();
-         if (!u.g) {
+         if (!OptionsManager.g) {
             agreementView.startActivity(new Intent(Main.u, userIDview.class));
          }
 

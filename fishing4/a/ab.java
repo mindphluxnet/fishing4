@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.net.Socket;
 
 import fishing4.game.globalConfig;
+import fishing4.game.OptionsManager;
 
 public final class ab implements af, Runnable {
    private static int H;
@@ -245,7 +246,7 @@ public final class ab implements af, Runnable {
                   this.l = var3[1];
                   if (this.l == 1) {
                      fishing4.game.ad.p.b((long)fishing4.a.y.a(var3, 2));
-                     fishing4.game.u.d();
+                     OptionsManager.saveOptions();
                      com.tapjoy.f.a();
                      com.tapjoy.f.a(this.G, this);
                   }

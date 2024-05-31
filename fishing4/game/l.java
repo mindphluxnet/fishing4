@@ -73,10 +73,10 @@ public final class l {
 
       if (d != 32 && d != 30 && d != 31) {
          if (d == 10 || d == 12) {
-            u.a(500);
+            OptionsManager.a(500);
          }
       } else {
-         u.a(1000);
+         OptionsManager.a(1000);
       }
 
       if (d != 41 && d != 42) {

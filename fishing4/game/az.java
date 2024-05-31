@@ -221,7 +221,7 @@ public final class az {
    public static void a(GL10 var0, float var1) {
       fishing4.a.m.a(var0, s, fishing4.a.m.c() - 80.0F, var1 + 150.0F, 587.0F, 689.0F, 66.0F, 68.0F);
       fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 + 170.0F, 662.0F, 501.0F, 52.0F, 18.0F);
-      if (fishing4.game.u.a) {
+      if (OptionsManager.a) {
          fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 + 130.0F, 0.0F, 719.0F, 78.0F, 52.0F, fishing4.a.aa.c());
          fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 + 130.0F, 928.0F, 814.0F, 42.0F, 22.0F, '\u0001');
       } else {
@@ -231,7 +231,7 @@ public final class az {
 
       fishing4.a.m.a(var0, s, fishing4.a.m.c() - 80.0F, var1 + 50.0F, 587.0F, 689.0F, 66.0F, 68.0F);
       fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 + 70.0F, 680.0F, 478.0F, 118.0F, 16.0F);
-      if (fishing4.game.u.b) {
+      if (OptionsManager.b) {
          fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 + 30.0F, 0.0F, 719.0F, 78.0F, 52.0F, fishing4.a.aa.c());
          fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 + 30.0F, 928.0F, 814.0F, 42.0F, 22.0F, '\u0001');
       } else {
@@ -241,7 +241,7 @@ public final class az {
 
       fishing4.a.m.a(var0, s, fishing4.a.m.c() - 80.0F, var1 - 50.0F, 497.0F, 689.0F, 88.0F, 58.0F);
       fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 - 30.0F, 727.0F, 886.0F, 122.0F, 18.0F);
-      if (fishing4.game.u.c) {
+      if (OptionsManager.c) {
          fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 - 70.0F, 0.0F, 719.0F, 78.0F, 52.0F, fishing4.a.aa.c());
          fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 - 70.0F, 928.0F, 814.0F, 42.0F, 22.0F, '\u0001');
       } else {
@@ -1582,46 +1582,46 @@ public final class az {
       boolean var3 = false;
       boolean var4 = false;
       if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), 150.0F + var0), fishing4.a.h.a(400.0F, 70.0F), var1)) {
-         if (fishing4.game.u.a) {
+         if (OptionsManager.a) {
             var2 = var4;
          } else {
             var2 = true;
          }
 
-         fishing4.game.u.a = var2;
+         OptionsManager.a = var2;
          if (var2) {
             fishing4.b.d.a().b(0.5F);
          } else {
             fishing4.b.d.a().b(0.0F);
          }
 
-         fishing4.game.u.d();
+         OptionsManager.saveOptions();
       } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), 50.0F + var0), fishing4.a.h.a(400.0F, 70.0F), var1)) {
-         if (!fishing4.game.u.b) {
+         if (!OptionsManager.b) {
             var2 = true;
          }
 
-         fishing4.game.u.b = var2;
+         OptionsManager.b = var2;
          if (var2) {
             fishing4.b.d.a().a(1.0F);
          } else {
             fishing4.b.d.a().a(0.0F);
          }
 
-         fishing4.game.u.d();
+         OptionsManager.saveOptions();
       } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), var0 - 50.0F), fishing4.a.h.a(400.0F, 70.0F), var1)) {
-         if (fishing4.game.u.c) {
+         if (OptionsManager.c) {
             var2 = var3;
          } else {
             var2 = true;
          }
 
-         fishing4.game.u.c = var2;
+         OptionsManager.c = var2;
          if (var2) {
-            fishing4.game.u.a(500);
+            OptionsManager.a(500);
          }
 
-         fishing4.game.u.d();
+         OptionsManager.saveOptions();
       } else {
          fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), var0 - 150.0F), fishing4.a.h.a(400.0F, 70.0F), var1);
       }

@@ -28,12 +28,12 @@ public final class aq {
             }
          } else if (a == 3) {
             if (z.b() == 3) {
-               ++u.m;
+               ++OptionsManager.m;
             } else if (z.b() == 4) {
-               ++u.n;
+               ++OptionsManager.n;
             }
 
-            u.d();
+            OptionsManager.saveOptions();
             a = 0;
          } else if (a == 1) {
             a = 2;

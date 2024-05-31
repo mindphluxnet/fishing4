@@ -10,7 +10,7 @@ import fishing4.a.y;
 import fishing4.game.MyWebView;
 import fishing4.game.am;
 import fishing4.game.globalConfig;
-import fishing4.game.u;
+import fishing4.game.OptionsManager;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -72,9 +72,9 @@ public class FacebookMainView extends Activity {
       String var1 = this.e.b();
       c = var1;
       if (a(var1)) {
-         if (u.i == 0) {
-            u.i = 1;
-            u.b();
+         if (OptionsManager.i == 0) {
+            OptionsManager.i = 1;
+            OptionsManager.b();
             am.a(92);
          } else {
             am.a(93);

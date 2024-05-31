@@ -3,12 +3,12 @@ package fishing4.game;
 import android.os.Vibrator;
 import android.util.Log;
 
-public final class u {
+public final class OptionsManager {
    public static boolean a;
    public static boolean b;
    public static boolean c;
    public static boolean d;
-   public static boolean e;
+   public static boolean hasConfirmedAgreement;
    public static boolean f;
    public static boolean g;
    public static boolean h;
@@ -40,34 +40,34 @@ public final class u {
       // $FF: Couldn't be decompiled
    }
 
-   public static void d() {
-      byte[] var0 = new byte[85];
-      System.arraycopy(fishing4.a.a.a(a), 0, var0, 0, 1);
-      System.arraycopy(fishing4.a.a.a(b), 0, var0, 1, 1);
-      System.arraycopy(fishing4.a.a.a(c), 0, var0, 2, 1);
-      System.arraycopy(fishing4.a.a.a(d), 0, var0, 3, 1);
-      System.arraycopy(fishing4.a.a.a(e), 0, var0, 4, 1);
-      System.arraycopy(fishing4.a.a.a(f), 0, var0, 5, 1);
-      System.arraycopy(fishing4.a.a.a(m), 0, var0, 6, 4);
-      System.arraycopy(fishing4.a.a.a(n), 0, var0, 10, 4);
-      System.arraycopy(fishing4.a.a.a(o), 0, var0, 14, 1);
-      System.arraycopy(fishing4.a.a.a(h), 0, var0, 15, 1);
-      System.arraycopy(fishing4.a.a.a(ad.p.b()), 0, var0, 16, 8);
-      System.arraycopy(fishing4.a.a.a(globalConfig.g.encrypt()), 0, var0, 24, 8);
-      System.arraycopy(fishing4.a.a.a(g), 0, var0, 32, 1);
-      System.arraycopy(globalConfig.userName.getBytes(), 0, var0, 33, globalConfig.userName.getBytes().length);
-      fishing4.a.i.a("f4option.data", var0);
-      fishing4.a.i.b("new_f4option.data", var0);
+   public static void saveOptions() {
+      byte[] buf = new byte[85];
+      System.arraycopy(fishing4.a.a.a(a), 0, buf, 0, 1);
+      System.arraycopy(fishing4.a.a.a(b), 0, buf, 1, 1);
+      System.arraycopy(fishing4.a.a.a(c), 0, buf, 2, 1);
+      System.arraycopy(fishing4.a.a.a(d), 0, buf, 3, 1);
+      System.arraycopy(fishing4.a.a.a(hasConfirmedAgreement), 0, buf, 4, 1);
+      System.arraycopy(fishing4.a.a.a(f), 0, buf, 5, 1);
+      System.arraycopy(fishing4.a.a.a(m), 0, buf, 6, 4);
+      System.arraycopy(fishing4.a.a.a(n), 0, buf, 10, 4);
+      System.arraycopy(fishing4.a.a.a(o), 0, buf, 14, 1);
+      System.arraycopy(fishing4.a.a.a(h), 0, buf, 15, 1);
+      System.arraycopy(fishing4.a.a.a(ad.p.b()), 0, buf, 16, 8);
+      System.arraycopy(fishing4.a.a.a(globalConfig.g.encrypt()), 0, buf, 24, 8);
+      System.arraycopy(fishing4.a.a.a(g), 0, buf, 32, 1);
+      System.arraycopy(globalConfig.userName.getBytes(), 0, buf, 33, globalConfig.userName.getBytes().length);
+      fishing4.a.i.a("f4option.data", buf);
+      fishing4.a.i.b("new_f4option.data", buf);
    }
 
-   public static void e() {
+   public static void loadOptions() {
       boolean var1 = false;
       if (!fishing4.a.y.b("f4option.data") && !fishing4.a.y.b("new_f4option.data")) {
          a = true;
          b = true;
          c = true;
          d = true;
-         e = false;
+         hasConfirmedAgreement = false;
          g = false;
          f = false;
          h = false;
@@ -152,9 +152,9 @@ public final class u {
             }
 
             try {
-               e = var0;
+               hasConfirmedAgreement = var0;
                StringBuilder var3 = new StringBuilder("k:");
-               Log.d("", var3.append(Boolean.toString(e)).toString());
+               Log.d("", var3.append(Boolean.toString(hasConfirmedAgreement)).toString());
             } catch (Exception var10) {
                var10000 = var10;
                var10001 = false;

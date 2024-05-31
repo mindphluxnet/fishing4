@@ -219,7 +219,7 @@ public final class aw extends aa {
             m = false;
             l = false;
             n = 0;
-            if (fishing4.game.u.d) {
+            if (OptionsManager.d) {
                fishing4.game.m.b(var1);
             }
             break;
@@ -782,8 +782,8 @@ public final class aw extends aa {
                                        am.a(180);
                                     }
                                  } else if (fishing4.game.l.d == 66) {
-                                    fishing4.game.u.o = true;
-                                    fishing4.game.u.d();
+                                    OptionsManager.o = true;
+                                    OptionsManager.saveOptions();
                                     globalConfig.o = true;
                                     fishing4.game.l.a(62);
                                  }
@@ -912,7 +912,7 @@ public final class aw extends aa {
                                                    case 42:
                                                       break label715;
                                                    case 43:
-                                                      if (fishing4.game.u.d) {
+                                                      if (OptionsManager.d) {
                                                          fishing4.game.k.q();
                                                          if (fishing4.a.z.a(100) < 5) {
                                                             fishing4.game.l.a(61);
@@ -1401,7 +1401,7 @@ public final class aw extends aa {
                   } else {
                      var12 = this.K;
                      if (fishing4.a.r.e() == 1) {
-                        if (fishing4.a.r.ae >= 100000 && !fishing4.game.u.o) {
+                        if (fishing4.a.r.ae >= 100000 && !OptionsManager.o) {
                            fishing4.game.l.a(66);
                         } else {
                            fishing4.game.l.a(62);
@@ -1417,8 +1417,8 @@ public final class aw extends aa {
                            } else {
                               var12 = this.K;
                               if (fishing4.a.r.e() == 3) {
-                                 fishing4.game.u.d = false;
-                                 fishing4.game.u.d();
+                                 OptionsManager.d = false;
+                                 OptionsManager.saveOptions();
                                  fishing4.game.l.a(63);
                               }
                            }

@@ -71,8 +71,8 @@ public class userIDview extends Activity {
 
    // $FF: synthetic method
    static void d(userIDview view) {
-      u.g = true;
-      u.d();
+      OptionsManager.g = true;
+      OptionsManager.saveOptions();
       view.dismissView();
    }
 

@@ -340,10 +340,10 @@ public final class bh {
    public static void c() {
       am.b();
       a = 100;
-      if (u.i == 1) {
+      if (OptionsManager.i == 1) {
          ad.o.c(10000L);
-         u.i = 2;
-         u.b();
+         OptionsManager.i = 2;
+         OptionsManager.b();
          fishing4.b.d.a().b(fishing4.a.s.a(), 2131034133);
          am.a(96);
       }

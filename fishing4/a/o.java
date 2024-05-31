@@ -2,6 +2,8 @@ package fishing4.a;
 
 import javax.microedition.khronos.opengles.GL10;
 
+import fishing4.game.OptionsManager;
+
 public final class o {
    public static e d = fishing4.a.e.a();
    public static e e = fishing4.a.e.a();
@@ -48,7 +50,7 @@ public final class o {
       float var0 = 1.5F;
       if (g) {
          float var2 = fishing4.a.e.d(d, e);
-         float var1 = var2 / f * fishing4.game.u.j;
+         float var1 = var2 / f * OptionsManager.j;
          if (!(var1 > 1.5F)) {
             if (var1 < 0.5F) {
                var0 = 0.5F;
@@ -57,7 +59,7 @@ public final class o {
             }
          }
 
-         fishing4.game.u.j = var0;
+         OptionsManager.j = var0;
          f = var2;
       }
 
@@ -73,14 +75,14 @@ public final class o {
    }
 
    public final void a(GL10 var1, w var2) {
-      fishing4.a.m.b(var1, var2, this.l.a, this.l.b, this.j.a.a, this.j.a.b, this.j.b.a, this.j.b.b, fishing4.a.g.a(fishing4.game.u.j), 100);
-      fishing4.a.m.a(var1, var2, this.m, this.h, fishing4.a.g.a(fishing4.game.u.j));
+      fishing4.a.m.b(var1, var2, this.l.a, this.l.b, this.j.a.a, this.j.a.b, this.j.b.a, this.j.b.b, fishing4.a.g.a(OptionsManager.j), 100);
+      fishing4.a.m.a(var1, var2, this.m, this.h, fishing4.a.g.a(OptionsManager.j));
       if (this.a) {
-         fishing4.a.m.a(var1, var2, this.m, this.i, fishing4.a.g.a(fishing4.game.u.j));
+         fishing4.a.m.a(var1, var2, this.m, this.i, fishing4.a.g.a(OptionsManager.j));
          if (this.c == 0) {
-            fishing4.a.m.a(var1, var2, this.m, fishing4.a.f.a(264.0F, 410.0F, 92.0F, 92.0F), fishing4.a.g.a(fishing4.game.u.j));
+            fishing4.a.m.a(var1, var2, this.m, fishing4.a.f.a(264.0F, 410.0F, 92.0F, 92.0F), fishing4.a.g.a(OptionsManager.j));
          } else {
-            fishing4.a.m.a(var1, var2, this.m, fishing4.a.f.a(358.0F, 410.0F, 92.0F, 92.0F), fishing4.a.g.a(fishing4.game.u.j));
+            fishing4.a.m.a(var1, var2, this.m, fishing4.a.f.a(358.0F, 410.0F, 92.0F, 92.0F), fishing4.a.g.a(OptionsManager.j));
          }
       }
 
@@ -89,12 +91,12 @@ public final class o {
    public final void b(e var1) {
       this.l.a(var1);
       this.m.a(var1);
-      fishing4.game.u.k = var1.a;
-      fishing4.game.u.l = var1.b;
+      OptionsManager.k = var1.a;
+      OptionsManager.l = var1.b;
    }
 
    public final float c() {
-      return this.k.b.a / 2.0F * fishing4.game.u.j;
+      return this.k.b.a / 2.0F * OptionsManager.j;
    }
 
    public final boolean c(e var1) {

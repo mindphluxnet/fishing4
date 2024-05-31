@@ -191,8 +191,8 @@ public final class k {
       String var17 = "&gold=" + Long.toString(ad.o.b());
       String var20 = "&playtime=" + Long.toString(x.c);
       String var18 = "&version=" + "1.0.5".replace(".", "");
-      (new StringBuilder("&main=")).append(Integer.toString(u.m)).toString();
-      (new StringBuilder("&game=")).append(Integer.toString(u.n)).toString();
+      (new StringBuilder("&main=")).append(Integer.toString(OptionsManager.m)).toString();
+      (new StringBuilder("&game=")).append(Integer.toString(OptionsManager.n)).toString();
       String var14;
       if (globalConfig.languageId == 0) {
          var14 = "&location=kr";
@@ -1363,8 +1363,8 @@ public final class k {
       String var18 = "&gold=" + Long.toString(ad.o.b());
       String var20 = "&playtime=" + Long.toString(x.c);
       String var19 = "&version=" + "1.0.5".replace(".", "");
-      (new StringBuilder("&main=")).append(Integer.toString(u.m)).toString();
-      (new StringBuilder("&game=")).append(Integer.toString(u.n)).toString();
+      (new StringBuilder("&main=")).append(Integer.toString(OptionsManager.m)).toString();
+      (new StringBuilder("&game=")).append(Integer.toString(OptionsManager.n)).toString();
       String var15;
       if (globalConfig.languageId == 0) {
          var15 = "&location=kr";
@@ -1479,8 +1479,8 @@ public final class k {
       String var20 = "&gold=" + Long.toString(ad.o.b());
       String var19 = "&playtime=" + Long.toString(x.c);
       String var22 = "&version=" + "1.0.5".replace(".", "");
-      (new StringBuilder("&main=")).append(Integer.toString(u.m)).toString();
-      (new StringBuilder("&game=")).append(Integer.toString(u.n)).toString();
+      (new StringBuilder("&main=")).append(Integer.toString(OptionsManager.m)).toString();
+      (new StringBuilder("&game=")).append(Integer.toString(OptionsManager.n)).toString();
       String var16;
       if (globalConfig.languageId == 0) {
          var16 = "&location=kr";
@@ -1735,7 +1735,7 @@ public final class k {
 
    public static final boolean h() {
       boolean var0;
-      if (!u.h) {
+      if (!OptionsManager.h) {
          var0 = true;
       } else {
          var0 = false;
@@ -1746,8 +1746,8 @@ public final class k {
 
    public static void i() {
       Main.e();
-      u.h = true;
-      u.d();
+      OptionsManager.h = true;
+      OptionsManager.saveOptions();
       fishing4.a.r.h();
    }
 
