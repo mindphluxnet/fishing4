@@ -14,7 +14,7 @@ public final class f {
    private static ac g = null;
 
    private f(Context var1, String var2, String var3) {
-      com.tapjoy.g.a(var1, var2, var3);
+      TapjoyConnectCore.a(var1, var2, var3);
    }
 
    public static f a() {
@@ -32,8 +32,8 @@ public final class f {
    }
 
    public static void a(Context var0, String var1, String var2) {
-      com.tapjoy.g.b("offers");
-      com.tapjoy.g.a("native");
+      TapjoyConnectCore.b("offers");
+      TapjoyConnectCore.a("native");
       a = new f(var0, var1, var2);
       b = new a(var0);
       c = new u(var0);
@@ -58,11 +58,11 @@ public final class f {
 
    public static void b() {
       a var1 = b;
-      aa.a("TapjoyOffers", "Showing offers with userID: " + com.tapjoy.g.e());
+      aa.a("TapjoyOffers", "Showing offers with userID: " + TapjoyConnectCore.e());
       Intent var0 = new Intent(var1.c, TJCOffersWebView.class);
       var0.setFlags(268435456);
-      var0.putExtra("USER_ID", com.tapjoy.g.e());
-      var0.putExtra("URL_PARAMS", com.tapjoy.g.c());
+      var0.putExtra("USER_ID", TapjoyConnectCore.e());
+      var0.putExtra("URL_PARAMS", TapjoyConnectCore.c());
       var1.c.startActivity(var0);
    }
 

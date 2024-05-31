@@ -15,10 +15,10 @@ final class ak implements Runnable {
 
       while(true) {
          if (ai.f(this.a)) {
-            aa.a("TapjoyVideo", "cacheVideos connection_type: " + g.g());
+            aa.a("TapjoyVideo", "cacheVideos connection_type: " + TapjoyConnectCore.g());
             aa.a("TapjoyVideo", "cache3g: " + ai.g(this.a));
             aa.a("TapjoyVideo", "cacheWifi: " + ai.h(this.a));
-            if (ai.g(this.a) && g.g().equals("mobile") || ai.h(this.a) && g.g().equals("wifi")) {
+            if (ai.g(this.a) && TapjoyConnectCore.g().equals("mobile") || ai.h(this.a) && TapjoyConnectCore.g().equals("wifi")) {
                if (!"mounted".equals(Environment.getExternalStorageState())) {
                   aa.a("TapjoyVideo", "Media storage unavailable.  Aborting caching videos.");
                   ai.c();

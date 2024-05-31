@@ -77,9 +77,9 @@ public class TapjoyFeaturedAppWebView extends Activity {
 
    protected void onResume() {
       super.onResume();
-      if (this.g && com.tapjoy.g.a() != null) {
+      if (this.g && TapjoyConnectCore.a() != null) {
          aa.a("Full Screen Ad", "call connect");
-         com.tapjoy.g.a().b();
+         TapjoyConnectCore.a().b();
       }
 
       this.g = true;

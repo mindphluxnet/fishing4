@@ -24,7 +24,8 @@ import java.util.Timer;
 import java.util.Vector;
 import org.w3c.dom.Document;
 
-public final class g {
+// TODO: there's a lot wrong here. Needs to be refactored from public SDK sources.
+public final class TapjoyConnectCore {
    private static String A = "";
    private static String B = "";
    private static String C = "";
@@ -34,12 +35,12 @@ public final class g {
    private static String G = "";
    private static boolean H = false;
    private static String I = "";
-   private static float J = 1.0F;
+   private static float DEFAULT_CURRENCY_MULTIPLIER = 1.0F;
    private static String K = null;
    private static Hashtable N = null;
    private static String O = "";
    private static Context a = null;
-   private static g b = null;
+   private static TapjoyConnectCore b = null;
    private static ag c = null;
    private static String d = "";
    private static String e = "";
@@ -67,7 +68,7 @@ public final class g {
    private long L = 0L;
    private Timer M = null;
 
-   private g(Context var1) {
+   private TapjoyConnectCore(Context var1) {
       a = var1;
       c = new ag();
       m();
@@ -75,7 +76,7 @@ public final class g {
       (new Thread(new h(this))).start();
    }
 
-   public static g a() {
+   public static TapjoyConnectCore a() {
       return b;
    }
 
@@ -119,7 +120,7 @@ public final class g {
       p = var1;
       C = var2;
       N = null;
-      b = new g(var0);
+      b = new TapjoyConnectCore(var0);
    }
 
    public static void a(String var0) {
@@ -412,7 +413,7 @@ public final class g {
          }
       }
 
-      var1 = var1 + "device_name=" + Uri.encode(j) + "&" + "device_manufacturer=" + Uri.encode(k) + "&" + "device_type=" + Uri.encode(l) + "&" + "os_version=" + Uri.encode(m) + "&" + "country_code=" + Uri.encode(n) + "&" + "language_code=" + Uri.encode(o) + "&" + "app_version=" + Uri.encode(q) + "&" + "library_version=" + Uri.encode(r) + "&" + "platform=" + Uri.encode(v) + "&" + "display_multiplier=" + Uri.encode(Float.toString(J));
+      var1 = var1 + "device_name=" + Uri.encode(j) + "&" + "device_manufacturer=" + Uri.encode(k) + "&" + "device_type=" + Uri.encode(l) + "&" + "os_version=" + Uri.encode(m) + "&" + "country_code=" + Uri.encode(n) + "&" + "language_code=" + Uri.encode(o) + "&" + "app_version=" + Uri.encode(q) + "&" + "library_version=" + Uri.encode(r) + "&" + "platform=" + Uri.encode(v) + "&" + "display_multiplier=" + Uri.encode(Float.toString(DEFAULT_CURRENCY_MULTIPLIER));
       var0 = var1;
       if (w.length() > 0) {
          var0 = var1 + "&" + "carrier_name=" + Uri.encode(w);

@@ -9,7 +9,7 @@ final class b implements Runnable {
 
    public final void run() {
       boolean var1 = false;
-      String var2 = g.c() + "&publisher_user_id=" + g.e();
+      String var2 = TapjoyConnectCore.c() + "&publisher_user_id=" + TapjoyConnectCore.e();
       new ag();
       var2 = ag.b("https://ws.tapjoyads.com/get_vg_store_items/user_account?", var2);
       if (var2 != null) {

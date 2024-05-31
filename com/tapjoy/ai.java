@@ -51,13 +51,13 @@ public final class ai {
       this.h = new Hashtable();
       this.i = new Hashtable();
       aa.a("TapjoyVideo", "initVideoAd");
-      if (com.tapjoy.g.e("disable_video_offers") != null && com.tapjoy.g.e("disable_video_offers").equals("true")) {
-         aa.a("TapjoyVideo", "disable_video_offers: " + com.tapjoy.g.e("disable_video_offers") + ". Aborting video initializing... ");
-         com.tapjoy.g.a(false);
+      if (TapjoyConnectCore.e("disable_video_offers") != null && TapjoyConnectCore.e("disable_video_offers").equals("true")) {
+         aa.a("TapjoyVideo", "disable_video_offers: " + TapjoyConnectCore.e("disable_video_offers") + ". Aborting video initializing... ");
+         TapjoyConnectCore.a(false);
       } else {
          this.g();
          (new Thread(new aj(this))).start();
-         com.tapjoy.g.a(true);
+         TapjoyConnectCore.a(true);
       }
 
    }
@@ -829,7 +829,7 @@ public final class ai {
       }
 
       aa.a("TapjoyVideo", "videoIDs: [" + var1 + "]");
-      com.tapjoy.g.c(var1);
+      TapjoyConnectCore.c(var1);
    }
 
    // $FF: synthetic method

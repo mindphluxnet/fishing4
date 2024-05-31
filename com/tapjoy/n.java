@@ -22,9 +22,9 @@ final class n extends TimerTask {
          this.cancel();
       } else {
          aa.a("Banner Ad", "adView.isShown: " + this.a.b.isShown());
-         if (this.a.b.isShown() && g.a() != null) {
+         if (this.a.b.isShown() && TapjoyConnectCore.a() != null) {
             aa.a("Banner Ad", "call connect");
-            g.a().b();
+            TapjoyConnectCore.a().b();
             this.cancel();
          }
 

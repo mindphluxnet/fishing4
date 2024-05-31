@@ -52,8 +52,8 @@ public class TJCOffersWebView extends Activity {
             this.g = var2.getString("URL_PARAMS");
             this.h = var2.getString("USER_ID");
             this.g = this.g + "&publisher_user_id=" + this.h;
-            if (com.tapjoy.g.f().length() > 0) {
-               this.g = this.g + "&" + com.tapjoy.g.f();
+            if (TapjoyConnectCore.f().length() > 0) {
+               this.g = this.g + "&" + TapjoyConnectCore.f();
             }
 
             aa.a("Offers", "urlParams: [" + this.g + "]");
@@ -64,7 +64,7 @@ public class TJCOffersWebView extends Activity {
       }
 
       this.c = this.c.replaceAll(" ", "%20");
-      this.f = com.tapjoy.g.h();
+      this.f = TapjoyConnectCore.h();
       aa.a("Offers", "clientPackage: [" + this.f + "]");
       super.onCreate(var1);
       this.requestWindowFeature(1);
@@ -112,9 +112,9 @@ public class TJCOffersWebView extends Activity {
          this.b.loadUrl(this.c);
       }
 
-      if (this.j && com.tapjoy.g.a() != null) {
+      if (this.j && TapjoyConnectCore.a() != null) {
          aa.a("Offers", "call connect");
-         com.tapjoy.g.a().b();
+         TapjoyConnectCore.a().b();
       }
 
       this.j = true;

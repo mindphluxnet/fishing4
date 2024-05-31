@@ -198,9 +198,9 @@ public final class k {
       aa.a("Banner Ad", "Get Banner Ad");
       aa.a("Banner Ad", "Get Banner Ad, currencyID: " + null);
       g = var1;
-      String var2 = com.tapjoy.g.c();
+      String var2 = TapjoyConnectCore.c();
       a = var2;
-      var2 = var2 + "&publisher_user_id=" + com.tapjoy.g.e();
+      var2 = var2 + "&publisher_user_id=" + TapjoyConnectCore.e();
       a = var2;
       a = var2 + "&size=" + k;
       (new Thread(new l(this))).start();

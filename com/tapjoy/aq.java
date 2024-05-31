@@ -9,7 +9,7 @@ final class aq implements Runnable {
 
    public final void run() {
       if (TapjoyVideoView.e(this.a)) {
-         g.a().d(TapjoyVideoView.a().a);
+         TapjoyConnectCore.a().d(TapjoyVideoView.a().a);
       }
 
    }

@@ -41,7 +41,7 @@ public final class a {
             var2 = ah.a(var3.getElementsByTagName("TapPoints"));
             var0 = ah.a(var3.getElementsByTagName("CurrencyName"));
             if (var2 != null && var0 != null) {
-               com.tapjoy.g.a(Integer.parseInt(var2));
+               TapjoyConnectCore.a(Integer.parseInt(var2));
                e.a(Integer.parseInt(var2));
                return var1;
             }
