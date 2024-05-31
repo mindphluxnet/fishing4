@@ -3,15 +3,17 @@ package fishing4.game;
 import java.text.DecimalFormat;
 import javax.microedition.khronos.opengles.GL10;
 
+import fishing4.a.AESUtils;
+
 public class ae {
-   protected fishing4.a.l a = fishing4.a.l.a();
+   protected AESUtils a = AESUtils.a();
    public fishing4.a.h b;
    public fishing4.a.f[] c;
    public fishing4.a.e[] d;
    protected boolean e = false;
 
    public ae(long var1) {
-      this.a.a(var1);
+      this.a.encryptLong(var1);
       this.a();
    }
 
@@ -166,24 +168,24 @@ public class ae {
    }
 
    public final long b() {
-      return this.a.b();
+      return this.a.encrypt();
    }
 
    public final void b(long var1) {
-      this.a.a(var1);
+      this.a.encryptLong(var1);
       this.e = true;
    }
 
    public final String c() {
-      return (new DecimalFormat()).format(this.a.b()).toString();
+      return (new DecimalFormat()).format(this.a.encrypt()).toString();
    }
 
    public boolean c(long var1) {
-      if (this.a.b() + var1 > 999999999L) {
-         this.a.a(999999999L);
+      if (this.a.encrypt() + var1 > 999999999L) {
+         this.a.encryptLong(999999999L);
          this.e = true;
       } else if (var1 > 0L) {
-         this.a.a(this.a.b() + var1);
+         this.a.encryptLong(this.a.encrypt() + var1);
          this.e = true;
       }
 
@@ -196,8 +198,8 @@ public class ae {
 
    public final boolean d(long var1) {
       boolean var3 = false;
-      if (this.a.b() - var1 >= 0L && var1 >= 0L) {
-         this.a.a(this.a.b() - var1);
+      if (this.a.encrypt() - var1 >= 0L && var1 >= 0L) {
+         this.a.encryptLong(this.a.encrypt() - var1);
          this.e = true;
          q.c(13);
          var3 = true;

@@ -53,7 +53,7 @@ public final class u {
       System.arraycopy(fishing4.a.a.a(o), 0, var0, 14, 1);
       System.arraycopy(fishing4.a.a.a(h), 0, var0, 15, 1);
       System.arraycopy(fishing4.a.a.a(ad.p.b()), 0, var0, 16, 8);
-      System.arraycopy(fishing4.a.a.a(globalConfig.g.b()), 0, var0, 24, 8);
+      System.arraycopy(fishing4.a.a.a(globalConfig.g.encrypt()), 0, var0, 24, 8);
       System.arraycopy(fishing4.a.a.a(g), 0, var0, 32, 1);
       System.arraycopy(globalConfig.userName.getBytes(), 0, var0, 33, globalConfig.userName.getBytes().length);
       fishing4.a.i.a("f4option.data", var0);
@@ -200,7 +200,7 @@ public final class u {
             try {
                h = var0;
                ad.p.b(fishing4.a.a.b(var2, 16));
-               globalConfig.g.a(fishing4.a.a.b(var2, 24));
+               globalConfig.g.encryptLong(fishing4.a.a.b(var2, 24));
             } catch (Exception var7) {
                var10000 = var7;
                var10001 = false;

@@ -798,7 +798,7 @@ public final class aw extends aa {
                               if (fishing4.game.l.d == 61) {
                                  fishing4.game.l.a(64);
                               } else if (fishing4.game.l.d == 80) {
-                                 globalConfig.h.a(0L);
+                                 globalConfig.h.encryptLong(0L);
                                  fishing4.game.l.a(82);
                               } else if (fishing4.game.l.d == 55) {
                                  fishing4.game.l.a(44);
@@ -920,13 +920,13 @@ public final class aw extends aa {
                                                          }
 
                                                          if (fishing4.a.z.a(100) < 5) {
-                                                            globalConfig.h.a(1L);
+                                                            globalConfig.h.encryptLong(1L);
                                                             fishing4.game.l.a(80);
                                                             return;
                                                          }
 
                                                          if (fishing4.game.k.n()) {
-                                                            globalConfig.h.a(1L);
+                                                            globalConfig.h.encryptLong(1L);
 
                                                             while(fishing4.game.k.n()) {
                                                                globalConfig.g.b(1L);
@@ -937,13 +937,13 @@ public final class aw extends aa {
                                                          }
                                                       } else {
                                                          if (fishing4.a.z.a(100) < 5) {
-                                                            globalConfig.h.a(1L);
+                                                            globalConfig.h.encryptLong(1L);
                                                             fishing4.game.l.a(80);
                                                             return;
                                                          }
 
                                                          if (fishing4.game.k.n()) {
-                                                            globalConfig.h.a(1L);
+                                                            globalConfig.h.encryptLong(1L);
 
                                                             while(fishing4.game.k.n()) {
                                                                globalConfig.g.b(1L);
@@ -1440,7 +1440,7 @@ public final class aw extends aa {
                      if (this.L == 1) {
                         var12 = this.K;
                         if (fishing4.a.r.b()) {
-                           long var7 = globalConfig.h.b();
+                           long var7 = globalConfig.h.encrypt();
                            globalConfig.i = null;
                            if (var7 >= 2L && var7 <= 10L) {
                               globalConfig.i = new String("네트워크낚시터 코인 획득");
@@ -1515,28 +1515,28 @@ public final class aw extends aa {
                         if (fishing4.a.r.b()) {
                            switch (aq.b) {
                               case 10:
-                                 globalConfig.h.a(200L);
+                                 globalConfig.h.encryptLong(200L);
                                  break;
                               case 11:
-                                 globalConfig.h.a(515L);
+                                 globalConfig.h.encryptLong(515L);
                                  break;
                               case 12:
-                                 globalConfig.h.a(840L);
+                                 globalConfig.h.encryptLong(840L);
                                  break;
                               case 13:
-                                 globalConfig.h.a(1400L);
+                                 globalConfig.h.encryptLong(1400L);
                                  break;
                               case 14:
-                                 globalConfig.h.a(3300L);
+                                 globalConfig.h.encryptLong(3300L);
                                  break;
                               case 15:
-                                 globalConfig.h.a(6000L);
+                                 globalConfig.h.encryptLong(6000L);
                                  break;
                               case 16:
-                                 globalConfig.h.a(0L);
+                                 globalConfig.h.encryptLong(0L);
                                  break;
                               default:
-                                 globalConfig.h.a((long)(aq.b() * -1));
+                                 globalConfig.h.encryptLong((long)(aq.b() * -1));
                            }
 
                            if (aq.b >= 10 && aq.b <= 15) {

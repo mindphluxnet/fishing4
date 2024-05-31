@@ -243,7 +243,7 @@ public final class t {
                         return var2;
                      }
 
-                     if (globalConfig.a == 0) {
+                     if (globalConfig.languageId == 0) {
                         var4 = "인터넷 연결 상태를 확인하세요.";
                      } else {
                         var4 = "Check network connection.";
@@ -299,7 +299,7 @@ public final class t {
          label94: {
             StringBuilder var3;
             try {
-               if (globalConfig.a == 0) {
+               if (globalConfig.languageId == 0) {
                   var3 = new StringBuilder("http://wap.pnjmobile.co.kr/news/Android/android_link.php?gameid=101442&language=ko&serialNum=");
                   z = var3.append(fishing4.a.r.a).append("&imgSize=480").toString();
                   break label94;

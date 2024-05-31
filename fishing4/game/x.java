@@ -3,13 +3,15 @@ package fishing4.game;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
+import fishing4.a.AESUtils;
+
 public final class x {
    public static int a;
    public static int b;
    public static long c;
    public static long d = 0L;
-   private static fishing4.a.l e = fishing4.a.l.a();
-   private static fishing4.a.l f = fishing4.a.l.a();
+   private static AESUtils e = AESUtils.a();
+   private static AESUtils f = AESUtils.a();
 
    public static final int a(boolean var0) {
       byte var1 = 0;
@@ -55,42 +57,42 @@ public final class x {
                var1 = 19;
             }
          }
-      } else if (e.b() >= 200L) {
-         if (e.b() < 500L) {
+      } else if (e.encrypt() >= 200L) {
+         if (e.encrypt() < 500L) {
             var1 = 1;
-         } else if (e.b() < 1000L) {
+         } else if (e.encrypt() < 1000L) {
             var1 = 2;
-         } else if (e.b() < 1700L) {
+         } else if (e.encrypt() < 1700L) {
             var1 = 3;
-         } else if (e.b() < 2700L) {
+         } else if (e.encrypt() < 2700L) {
             var1 = 4;
-         } else if (e.b() < 4000L) {
+         } else if (e.encrypt() < 4000L) {
             var1 = 5;
-         } else if (e.b() < 6000L) {
+         } else if (e.encrypt() < 6000L) {
             var1 = 6;
-         } else if (e.b() < 10000L) {
+         } else if (e.encrypt() < 10000L) {
             var1 = 7;
-         } else if (e.b() < 16000L) {
+         } else if (e.encrypt() < 16000L) {
             var1 = 8;
-         } else if (e.b() < 26000L) {
+         } else if (e.encrypt() < 26000L) {
             var1 = 9;
-         } else if (e.b() < 37000L) {
+         } else if (e.encrypt() < 37000L) {
             var1 = 10;
-         } else if (e.b() < 55000L) {
+         } else if (e.encrypt() < 55000L) {
             var1 = 11;
-         } else if (e.b() < 75000L) {
+         } else if (e.encrypt() < 75000L) {
             var1 = 12;
-         } else if (e.b() < 105000L) {
+         } else if (e.encrypt() < 105000L) {
             var1 = 13;
-         } else if (e.b() < 140000L) {
+         } else if (e.encrypt() < 140000L) {
             var1 = 14;
-         } else if (e.b() < 180000L) {
+         } else if (e.encrypt() < 180000L) {
             var1 = 15;
-         } else if (e.b() < 230000L) {
+         } else if (e.encrypt() < 230000L) {
             var1 = 16;
-         } else if (e.b() < 290000L) {
+         } else if (e.encrypt() < 290000L) {
             var1 = 17;
-         } else if (e.b() < 400000L) {
+         } else if (e.encrypt() < 400000L) {
             var1 = 18;
          } else {
             var1 = 19;
@@ -118,7 +120,7 @@ public final class x {
    }
 
    public static void a(int var0) {
-      e.a((long)var0);
+      e.encryptLong((long)var0);
    }
 
    public static boolean a(int var0, int var1) {
@@ -203,42 +205,42 @@ public final class x {
                var1 = 20;
             }
          }
-      } else if (f.b() >= 200L) {
-         if (f.b() < 500L) {
+      } else if (f.encrypt() >= 200L) {
+         if (f.encrypt() < 500L) {
             var1 = 2;
-         } else if (f.b() < 1000L) {
+         } else if (f.encrypt() < 1000L) {
             var1 = 3;
-         } else if (f.b() < 1700L) {
+         } else if (f.encrypt() < 1700L) {
             var1 = 4;
-         } else if (f.b() < 2700L) {
+         } else if (f.encrypt() < 2700L) {
             var1 = 5;
-         } else if (f.b() < 4000L) {
+         } else if (f.encrypt() < 4000L) {
             var1 = 6;
-         } else if (f.b() < 6000L) {
+         } else if (f.encrypt() < 6000L) {
             var1 = 7;
-         } else if (f.b() < 10000L) {
+         } else if (f.encrypt() < 10000L) {
             var1 = 8;
-         } else if (f.b() < 16000L) {
+         } else if (f.encrypt() < 16000L) {
             var1 = 9;
-         } else if (f.b() < 26000L) {
+         } else if (f.encrypt() < 26000L) {
             var1 = 10;
-         } else if (f.b() < 37000L) {
+         } else if (f.encrypt() < 37000L) {
             var1 = 11;
-         } else if (f.b() < 55000L) {
+         } else if (f.encrypt() < 55000L) {
             var1 = 12;
-         } else if (f.b() < 75000L) {
+         } else if (f.encrypt() < 75000L) {
             var1 = 13;
-         } else if (f.b() < 105000L) {
+         } else if (f.encrypt() < 105000L) {
             var1 = 14;
-         } else if (f.b() < 140000L) {
+         } else if (f.encrypt() < 140000L) {
             var1 = 15;
-         } else if (f.b() < 180000L) {
+         } else if (f.encrypt() < 180000L) {
             var1 = 16;
-         } else if (f.b() < 230000L) {
+         } else if (f.encrypt() < 230000L) {
             var1 = 17;
-         } else if (f.b() < 290000L) {
+         } else if (f.encrypt() < 290000L) {
             var1 = 18;
-         } else if (f.b() < 400000L) {
+         } else if (f.encrypt() < 400000L) {
             var1 = 19;
          } else {
             var1 = 20;
@@ -250,8 +252,8 @@ public final class x {
 
    public static void b() {
       byte var1 = 0;
-      e.a(0L);
-      f.a(0L);
+      e.encryptLong(0L);
+      f.encryptLong(0L);
       a = 0;
       b = 0;
       c = 0L;
@@ -289,7 +291,7 @@ public final class x {
    }
 
    public static final int c() {
-      return (int)e.b();
+      return (int)e.encrypt();
    }
 
    public static final int c(boolean var0) {
@@ -297,11 +299,11 @@ public final class x {
    }
 
    public static void c(int var0) {
-      f.a((long)var0);
+      f.encryptLong((long)var0);
    }
 
    public static final int d() {
-      return (int)f.b();
+      return (int)f.encrypt();
    }
 
    public static void d(int var0) {

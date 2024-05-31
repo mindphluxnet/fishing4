@@ -428,7 +428,7 @@ public final class ba extends aa {
                   if (f == 1) {
                      if (this.v == 0) {
                         fishing4.game.k.a();
-                        if (globalConfig.h.b() > 0L) {
+                        if (globalConfig.h.encrypt() > 0L) {
                            this.u.a(4);
                         } else {
                            this.u.a(103);
@@ -441,7 +441,7 @@ public final class ba extends aa {
                      if (this.v == 1) {
                         var4 = this.u;
                         if (fishing4.a.r.b()) {
-                           if (globalConfig.h.b() > 0L) {
+                           if (globalConfig.h.encrypt() > 0L) {
                               globalConfig.i = null;
                               globalConfig.i = new String("코인선물 받기");
                               this.u.b(4);
@@ -470,8 +470,8 @@ public final class ba extends aa {
                         break;
                      }
                   } else if (f == 2) {
-                     if (globalConfig.h.b() > 0L) {
-                        globalConfig.h.a(0L);
+                     if (globalConfig.h.encrypt() > 0L) {
+                        globalConfig.h.encryptLong(0L);
                         return;
                      } else if (fishing4.a.r.J > 0) {
                         am.a(54);
@@ -912,8 +912,8 @@ public final class ba extends aa {
                         aa.d = 8;
                      } else if (fishing4.a.f.a(this.t, this.n.c, var1)) {
                         if (fishing4.game.k.e()) {
-                           fishing4.a.r.M.a(0L);
-                           globalConfig.h.a(0L);
+                           fishing4.a.r.M.encryptLong(0L);
+                           globalConfig.h.encryptLong(0L);
                            aa.d = 9;
                            am.b();
                            fishing4.a.r.E = 0;
@@ -997,15 +997,15 @@ public final class ba extends aa {
                      } else if (am.b == 54) {
                         if (am.c.a(var1, true)) {
                            am.b();
-                           if (fishing4.a.r.M.b() > 0L) {
+                           if (fishing4.a.r.M.encrypt() > 0L) {
                               fishing4.a.r.J = 0;
-                              if (ad.p.b() + fishing4.a.r.M.b() > 99999L) {
-                                 globalConfig.h.a(99999L);
+                              if (ad.p.b() + fishing4.a.r.M.encrypt() > 99999L) {
+                                 globalConfig.h.encryptLong(99999L);
                               } else {
-                                 globalConfig.h.a(fishing4.a.r.M.b());
+                                 globalConfig.h.encryptLong(fishing4.a.r.M.encrypt());
                               }
 
-                              fishing4.a.r.M.a(0L);
+                              fishing4.a.r.M.encryptLong(0L);
                               f = 1;
                            } else {
                               fishing4.a.r.E = 1;

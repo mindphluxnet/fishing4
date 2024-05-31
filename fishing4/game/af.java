@@ -21,11 +21,11 @@ public final class af extends ae {
    }
 
    public final boolean c(long var1) {
-      if (this.a.b() + var1 > 99999L) {
-         this.a.a(99999L);
+      if (this.a.encrypt() + var1 > 99999L) {
+         this.a.encryptLong(99999L);
          this.e = true;
       } else if (var1 > 0L) {
-         this.a.a(this.a.b() + var1);
+         this.a.encryptLong(this.a.encrypt() + var1);
          this.e = true;
       }
 

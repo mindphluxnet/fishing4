@@ -68,28 +68,28 @@ public final class aq {
                   if (fishing4.a.r.b()) {
                      switch (b) {
                         case 10:
-                           globalConfig.h.a(200L);
+                           globalConfig.h.encryptLong(200L);
                            break;
                         case 11:
-                           globalConfig.h.a(515L);
+                           globalConfig.h.encryptLong(515L);
                            break;
                         case 12:
-                           globalConfig.h.a(840L);
+                           globalConfig.h.encryptLong(840L);
                            break;
                         case 13:
-                           globalConfig.h.a(1400L);
+                           globalConfig.h.encryptLong(1400L);
                            break;
                         case 14:
-                           globalConfig.h.a(3300L);
+                           globalConfig.h.encryptLong(3300L);
                            break;
                         case 15:
-                           globalConfig.h.a(6000L);
+                           globalConfig.h.encryptLong(6000L);
                            break;
                         case 16:
-                           globalConfig.h.a(0L);
+                           globalConfig.h.encryptLong(0L);
                            break;
                         default:
-                           globalConfig.h.a((long)(b() * -1));
+                           globalConfig.h.encryptLong((long)(b() * -1));
                      }
 
                      globalConfig.i = null;

@@ -7,6 +7,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import javax.microedition.khronos.opengles.GL10;
 
+import fishing4.a.AESUtils;
+
 public final class bg {
    public static int a;
    public static int b;
@@ -27,7 +29,7 @@ public final class bg {
    private int o;
    private int p;
    private int q;
-   private fishing4.a.l r;
+   private AESUtils r;
    private fishing4.a.ad s;
    private fishing4.a.ad t;
    private fishing4.a.ad u;
@@ -37,13 +39,13 @@ public final class bg {
       super();
       this.h = fishing4.a.f.a(268.0F, 588.0F, 126.0F, 108.0F);
       this.i = fishing4.a.f.a(892.0F, 842.0F, 132.0F, 88.0F);
-      this.r = fishing4.a.l.a();
+      this.r = AESUtils.a();
       a = 10;
       k = -1;
       l = 0;
       m = 0;
       n = 0;
-      this.r.a(1L);
+      this.r.encryptLong(1L);
       this.o = -1;
       this.p = -1;
       this.q = -1;
@@ -124,28 +126,28 @@ public final class bg {
                if (fishing4.a.r.b()) {
                   switch (aq.b) {
                      case 10:
-                        globalConfig.h.a(200L);
+                        globalConfig.h.encryptLong(200L);
                         break;
                      case 11:
-                        globalConfig.h.a(515L);
+                        globalConfig.h.encryptLong(515L);
                         break;
                      case 12:
-                        globalConfig.h.a(840L);
+                        globalConfig.h.encryptLong(840L);
                         break;
                      case 13:
-                        globalConfig.h.a(1400L);
+                        globalConfig.h.encryptLong(1400L);
                         break;
                      case 14:
-                        globalConfig.h.a(3300L);
+                        globalConfig.h.encryptLong(3300L);
                         break;
                      case 15:
-                        globalConfig.h.a(6000L);
+                        globalConfig.h.encryptLong(6000L);
                         break;
                      case 16:
-                        globalConfig.h.a(0L);
+                        globalConfig.h.encryptLong(0L);
                         break;
                      default:
-                        globalConfig.h.a((long)(aq.b() * -1));
+                        globalConfig.h.encryptLong((long)(aq.b() * -1));
                   }
 
                   globalConfig.i = null;
@@ -1085,7 +1087,7 @@ public final class bg {
                } else {
                   switch (b) {
                      case 0:
-                        am.a(var1, fishing4.a.y.a(((ac)this.f().get(m)).u()) + " 구매하시겠습니까?\n\n|255255000|구매가 " + ac.a(((ac)this.f().get(m)).f(), true, (int)this.r.b()) + "\n|255255255|소지금 " + ad.o.d(), fishing4.a.m.e(), var2, var3);
+                        am.a(var1, fishing4.a.y.a(((ac)this.f().get(m)).u()) + " 구매하시겠습니까?\n\n|255255000|구매가 " + ac.a(((ac)this.f().get(m)).f(), true, (int)this.r.encrypt()) + "\n|255255255|소지금 " + ad.o.d(), fishing4.a.m.e(), var2, var3);
                         break;
                      case 1:
                         am.a(var1, "구입 중입니다..", fishing4.a.m.e(), var2, var3);
@@ -1105,7 +1107,7 @@ public final class bg {
                         am.a(var1, "더 이상 인벤토리에 여유공간이 없습니다. 인벤토리를 비운 후 다시 구매하세요.", fishing4.a.m.e(), var2, var3);
                         break;
                      case 5:
-                        am.a(var1, this.r.b());
+                        am.a(var1, this.r.encrypt());
                      case 6:
                      case 7:
                      case 8:
@@ -1124,9 +1126,9 @@ public final class bg {
                         break;
                      case 10:
                         if (((ac)this.f().get(m)).b(m)) {
-                           am.a(var1, "현재 사용중인 장비입니다. 판매하시겠습니까?\n\n|255255000|판매가 " + ac.a((ac)this.f().get(m), this.r.b()) + "\n|255255255|소지금 " + ad.o.d(), fishing4.a.m.e(), var2, var3);
+                           am.a(var1, "현재 사용중인 장비입니다. 판매하시겠습니까?\n\n|255255000|판매가 " + ac.a((ac)this.f().get(m), this.r.encrypt()) + "\n|255255255|소지금 " + ad.o.d(), fishing4.a.m.e(), var2, var3);
                         } else {
-                           am.a(var1, fishing4.a.y.a(((ac)this.f().get(m)).u()) + " 판매하시겠습니까?\n\n|255255000|판매가 " + ac.a((ac)this.f().get(m), this.r.b()) + "\n|255255255|소지금 " + ad.o.d(), fishing4.a.m.e(), var2, var3);
+                           am.a(var1, fishing4.a.y.a(((ac)this.f().get(m)).u()) + " 판매하시겠습니까?\n\n|255255000|판매가 " + ac.a((ac)this.f().get(m), this.r.encrypt()) + "\n|255255255|소지금 " + ad.o.d(), fishing4.a.m.e(), var2, var3);
                         }
                         break;
                      case 11:
@@ -1134,9 +1136,9 @@ public final class bg {
                         if (fishing4.a.y.a() - am.h > 500L) {
                            var12 = (ac)this.f().get(m);
                            var8 = (long)ac.e(var12.f());
-                           var10 = this.r.b();
-                           if (var12.s() == 1 && (long)var12.c() > this.r.b()) {
-                              var12.b(this.r.b());
+                           var10 = this.r.encrypt();
+                           if (var12.s() == 1 && (long)var12.c() > this.r.encrypt()) {
+                              var12.b(this.r.encrypt());
                            } else {
                               ad.b(var12.s(), m);
                            }
@@ -1154,7 +1156,7 @@ public final class bg {
                         am.a(var1, "판매불가한 아이템입니다.", fishing4.a.m.e(), var2, var3);
                         break;
                      case 14:
-                        am.a(var1, this.r.b());
+                        am.a(var1, this.r.encrypt());
                         break;
                      case 20:
                         if (((ac)this.f().get(m)).f() != 120 && ((ac)this.f().get(m)).f() != 121 && ((ac)this.f().get(m)).f() != 122) {
@@ -1505,7 +1507,7 @@ public final class bg {
             } else {
                switch (b) {
                   case 0:
-                     am.a(var1, " Do you want to buy \nthis?\n\n|255255000|Price : " + ac.a(((ac)this.f().get(m)).f(), true, (int)this.r.b()) + "\n|255255255|Gold :" + ad.o.d(), fishing4.a.m.e(), var2, var3);
+                     am.a(var1, " Do you want to buy \nthis?\n\n|255255000|Price : " + ac.a(((ac)this.f().get(m)).f(), true, (int)this.r.encrypt()) + "\n|255255255|Gold :" + ad.o.d(), fishing4.a.m.e(), var2, var3);
                      break;
                   case 1:
                      am.a(var1, "purchasing...", fishing4.a.m.e(), var2, var3);
@@ -1525,7 +1527,7 @@ public final class bg {
                      am.a(var1, "Not enough inventory space. ", fishing4.a.m.e(), var2, var3);
                      break;
                   case 5:
-                     am.a(var1, this.r.b());
+                     am.a(var1, this.r.encrypt());
                   case 6:
                   case 7:
                   case 8:
@@ -1544,9 +1546,9 @@ public final class bg {
                      break;
                   case 10:
                      if (((ac)this.f().get(m)).b(m)) {
-                        am.a(var1, "This item is in use. Sell \nit anyway?\n\n|255255000|Selling price : " + ac.a((ac)this.f().get(m), this.r.b()) + "\n|255255255|Gold :" + ad.o.d(), fishing4.a.m.e(), var2, var3);
+                        am.a(var1, "This item is in use. Sell \nit anyway?\n\n|255255000|Selling price : " + ac.a((ac)this.f().get(m), this.r.encrypt()) + "\n|255255255|Gold :" + ad.o.d(), fishing4.a.m.e(), var2, var3);
                      } else {
-                        am.a(var1, fishing4.a.y.a(((ac)this.f().get(m)).u()) + "\nDo you want to sell \nthis?\n\n|255255000|Selling price : " + ac.a((ac)this.f().get(m), this.r.b()) + "\n|255255255|Gold :" + ad.o.d(), fishing4.a.m.e(), var2, var3);
+                        am.a(var1, fishing4.a.y.a(((ac)this.f().get(m)).u()) + "\nDo you want to sell \nthis?\n\n|255255000|Selling price : " + ac.a((ac)this.f().get(m), this.r.encrypt()) + "\n|255255255|Gold :" + ad.o.d(), fishing4.a.m.e(), var2, var3);
                      }
                      break;
                   case 11:
@@ -1554,9 +1556,9 @@ public final class bg {
                      if (fishing4.a.y.a() - am.h > 500L) {
                         var12 = (ac)this.f().get(m);
                         var8 = (long)ac.e(var12.f());
-                        var10 = this.r.b();
-                        if (var12.s() == 1 && (long)var12.c() > this.r.b()) {
-                           var12.b(this.r.b());
+                        var10 = this.r.encrypt();
+                        if (var12.s() == 1 && (long)var12.c() > this.r.encrypt()) {
+                           var12.b(this.r.encrypt());
                         } else {
                            ad.b(var12.s(), m);
                         }
@@ -1574,7 +1576,7 @@ public final class bg {
                      am.a(var1, "This item is not tradable.", fishing4.a.m.e(), var2, var3);
                      break;
                   case 14:
-                     am.a(var1, this.r.b());
+                     am.a(var1, this.r.encrypt());
                      break;
                   case 20:
                      if (((ac)this.f().get(m)).f() != 120 && ((ac)this.f().get(m)).f() != 121 && ((ac)this.f().get(m)).f() != 122) {
@@ -2313,11 +2315,11 @@ public final class bg {
          } else if (this.j == 2 || this.j == 3) {
             ac var4 = (ac)this.f().get(m);
             if (k == 0) {
-               if (ad.o.b() < (long)ac.d(var4.f()) * this.r.b()) {
+               if (ad.o.b() < (long)ac.d(var4.f()) * this.r.encrypt()) {
                   am.i = 2131034135;
                   am.b(0);
                   b = 3;
-               } else if (ad.a(var4.f(), this.r.b(), false)) {
+               } else if (ad.a(var4.f(), this.r.encrypt(), false)) {
                   am.b(2);
                   b = 1;
                   am.h = System.currentTimeMillis();
@@ -2454,7 +2456,7 @@ public final class bg {
          l = var1;
          n = 0;
          m = 0;
-         this.r.a(1L);
+         this.r.encryptLong(1L);
          if (this.g != null) {
             for(var1 = 0; var1 < this.g.length; ++var1) {
                this.g[var1] = null;
@@ -3600,58 +3602,58 @@ public final class bg {
                         am.b(1);
                         b = 0;
                      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 80.0F, fishing4.a.m.d()), fishing4.a.h.a(50.0F, 50.0F), var1)) {
-                        if (this.r.b() > 1L) {
+                        if (this.r.encrypt() > 1L) {
                            this.r.b(-1L);
                         } else if (((ac)this.f().get(m)).p() > 0) {
-                           this.r.a((long)((int)(ad.o.b() / (long)((ac)this.f().get(m)).p())));
-                           if (this.r.b() > 99L) {
-                              this.r.a(99L);
-                           } else if (this.r.b() < 1L) {
-                              this.r.a(1L);
+                           this.r.encryptLong((long)((int)(ad.o.b() / (long)((ac)this.f().get(m)).p())));
+                           if (this.r.encrypt() > 99L) {
+                              this.r.encryptLong(99L);
+                           } else if (this.r.encrypt() < 1L) {
+                              this.r.encryptLong(1L);
                            }
                         } else {
-                           this.r.a(99L);
+                           this.r.encryptLong(99L);
                         }
                      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 140.0F, fishing4.a.m.d()), fishing4.a.h.a(50.0F, 50.0F), var1)) {
-                        if (this.r.b() > 10L) {
+                        if (this.r.encrypt() > 10L) {
                            this.r.b(-10L);
-                        } else if (this.r.b() == 1L) {
+                        } else if (this.r.encrypt() == 1L) {
                            if (((ac)this.f().get(m)).p() > 0) {
-                              this.r.a((long)((int)(ad.o.b() / (long)((ac)this.f().get(m)).p())));
-                              if (this.r.b() > 99L) {
-                                 this.r.a(99L);
-                              } else if (this.r.b() < 1L) {
-                                 this.r.a(1L);
+                              this.r.encryptLong((long)((int)(ad.o.b() / (long)((ac)this.f().get(m)).p())));
+                              if (this.r.encrypt() > 99L) {
+                                 this.r.encryptLong(99L);
+                              } else if (this.r.encrypt() < 1L) {
+                                 this.r.encryptLong(1L);
                               }
                            } else {
-                              this.r.a(99L);
+                              this.r.encryptLong(99L);
                            }
                         } else {
-                           this.r.a(1L);
+                           this.r.encryptLong(1L);
                         }
                      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 80.0F, fishing4.a.m.d()), fishing4.a.h.a(50.0F, 50.0F), var1)) {
-                        if (this.r.b() < 99L && ad.o.b() >= (long)((ac)this.f().get(m)).p() * (this.r.b() + 1L)) {
+                        if (this.r.encrypt() < 99L && ad.o.b() >= (long)((ac)this.f().get(m)).p() * (this.r.encrypt() + 1L)) {
                            this.r.b(1L);
                         } else {
-                           this.r.a(1L);
+                           this.r.encryptLong(1L);
                         }
                      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 140.0F, fishing4.a.m.d()), fishing4.a.h.a(50.0F, 50.0F), var1)) {
-                        if (this.r.b() < 89L && ad.o.b() >= (long)((ac)this.f().get(m)).p() * (this.r.b() + 10L)) {
+                        if (this.r.encrypt() < 89L && ad.o.b() >= (long)((ac)this.f().get(m)).p() * (this.r.encrypt() + 10L)) {
                            this.r.b(10L);
                         } else if (((ac)this.f().get(m)).p() > 0) {
-                           if (this.r.b() != 99L && ad.o.b() >= (long)((ac)this.f().get(m)).p()) {
-                              this.r.a((long)((int)(ad.o.b() / (long)((ac)this.f().get(m)).p())));
+                           if (this.r.encrypt() != 99L && ad.o.b() >= (long)((ac)this.f().get(m)).p()) {
+                              this.r.encryptLong((long)((int)(ad.o.b() / (long)((ac)this.f().get(m)).p())));
                            } else {
-                              this.r.a(1L);
+                              this.r.encryptLong(1L);
                            }
 
-                           if (this.r.b() > 99L) {
-                              this.r.a(99L);
+                           if (this.r.encrypt() > 99L) {
+                              this.r.encryptLong(99L);
                            }
-                        } else if (this.r.b() < 99L) {
-                           this.r.a(99L);
+                        } else if (this.r.encrypt() < 99L) {
+                           this.r.encryptLong(99L);
                         } else {
-                           this.r.a(1L);
+                           this.r.encryptLong(1L);
                         }
                      }
                   } else if (b == 14) {
@@ -3661,32 +3663,32 @@ public final class bg {
                            am.b(1);
                            b = 10;
                         } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 80.0F, fishing4.a.m.d()), fishing4.a.h.a(50.0F, 50.0F), var1)) {
-                           if (this.r.b() > 1L) {
+                           if (this.r.encrypt() > 1L) {
                               this.r.b(-1L);
                            } else {
-                              this.r.a((long)((ac)this.f().get(m)).c());
+                              this.r.encryptLong((long)((ac)this.f().get(m)).c());
                            }
                         } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 140.0F, fishing4.a.m.d()), fishing4.a.h.a(50.0F, 50.0F), var1)) {
-                           if (this.r.b() > 10L) {
+                           if (this.r.encrypt() > 10L) {
                               this.r.b(-10L);
-                           } else if (this.r.b() == 1L) {
-                              this.r.a((long)var8.c());
+                           } else if (this.r.encrypt() == 1L) {
+                              this.r.encryptLong((long)var8.c());
                            } else {
-                              this.r.a(1L);
+                              this.r.encryptLong(1L);
                            }
                         } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 80.0F, fishing4.a.m.d()), fishing4.a.h.a(50.0F, 50.0F), var1)) {
-                           if (this.r.b() < (long)var8.c()) {
+                           if (this.r.encrypt() < (long)var8.c()) {
                               this.r.b(1L);
                            } else {
-                              this.r.a(1L);
+                              this.r.encryptLong(1L);
                            }
                         } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 140.0F, fishing4.a.m.d()), fishing4.a.h.a(50.0F, 50.0F), var1)) {
-                           if (var8.c() > 10 && this.r.b() + 10L <= (long)var8.c()) {
+                           if (var8.c() > 10 && this.r.encrypt() + 10L <= (long)var8.c()) {
                               this.r.b(10L);
-                           } else if (this.r.b() == (long)var8.c()) {
-                              this.r.a(1L);
+                           } else if (this.r.encrypt() == (long)var8.c()) {
+                              this.r.encryptLong(1L);
                            } else {
-                              this.r.a((long)var8.c());
+                              this.r.encryptLong((long)var8.c());
                            }
                         }
                      }
@@ -3698,13 +3700,13 @@ public final class bg {
                   am.b();
                }
             } else if (a == 1 && this.g != null && m < this.f().size() && this.s.a(var1, true)) {
-               this.r.a(1L);
+               this.r.encryptLong(1L);
                this.g();
             } else {
                for(var2 = 0; var2 < 12; ++var2) {
                   if (fishing4.a.f.a(this.g[n * 12 + var2], c.b, var1)) {
                      if (m == n * 12 + var2) {
-                        this.r.a(1L);
+                        this.r.encryptLong(1L);
                         this.g();
                      } else {
                         this.n(var2);

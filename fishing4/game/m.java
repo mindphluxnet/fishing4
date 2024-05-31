@@ -3,13 +3,15 @@ package fishing4.game;
 import java.math.BigDecimal;
 import javax.microedition.khronos.opengles.GL10;
 
+import fishing4.a.AESUtils;
+
 public final class m {
    public static fishing4.a.w f;
    public static boolean g;
    public static fishing4.a.w h;
    public static fishing4.a.w i;
-   public static fishing4.a.l j = fishing4.a.l.a();
-   public static fishing4.a.l k = fishing4.a.l.a();
+   public static AESUtils j = AESUtils.a();
+   public static AESUtils k = AESUtils.a();
    protected int a;
    protected float b;
    protected boolean c;

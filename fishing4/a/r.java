@@ -23,7 +23,7 @@ public final class r implements Runnable {
    public static int J = 0;
    public static int[] K;
    public static int[] L;
-   public static l M = fishing4.a.l.a();
+   public static AESUtils M = AESUtils.a();
    public static String N = "01";
    public static int O;
    public static int P;
@@ -541,7 +541,7 @@ public final class r implements Runnable {
                }
                break;
             case 17:
-               M.a((long)L[var0]);
+               M.encryptLong((long)L[var0]);
                globalConfig.f = true;
                break;
             case 18:

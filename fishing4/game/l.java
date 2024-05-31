@@ -533,7 +533,7 @@ public final class l {
             am.a(var0, "버전업 대상입니다.", fishing4.a.m.e(), var1, var2);
             break;
          case 90:
-            am.a(var0, "아이템을 낚았습니다!!\n\n[" + ab.c((int)as.c.b()) + "]", fishing4.a.m.e(), var1, var2);
+            am.a(var0, "아이템을 낚았습니다!!\n\n[" + ab.c((int)as.c.encrypt()) + "]", fishing4.a.m.e(), var1, var2);
             break;
          case 91:
             am.a(var0, "인벤토리가 가득 차서 추가 아이템을 획득할 수 없습니다.", fishing4.a.m.e(), var1, var2);

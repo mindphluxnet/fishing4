@@ -1,7 +1,9 @@
 package fishing4.game;
 
+import fishing4.a.AESUtils;
+
 public final class as {
-   public static fishing4.a.l a = fishing4.a.l.a();
-   public static fishing4.a.l b = fishing4.a.l.a();
-   public static fishing4.a.l c = fishing4.a.l.a();
+   public static AESUtils a = AESUtils.a();
+   public static AESUtils b = AESUtils.a();
+   public static AESUtils c = AESUtils.a();
 }
