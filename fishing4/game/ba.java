@@ -326,9 +326,9 @@ public final class ba extends aa {
             }
 
             fishing4.a.aa var3 = fishing4.a.aa.a(0.0F, 0.0F, 0.0F, 1.0F);
-            fishing4.a.ae.a(var1, "id:" + globalConfig.b, this.q.a + 2.0F, this.t.b - 102.0F, var3);
+            fishing4.a.ae.a(var1, "id:" + globalConfig.userName, this.q.a + 2.0F, this.t.b - 102.0F, var3);
             var3 = fishing4.a.aa.a(1.0F, 1.0F, 1.0F, 1.0F);
-            fishing4.a.ae.a(var1, "id:" + globalConfig.b, this.q.a + 0.0F, this.t.b - 100.0F, var3);
+            fishing4.a.ae.a(var1, "id:" + globalConfig.userName, this.q.a + 0.0F, this.t.b - 100.0F, var3);
             am.a(var1, e);
             break;
          case 3:

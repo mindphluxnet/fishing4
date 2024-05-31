@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 
 public final class globalConfig {
    public static final int languageId = fishing4.game.k.getLanguageId();
-   public static String b = new String();
+   public static String userName = new String();
    public static boolean c = false;
    public static boolean d = false;
    public static boolean e = false;

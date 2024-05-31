@@ -25,15 +25,15 @@ public class userIDview extends Activity {
    }
 
    // $FF: synthetic method
-   static boolean a(String var0) {
-      boolean var1 = Pattern.matches("^[a-zA-Z0-9]*$", var0);
-      if (var0.length() > 3 && var1 && var0.length() < 21) {
-         var1 = true;
+   static boolean isValidUserName(String userName) {
+      boolean isNameLegal = Pattern.matches("^[a-zA-Z0-9]*$", userName);
+      if (userName.length() > 3 && isNameLegal && userName.length() < 21) {
+         isNameLegal = true;
       } else {
-         var1 = false;
+         isNameLegal = false;
       }
 
-      return var1;
+      return isNameLegal;
    }
 
    // $FF: synthetic method
@@ -41,7 +41,7 @@ public class userIDview extends Activity {
       return var0.b;
    }
 
-   private void b() {
+   private void dismissView() {
       if (this.c != null) {
          this.c.dismiss();
          this.c = null;
@@ -65,20 +65,20 @@ public class userIDview extends Activity {
    }
 
    // $FF: synthetic method
-   static void c(userIDview var0) {
-      var0.b();
+   static void c(userIDview view) {
+      view.dismissView();
    }
 
    // $FF: synthetic method
-   static void d(userIDview var0) {
+   static void d(userIDview view) {
       u.g = true;
       u.d();
-      var0.b();
+      view.dismissView();
    }
 
    // $FF: synthetic method
-   static void e(userIDview var0) {
-      var0.c();
+   static void e(userIDview view) {
+      view.c();
    }
 
    public final void a() {
@@ -91,7 +91,7 @@ public class userIDview extends Activity {
          var1.setImageResource(2130837519);
       }
 
-      var3.setOnClickListener(new bj(this, var4, var2));
+      var3.setOnClickListener(new selectUserNameView(this, var4, var2));
       var5.setOnClickListener(new bk(this));
    }
 

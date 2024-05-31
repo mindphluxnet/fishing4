@@ -55,7 +55,7 @@ public final class u {
       System.arraycopy(fishing4.a.a.a(ad.p.b()), 0, var0, 16, 8);
       System.arraycopy(fishing4.a.a.a(globalConfig.g.b()), 0, var0, 24, 8);
       System.arraycopy(fishing4.a.a.a(g), 0, var0, 32, 1);
-      System.arraycopy(globalConfig.b.getBytes(), 0, var0, 33, globalConfig.b.getBytes().length);
+      System.arraycopy(globalConfig.userName.getBytes(), 0, var0, 33, globalConfig.userName.getBytes().length);
       fishing4.a.i.a("f4option.data", var0);
       fishing4.a.i.b("new_f4option.data", var0);
    }
@@ -219,7 +219,7 @@ public final class u {
                   byte[] var20 = new byte[21];
                   System.arraycopy(var2, 33, var20, 0, 20);
                   String var18 = new String(var20, "KSC5601");
-                  globalConfig.b = var18.trim();
+                  globalConfig.userName = var18.trim();
                   if (a) {
                      fishing4.b.d.a().b(0.5F);
                      break label160;
