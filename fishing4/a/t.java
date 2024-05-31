@@ -99,13 +99,7 @@ public final class t {
                }
             }
 
-            try {
-               var1.append(var2);
-            } catch (IOException var8) {
-               var10000 = var8;
-               var10001 = false;
-               break;
-            }
+             var1.append(var2);
          }
       }
 
@@ -218,7 +212,7 @@ public final class t {
             return var2;
          }
 
-         if (globalConfig.a == 0) {
+         if (globalConfig.languageId == 0) {
             var4 = "인터넷 연결 상태를 확인하세요.";
          } else {
             var4 = "Check network connection.";
