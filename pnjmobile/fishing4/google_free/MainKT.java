@@ -120,7 +120,7 @@ public class MainKT extends Activity implements View.OnTouchListener {
             com.pnjmobile.tnk.a.a(this, fishing4.a.r.a);
             fishing4.a.r.a(fishing4.a.r.a);
             this.setVolumeControlStream(3);
-            OptionsManager.p = (Vibrator)this.getSystemService("vibrator");
+            OptionsManager.vibrator = (Vibrator)this.getSystemService("vibrator");
             OptionsManager.loadOptions();
             OptionsManager.c();
             OptionsManager.a();

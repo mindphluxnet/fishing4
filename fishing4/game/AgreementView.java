@@ -90,7 +90,7 @@ public class AgreementView extends Activity {
 
          OptionsManager.saveOptions();
          agreementView.a();
-         if (!OptionsManager.g) {
+         if (!OptionsManager.hasChosenUserName) {
             agreementView.startActivity(new Intent(Main.u, userIDview.class));
          }
 

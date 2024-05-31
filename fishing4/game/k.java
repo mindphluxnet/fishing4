@@ -79,7 +79,7 @@ public final class k {
 
    public static void a(int var0) {
       byte[] var4 = fishing4.a.r.a.getBytes();
-      byte[] var2 = fishing4.a.r.b.getBytes();
+      byte[] var2 = fishing4.a.r.deviceId.getBytes();
 
       int var1;
       for(var1 = 0; var1 < var4.length; ++var1) {
@@ -99,7 +99,7 @@ public final class k {
       var1 = 0;
 
       String var25;
-      for(var25 = "&m="; var1 < fishing4.a.r.b.length(); ++var1) {
+      for(var25 = "&m="; var1 < fishing4.a.r.deviceId.length(); ++var1) {
          var25 = var25 + var2[var1];
       }
 
@@ -1277,7 +1277,7 @@ public final class k {
 
    public static void a(boolean var0, int var1) {
       byte[] var4 = fishing4.a.r.a.getBytes();
-      byte[] var5 = fishing4.a.r.b.getBytes();
+      byte[] var5 = fishing4.a.r.deviceId.getBytes();
 
       int var2;
       for(var2 = 0; var2 < var4.length; ++var2) {
@@ -1297,7 +1297,7 @@ public final class k {
       var2 = 0;
 
       String var24;
-      for(var24 = "&m="; var2 < fishing4.a.r.b.length(); ++var2) {
+      for(var24 = "&m="; var2 < fishing4.a.r.deviceId.length(); ++var2) {
          var24 = var24 + var5[var2];
       }
 
@@ -1387,7 +1387,7 @@ public final class k {
 
    public static void a(boolean var0, int var1, boolean var2) {
       byte[] var6 = fishing4.a.r.a.getBytes();
-      byte[] var4 = fishing4.a.r.b.getBytes();
+      byte[] var4 = fishing4.a.r.deviceId.getBytes();
 
       int var3;
       for(var3 = 0; var3 < var6.length; ++var3) {
@@ -1407,7 +1407,7 @@ public final class k {
       var3 = 0;
 
       String var26;
-      for(var26 = "&m="; var3 < fishing4.a.r.b.length(); ++var3) {
+      for(var26 = "&m="; var3 < fishing4.a.r.deviceId.length(); ++var3) {
          var26 = var26 + var4[var3];
       }
 

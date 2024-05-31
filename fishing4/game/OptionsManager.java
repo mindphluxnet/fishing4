@@ -12,7 +12,7 @@ public final class OptionsManager {
    public static boolean d;
    public static boolean hasConfirmedAgreement;
    public static boolean f;
-   public static boolean g;
+   public static boolean hasChosenUserName;
    public static boolean h;
    public static int i;
    public static float j;
@@ -21,7 +21,7 @@ public final class OptionsManager {
    public static int m;
    public static int n;
    public static boolean o;
-   public static Vibrator p;
+   public static Vibrator vibrator;
 
    public static void a() {
       // $FF: Couldn't be decompiled
@@ -29,7 +29,7 @@ public final class OptionsManager {
 
    public static void a(int var0) {
       if (c) {
-         p.vibrate((long)var0);
+         vibrator.vibrate((long)var0);
       }
 
    }
@@ -56,7 +56,7 @@ public final class OptionsManager {
       System.arraycopy(fishing4.a.a.a(h), 0, buf, 15, 1);
       System.arraycopy(fishing4.a.a.a(ad.p.b()), 0, buf, 16, 8);
       System.arraycopy(fishing4.a.a.a(globalConfig.g.encrypt()), 0, buf, 24, 8);
-      System.arraycopy(fishing4.a.a.a(g), 0, buf, 32, 1);
+      System.arraycopy(fishing4.a.a.a(hasChosenUserName), 0, buf, 32, 1);
       System.arraycopy(globalConfig.userName.getBytes(), 0, buf, 33, globalConfig.userName.getBytes().length);
       SaveLoadManager.a("f4option.data", buf);
       SaveLoadManager.b("new_f4option.data", buf);
@@ -70,7 +70,7 @@ public final class OptionsManager {
          c = true;
          d = true;
          hasConfirmedAgreement = false;
-         g = false;
+         hasChosenUserName = false;
          f = false;
          h = false;
          m = 0;
@@ -217,7 +217,7 @@ public final class OptionsManager {
 
             label160: {
                try {
-                  g = var0;
+                  hasChosenUserName = var0;
                   byte[] var20 = new byte[21];
                   System.arraycopy(var2, 33, var20, 0, 20);
                   String var18 = new String(var20, "KSC5601");

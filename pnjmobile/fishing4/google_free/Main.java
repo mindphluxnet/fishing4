@@ -105,7 +105,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
    final int p = 101;
    final int q = 101;
    final String r = "sBNR003167";
-   SaveLoadManager v = null;
+   SaveLoadManager saveLoadManager = null;
    boolean y = false;
 
    private static String a(URL var0) {
@@ -226,7 +226,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
 
    static void d(int var0) {
       byte[] var4 = fishing4.a.r.a.getBytes();
-      byte[] var5 = fishing4.a.r.b.getBytes();
+      byte[] var5 = fishing4.a.r.deviceId.getBytes();
 
       int var1;
       for(var1 = 0; var1 < var4.length; ++var1) {
@@ -262,7 +262,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       var1 = 0;
 
       String var10;
-      for(var10 = ""; var1 < fishing4.a.r.b.length(); ++var1) {
+      for(var10 = ""; var1 < fishing4.a.r.deviceId.length(); ++var1) {
          var10 = var10 + var5[var1];
       }
 
@@ -813,7 +813,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
 
    public void onCreate(Bundle var1) {
       super.onCreate(var1);
-      Window var5 = this.getWindow();
+      Window window = this.getWindow();
       x = new View(this);
       u = this;
       com.tapjoy.f.requestTapjoyConnect(this, "0faf65f6-b8ba-4387-8184-075214d63502", "6ahYoU1UCshal8OTIkyk");
@@ -830,57 +830,57 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       b = new m(this);
       this.U = new Handler();
       this.V = new ao(this, this.U);
-      BillingService var2 = new BillingService();
-      c = var2;
-      var2.a((Context)this);
+      BillingService billingService = new BillingService();
+      c = billingService;
+      billingService.a((Context)this);
       bh.a((bf)this.V);
       c.a();
       fishing4.a.s.a = this.getApplicationContext();
       this.setRequestedOrientation(1);
-      var5.setFlags(1024, 1024);
-      var5.addFlags(128);
+      window.setFlags(1024, 1024);
+      window.addFlags(128);
       this.requestWindowFeature(1);
       this.requestWindowFeature(2);
-      WifiInfo var8 = ((WifiManager)this.getSystemService("wifi")).getConnectionInfo();
+      WifiInfo wifiInfo = ((WifiManager)this.getSystemService("wifi")).getConnectionInfo();
       fishing4.a.r.d = Build.MODEL.replace(" ", "").trim();
       fishing4.a.r.e = VERSION.RELEASE;
-      TelephonyManager var6 = (TelephonyManager)this.getSystemService("phone");
-      String var4 = var6.getLine1Number();
-      String var3 = var6.getDeviceId();
-      fishing4.a.r.b = var3;
-      if (var3 == null || fishing4.a.r.b.equals("")) {
-         fishing4.a.r.b = var8.getMacAddress();
+      TelephonyManager telephonyManager = (TelephonyManager)this.getSystemService("phone");
+      String phoneNumber = telephonyManager.getLine1Number();
+      String deviceId = telephonyManager.getDeviceId();
+      fishing4.a.r.deviceId = deviceId;
+      if (deviceId == null || fishing4.a.r.deviceId.equals("")) {
+         fishing4.a.r.deviceId = wifiInfo.getMacAddress();
       }
 
-      String var7;
-      String var9;
-      if (var6.getSimState() != 1) {
-         if (var4 != null) {
-            var9 = var6.getSimCountryIso();
-            var7 = var6.getLine1Number();
+      String line1Number;
+      String simCountryISO;
+      if (telephonyManager.getSimState() != 1) {
+         if (phoneNumber != null) {
+            simCountryISO = telephonyManager.getSimCountryIso();
+            line1Number = telephonyManager.getLine1Number();
          } else {
-            var9 = var6.getSimCountryIso();
-            var7 = "0";
+            simCountryISO = telephonyManager.getSimCountryIso();
+            line1Number = "0";
          }
       } else {
-         var9 = var6.getSimCountryIso();
-         var7 = "0";
+         simCountryISO = telephonyManager.getSimCountryIso();
+         line1Number = "0";
       }
 
-      if (fishing4.a.r.b != null && !fishing4.a.r.b.equals("")) {
-         fishing4.a.r.a = var9 + var7;
-         if (var9.equals("kr") && (var7.charAt(0) == '+' || var7.length() == 13)) {
-            var7 = var7.substring(3);
-            fishing4.a.r.a = var9 + "0" + var7;
+      if (fishing4.a.r.deviceId != null && !fishing4.a.r.deviceId.equals("")) {
+         fishing4.a.r.a = simCountryISO + line1Number;
+         if (simCountryISO.equals("kr") && (line1Number.charAt(0) == '+' || line1Number.length() == 13)) {
+            line1Number = line1Number.substring(3);
+            fishing4.a.r.a = simCountryISO + "0" + line1Number;
          }
 
          com.pnjmobile.tnk.a.a(this, fishing4.a.r.a);
          fishing4.a.r.a(fishing4.a.r.a);
          this.setVolumeControlStream(3);
-         OptionsManager.p = (Vibrator)this.getSystemService("vibrator");
+         OptionsManager.vibrator = (Vibrator)this.getSystemService("vibrator");
          if (!this.aa) {
-            this.v = SaveLoadManager.a();
-            SaveLoadManager var10 = this.v;
+            this.saveLoadManager = SaveLoadManager.a();
+            SaveLoadManager saveLoadManager1 = this.saveLoadManager;
             SaveLoadManager.a((Context)this);
             this.aa = true;
          }
@@ -905,7 +905,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
 
          if (!fishing4.game.az.f && !OptionsManager.hasConfirmedAgreement) {
             this.startActivity(new Intent(this, AgreementView.class));
-         } else if (!OptionsManager.g) {
+         } else if (!OptionsManager.hasChosenUserName) {
             this.startActivity(new Intent(this, userIDview.class));
          }
 
@@ -1064,7 +1064,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       }
 
       this.ab = 0;
-      this.v = SaveLoadManager.a();
+      this.saveLoadManager = SaveLoadManager.a();
       (new Thread(this)).start();
    }
 
@@ -1079,7 +1079,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
          d = false;
          if (!fishing4.game.az.f && !OptionsManager.hasConfirmedAgreement) {
             this.startActivity(new Intent(this, AgreementView.class));
-         } else if (!OptionsManager.g) {
+         } else if (!OptionsManager.hasChosenUserName) {
             this.startActivity(new Intent(this, userIDview.class));
          }
       }
@@ -1112,18 +1112,18 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
 
       fishing4.b.d.a().d();
       if (w) {
-         this.v.c();
-         if (!this.v.c) {
+         this.saveLoadManager.c();
+         if (!this.saveLoadManager.c) {
             O.sendEmptyMessageDelayed(0, 1000L);
          }
 
-         if (this.v.b && this.v.c) {
+         if (this.saveLoadManager.b && this.saveLoadManager.c) {
             w = false;
          }
       } else {
          this.ab = 1;
          if (!this.aa) {
-            this.v = SaveLoadManager.a();
+            this.saveLoadManager = SaveLoadManager.a();
          }
 
          (new Thread(this)).start();
@@ -1409,15 +1409,15 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
 
    public void run() {
       if (!this.aa) {
-         SaveLoadManager var1 = this.v;
+         SaveLoadManager var1 = this.saveLoadManager;
          SaveLoadManager.a((Context)this);
          this.aa = true;
       }
 
       if (this.ab == 0) {
-         this.v.c();
+         this.saveLoadManager.c();
       } else if (this.ab == 1) {
-         this.v.b();
+         this.saveLoadManager.b();
       }
 
       while(true) {
@@ -1425,19 +1425,19 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
             try {
                while(true) {
                   if (this.ab == 0) {
-                     if (this.v.b && this.v.c) {
-                        this.v.c();
+                     if (this.saveLoadManager.b && this.saveLoadManager.c) {
+                        this.saveLoadManager.c();
                         return;
                      }
 
-                     if (this.v.b && !this.v.c) {
+                     if (this.saveLoadManager.b && !this.saveLoadManager.c) {
                         O.sendEmptyMessageDelayed(0, 1000L);
                         return;
                      }
 
                      Thread.sleep(2500L);
                   } else if (this.ab == 1) {
-                     if (this.v.b && this.v.c) {
+                     if (this.saveLoadManager.b && this.saveLoadManager.c) {
                         return;
                      }
 
