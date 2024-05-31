@@ -1,0 +1,19 @@
+package pnjmobile.fishing4.google_free;
+
+import android.content.DialogInterface;
+
+final class z implements DialogInterface.OnClickListener {
+   final Main a;
+
+   z(Main var1) {
+      this.a = var1;
+   }
+
+   public final void onClick(DialogInterface var1, int var2) {
+      var1.dismiss();
+      Main var3 = this.a;
+      Main.m();
+      fishing4.game.k.f();
+      this.a.c(Main.l).show();
+   }
+}
