@@ -150,7 +150,7 @@ public final class TapjoyConnectCore {
       return "" + "app_id=" + Uri.encode(p) + "&" + l();
    }
 
-   public static String e() {
+   public static String getUserId() {
       return u;
    }
 

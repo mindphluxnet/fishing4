@@ -200,7 +200,7 @@ public final class k {
       g = var1;
       String var2 = TapjoyConnectCore.c();
       a = var2;
-      var2 = var2 + "&publisher_user_id=" + TapjoyConnectCore.e();
+      var2 = var2 + "&publisher_user_id=" + TapjoyConnectCore.getUserId();
       a = var2;
       a = var2 + "&size=" + k;
       (new Thread(new l(this))).start();

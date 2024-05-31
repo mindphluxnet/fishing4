@@ -813,7 +813,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       Window var5 = this.getWindow();
       x = new View(this);
       u = this;
-      com.tapjoy.f.a(this, "0faf65f6-b8ba-4387-8184-075214d63502", "6ahYoU1UCshal8OTIkyk");
+      com.tapjoy.f.requestTapjoyConnect(this, "0faf65f6-b8ba-4387-8184-075214d63502", "6ahYoU1UCshal8OTIkyk");
       com.tapjoy.f.a();
       com.tapjoy.f.a((com.tapjoy.ab)this);
       com.tapjoy.f.a();

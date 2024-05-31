@@ -13,7 +13,7 @@ final class aj implements Runnable {
 
    public final void run() {
       boolean var2 = false;
-      String var3 = TapjoyConnectCore.c() + "&publisher_user_id=" + TapjoyConnectCore.e();
+      String var3 = TapjoyConnectCore.c() + "&publisher_user_id=" + TapjoyConnectCore.getUserId();
       new ag();
       var3 = ag.b("https://ws.tapjoyads.com/videos?", var3);
       boolean var1 = var2;
