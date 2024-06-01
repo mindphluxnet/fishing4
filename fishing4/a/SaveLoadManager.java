@@ -37,13 +37,13 @@ import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
 
 public final class SaveLoadManager { // TODO: possible candidate for rename
-   private static String f;
-   private static String g;
+   private static String deviceId;
+   private static String macAddress;
    private static int h;
    private static Context context;
    private static SaveLoadManager saveLoadManager = null;
    private static final byte[] l = "18encrypt18".getBytes();
-   private static String[] m;
+   private static String[] listEntries;
    Handler a = new j(this);
    public boolean b;
    public boolean c;
@@ -51,7 +51,7 @@ public final class SaveLoadManager { // TODO: possible candidate for rename
    private final int e = 1;
    private String[] j = null;
 
-   public static SaveLoadManager a() {
+   public static SaveLoadManager createInstance() {
       if (saveLoadManager == null) {
          saveLoadManager = new SaveLoadManager();
       }
@@ -59,60 +59,60 @@ public final class SaveLoadManager { // TODO: possible candidate for rename
       return saveLoadManager;
    }
 
-   public static boolean a(Context var0) {
-      context = var0;
+   public static boolean getDeviceId(Context _context) {
+      context = _context;
 
-      boolean var1;
+      boolean hasDeviceId;
       label53: {
          boolean var10001;
-         String var2;
+         String deviceId;
          try {
-            var2 = ((TelephonyManager)var0.getSystemService("phone")).getDeviceId();
-         } catch (Exception var6) {
+            deviceId = ((TelephonyManager)_context.getSystemService("phone")).getDeviceId();
+         } catch (Exception ex) {
             var10001 = false;
             break label53;
          }
 
-         if (var2 == null) {
-            String var7;
+         if (deviceId == null) {
+            String macAddress;
             try {
-               var7 = ((WifiManager)var0.getSystemService("wifi")).getConnectionInfo().getMacAddress();
+               macAddress = ((WifiManager)_context.getSystemService("wifi")).getConnectionInfo().getMacAddress();
             } catch (Exception var4) {
                var10001 = false;
                break label53;
             }
 
-            if (var7 == null) {
-               var1 = false;
-               return var1;
+            if (macAddress == null) {
+               hasDeviceId = false;
+               return hasDeviceId;
             }
 
             try {
-               g = var7;
+               SaveLoadManager.macAddress = macAddress;
                h = 2;
             } catch (Exception var3) {
                var10001 = false;
                break label53;
             }
 
-            var1 = true;
+            hasDeviceId = true;
          } else {
             try {
-               f = var2;
+               SaveLoadManager.deviceId = deviceId;
                h = 1;
             } catch (Exception var5) {
                var10001 = false;
                break label53;
             }
 
-            var1 = true;
+            hasDeviceId = true;
          }
 
-         return var1;
+         return hasDeviceId;
       }
 
-      var1 = false;
-      return var1;
+      hasDeviceId = false;
+      return hasDeviceId;
    }
 
    private static boolean a(Context var0, String[] var1) {
@@ -326,8 +326,8 @@ public final class SaveLoadManager { // TODO: possible candidate for rename
       return var4;
    }
 
-   public static boolean a(String var0, byte[] var1) {
-      return b(var0, var1, h);
+   public static boolean saveFile(String fileName, byte[] data) {
+      return saveFile(fileName, data, h);
    }
 
    private static boolean a(String var0, byte[] var1, int var2) {
@@ -393,7 +393,7 @@ public final class SaveLoadManager { // TODO: possible candidate for rename
             byte[] var10 = new byte[4];
             stream.read(var10, 0, 4);
             stream.close();
-            remainingBytes = c(var10);
+            remainingBytes = bytesToBigEndian(var10);
             if (b(readBuf) == remainingBytes) {
                fileData = c(readBuf, l);
                return fileData;
@@ -434,145 +434,137 @@ public final class SaveLoadManager { // TODO: possible candidate for rename
       return 92809079 ^ var1;
    }
 
-   private static boolean b(Context var0) {
-      boolean var3 = false;
-      context = var0;
+   private static boolean jailbreakCheck(Context context) {
+      boolean isJailbroken = false;
+      SaveLoadManager.context = context;
 
-      int var1;
-      int var2;
-      Exception var10000;
-      boolean var10001;
-      label196: {
+      int entry;
+      int numEntries;
+      Exception exception;
+       label196: {
          label200: {
-            StringTokenizer var33;
+            StringTokenizer splitData;
             try {
-               byte[] var6 = c("list.dat");
-               String var5 = new String(var6);
-               var33 = new StringTokenizer(var5, "/");
-               m = new String[var33.countTokens()];
-            } catch (Exception var23) {
-               var10000 = var23;
-               var10001 = false;
-               break label200;
+               byte[] buffer = loadFileRaw("list.dat");
+               String data = new String(buffer);
+               splitData = new StringTokenizer(data, "/");
+               listEntries = new String[splitData.countTokens()];
+            } catch (Exception ex) {
+               exception = ex;
+                break label200;
             }
 
-            var1 = 0;
+            entry = 0;
 
             while(true) {
                try {
-                  var2 = m.length;
-               } catch (Exception var22) {
-                  var10000 = var22;
-                  var10001 = false;
-                  break;
+                  numEntries = listEntries.length;
+               } catch (Exception ex) {
+                  exception = ex;
+                   break;
                }
 
-               if (var1 >= var2) {
+               if (entry >= numEntries) {
                   break label196;
                }
 
                try {
-                  m[var1] = var33.nextToken();
-                  StringBuilder var31 = new StringBuilder();
-                  Log.e("i", var31.append(m[var1]).toString());
-               } catch (Exception var21) {
-                  var10000 = var21;
-                  var10001 = false;
-                  break;
+                  listEntries[entry] = splitData.nextToken();
+                  StringBuilder sb = new StringBuilder();
+                  Log.e("i", sb.append(listEntries[entry]).toString());
+               } catch (Exception ex) {
+                  exception = ex;
+                   break;
                }
 
-               ++var1;
+               ++entry;
             }
          }
 
-         Exception var30 = var10000;
-         var30.printStackTrace();
+         Exception ex = exception;
+         ex.printStackTrace();
          az.d();
-         Toast.makeText(context, "데이터 조작이 발견되었습니다. 프로그램을 종료합니다.", 1).show();
+         Toast.makeText(SaveLoadManager.context, "데이터 조작이 발견되었습니다. 프로그램을 종료합니다.", 1).show(); // "Data manipulation has been discovered. Exit the program."
       }
 
-      PackageManager var32 = var0.getApplicationContext().getPackageManager();
-      List var34 = var32.getInstalledApplications(8192);
-      ActivityManager var24 = (ActivityManager)var0.getSystemService("activity");
-      Iterator var7 = var24.getRunningTasks(Integer.MAX_VALUE).iterator();
+      PackageManager packageManager = context.getApplicationContext().getPackageManager();
+      List<ApplicationInfo> installedApplications = packageManager.getInstalledApplications(8192);
+      ActivityManager activityManager = (ActivityManager)context.getSystemService("activity");
+      Iterator iterator = activityManager.getRunningTasks(Integer.MAX_VALUE).iterator();
 
       while(true) {
-         if (!var7.hasNext()) {
-            var7 = var24.getRunningAppProcesses().iterator();
+         if (!iterator.hasNext()) {
+            iterator = activityManager.getRunningAppProcesses().iterator();
 
-            while(var7.hasNext()) {
-               ActivityManager.RunningAppProcessInfo var37 = (ActivityManager.RunningAppProcessInfo)var7.next();
+            while(iterator.hasNext()) {
+               ActivityManager.RunningAppProcessInfo var37 = (ActivityManager.RunningAppProcessInfo)iterator.next();
 
-               for(var1 = 0; var1 < m.length; ++var1) {
-                  if (var37.processName.contains(m[var1])) {
-                     var3 = true;
-                     return var3;
+               for(entry = 0; entry < listEntries.length; ++entry) {
+                  if (var37.processName.contains(listEntries[entry])) {
+                     isJailbroken = true;
+                     return isJailbroken;
                   }
                }
             }
 
-            Iterator var25 = var24.getRunningServices(Integer.MAX_VALUE).iterator();
+            Iterator iterator1 = activityManager.getRunningServices(Integer.MAX_VALUE).iterator();
 
-            while(var25.hasNext()) {
-               ActivityManager.RunningServiceInfo var35 = (ActivityManager.RunningServiceInfo)var25.next();
+            while(iterator1.hasNext()) {
+               ActivityManager.RunningServiceInfo runningServiceInfo = (ActivityManager.RunningServiceInfo)iterator1.next();
 
-               for(var1 = 0; var1 < m.length; ++var1) {
-                  if (var35.service.getClassName().contains(m[var1])) {
-                     var3 = true;
-                     return var3;
+               for(entry = 0; entry < listEntries.length; ++entry) {
+                  if (runningServiceInfo.service.getClassName().contains(listEntries[entry])) {
+                     isJailbroken = true;
+                     return isJailbroken;
                   }
                }
             }
 
             label145: {
                label205: {
-                  BufferedReader var28;
+                  BufferedReader bufferedReader;
                   try {
-                     ProcessBuilder var26 = new ProcessBuilder(new String[0]);
-                     var26.command("ps");
-                     InputStream var27 = var26.start().getInputStream();
-                     InputStreamReader var36 = new InputStreamReader(var27);
-                     var28 = new BufferedReader(var36);
-                  } catch (Exception var20) {
-                     var10000 = var20;
-                     var10001 = false;
-                     break label205;
+                     ProcessBuilder processBuilder = new ProcessBuilder();
+                     processBuilder.command("ps");
+                     InputStream inputStream = processBuilder.start().getInputStream();
+                     InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+                     bufferedReader = new BufferedReader(inputStreamReader);
+                  } catch (Exception ex) {
+                     exception = ex;
+                      break label205;
                   }
 
-                  var1 = 0;
+                  entry = 0;
 
                   label140:
                   while(true) {
                      String var38;
                      try {
-                        var38 = var28.readLine();
+                        var38 = bufferedReader.readLine();
                      } catch (Exception var15) {
-                        var10000 = var15;
-                        var10001 = false;
-                        break;
+                        exception = var15;
+                         break;
                      }
 
                      if (var38 == null) {
-                        return var3;
+                        return isJailbroken;
                      }
 
-                     if (var1 != 0) {
+                     if (entry != 0) {
                         StringTokenizer var39;
                         try {
                            var39 = new StringTokenizer(var38, " ");
                         } catch (Exception var14) {
-                           var10000 = var14;
-                           var10001 = false;
-                           break;
+                           exception = var14;
+                            break;
                         }
 
-                        for(var2 = 0; var2 < 8; ++var2) {
+                        for(numEntries = 0; numEntries < 8; ++numEntries) {
                            try {
                               var39.nextToken();
                            } catch (Exception var13) {
-                              var10000 = var13;
-                              var10001 = false;
-                              break label140;
+                              exception = var13;
+                               break label140;
                            }
                         }
 
@@ -580,11 +572,10 @@ public final class SaveLoadManager { // TODO: possible candidate for rename
                         String var10;
                         try {
                            var10 = var39.nextToken();
-                           var9 = var34.iterator();
+                           var9 = installedApplications.iterator();
                         } catch (Exception var12) {
-                           var10000 = var12;
-                           var10001 = false;
-                           break;
+                           exception = var12;
+                            break;
                         }
 
                         label129:
@@ -596,9 +587,8 @@ public final class SaveLoadManager { // TODO: possible candidate for rename
                                     break label129;
                                  }
                               } catch (Exception var17) {
-                                 var10000 = var17;
-                                 var10001 = false;
-                                 break label140;
+                                 exception = var17;
+                                  break label140;
                               }
 
                               try {
@@ -607,298 +597,285 @@ public final class SaveLoadManager { // TODO: possible candidate for rename
                                     break;
                                  }
                               } catch (Exception var18) {
-                                 var10000 = var18;
-                                 var10001 = false;
-                                 break label140;
+                                 exception = var18;
+                                  break label140;
                               }
                            }
 
-                           var2 = 0;
+                           numEntries = 0;
 
                            while(true) {
                               try {
-                                 if (var2 >= m.length) {
+                                 if (numEntries >= listEntries.length) {
                                     break;
                                  }
 
-                                 if (var40.loadLabel(var32).toString().contains(m[var2])) {
+                                 if (var40.loadLabel(packageManager).toString().contains(listEntries[numEntries])) {
                                     break label145;
                                  }
                               } catch (Exception var19) {
-                                 var10000 = var19;
-                                 var10001 = false;
-                                 break label140;
+                                 exception = var19;
+                                  break label140;
                               }
 
-                              ++var2;
+                              ++numEntries;
                            }
                         }
                      }
 
-                     var2 = 0;
+                     numEntries = 0;
 
                      while(true) {
                         try {
-                           if (var2 >= m.length) {
+                           if (numEntries >= listEntries.length) {
                               break;
                            }
                         } catch (Exception var16) {
-                           var10000 = var16;
-                           var10001 = false;
-                           break label140;
+                           exception = var16;
+                            break label140;
                         }
 
                         boolean var4;
                         try {
-                           var4 = var38.contains(m[var2]);
+                           var4 = var38.contains(listEntries[numEntries]);
                         } catch (Exception var11) {
-                           var10000 = var11;
-                           var10001 = false;
-                           break label140;
+                           exception = var11;
+                            break label140;
                         }
 
                         if (var4) {
-                           var3 = true;
-                           return var3;
+                           isJailbroken = true;
+                           return isJailbroken;
                         }
 
-                        ++var2;
+                        ++numEntries;
                      }
 
-                     ++var1;
+                     ++entry;
                   }
                }
 
-               Exception var29 = var10000;
+               Exception var29 = exception;
                var29.printStackTrace();
                break;
             }
 
-            var3 = true;
+            isJailbroken = true;
             break;
          }
 
-         ActivityManager.RunningTaskInfo var8 = (ActivityManager.RunningTaskInfo)var7.next();
+         ActivityManager.RunningTaskInfo var8 = (ActivityManager.RunningTaskInfo)iterator.next();
 
-         for(var1 = 0; var1 < m.length; ++var1) {
-            if (var8.topActivity.getClassName().toString().contains(m[var1])) {
-               var3 = true;
-               return var3;
+         for(entry = 0; entry < listEntries.length; ++entry) {
+            if (var8.topActivity.getClassName().toString().contains(listEntries[entry])) {
+               isJailbroken = true;
+               return isJailbroken;
             }
          }
       }
 
-      return var3;
+      return isJailbroken;
    }
 
    public static boolean b(String var0, byte[] var1) {
       return a(var0, var1, h);
    }
 
-   private static boolean b(String var0, byte[] var1, int var2) {
-      boolean var3 = false;
-      Log.i("", "sms99:" + var0.toString());
-      if (var2 > 0) {
-         String var4 = var0;
-         if (var0.charAt(0) != '/') {
-            var4 = "/" + var0;
+   private static boolean saveFile(String fileName, byte[] data, int toFolder) {
+      boolean result = false;
+      Log.i("", "sms99:" + fileName.toString());
+      if (toFolder > 0) {
+         String tmpFileName = fileName;
+         if (fileName.charAt(0) != '/') {
+            tmpFileName = "/" + fileName;
          }
 
          label44: {
-            Exception var10000;
+            Exception exception;
             label34: {
-               var4 = "" + context.getFilesDir().getAbsolutePath() + var4;
-               Log.w("SAVEPATH", "SaveFilePath : " + var4);
-               File var5 = new File(var4);
-               var0 = null;
-               boolean var10001;
-               if (var2 == 1) {
+               tmpFileName = "" + context.getFilesDir().getAbsolutePath() + tmpFileName;
+               Log.w("SAVEPATH", "SaveFilePath : " + tmpFileName);
+               File file = new File(tmpFileName);
+               fileName = null;
+                if (toFolder == 1) {
                   try {
-                     var0 = f;
-                  } catch (Exception var8) {
-                     var10000 = var8;
-                     var10001 = false;
-                     break label34;
+                     fileName = deviceId;
+                  } catch (Exception ex) {
+                     exception = ex;
+                      break label34;
                   }
-               } else if (var2 == 2) {
+               } else if (toFolder == 2) {
                   try {
-                     var0 = g;
-                  } catch (Exception var7) {
-                     var10000 = var7;
-                     var10001 = false;
-                     break label34;
+                     fileName = macAddress;
+                  } catch (Exception ex) {
+                     exception = ex;
+                      break label34;
                   }
                }
 
                try {
-                  var1 = a(var0.getBytes(), var1);
-                  FileOutputStream var11 = new FileOutputStream(var5);
-                  var11.write(var1);
-                  var11.flush();
-                  var11.close();
-                  byte[] var13 = makeBigEndian(var2);
+                  data = a(fileName.getBytes(), data);
+                  FileOutputStream fileOutputStream = new FileOutputStream(file);
+                  fileOutputStream.write(data);
+                  fileOutputStream.flush();
+                  fileOutputStream.close();
+                  byte[] var13 = makeBigEndian(toFolder);
                   var13 = a("588212698009923".getBytes(), var13);
-                  StringBuilder var10 = new StringBuilder(String.valueOf(var4.substring(0, var4.length() - 3)));
-                  var4 = var10.append("key").toString();
-                  File var12 = new File(var4);
-                  FileOutputStream var14 = new FileOutputStream(var12);
-                  var14.write(var13);
-                  var14.flush();
-                  var14.close();
+                  StringBuilder stringBuilder = new StringBuilder(tmpFileName.substring(0, tmpFileName.length() - 3));
+                  tmpFileName = stringBuilder.append("key").toString();
+                  File file1 = new File(tmpFileName);
+                  FileOutputStream outputStream = new FileOutputStream(file1);
+                  outputStream.write(var13);
+                  outputStream.flush();
+                  outputStream.close();
                   break label44;
                } catch (Exception var6) {
-                  var10000 = var6;
-                  var10001 = false;
+                  exception = var6;
                }
             }
 
-            Exception var9 = var10000;
-            Log.e("ERROR", "File Save Exception  : " + var9.toString());
-            var9.printStackTrace();
-            return var3;
+            Exception exception1 = exception;
+            Log.e("ERROR", "File Save Exception  : " + exception1);
+            exception1.printStackTrace();
+            return result;
          }
 
-         var3 = true;
+         result = true;
       }
 
-      return var3;
+      return result;
    }
 
-   public static byte[] b(String var0) {
-      Object var4 = null;
-      String var5 = context.getFilesDir().getAbsolutePath();
-      String var3 = var0;
-      if (var0.charAt(0) != '/') {
-         var3 = "/" + var0;
+   public static byte[] b(String fileName) {
+      Object empty = null;
+      String absolutePath = context.getFilesDir().getAbsolutePath();
+      String tmpFileName = fileName;
+      if (fileName.charAt(0) != '/') {
+         tmpFileName = "/" + fileName;
       }
 
-      var3 = var5 + var3;
-      File var16 = new File(var3.substring(0, var3.length() - 3) + "key");
-      byte[] var11 = (byte[])var4;
-      if (var16.exists()) {
+      tmpFileName = absolutePath + tmpFileName;
+      File file = new File(tmpFileName.substring(0, tmpFileName.length() - 3) + "key");
+      byte[] buffer = (byte[])empty;
+      if (file.exists()) {
          int var1;
-         FileInputStream var12;
+         FileInputStream fileInputStream;
          try {
-            var12 = new FileInputStream(var16);
-            byte[] var17 = new byte[var12.available()];
-            var12.read(var17, 0, var17.length);
-            var12.close();
-            var1 = c(b("588212698009923".getBytes(), var17));
-         } catch (Exception var10) {
-            Log.e("ERROR", "File Load Exception  : " + var10.toString());
-            var11 = (byte[])var4;
-            return var11;
+            fileInputStream = new FileInputStream(file);
+            byte[] buf = new byte[fileInputStream.available()];
+            fileInputStream.read(buf, 0, buf.length);
+            fileInputStream.close();
+            var1 = bytesToBigEndian(encryptData("588212698009923".getBytes(), buf));
+         } catch (Exception ex) {
+            Log.e("ERROR", "File Load Exception  : " + ex);
+            buffer = (byte[])empty;
+            return buffer;
          }
 
-         Log.w("LOADPATH", "LoadFilePath : " + var3);
-         File var14 = new File(var3);
-         var11 = (byte[])var4;
-         if (var14.exists()) {
-            Exception var10000;
+         Log.w("LOADPATH", "LoadFilePath : " + tmpFileName);
+         File file1 = new File(tmpFileName);
+         buffer = (byte[])empty;
+         if (file1.exists()) {
+            Exception exception;
             label53: {
-               byte[] var15;
-               boolean var10001;
-               try {
-                  var12 = new FileInputStream(var14);
-                  int var2 = var12.available();
-                  var15 = new byte[var2];
-                  var12.read(var15, 0, var2);
-                  var12.close();
-               } catch (Exception var9) {
-                  var10000 = var9;
-                  var10001 = false;
-                  break label53;
+               byte[] buf;
+                try {
+                  fileInputStream = new FileInputStream(file1);
+                  int length = fileInputStream.available();
+                  buf = new byte[length];
+                  fileInputStream.read(buf, 0, length);
+                  fileInputStream.close();
+               } catch (Exception ex) {
+                  exception = ex;
+                    break label53;
                }
 
                if (var1 == 1) {
                   try {
-                     var0 = f;
+                     fileName = deviceId;
                   } catch (Exception var8) {
-                     var10000 = var8;
-                     var10001 = false;
-                     break label53;
+                     exception = var8;
+                      break label53;
                   }
                } else if (var1 == 2) {
                   try {
-                     var0 = g;
+                     fileName = macAddress;
                   } catch (Exception var7) {
-                     var10000 = var7;
-                     var10001 = false;
-                     break label53;
+                     exception = var7;
+                      break label53;
                   }
                } else {
-                  var0 = null;
+                  fileName = null;
                }
 
                try {
-                  var11 = b(var0.getBytes(), var15);
-                  return var11;
+                  buffer = encryptData(fileName.getBytes(), buf);
+                  return buffer;
                } catch (Exception var6) {
-                  var10000 = var6;
-                  var10001 = false;
+                  exception = var6;
                }
             }
 
-            Exception var13 = var10000;
-            Log.e("ERROR", "File Load Exception  : " + var13.toString());
-            var13.printStackTrace();
-            var11 = (byte[])var4;
+            Exception exception1 = exception;
+            Log.e("ERROR", "File Load Exception  : " + exception1);
+            exception1.printStackTrace();
+            buffer = (byte[])empty;
          }
       }
 
-      return var11;
+      return buffer;
    }
 
-   private static byte[] b(byte[] var0, byte[] var1) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
-      SecretKeySpec var2 = new SecretKeySpec(a(var0), "AES");
-      Cipher var3 = Cipher.getInstance("AES");
-      var3.init(2, var2);
-      return var3.doFinal(var1);
+   private static byte[] encryptData(byte[] key, byte[] data) throws NoSuchPaddingException, NoSuchAlgorithmException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
+      SecretKeySpec secretKeySpec = new SecretKeySpec(a(key), "AES");
+      Cipher cipher = Cipher.getInstance("AES");
+      cipher.init(2, secretKeySpec);
+      return cipher.doFinal(data);
    }
 
-   private static int c(byte[] var0) {
+   private static int bytesToBigEndian(byte[] data) {
       ByteBuffer.allocate(4);
-      byte[] var2 = new byte[4];
+      byte[] buffer = new byte[4];
 
-      for(int var1 = 0; var1 < 4; ++var1) {
-         if (var0.length + var1 < 4) {
-            var2[var1] = 0;
+      for(int i = 0; i < 4; ++i) {
+         if (data.length + i < 4) {
+            buffer[i] = 0;
          } else {
-            var2[var1] = var0[var0.length + var1 - 4];
+            buffer[i] = data[data.length + i - 4];
          }
       }
 
-      ByteBuffer var3 = ByteBuffer.wrap(var2);
-      var3.order(ByteOrder.BIG_ENDIAN);
-      return var3.getInt();
+      ByteBuffer buf = ByteBuffer.wrap(buffer);
+      buf.order(ByteOrder.BIG_ENDIAN);
+      return buf.getInt();
    }
 
-   private static byte[] c(String var0) {
-      Object var2 = null;
-      AssetManager var3 = context.getAssets();
+   private static byte[] loadFileRaw(String fileName) {
+      Object empty = null;
+      AssetManager assetManager = context.getAssets();
 
-      byte[] var6;
+      byte[] buffer;
       try {
-         InputStream var7 = var3.open(var0);
-         int var1 = var7.available();
-         var6 = new byte[var1 - 4];
-         var7.read(var6, 0, var1 - 4);
-         byte[] var4 = new byte[4];
-         var7.read(var4, 0, 4);
-         var7.close();
-         var1 = c(var4);
-         if (b(var6) == var1) {
-            var6 = c(var6, l);
-            return var6;
+         InputStream stream = assetManager.open(fileName);
+         int remaining = stream.available();
+         buffer = new byte[remaining - 4];
+         stream.read(buffer, 0, remaining - 4);
+         byte[] buffer2 = new byte[4];
+         stream.read(buffer2, 0, 4);
+         stream.close();
+         remaining = bytesToBigEndian(buffer2);
+         if (b(buffer) == remaining) {
+            buffer = c(buffer, l);
+            return buffer;
          }
-      } catch (Exception var5) {
-         Log.e("ERROR", "File Load Exception  : " + var5.toString());
-         var6 = (byte[])var2;
-         return var6;
+      } catch (Exception ex) {
+         Log.e("ERROR", "File Load Exception  : " + ex.toString());
+         buffer = (byte[])empty;
+         return buffer;
       }
 
-      var6 = (byte[])var2;
-      return var6;
+      buffer = (byte[])empty;
+      return buffer;
    }
 
    private static byte[] c(byte[] var0, byte[] var1) {
@@ -921,17 +898,9 @@ public final class SaveLoadManager { // TODO: possible candidate for rename
       return var7;
    }
 
-   // $FF: synthetic method
-   static Context d() {
-      return context;
-   }
-
    public final void b() {
       this.b = false;
-      this.c = true;
-      if (b(context)) {
-         this.c = false;
-      }
+       this.c = !jailbreakCheck(context);
 
       Message var1;
       if (this.c) {

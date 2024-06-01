@@ -58,7 +58,7 @@ public final class j implements Runnable {
          try {
             Socket var2 = new Socket("222.122.160.61", 12002);
             k = var2;
-            globalConfig.c = true;
+            globalConfig.isConnected = true;
             k.setSoTimeout(20000);
             DataOutputStream var4 = new DataOutputStream(k.getOutputStream());
             l = var4;

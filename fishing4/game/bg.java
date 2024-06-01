@@ -39,7 +39,7 @@ public final class bg {
       super();
       this.h = fishing4.a.f.a(268.0F, 588.0F, 126.0F, 108.0F);
       this.i = fishing4.a.f.a(892.0F, 842.0F, 132.0F, 88.0F);
-      this.r = AESUtils.a();
+      this.r = AESUtils.createInstance();
       a = 10;
       k = -1;
       l = 0;
@@ -936,7 +936,7 @@ public final class bg {
                }
 
                if (!am.e() && am.b != -1) {
-                  am.a(var1, var7);
+                  am.displayMessageBox(var1, var7);
                   a(var1);
                } else {
                   switch (b) {
@@ -1082,7 +1082,7 @@ public final class bg {
                }
             } else if (this.j == 3 || this.j == 2) {
                if (!am.e() && am.b != -1) {
-                  am.a(var1, var7);
+                  am.displayMessageBox(var1, var7);
                   a(var1);
                } else {
                   switch (b) {
@@ -1356,7 +1356,7 @@ public final class bg {
             }
 
             if (!am.e() && am.b != -1) {
-               am.a(var1, var7);
+               am.displayMessageBox(var1, var7);
                a(var1);
             } else {
                switch (b) {
@@ -1502,7 +1502,7 @@ public final class bg {
             }
          } else if (this.j == 3 || this.j == 2) {
             if (!am.e() && am.b != -1) {
-               am.a(var1, var7);
+               am.displayMessageBox(var1, var7);
                a(var1);
             } else {
                switch (b) {

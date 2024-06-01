@@ -14,7 +14,7 @@ public final class AESUtils {
       this.generateKey();
    }
 
-   public static AESUtils a() {
+   public static AESUtils createInstance() {
       return new AESUtils();
    }
 

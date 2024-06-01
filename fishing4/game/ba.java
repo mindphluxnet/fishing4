@@ -329,7 +329,7 @@ public final class ba extends aa {
             fishing4.a.ae.a(var1, "id:" + globalConfig.userName, this.q.a + 2.0F, this.t.b - 102.0F, var3);
             var3 = fishing4.a.aa.a(1.0F, 1.0F, 1.0F, 1.0F);
             fishing4.a.ae.a(var1, "id:" + globalConfig.userName, this.q.a + 0.0F, this.t.b - 100.0F, var3);
-            am.a(var1, e);
+            am.displayMessageBox(var1, e);
             break;
          case 3:
          case 4:
@@ -343,7 +343,7 @@ public final class ba extends aa {
                fishing4.a.m.a(var1, this.m, this.q.a, this.q.b, 0.0F, 113.0F, 172.0F, 22.0F);
             }
 
-            am.a(var1, e);
+            am.displayMessageBox(var1, e);
             break;
          case 5:
          case 6:
@@ -381,7 +381,7 @@ public final class ba extends aa {
                var2 = fishing4.a.r.E;
             }
 
-            am.a(var1, e);
+            am.displayMessageBox(var1, e);
             break;
          case 10:
             fishing4.a.m.a(var1, this.n, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 100));
@@ -394,7 +394,7 @@ public final class ba extends aa {
             az.c();
             a(var1, fishing4.a.m.d() - 70.0F);
             az.a(var1, fishing4.a.m.d() - 70.0F, e);
-            am.a(var1, e);
+            am.displayMessageBox(var1, e);
             break;
          case 11:
             fishing4.a.m.a(var1, this.n, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 100));
@@ -404,7 +404,7 @@ public final class ba extends aa {
                fishing4.a.m.a(var1, this.m, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 100), 171.0F, 30.0F, 188.0F, 22.0F);
             }
 
-            am.a(var1, e);
+            am.displayMessageBox(var1, e);
             break;
          case 12:
             fishing4.a.m.a(var1, this.n, fishing4.a.m.c(), (float)(fishing4.a.m.b() - 100));
@@ -417,7 +417,7 @@ public final class ba extends aa {
             az.c();
             a(var1, fishing4.a.m.d() - 70.0F);
             az.b(var1, fishing4.a.m.d() - 70.0F, e);
-            am.a(var1, e);
+            am.displayMessageBox(var1, e);
       }
 
       if (aa.c == 13 || aa.c == 9 || aa.c == 11 || aa.c == 12) {
@@ -1184,11 +1184,11 @@ public final class ba extends aa {
             fishing4.a.m.a(var1, this.j, fishing4.a.m.c(), fishing4.a.m.d() - 200.0F, 0.0F, 472.0F, 380.0F, 40.0F, 240 - e % 20 * 12);
          }
 
-         am.a(var1, e);
+         am.displayMessageBox(var1, e);
       } else if (c == 13) {
          this.g(var1);
          this.h(var1);
-         am.a(var1, e);
+         am.displayMessageBox(var1, e);
       } else {
          this.g(var1);
          this.h(var1);

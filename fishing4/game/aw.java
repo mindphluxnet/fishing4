@@ -1356,7 +1356,7 @@ public final class aw extends aa {
             var11 = az.u;
             var11 = az.v;
             fishing4.game.l.a(var1, var9, var10, e);
-            am.a(var1, e);
+            am.displayMessageBox(var1, e);
             fishing4.a.r var12;
             if (fishing4.game.l.d == 61) {
                if (o == 1) {
@@ -1745,7 +1745,7 @@ public final class aw extends aa {
             fishing4.a.m.a(var1, az.G, var2 - 15.0F, var3 + 15.0F, 0.0F, 0.0F, 64.0F, 64.0F, '\u0001', var13);
          }
 
-         am.a(var1, e);
+         am.displayMessageBox(var1, e);
       }
 
       this.Q.a(var1, e);

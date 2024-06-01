@@ -383,8 +383,8 @@ public class MainLGU extends Activity implements View.OnTouchListener {
                         } else {
                            Toast.makeText(this, "인터넷 연결 상태를 확인하세요.", 0).show();
                         }
-                     } else if (!c && globalConfig.m) {
-                        globalConfig.m = false;
+                     } else if (!c && globalConfig.isPlayStore) {
+                        globalConfig.isPlayStore = false;
                         var11 = (ConnectivityManager)this.getSystemService("connectivity");
                         if (var11.getActiveNetworkInfo() != null && var11.getActiveNetworkInfo() != null && var11.getActiveNetworkInfo().isConnectedOrConnecting()) {
                            fishing4.game.k.l();

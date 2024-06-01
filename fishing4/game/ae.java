@@ -6,7 +6,7 @@ import javax.microedition.khronos.opengles.GL10;
 import fishing4.a.AESUtils;
 
 public class ae {
-   protected AESUtils a = AESUtils.a();
+   protected AESUtils a = AESUtils.createInstance();
    public fishing4.a.h b;
    public fishing4.a.f[] c;
    public fishing4.a.e[] d;

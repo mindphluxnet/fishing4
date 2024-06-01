@@ -11,18 +11,16 @@ import fishing4.game.globalConfig;
 
 public final class q {
    public static byte[] a = null;
-   public static Socket b = null;
-   public static DataOutputStream c = null;
-   public static DataInputStream d = null;
+   public static Socket socket = null;
+   public static DataOutputStream dataOutputStream = null;
+   public static DataInputStream dataInputStream = null;
    public static byte e;
    public static String f = "0004875A";
-   public static String g = "222.122.160.61";
-   public static int h = 12002;
    private static boolean i;
    private static boolean j;
 
-   public static byte a() {
-      byte var0 = 0;
+   public static byte connect() {
+      byte result = 0;
       j = true;
       if (i) {
          j = false;
@@ -30,26 +28,24 @@ public final class q {
          Log.i("Connect:", "Connecting");
 
          try {
-            Socket var1 = new Socket("222.122.160.61", 12002);
-            b = var1;
-            globalConfig.c = true;
-            b.setSoTimeout(20000);
-            DataOutputStream var3 = new DataOutputStream(b.getOutputStream());
-            c = var3;
-            DataInputStream var4 = new DataInputStream(b.getInputStream());
-            d = var4;
+            Socket socket = new Socket("222.122.160.61", 12002);
+            q.socket = socket;
+            globalConfig.isConnected = true;
+            q.socket.setSoTimeout(20000);
+            dataOutputStream = new DataOutputStream(q.socket.getOutputStream());
+            dataInputStream = new DataInputStream(q.socket.getInputStream());
             i = true;
             j = false;
-         } catch (Exception var2) {
+         } catch (Exception ex) {
             Log.i("Connect:", "ConnectFail");
             j = false;
-            return var0;
+            return result;
          }
 
-         var0 = 1;
+         result = 1;
       }
 
-      return var0;
+      return result;
    }
 
    public static boolean a(byte[] var0) {
@@ -59,9 +55,9 @@ public final class q {
          j = false;
       } else {
          try {
-            c.write(var0);
-         } catch (Exception var2) {
-            var2.printStackTrace();
+            dataOutputStream.write(var0);
+         } catch (Exception ex) {
+            ex.printStackTrace();
             return var1;
          }
 
@@ -71,20 +67,20 @@ public final class q {
       return var1;
    }
 
-   private static byte[] a(int var0) {
-      byte[] var1 = null;
+   private static byte[] readBytes(int numBytes) throws IOException {
+      byte[] buffer = null;
       if (i) {
          try {
-            var1 = new byte[var0];
-            d.readFully(var1, 0, var0);
-         } catch (EOFException var2) {
-            var1 = null;
-         } catch (Exception var3) {
-            throw new IOException(var3.getMessage());
+            buffer = new byte[numBytes];
+            dataInputStream.readFully(buffer, 0, numBytes);
+         } catch (EOFException ex) {
+            buffer = null;
+         } catch (Exception ex) {
+            throw new IOException(ex.getMessage());
          }
       }
 
-      return var1;
+      return buffer;
    }
 
    public static boolean b() {
@@ -108,7 +104,7 @@ public final class q {
             }
 
             try {
-               a = a(var0);
+               a = readBytes(var0);
                break label37;
             } catch (Exception var3) {
                var10000 = var3;
@@ -125,50 +121,50 @@ public final class q {
       return var1;
    }
 
-   public static void c() {
+   public static void disconnect() {
       boolean var10001;
       label49: {
-         DataInputStream var0;
+         DataInputStream inputStream;
          try {
-            if (b == null) {
+            if (socket == null) {
                break label49;
             }
 
-            b.close();
-            b = null;
-            var0 = d;
-         } catch (Exception var6) {
+            socket.close();
+            socket = null;
+            inputStream = dataInputStream;
+         } catch (Exception ex) {
             var10001 = false;
             return;
          }
 
-         if (var0 != null) {
+         if (inputStream != null) {
             try {
-               d.close();
-               d = null;
-            } catch (Exception var2) {
+               dataInputStream.close();
+               dataInputStream = null;
+            } catch (Exception ex) {
             }
          }
 
-         DataOutputStream var7;
+         DataOutputStream outputStream;
          try {
-            var7 = c;
-         } catch (Exception var5) {
+            outputStream = dataOutputStream;
+         } catch (Exception ex) {
             var10001 = false;
             return;
          }
 
-         if (var7 != null) {
+         if (outputStream != null) {
             try {
-               c.close();
-               c = null;
-            } catch (Exception var1) {
+               dataOutputStream.close();
+               dataOutputStream = null;
+            } catch (Exception ex) {
             }
          }
 
          try {
             i = false;
-         } catch (Exception var4) {
+         } catch (Exception ex) {
             var10001 = false;
             return;
          }
@@ -191,24 +187,24 @@ public final class q {
          Exception var10000;
          label30: {
             boolean var10001;
-            byte[] var2;
+            byte[] buffer;
             try {
-               var2 = a(4);
-            } catch (Exception var4) {
-               var10000 = var4;
+               buffer = readBytes(4);
+            } catch (Exception ex) {
+               var10000 = ex;
                var10001 = false;
                break label30;
             }
 
-            if (var2 == null) {
+            if (buffer == null) {
                return var0;
             }
 
             try {
-               var1 = fishing4.a.a.a(var2, 0);
+               var1 = fishing4.a.a.a(buffer, 0);
                break label37;
-            } catch (Exception var3) {
-               var10000 = var3;
+            } catch (Exception ex) {
+               var10000 = ex;
                var10001 = false;
             }
          }

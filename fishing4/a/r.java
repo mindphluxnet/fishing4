@@ -23,7 +23,7 @@ public final class r implements Runnable {
    public static int numGiftsWaiting = 0;
    public static int[] K;
    public static int[] L;
-   public static AESUtils M = AESUtils.a();
+   public static AESUtils M = AESUtils.createInstance();
    public static String N = "01";
    public static int O;
    public static int P;
@@ -133,7 +133,7 @@ public final class r implements Runnable {
 
    }
 
-   private void b(boolean var1) {
+   private void disconnect(boolean var1) {
       if (l != 100 || o) {
          Exception var10000;
          label29: {
@@ -159,16 +159,16 @@ public final class r implements Runnable {
 
             try {
                o = false;
-               fishing4.a.q.c();
+               fishing4.a.q.disconnect();
                return;
-            } catch (Exception var3) {
-               var10000 = var3;
+            } catch (Exception ex) {
+               var10000 = ex;
                var10001 = false;
             }
          }
 
-         Exception var2 = var10000;
-         n = "disconnect() : " + var2;
+         Exception ex = var10000;
+         n = "disconnect() : " + ex;
       }
 
    }
@@ -382,29 +382,6 @@ public final class r implements Runnable {
       return y;
    }
 
-   private byte[] e(int var1) {
-      am = new byte[var1 + 66];
-      System.arraycopy("PNJNETCON".getBytes(), 0, am, 0, 9);
-      fishing4.game.k.l();
-      System.arraycopy("ADM".getBytes(), 0, am, 9, 3);
-      System.arraycopy(p, 0, am, 12, p.length);
-      System.arraycopy(q, 0, am, 32, q.length);
-      System.arraycopy(d(100), 0, am, 52, 4);
-      System.arraycopy(d(f), 0, am, 56, 4);
-      System.arraycopy(d(var1 + 2), 0, am, 60, 4);
-      am[64] = k;
-      if (255 == this.r && E == 1) {
-         Log.i("", "1");
-         am[65] = 6;
-      } else {
-         Log.i("", "2");
-         am[65] = (byte)this.r;
-         Log.i("", Integer.toString(this.r));
-      }
-
-      return am;
-   }
-
    public static int f() {
       return al;
    }
@@ -581,7 +558,7 @@ public final class r implements Runnable {
    public final void a(int var1) {
       byte var2 = 0;
       if (o) {
-         this.b(true);
+         this.disconnect(true);
       }
 
       u = fishing4.a.y.a();
@@ -669,7 +646,7 @@ public final class r implements Runnable {
                }
             } else {
                if (o) {
-                  this.b(true);
+                  this.disconnect(true);
                   l = 99;
                }
 
@@ -721,7 +698,7 @@ public final class r implements Runnable {
             }
 
             try {
-               if (fishing4.a.q.a() == 1) {
+               if (fishing4.a.q.connect() == 1) {
                   l = 2;
                   o = true;
                }
@@ -751,7 +728,7 @@ public final class r implements Runnable {
          while(true) {
             try {
                if (!o) {
-                  this.b(true);
+                  this.disconnect(true);
                   return;
                }
             } catch (Exception var4) {

@@ -1727,7 +1727,7 @@ public final class k {
       var0 += 4;
       System.arraycopy(fishing4.a.a.a(Main.k), 0, var3, var0, 4);
       System.arraycopy(fishing4.a.a.a(Main.l), 0, var3, var0 + 4, 4);
-      SaveLoadManager.a("f4save.data", var3);
+      SaveLoadManager.saveFile("f4save.data", var3);
       SaveLoadManager.b("new_f4save.data", var3);
    }
 

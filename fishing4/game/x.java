@@ -10,8 +10,8 @@ public final class x {
    public static int b;
    public static long c;
    public static long d = 0L;
-   private static AESUtils e = AESUtils.a();
-   private static AESUtils f = AESUtils.a();
+   private static AESUtils e = AESUtils.createInstance();
+   private static AESUtils f = AESUtils.createInstance();
 
    public static final int a(boolean var0) {
       byte var1 = 0;

@@ -41,20 +41,20 @@ public final class z {
       a[var1] = var0;
    }
 
-   public static void a(GL10 var0) {
+   public static void a(GL10 glContext) {
       if (f != -1 && a[f] != null) {
-         a[f].e(var0);
+         a[f].e(glContext);
          if (az.e) {
-            az.a(var0, aa.e);
+            az.a(glContext, aa.e);
          }
       }
 
    }
 
-   public static void a(GL10 var0, int var1) {
+   public static void a(GL10 glContext, int var1) {
       f = var1;
-      a[f].b(var0);
-      a[f].c(var0);
+      a[f].b(glContext);
+      a[f].c(glContext);
    }
 
    public static int b() {
@@ -82,15 +82,15 @@ public final class z {
 
    }
 
-   public static void b(GL10 var0) {
+   public static void b(GL10 glContext) {
       if (f != -1 && a[f] != null) {
          ++aa.e;
-         a[f].f(var0);
+         a[f].f(glContext);
          if (g != -1) {
             int var1 = g;
             e = f;
-            a[e].d(var0);
-            a(var0, var1);
+            a[e].d(glContext);
+            a(glContext, var1);
             g = -1;
          }
       }

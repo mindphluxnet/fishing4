@@ -59,7 +59,7 @@ public final class i implements Runnable {
          try {
             Socket var2 = new Socket("222.122.160.61", 12002);
             l = var2;
-            globalConfig.c = true;
+            globalConfig.isConnected = true;
             l.setSoTimeout(20000);
             DataOutputStream var4 = new DataOutputStream(l.getOutputStream());
             m = var4;

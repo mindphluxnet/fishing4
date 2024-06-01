@@ -58,7 +58,7 @@ public final class OptionsManager {
       System.arraycopy(fishing4.a.a.a(globalConfig.g.encrypt()), 0, buf, 24, 8);
       System.arraycopy(fishing4.a.a.a(hasChosenUserName), 0, buf, 32, 1);
       System.arraycopy(globalConfig.userName.getBytes(), 0, buf, 33, globalConfig.userName.getBytes().length);
-      SaveLoadManager.a("f4option.data", buf);
+      SaveLoadManager.saveFile("f4option.data", buf);
       SaveLoadManager.b("new_f4option.data", buf);
    }
 

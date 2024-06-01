@@ -10,8 +10,8 @@ public final class m {
    public static boolean g;
    public static fishing4.a.w h;
    public static fishing4.a.w i;
-   public static AESUtils j = AESUtils.a();
-   public static AESUtils k = AESUtils.a();
+   public static AESUtils j = AESUtils.createInstance();
+   public static AESUtils k = AESUtils.createInstance();
    protected int a;
    protected float b;
    protected boolean c;

@@ -777,7 +777,7 @@ public final class bb extends aa {
                aq.a(var1, fishing4.a.m.c() - 160.0F);
             }
 
-            am.a(var1, e);
+            am.displayMessageBox(var1, e);
             var2 = e;
             fishing4.game.k.c();
             this.y.a(var1, e);
@@ -863,7 +863,7 @@ public final class bb extends aa {
             var13.a(var1, var9, var5, var8, var10, var11, var6, var7, az.v, this.t, e);
             bd.a(var1, az.s);
             if (bh.a()) {
-               am.a(var1, e);
+               am.displayMessageBox(var1, e);
             }
 
             d(f);
