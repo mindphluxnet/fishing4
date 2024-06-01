@@ -456,7 +456,7 @@ public final class i implements Runnable {
                label143: {
                   label128: {
                      try {
-                        if (fishing4.a.r.a == null) {
+                        if (fishing4.a.r.phoneNumber == null) {
                            this.E = this.x;
                            break label128;
                         }
@@ -467,7 +467,7 @@ public final class i implements Runnable {
                      }
 
                      try {
-                        fishing4.a.r.p = fishing4.a.r.a.getBytes();
+                        fishing4.a.r.p = fishing4.a.r.phoneNumber.getBytes();
                         fishing4.a.r.q = fishing4.a.r.deviceId.getBytes();
                      } catch (Exception var18) {
                         var10000 = var18;

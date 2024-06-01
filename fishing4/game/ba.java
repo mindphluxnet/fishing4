@@ -646,7 +646,7 @@ public final class ba extends aa {
    public final void a(fishing4.a.e var1) {
       if (f != 1) {
          if (a(var1, true)) {
-            Main.a();
+            Main.openPlayStoreLink();
          } else if (am.e && !am.c.a(var1, false)) {
             am.d.a(var1, false);
          }

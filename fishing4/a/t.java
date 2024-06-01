@@ -295,7 +295,7 @@ public final class t {
             try {
                if (globalConfig.languageId == 0) {
                   var3 = new StringBuilder("http://wap.pnjmobile.co.kr/news/Android/android_link.php?gameid=101442&language=ko&serialNum=");
-                  z = var3.append(fishing4.a.r.a).append("&imgSize=480").toString();
+                  z = var3.append(fishing4.a.r.phoneNumber).append("&imgSize=480").toString();
                   break label94;
                }
             } catch (Exception var12) {
@@ -306,7 +306,7 @@ public final class t {
 
             try {
                var3 = new StringBuilder("http://wap.pnjmobile.co.kr/news/Android/android_link.php?gameid=101442&language=en&serialNum=");
-               z = var3.append(fishing4.a.r.a).append("&imgSize=480").toString();
+               z = var3.append(fishing4.a.r.phoneNumber).append("&imgSize=480").toString();
             } catch (Exception var11) {
                var10000 = var11;
                var10001 = false;

@@ -202,25 +202,25 @@ public final class y {
       return var2;
    }
 
-   public static void b(URL var0) {
+   public static void postToUrl(URL url) {
       try {
-         if (var0.getProtocol().equals("https")) {
-            HttpsURLConnection var2 = (HttpsURLConnection)var0.openConnection();
-            var2.setConnectTimeout(1000);
-            var2.setReadTimeout(1000);
-            var2.setUseCaches(false);
-            var2.getResponseMessage();
-            var2.disconnect();
-         } else if (var0.getProtocol().equals("http")) {
-            HttpURLConnection var3 = (HttpURLConnection)var0.openConnection();
-            var3.setConnectTimeout(1000);
-            var3.setReadTimeout(1000);
-            var3.setUseCaches(false);
-            var3.getResponseMessage();
-            var3.disconnect();
+         if (url.getProtocol().equals("https")) {
+            HttpsURLConnection urlConnection = (HttpsURLConnection)url.openConnection();
+            urlConnection.setConnectTimeout(1000);
+            urlConnection.setReadTimeout(1000);
+            urlConnection.setUseCaches(false);
+            urlConnection.getResponseMessage();
+            urlConnection.disconnect();
+         } else if (url.getProtocol().equals("http")) {
+            HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
+            urlConnection.setConnectTimeout(1000);
+            urlConnection.setReadTimeout(1000);
+            urlConnection.setUseCaches(false);
+            urlConnection.getResponseMessage();
+            urlConnection.disconnect();
          }
-      } catch (IOException var1) {
-         var1.printStackTrace();
+      } catch (IOException ex) {
+         ex.printStackTrace();
       }
 
    }

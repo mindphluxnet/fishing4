@@ -106,19 +106,19 @@ public class MainKT extends Activity implements View.OnTouchListener {
          this.requestWindowFeature(1);
          this.requestWindowFeature(2);
          String var5 = ((TelephonyManager)this.getSystemService("phone")).getLine1Number();
-         fishing4.a.r.a = var5;
+         fishing4.a.r.phoneNumber = var5;
          if (var5 == null) {
             fishing4.game.az.J = "USIM이 없거나 비행기모드일때는 실행할 수 없습니다. 게임을 종료합니다.";
             fishing4.game.az.I = true;
             this.showDialog(0);
          } else {
-            if (fishing4.a.r.a.charAt(0) == '+' || fishing4.a.r.a.length() == 13) {
-               var5 = fishing4.a.r.a.substring(3);
-               fishing4.a.r.a = "0" + var5;
+            if (fishing4.a.r.phoneNumber.charAt(0) == '+' || fishing4.a.r.phoneNumber.length() == 13) {
+               var5 = fishing4.a.r.phoneNumber.substring(3);
+               fishing4.a.r.phoneNumber = "0" + var5;
             }
 
-            com.pnjmobile.tnk.a.a(this, fishing4.a.r.a);
-            fishing4.a.r.a(fishing4.a.r.a);
+            com.pnjmobile.tnk.a.a(this, fishing4.a.r.phoneNumber);
+            fishing4.a.r.a(fishing4.a.r.phoneNumber);
             this.setVolumeControlStream(3);
             OptionsManager.vibrator = (Vibrator)this.getSystemService("vibrator");
             OptionsManager.loadOptions();
@@ -408,7 +408,7 @@ public class MainKT extends Activity implements View.OnTouchListener {
                      var11 = (ConnectivityManager)this.getSystemService("connectivity");
                      if (var11.getActiveNetworkInfo() != null && var11.getActiveNetworkInfo() != null && var11.getActiveNetworkInfo().isConnectedOrConnecting()) {
                         fishing4.game.k.l();
-                        this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://wap.pnjmobile.co.kr/Link/Google_play/?game=Fish4_google_fullversionphoneNum=" + fishing4.a.r.a + "&comm=" + "6")));
+                        this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://wap.pnjmobile.co.kr/Link/Google_play/?game=Fish4_google_fullversionphoneNum=" + fishing4.a.r.phoneNumber + "&comm=" + "6")));
                      } else {
                         Toast.makeText(this, "인터넷 연결 상태를 확인하세요.", 0).show();
                      }

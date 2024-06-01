@@ -3270,7 +3270,7 @@ public final class bg {
 
                try {
                   URL var21 = new URL(fishing4.game.k.k);
-                  fishing4.a.y.b(var21);
+                  fishing4.a.y.postToUrl(var21);
                } catch (MalformedURLException var19) {
                   var19.printStackTrace();
                } catch (IOException var20) {

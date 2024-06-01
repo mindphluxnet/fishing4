@@ -67,7 +67,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
    public static AlertDialog a;
    public static Handler b;
    public static BillingService c;
-   public static boolean d = false;
+   public static boolean isPaused = false;
    public static boolean e = true;
    static boolean h;
    public static int i;
@@ -79,7 +79,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
    public static DecimalFormat o = new DecimalFormat("###0.0#");
    public static boolean s = false;
    public static boolean t = false;
-   public static Context u;
+   public static Context context;
    public static boolean w = false;
    static View x;
    static RelativeLayout z;
@@ -108,71 +108,71 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
    SaveLoadManager saveLoadManager = null;
    boolean y = false;
 
-   private static String a(URL var0) {
-      String var12;
-      IOException var10000;
+   private static String readFromUrl(URL url) {
+      String result;
+      IOException ioException;
       label33: {
-         BufferedReader var1;
-         StringBuffer var2;
-         InputStreamReader var3;
-         HttpURLConnection var4;
-         BufferedInputStream var10;
+         BufferedReader bufferedReader;
+         StringBuffer stringBuffer;
+         InputStreamReader reader;
+         HttpURLConnection urlConnection;
+         BufferedInputStream inputStream;
          boolean var10001;
          try {
-            var4 = (HttpURLConnection)var0.openConnection();
-            var4.setConnectTimeout(3000);
-            var4.setReadTimeout(3000);
-            var4.setUseCaches(false);
-            var10 = new BufferedInputStream(var4.getInputStream());
-            var3 = new InputStreamReader(var10, Charset.forName("EUC-KR"));
-            var1 = new BufferedReader(var3);
-            var2 = new StringBuffer();
-         } catch (IOException var9) {
-            var10000 = var9;
+            urlConnection = (HttpURLConnection)url.openConnection();
+            urlConnection.setConnectTimeout(3000);
+            urlConnection.setReadTimeout(3000);
+            urlConnection.setUseCaches(false);
+            inputStream = new BufferedInputStream(urlConnection.getInputStream());
+            reader = new InputStreamReader(inputStream, Charset.forName("EUC-KR"));
+            bufferedReader = new BufferedReader(reader);
+            stringBuffer = new StringBuffer();
+         } catch (IOException ex) {
+            ioException = ex;
             var10001 = false;
             break label33;
          }
 
          while(true) {
-            String var5;
+            String input;
             try {
-               var5 = var1.readLine();
-            } catch (IOException var7) {
-               var10000 = var7;
+               input = bufferedReader.readLine();
+            } catch (IOException ex) {
+               ioException = ex;
                var10001 = false;
                break;
             }
 
-            if (var5 == null) {
+            if (input == null) {
                try {
-                  var1.close();
-                  var3.close();
-                  var10.close();
-                  var4.disconnect();
-                  var12 = var2.toString();
-                  return var12;
-               } catch (IOException var6) {
-                  var10000 = var6;
+                  bufferedReader.close();
+                  reader.close();
+                  inputStream.close();
+                  urlConnection.disconnect();
+                  result = stringBuffer.toString();
+                  return result;
+               } catch (IOException ex) {
+                  ioException = ex;
                   var10001 = false;
                   break;
                }
             }
 
-             var2.append(var5);
+             stringBuffer.append(input);
          }
       }
 
-      IOException var11 = var10000;
-      var11.printStackTrace();
-      var12 = null;
-      return var12;
+      IOException exception = ioException;
+      exception.printStackTrace();
+      result = null;
+      return result;
    }
 
-   public static void a() {
+   public static void openPlayStoreLink() {
       globalConfig.m = false;
-      ConnectivityManager var0 = (ConnectivityManager)u.getSystemService("connectivity");
-      if (var0.getActiveNetworkInfo() != null && var0.getActiveNetworkInfo().isConnectedOrConnecting()) {
-         u.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://wap.pnjmobile.co.kr/Link/Google_play/?game=Fish4_google_fullversion")));
+      ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService("connectivity");
+      if (connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnectedOrConnecting()) {
+         context.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://wap.pnjmobile.co.kr/Link/Google_play/?game=Fish4_google_fullversion")));
       } else {
          String var1;
          if (globalConfig.languageId == 0) {
@@ -181,7 +181,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
             var1 = "Check network connection.";
          }
 
-         Toast.makeText(u, var1, 0).show();
+         Toast.makeText(context, var1, 0).show();
       }
 
    }
@@ -224,66 +224,64 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
 
    }
 
-   static void d(int var0) {
-      byte[] var4 = fishing4.a.r.a.getBytes();
-      byte[] var5 = fishing4.a.r.deviceId.getBytes();
+   static void postGoogleAttendanceLog(int gold) {
+      byte[] var4 = fishing4.a.r.phoneNumber.getBytes();
+      byte[] deviceIdBytes = fishing4.a.r.deviceId.getBytes();
 
-      int var1;
-      for(var1 = 0; var1 < var4.length; ++var1) {
-         var4[var1] = (byte)(var4[var1] ^ 1559);
+      int i;
+      for(i = 0; i < var4.length; ++i) {
+         var4[i] = (byte)(var4[i] ^ 1559);
       }
 
-      for(var1 = 0; var1 < var5.length; ++var1) {
-         var5[var1] = (byte)(var5[var1] ^ 1559);
+      for(i = 0; i < deviceIdBytes.length; ++i) {
+         deviceIdBytes[i] = (byte)(deviceIdBytes[i] ^ 1559);
       }
 
-      String var2 = "";
+      String date = "";
 
-      URL var3;
-      String var9;
+      URL url;
+      String input;
       label51: {
          try {
-            var3 = new URL("http://www.pnjmobile.com/pnj_time/time.php");
-            var9 = a(var3);
-         } catch (IOException var8) {
-            var8.printStackTrace();
+            url = new URL("http://www.pnjmobile.com/pnj_time/time.php");
+            input = readFromUrl(url);
+         } catch (IOException ex) {
+            ex.printStackTrace();
             break label51;
          }
 
-         var2 = var9;
+         date = input;
       }
 
-      var9 = "";
+      input = "";
 
-      for(var1 = 0; var1 < fishing4.a.r.a.length(); ++var1) {
-         var9 = var9 + var4[var1];
+      for(i = 0; i < fishing4.a.r.phoneNumber.length(); ++i) {
+         input = input + var4[i];
       }
 
-      var1 = 0;
+      i = 0;
 
-      String var10;
-      for(var10 = ""; var1 < fishing4.a.r.deviceId.length(); ++var1) {
-         var10 = var10 + var5[var1];
+      String deviceId;
+      for(deviceId = ""; i < fishing4.a.r.deviceId.length(); ++i) {
+         deviceId = deviceId + deviceIdBytes[i];
       }
 
-      String var12;
+      String language;
       if (globalConfig.languageId == 0) {
-         var12 = "ko";
+         language = "ko";
       } else {
-         var12 = "en";
+         language = "en";
       }
 
-      var2 = "http://wap.pnjmobile.co.kr/GameUserDataLog/Fishing4/Google/Fishing4_Google_attendance_Log.php?p=" + var9 + "&m=" + var10 + "&attendance_day=" + l + "&gold=" + var0 + "&d_day=" + var2 + "&location=" + var12;
+      date = "http://wap.pnjmobile.co.kr/GameUserDataLog/Fishing4/Google/Fishing4_Google_attendance_Log.php?p=" + input + "&m=" + deviceId + "&attendance_day=" + l + "&gold=" + gold + "&d_day=" + date + "&location=" + language;
 
       try {
-         var3 = new URL(var2);
-         fishing4.a.y.b(var3);
-         StringBuilder var11 = new StringBuilder("sms30:");
-         Log.i("", var11.append(var2.toString()).toString());
-      } catch (MalformedURLException var6) {
-         var6.printStackTrace();
-      } catch (IOException var7) {
-         var7.printStackTrace();
+         url = new URL(date);
+         fishing4.a.y.postToUrl(url);
+         StringBuilder sb = new StringBuilder("sms30:");
+         Log.i("", sb.append(date.toString()).toString());
+      } catch (IOException ex) {
+         ex.printStackTrace();
       }
 
    }
@@ -513,7 +511,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
 
       try {
          URL var9 = new URL("http://www.pnjmobile.com/pnj_time/time.php");
-         n = a(var9);
+         n = readFromUrl(var9);
       } catch (IOException var21) {
          var21.printStackTrace();
          return;
@@ -815,7 +813,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       super.onCreate(var1);
       Window window = this.getWindow();
       x = new View(this);
-      u = this;
+      context = this;
       com.tapjoy.f.requestTapjoyConnect(this, "0faf65f6-b8ba-4387-8184-075214d63502", "6ahYoU1UCshal8OTIkyk");
       com.tapjoy.f.a();
       com.tapjoy.f.a((com.tapjoy.ab)this);
@@ -868,14 +866,14 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       }
 
       if (fishing4.a.r.deviceId != null && !fishing4.a.r.deviceId.equals("")) {
-         fishing4.a.r.a = simCountryISO + line1Number;
+         fishing4.a.r.phoneNumber = simCountryISO + line1Number;
          if (simCountryISO.equals("kr") && (line1Number.charAt(0) == '+' || line1Number.length() == 13)) {
             line1Number = line1Number.substring(3);
-            fishing4.a.r.a = simCountryISO + "0" + line1Number;
+            fishing4.a.r.phoneNumber = simCountryISO + "0" + line1Number;
          }
 
-         com.pnjmobile.tnk.a.a(this, fishing4.a.r.a);
-         fishing4.a.r.a(fishing4.a.r.a);
+         com.pnjmobile.tnk.a.a(this, fishing4.a.r.phoneNumber);
+         fishing4.a.r.a(fishing4.a.r.phoneNumber);
          this.setVolumeControlStream(3);
          OptionsManager.vibrator = (Vibrator)this.getSystemService("vibrator");
          if (!this.aa) {
@@ -1053,7 +1051,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
    }
 
    protected void onPause() {
-      d = true;
+      isPaused = true;
       super.onPause();
       this.overridePendingTransition(2130968576, 2130968577);
       fishing4.b.d.a().c();
@@ -1071,12 +1069,12 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
    protected void onResume() {
       super.onResume();
       this.ac = true;
-      pnjmobile.fishing4.google_free.k.a(u);
-      Thread var2 = new Thread(new n(this));
-      var2.setDaemon(true);
-      var2.start();
-      if (d && !e) {
-         d = false;
+      pnjmobile.fishing4.google_free.k.a(context);
+      Thread thread = new Thread(new n(this));
+      thread.setDaemon(true);
+      thread.start();
+      if (isPaused && !e) {
+         isPaused = false;
          if (!fishing4.game.az.f && !OptionsManager.hasConfirmedAgreement) {
             this.startActivity(new Intent(this, AgreementView.class));
          } else if (!OptionsManager.hasChosenUserName) {
@@ -1373,7 +1371,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
                   }
                } else if (!s) {
                   if (globalConfig.m) {
-                     a();
+                     openPlayStoreLink();
                   } else if (globalConfig.o) {
                      globalConfig.o = false;
                      var11 = (ConnectivityManager)this.getSystemService("connectivity");

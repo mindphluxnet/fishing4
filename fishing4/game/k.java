@@ -78,7 +78,7 @@ public final class k {
    }
 
    public static void a(int var0) {
-      byte[] var4 = fishing4.a.r.a.getBytes();
+      byte[] var4 = fishing4.a.r.phoneNumber.getBytes();
       byte[] var2 = fishing4.a.r.deviceId.getBytes();
 
       int var1;
@@ -92,7 +92,7 @@ public final class k {
 
       String var3 = "p=";
 
-      for(var1 = 0; var1 < fishing4.a.r.a.length(); ++var1) {
+      for(var1 = 0; var1 < fishing4.a.r.phoneNumber.length(); ++var1) {
          var3 = var3 + var4[var1];
       }
 
@@ -214,7 +214,7 @@ public final class k {
 
       try {
          URL var27 = new URL(var3);
-         fishing4.a.y.b(var27);
+         fishing4.a.y.postToUrl(var27);
       } catch (MalformedURLException var21) {
          var21.printStackTrace();
       } catch (IOException var22) {
@@ -1276,7 +1276,7 @@ public final class k {
    }
 
    public static void a(boolean var0, int var1) {
-      byte[] var4 = fishing4.a.r.a.getBytes();
+      byte[] var4 = fishing4.a.r.phoneNumber.getBytes();
       byte[] var5 = fishing4.a.r.deviceId.getBytes();
 
       int var2;
@@ -1290,7 +1290,7 @@ public final class k {
 
       String var3 = "p=";
 
-      for(var2 = 0; var2 < fishing4.a.r.a.length(); ++var2) {
+      for(var2 = 0; var2 < fishing4.a.r.phoneNumber.length(); ++var2) {
          var3 = var3 + var4[var2];
       }
 
@@ -1386,7 +1386,7 @@ public final class k {
    }
 
    public static void a(boolean var0, int var1, boolean var2) {
-      byte[] var6 = fishing4.a.r.a.getBytes();
+      byte[] var6 = fishing4.a.r.phoneNumber.getBytes();
       byte[] var4 = fishing4.a.r.deviceId.getBytes();
 
       int var3;
@@ -1400,7 +1400,7 @@ public final class k {
 
       String var5 = "p=";
 
-      for(var3 = 0; var3 < fishing4.a.r.a.length(); ++var3) {
+      for(var3 = 0; var3 < fishing4.a.r.phoneNumber.length(); ++var3) {
          var5 = var5 + var6[var3];
       }
 

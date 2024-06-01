@@ -15,7 +15,7 @@ final class y implements DialogInterface.OnClickListener {
       var2 = Main.m();
       fishing4.game.ad.o.c((long)var2);
       var3 = this.a;
-      Main.d(var2);
+      Main.postGoogleAttendanceLog(var2);
       Main.l = 0;
       fishing4.game.k.f();
       this.a.b(var2).show();

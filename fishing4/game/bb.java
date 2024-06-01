@@ -122,7 +122,7 @@ public final class bb extends aa {
             }
 
             if (var2) {
-               Main.a();
+               Main.openPlayStoreLink();
             } else if (a(var1, true)) {
                aq var4 = this.y;
                aq.a();

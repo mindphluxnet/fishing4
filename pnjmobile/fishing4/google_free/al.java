@@ -20,7 +20,7 @@ final class al extends Handler {
          var3 = "Confirm";
       }
 
-      AlertDialog var5 = (new AlertDialog.Builder(Main.u)).setCancelable(false).setTitle(var4).setMessage(var2).setPositiveButton(var3, new am(this)).create();
+      AlertDialog var5 = (new AlertDialog.Builder(Main.context)).setCancelable(false).setTitle(var4).setMessage(var2).setPositiveButton(var3, new am(this)).create();
       Main.a = var5;
       var5.show();
    }

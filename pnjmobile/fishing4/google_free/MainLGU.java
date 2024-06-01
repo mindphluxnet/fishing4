@@ -85,15 +85,15 @@ public class MainLGU extends Activity implements View.OnTouchListener {
       this.requestWindowFeature(1);
       this.requestWindowFeature(2);
       String var3 = ((TelephonyManager)this.getSystemService("phone")).getLine1Number();
-      fishing4.a.r.a = var3;
-      if (var3 != null && !fishing4.a.r.a.equals("")) {
-         if (fishing4.a.r.a.charAt(0) == '+' || fishing4.a.r.a.length() == 13) {
-            var3 = fishing4.a.r.a.substring(3);
-            fishing4.a.r.a = "0" + var3;
+      fishing4.a.r.phoneNumber = var3;
+      if (var3 != null && !fishing4.a.r.phoneNumber.equals("")) {
+         if (fishing4.a.r.phoneNumber.charAt(0) == '+' || fishing4.a.r.phoneNumber.length() == 13) {
+            var3 = fishing4.a.r.phoneNumber.substring(3);
+            fishing4.a.r.phoneNumber = "0" + var3;
          }
 
-         com.pnjmobile.tnk.a.a(this, fishing4.a.r.a);
-         fishing4.a.r.a(fishing4.a.r.a);
+         com.pnjmobile.tnk.a.a(this, fishing4.a.r.phoneNumber);
+         fishing4.a.r.a(fishing4.a.r.phoneNumber);
          this.setVolumeControlStream(3);
          OptionsManager.vibrator = (Vibrator)this.getSystemService("vibrator");
          OptionsManager.loadOptions();
@@ -388,7 +388,7 @@ public class MainLGU extends Activity implements View.OnTouchListener {
                         var11 = (ConnectivityManager)this.getSystemService("connectivity");
                         if (var11.getActiveNetworkInfo() != null && var11.getActiveNetworkInfo() != null && var11.getActiveNetworkInfo().isConnectedOrConnecting()) {
                            fishing4.game.k.l();
-                           this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://wap.pnjmobile.co.kr/Link/Google_play/?game=Fish4_google_fullversionphoneNum=" + fishing4.a.r.a + "&comm=" + "6")));
+                           this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://wap.pnjmobile.co.kr/Link/Google_play/?game=Fish4_google_fullversionphoneNum=" + fishing4.a.r.phoneNumber + "&comm=" + "6")));
                         } else {
                            Toast.makeText(this, "인터넷 연결 상태를 확인하세요.", 0).show();
                         }

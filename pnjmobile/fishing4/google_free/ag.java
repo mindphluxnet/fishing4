@@ -19,9 +19,9 @@ final class ag extends Handler {
 
       try {
          if (globalConfig.a == 0) {
-            fishing4.game.k.m = ProgressDialog.show(Main.u, "로딩중", "Loading. Please wait...", true, false);
+            fishing4.game.k.m = ProgressDialog.show(Main.context, "로딩중", "Loading. Please wait...", true, false);
          } else {
-            fishing4.game.k.m = ProgressDialog.show(Main.u, "Loading...", "Loading. Please wait...", true, false);
+            fishing4.game.k.m = ProgressDialog.show(Main.context, "Loading...", "Loading. Please wait...", true, false);
          }
       } catch (Exception var2) {
       }

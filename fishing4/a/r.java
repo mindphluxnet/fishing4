@@ -37,7 +37,7 @@ public final class r implements Runnable {
    public static byte X;
    public static byte Y;
    public static int[] Z = new int[187];
-   public static String a = null;
+   public static String phoneNumber = null;
    public static String[] aa = new String[187];
    public static int[] ab = new int[187];
    public static int[] ac = new int[187];
@@ -596,10 +596,10 @@ public final class r implements Runnable {
 
       this.w = 0;
       this.r = -1;
-      if (a == null) {
+      if (phoneNumber == null) {
          l = 99;
       } else {
-         p = a.getBytes();
+         p = phoneNumber.getBytes();
          q = deviceId.getBytes();
       }
 
