@@ -2,6 +2,8 @@ package fishing4.game;
 
 import javax.microedition.khronos.opengles.GL10;
 
+import fishing4.a.GLRootView;
+
 public final class l {
    public static final fishing4.a.h a = fishing4.a.h.a(156.0F, 124.0F);
    public static final fishing4.a.e b;
@@ -15,14 +17,14 @@ public final class l {
    private static long j;
 
    static {
-      b = fishing4.a.e.a((float)fishing4.a.m.a() + a.a * 2.0F, a.b);
-      c = fishing4.a.e.a((float)fishing4.a.m.a() - a.a, a.b);
+      b = fishing4.a.e.a((float)fishing4.a.m.getWidthPixels() + a.a * 2.0F, a.b);
+      c = fishing4.a.e.a((float)fishing4.a.m.getWidthPixels() - a.a, a.b);
    }
 
    public static void a(int var0) {
       d = var0;
       f = 0.0F;
-      i = fishing4.a.e.a((float)fishing4.a.m.a() + a.a, a.b);
+      i = fishing4.a.e.a((float)fishing4.a.m.getWidthPixels() + a.a, a.b);
       e = true;
       if (d == 2) {
          am.b(1);
@@ -82,15 +84,15 @@ public final class l {
       if (d != 41 && d != 42) {
          if (d != 46 && d != 47 && d != 92) {
             if (d == 40) {
-               fishing4.b.d.a().b(fishing4.a.s.a(), 2131034118);
+               fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034118);
             } else if (d == 32 || d == 30 || d == 31) {
-               fishing4.b.d.a().b(fishing4.a.s.a(), 2131034117);
+               fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034117);
             }
          } else {
-            fishing4.b.d.a().b(fishing4.a.s.a(), 2131034133);
+            fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034133);
          }
       } else {
-         fishing4.b.d.a().b(fishing4.a.s.a(), 2131034133);
+         fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034133);
       }
 
       if (d == 30) {
@@ -343,7 +345,7 @@ public final class l {
             break;
          case 12:
             am.a(var0, fishing4.a.y.a(2131165256) + ab.b(ab.a(aw.p)), fishing4.a.m.e(), var1, var2);
-            aq.b(var0, fishing4.a.m.c());
+            aq.b(var0, fishing4.a.m.getHalfWidthPixels());
             break;
          case 13:
             am.a(var0, fishing4.a.y.a(2131165264), fishing4.a.m.e(), var1, var2);
@@ -548,7 +550,7 @@ public final class l {
          case 57:
          case 58:
          case 59:
-            aq.b(var0, fishing4.a.m.c() - 120.0F);
+            aq.b(var0, fishing4.a.m.getHalfWidthPixels() - 120.0F);
          default:
       }
    }

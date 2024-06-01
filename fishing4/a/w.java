@@ -117,7 +117,7 @@ public class w {
                h var9;
                boolean var10001;
                try {
-                  InputStream var6 = s.a().getAssets().open(var1);
+                  InputStream var6 = GLRootView.getAppContext().getAssets().open(var1);
                   var5 = BitmapFactory.decodeStream(var6);
                   var6.close();
                   var9 = h.a((float)var5.getWidth(), (float)var5.getHeight());
@@ -342,7 +342,7 @@ public class w {
                boolean var10001;
                Bitmap var18;
                try {
-                  InputStream var6 = s.a().getAssets().open(var1);
+                  InputStream var6 = GLRootView.getAppContext().getAssets().open(var1);
                   var18 = BitmapFactory.decodeStream(var6);
                   var6.close();
                   var7 = h.a((float)var18.getWidth(), (float)var18.getHeight());

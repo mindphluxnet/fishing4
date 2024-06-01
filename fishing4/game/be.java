@@ -101,15 +101,15 @@ public final class be {
 
       fishing4.a.e var2;
       if (var0 == 0 && bg.a != 0 && bg.a != 10) {
-         var2 = fishing4.a.e.a((float)fishing4.a.m.a() - var1.a / 3.0F, var1.b / 3.0F);
+         var2 = fishing4.a.e.a((float)fishing4.a.m.getWidthPixels() - var1.a / 3.0F, var1.b / 3.0F);
       } else if (var0 == 4 && bg.a != 0 && bg.a != 10) {
-         var2 = fishing4.a.e.a((float)fishing4.a.m.a() - var1.a / 3.0F, var1.b / 2.0F);
+         var2 = fishing4.a.e.a((float)fishing4.a.m.getWidthPixels() - var1.a / 3.0F, var1.b / 2.0F);
       } else if (var0 == 5 && bg.a != 0 && bg.a != 10) {
-         var2 = fishing4.a.e.a((float)fishing4.a.m.a() - var1.a / 5.0F, var1.b / 2.0F);
+         var2 = fishing4.a.e.a((float)fishing4.a.m.getWidthPixels() - var1.a / 5.0F, var1.b / 2.0F);
       } else if (var0 == 1 && bg.a != 0 && bg.a != 10) {
-         var2 = fishing4.a.e.a((float)fishing4.a.m.a() - var1.a / 2.0F + var1.a, var1.b / 2.0F);
+         var2 = fishing4.a.e.a((float)fishing4.a.m.getWidthPixels() - var1.a / 2.0F + var1.a, var1.b / 2.0F);
       } else {
-         var2 = fishing4.a.e.a((float)fishing4.a.m.a() - var1.a / 2.0F, var1.b / 2.0F);
+         var2 = fishing4.a.e.a((float)fishing4.a.m.getWidthPixels() - var1.a / 2.0F, var1.b / 2.0F);
       }
 
       return var2;

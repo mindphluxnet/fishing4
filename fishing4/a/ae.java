@@ -57,14 +57,14 @@ public final class ae extends w {
    }
 
    public static void a(GL10 var0, String var1, float var2, float var3, float var4) {
-      a(var0, var1, var2, var3, 332.0F, 50.0F, 26.0F, 4, aa.a(1.0F, 1.0F, 1.0F, var4 / 255.0F));
+      a(var0, var1, var2, var3, 332.0F, 50.0F, 26.0F, 4, RGBColor.getColor(1.0F, 1.0F, 1.0F, var4 / 255.0F));
    }
 
    public static void a(GL10 var0, String var1, float var2, float var3, float var4, float var5, float var6, int var7) {
-      a(var0, var1, var2, var3, var4, var5, var6, var7, aa.a(1.0F, 1.0F, 1.0F, 1.0F));
+      a(var0, var1, var2, var3, var4, var5, var6, var7, RGBColor.getColor(1.0F, 1.0F, 1.0F, 1.0F));
    }
 
-   public static void a(GL10 var0, String var1, float var2, float var3, float var4, float var5, float var6, int var7, aa var8) {
+   public static void a(GL10 var0, String var1, float var2, float var3, float var4, float var5, float var6, int var7, RGBColor var8) {
       if (var1 != null) {
          int var9 = a(var1);
          if (var9 != 999 && h[var9].b != null) {
@@ -105,7 +105,7 @@ public final class ae extends w {
    }
 
    public static void a(GL10 var0, String var1, float var2, float var3, float var4, int var5) {
-      aa var8 = aa.b();
+      RGBColor var8 = RGBColor.white();
       if (var1 != null) {
          f var7;
          if (var5 != 5 && var5 != 9 && var5 != 6) {
@@ -155,7 +155,7 @@ public final class ae extends w {
 
    }
 
-   public static void a(GL10 var0, String var1, float var2, float var3, aa var4) {
+   public static void a(GL10 var0, String var1, float var2, float var3, RGBColor var4) {
       if (var1 != null) {
          int var5 = a(var1);
          if (var5 != 999 && h[var5].b != null) {

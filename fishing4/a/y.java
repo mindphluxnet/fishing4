@@ -33,7 +33,7 @@ public final class y {
    }
 
    public static String a(int var0) {
-      return s.a().getString(var0);
+      return GLRootView.getAppContext().getString(var0);
    }
 
    public static String a(String var0) {
@@ -227,7 +227,7 @@ public final class y {
 
    public static boolean b(String var0) {
       boolean var2 = false;
-      String[] var3 = s.a().fileList();
+      String[] var3 = GLRootView.getAppContext().fileList();
 
       for(int var1 = 0; var1 < var3.length; ++var1) {
          if (var3[var1].equals(var0)) {
@@ -283,7 +283,7 @@ public final class y {
          label26: {
             InputStream var6;
             try {
-               var6 = s.a().getAssets().open(var0);
+               var6 = GLRootView.getAppContext().getAssets().open(var0);
                var5 = new byte[var6.available()];
             } catch (IOException var4) {
                var1 = var4;

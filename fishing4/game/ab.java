@@ -2,6 +2,8 @@ package fishing4.game;
 
 import java.text.DecimalFormat;
 
+import fishing4.a.GLRootView;
+
 public final class ab {
    public static DecimalFormat a = new DecimalFormat("###0.0#");
 
@@ -754,7 +756,7 @@ public final class ab {
             var0 = var1;
       }
 
-      return fishing4.a.s.a().getString(var0);
+      return GLRootView.getAppContext().getString(var0);
    }
 
    public static int d(int var0) {

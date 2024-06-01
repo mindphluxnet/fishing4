@@ -2,6 +2,8 @@ package fishing4.game;
 
 import javax.microedition.khronos.opengles.GL10;
 
+import fishing4.a.RGBColor;
+
 public final class ak {
    public final fishing4.a.h a;
    public int b;
@@ -63,9 +65,9 @@ public final class ak {
 
    public final void a(GL10 var1, fishing4.a.w var2, fishing4.a.w var3, fishing4.a.w var4, fishing4.a.w var5, fishing4.a.w var6, fishing4.a.w var7) {
       if (ah.o == 2) {
-         fishing4.a.m.a(var1, var2, this.d, this.l, fishing4.a.aa.a(0.0F, 1.0F, 0.0F, 1.0F), fishing4.a.d.a(0.5F, 1.0F, this.f));
+         fishing4.a.m.a(var1, var2, this.d, this.l, RGBColor.getColor(0.0F, 1.0F, 0.0F, 1.0F), fishing4.a.d.a(0.5F, 1.0F, this.f));
       } else if (ah.o == 1) {
-         fishing4.a.m.a(var1, var2, this.d, this.l, fishing4.a.aa.a(1.0F, 0.0F, 0.0F, 1.0F), fishing4.a.d.a(0.5F, 1.0F, this.f));
+         fishing4.a.m.a(var1, var2, this.d, this.l, RGBColor.getColor(1.0F, 0.0F, 0.0F, 1.0F), fishing4.a.d.a(0.5F, 1.0F, this.f));
       } else {
          fishing4.a.m.a(var1, var2, this.d, this.l, fishing4.a.d.a(0.5F, 1.0F, this.f));
       }

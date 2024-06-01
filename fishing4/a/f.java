@@ -133,21 +133,21 @@ public final class f {
             fishing4.b.d var8;
             if (fishing4.game.z.b) {
                var8 = fishing4.b.d.a();
-               s.a();
+               GLRootView.getAppContext();
                var8.a(2131034130);
                var8 = fishing4.b.d.a();
-               s.a();
+               GLRootView.getAppContext();
                var8.a(2131034131);
-               fishing4.b.d.a().b(s.a(), 2131034130);
+               fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034130);
                var5 = var6;
             } else {
                var8 = fishing4.b.d.a();
-               s.a();
+               GLRootView.getAppContext();
                var8.a(2131034130);
                var8 = fishing4.b.d.a();
-               s.a();
+               GLRootView.getAppContext();
                var8.a(2131034131);
-               fishing4.b.d.a().b(s.a(), 2131034131);
+               fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034131);
                var5 = var6;
             }
          }

@@ -2,6 +2,8 @@ package fishing4.game;
 
 import javax.microedition.khronos.opengles.GL10;
 
+import fishing4.a.GLRootView;
+
 public final class av {
    public static int a;
    public static o b;
@@ -22,7 +24,7 @@ public final class av {
 
    public static void a(int var0) {
       if (var0 == 1) {
-         fishing4.b.d.a().b(fishing4.a.s.a(), 2131034127);
+         fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034127);
       }
 
       a = var0;
@@ -80,7 +82,7 @@ public final class av {
       k = fishing4.game.o.a(var0, "gscript/000.gs");
       a(var0);
       f(var0);
-      fishing4.b.d.a().a(fishing4.a.s.a(), 2131034127);
+      fishing4.b.d.a().a(GLRootView.getAppContext(), 2131034127);
    }
 
    public static void b(GL10 var0) {
@@ -111,66 +113,66 @@ public final class av {
       int var2;
       int var3;
       if (aw.c == 3) {
-         fishing4.a.m.a(var0, n, (float)fishing4.a.m.a() - n.c.a / 2.0F, n.c.b / 2.0F);
-         fishing4.a.m.a(var0, m, (float)fishing4.a.m.a() - m.c.a / 2.0F, m.c.b / 2.0F, '\b');
+         fishing4.a.m.a(var0, n, (float)fishing4.a.m.getWidthPixels() - n.c.a / 2.0F, n.c.b / 2.0F);
+         fishing4.a.m.a(var0, m, (float)fishing4.a.m.getWidthPixels() - m.c.a / 2.0F, m.c.b / 2.0F, '\b');
          int var4;
          if (a == 3) {
             var2 = i;
             var3 = ad.b(3);
             var4 = ad.b(4);
-            k.a(var0, 1, (float)fishing4.a.m.a(), 0.0F, var2);
-            b.a(var0, 1, (float)fishing4.a.m.a(), 0.0F, var2);
-            c.a(var0, 1, (float)fishing4.a.m.a(), 0.0F, var2);
+            k.a(var0, 1, (float)fishing4.a.m.getWidthPixels(), 0.0F, var2);
+            b.a(var0, 1, (float)fishing4.a.m.getWidthPixels(), 0.0F, var2);
+            c.a(var0, 1, (float)fishing4.a.m.getWidthPixels(), 0.0F, var2);
             if (d != null && ad.b(5) != -1) {
-               d.a(var0, 1, (float)fishing4.a.m.a(), 0.0F, var2);
+               d.a(var0, 1, (float)fishing4.a.m.getWidthPixels(), 0.0F, var2);
             }
 
             if (var3 == 501 || var3 == 503 || var3 == 504 || var3 == 505 || var3 == 506 || var3 == 508) {
-               e.a(var0, 1, (float)fishing4.a.m.a(), 0.0F, var2);
+               e.a(var0, 1, (float)fishing4.a.m.getWidthPixels(), 0.0F, var2);
             }
 
             if (var4 == 601) {
-               b.a(var0, 1, (float)fishing4.a.m.a(), 0.0F, var2);
+               b.a(var0, 1, (float)fishing4.a.m.getWidthPixels(), 0.0F, var2);
             }
          } else if (a == 5) {
             var4 = i;
             var2 = ad.b(3);
             var3 = ad.b(4);
-            k.a(var0, 3, (float)fishing4.a.m.a(), 0.0F, var4);
-            b.a(var0, 3, (float)fishing4.a.m.a(), 0.0F, var4);
-            c.a(var0, 3, (float)fishing4.a.m.a(), 0.0F, var4);
+            k.a(var0, 3, (float)fishing4.a.m.getWidthPixels(), 0.0F, var4);
+            b.a(var0, 3, (float)fishing4.a.m.getWidthPixels(), 0.0F, var4);
+            c.a(var0, 3, (float)fishing4.a.m.getWidthPixels(), 0.0F, var4);
             if (d != null && ad.b(5) != -1) {
-               d.a(var0, 3, (float)fishing4.a.m.a(), 0.0F, var4);
+               d.a(var0, 3, (float)fishing4.a.m.getWidthPixels(), 0.0F, var4);
             }
 
             if (var2 == 501 || var2 == 503 || var2 == 504 || var2 == 505 || var2 == 506 || var2 == 508) {
-               e.a(var0, 3, (float)fishing4.a.m.a(), 0.0F, var4);
+               e.a(var0, 3, (float)fishing4.a.m.getWidthPixels(), 0.0F, var4);
             }
 
             if (var3 == 601) {
-               b.a(var0, 3, (float)fishing4.a.m.a(), 0.0F, var4);
+               b.a(var0, 3, (float)fishing4.a.m.getWidthPixels(), 0.0F, var4);
             }
          } else {
             var4 = i;
             var3 = ad.b(3);
             var2 = ad.b(4);
-            k.a(var0, 2, (float)fishing4.a.m.a(), 0.0F, var4);
-            b.a(var0, 2, (float)fishing4.a.m.a(), 0.0F, var4);
-            c.a(var0, 2, (float)fishing4.a.m.a(), 0.0F, var4);
+            k.a(var0, 2, (float)fishing4.a.m.getWidthPixels(), 0.0F, var4);
+            b.a(var0, 2, (float)fishing4.a.m.getWidthPixels(), 0.0F, var4);
+            c.a(var0, 2, (float)fishing4.a.m.getWidthPixels(), 0.0F, var4);
             if (d != null && ad.b(5) != -1) {
-               d.a(var0, 2, (float)fishing4.a.m.a(), 0.0F, var4);
+               d.a(var0, 2, (float)fishing4.a.m.getWidthPixels(), 0.0F, var4);
             }
 
             if (var3 == 501 || var3 == 503 || var3 == 504 || var3 == 505 || var3 == 506 || var3 == 508) {
-               e.a(var0, 2, (float)fishing4.a.m.a(), 0.0F, var4);
+               e.a(var0, 2, (float)fishing4.a.m.getWidthPixels(), 0.0F, var4);
             }
 
             if (var2 == 601) {
-               b.a(var0, 2, (float)fishing4.a.m.a(), 0.0F, var4);
+               b.a(var0, 2, (float)fishing4.a.m.getWidthPixels(), 0.0F, var4);
             }
          }
       } else {
-         fishing4.a.m.a(var0, l, (float)fishing4.a.m.a() - l.c.a / 2.0F, l.c.b / 2.0F + (float)j, '\b');
+         fishing4.a.m.a(var0, l, (float)fishing4.a.m.getWidthPixels() - l.c.a / 2.0F, l.c.b / 2.0F + (float)j, '\b');
          if (a == 0) {
             d(var0, 0);
          } else if (a == 1) {
@@ -324,7 +326,7 @@ public final class av {
                var5 = fishing4.a.f.a(0.0F, 400.0F, 420.0F, 400.0F);
          }
 
-         float var4 = (float)fishing4.a.m.a() - var5.b.a / 2.0F;
+         float var4 = (float)fishing4.a.m.getWidthPixels() - var5.b.a / 2.0F;
          var3 = (800.0F - (float)k.b[k.a(0)][6]) / 2.0F + 104.0F + (float)j;
          if (var1 >= 21 && var1 <= 22) {
             var2 = var3 - 2.0F;
@@ -354,7 +356,7 @@ public final class av {
       }
 
       if (var1 >= 20 && var1 <= 30) {
-         var2 = (float)(fishing4.a.m.a() - 374);
+         var2 = (float)(fishing4.a.m.getWidthPixels() - 374);
          var3 = (float)(j + 386);
          switch (var1) {
             case 20:
@@ -410,19 +412,19 @@ public final class av {
    private static void d(GL10 var0, int var1) {
       int var2 = ad.b(3);
       int var3 = ad.b(4);
-      k.a(var0, 0, (float)fishing4.a.m.a(), (float)(-j), var1);
-      b.a(var0, 0, (float)fishing4.a.m.a(), (float)(-j), var1);
-      c.a(var0, 0, (float)fishing4.a.m.a(), (float)(-j), var1);
+      k.a(var0, 0, (float)fishing4.a.m.getWidthPixels(), (float)(-j), var1);
+      b.a(var0, 0, (float)fishing4.a.m.getWidthPixels(), (float)(-j), var1);
+      c.a(var0, 0, (float)fishing4.a.m.getWidthPixels(), (float)(-j), var1);
       if (d != null && ad.b(5) != -1) {
-         d.a(var0, 0, (float)fishing4.a.m.a(), (float)(-j), var1);
+         d.a(var0, 0, (float)fishing4.a.m.getWidthPixels(), (float)(-j), var1);
       }
 
       if (e != null && (var2 == 501 || var2 == 503 || var2 == 504 || var2 == 505 || var2 == 506 || var2 == 508)) {
-         e.a(var0, 0, (float)fishing4.a.m.a(), (float)(-j), var1);
+         e.a(var0, 0, (float)fishing4.a.m.getWidthPixels(), (float)(-j), var1);
       }
 
       if (var3 == 601) {
-         b.a(var0, 0, (float)fishing4.a.m.a(), (float)(-j), var1);
+         b.a(var0, 0, (float)fishing4.a.m.getWidthPixels(), (float)(-j), var1);
       }
 
    }

@@ -101,7 +101,7 @@ public final class ai {
          al[] var14;
          if (var7 % 3 == 0) {
             var8 = fishing4.a.z.a(2);
-            float var3 = fishing4.a.m.c();
+            float var3 = fishing4.a.m.getHalfWidthPixels();
             var14 = this.e;
             float var1 = (float)fishing4.a.z.a(400 - (int)al.b(var8).a);
             var14 = this.e;

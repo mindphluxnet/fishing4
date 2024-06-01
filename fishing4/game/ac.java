@@ -3,6 +3,8 @@ package fishing4.game;
 import java.text.DecimalFormat;
 import javax.microedition.khronos.opengles.GL10;
 
+import fishing4.a.RGBColor;
+
 public final class ac {
    private int a;
    private float b;
@@ -80,21 +82,21 @@ public final class ac {
    }
 
    public static void a(GL10 var0, fishing4.a.w var1, float var2, float var3, int var4) {
-      a(var0, var1, var2, var3, var4, fishing4.a.aa.a(1.0F, 1.0F, 1.0F, 1.0F));
+      a(var0, var1, var2, var3, var4, RGBColor.getColor(1.0F, 1.0F, 1.0F, 1.0F));
    }
 
    public static void a(GL10 var0, fishing4.a.w var1, float var2, float var3, int var4, int var5) {
       if (var5 < 20) {
-         a(var0, var1, var2, var3, var4, fishing4.a.aa.a(1.0F, 0.5F, 0.5F, 1.0F));
+         a(var0, var1, var2, var3, var4, RGBColor.getColor(1.0F, 0.5F, 0.5F, 1.0F));
       } else {
          var5 = (100 - var5) * 56 / 100;
-         a(var0, var1, var2, var3, var4, fishing4.a.aa.a(1.0F, 1.0F, 1.0F, 1.0F));
-         fishing4.a.m.a(var0, var1, var2, var3 + 28.0F, (float)var5, fishing4.a.aa.a(1.0F, 1.0F, 1.0F, 1.0F), fishing4.a.d.a(0.5F, 0.0F, 0.0F));
+         a(var0, var1, var2, var3, var4, RGBColor.getColor(1.0F, 1.0F, 1.0F, 1.0F));
+         fishing4.a.m.a(var0, var1, var2, var3 + 28.0F, (float)var5, RGBColor.getColor(1.0F, 1.0F, 1.0F, 1.0F), fishing4.a.d.a(0.5F, 0.0F, 0.0F));
       }
 
    }
 
-   private static void a(GL10 var0, fishing4.a.w var1, float var2, float var3, int var4, fishing4.a.aa var5) {
+   private static void a(GL10 var0, fishing4.a.w var1, float var2, float var3, int var4, RGBColor var5) {
       fishing4.a.m.a(var0, var1, var2, var3, n(var4), var5);
    }
 

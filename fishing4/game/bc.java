@@ -5,9 +5,9 @@ import javax.microedition.khronos.opengles.GL10;
 public final class bc {
    public static final fishing4.a.f a = fishing4.a.f.a(303.0F, 0.0F, 288.0F, 84.0F);
    public static final fishing4.a.f b = fishing4.a.f.a(593.0F, 1.0F, 302.0F, 96.0F);
-   public static final fishing4.a.e c = fishing4.a.e.a(324.0F, (float)(fishing4.a.m.b() - 115 - 42));
+   public static final fishing4.a.e c = fishing4.a.e.a(324.0F, (float)(fishing4.a.m.getHeightPixels() - 115 - 42));
    private final int d = 4;
-   private fishing4.a.e e = fishing4.a.e.a(324.0F, (float)(fishing4.a.m.b() - 115 - 42));
+   private fishing4.a.e e = fishing4.a.e.a(324.0F, (float)(fishing4.a.m.getHeightPixels() - 115 - 42));
    private fishing4.a.e[] f = new fishing4.a.e[4];
 
    private bc() {
@@ -68,7 +68,7 @@ public final class bc {
       int var6;
       for(var6 = 0; var6 < 4; ++var6) {
          fishing4.a.e var8 = var0.f[var6];
-         if (var8.b < (float)fishing4.a.m.b() + a(var6).b.b / 2.0F) {
+         if (var8.b < (float)fishing4.a.m.getHeightPixels() + a(var6).b.b / 2.0F) {
             var0.f[var6] = fishing4.a.e.a(var8.a, var8.b + 1.0F);
          } else {
             var0.f[var6] = var0.b(var6);

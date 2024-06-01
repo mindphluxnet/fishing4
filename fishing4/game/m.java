@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import javax.microedition.khronos.opengles.GL10;
 
 import fishing4.a.AESUtils;
+import fishing4.a.GLRootView;
 
 public final class m {
    public static fishing4.a.w f;
@@ -1818,7 +1819,7 @@ public final class m {
    }
 
    public static String c(int var0) {
-      return fishing4.a.s.a().getString(2131165434 + var0);
+      return GLRootView.getAppContext().getString(2131165434 + var0);
    }
 
    private static void c(GL10 var0, float var1, float var2, int var3) {

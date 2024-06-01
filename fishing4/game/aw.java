@@ -5,6 +5,9 @@ import android.util.Log;
 import java.text.DecimalFormat;
 import javax.microedition.khronos.opengles.GL10;
 
+import fishing4.a.GLRootView;
+import fishing4.a.RGBColor;
+
 public final class aw extends aa {
    public static int f;
    public static float h;
@@ -66,9 +69,9 @@ public final class aw extends aa {
                if (!bh.a() && fishing4.game.j.a == 0) {
                   boolean var2;
                   if (globalConfig.j) {
-                     var2 = fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), 40.0F), fishing4.a.h.a(120.0F, 120.0F), var1);
+                     var2 = fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), 40.0F), fishing4.a.h.a(120.0F, 120.0F), var1);
                   } else {
-                     var2 = fishing4.a.f.a(fishing4.a.e.a(40.0F, (float)(fishing4.a.m.b() - 40)), fishing4.a.h.a(120.0F, 120.0F), var1);
+                     var2 = fishing4.a.f.a(fishing4.a.e.a(40.0F, (float)(fishing4.a.m.getHeightPixels() - 40)), fishing4.a.h.a(120.0F, 120.0F), var1);
                   }
 
                   if (var2) {
@@ -188,21 +191,21 @@ public final class aw extends aa {
                switch (f) {
                   case 0:
                   case 2:
-                     fishing4.b.d.a().c(fishing4.a.s.a(), 2131034132);
+                     fishing4.b.d.a().c(GLRootView.getAppContext(), 2131034132);
                      break label125;
                   case 1:
-                     fishing4.b.d.a().a(fishing4.a.s.a(), 2131034121);
-                     fishing4.b.d.a().c(fishing4.a.s.a(), 2131034132);
+                     fishing4.b.d.a().a(GLRootView.getAppContext(), 2131034121);
+                     fishing4.b.d.a().c(GLRootView.getAppContext(), 2131034132);
                      break label125;
                   case 3:
-                     fishing4.b.d.a().a(fishing4.a.s.a(), 2131034123);
+                     fishing4.b.d.a().a(GLRootView.getAppContext(), 2131034123);
                   case 4:
                   case 5:
                   case 6:
                   case 10:
                      break;
                   case 7:
-                     fishing4.b.d.a().a(fishing4.a.s.a(), 2131034122);
+                     fishing4.b.d.a().a(GLRootView.getAppContext(), 2131034122);
                      break;
                   case 8:
                   case 9:
@@ -210,7 +213,7 @@ public final class aw extends aa {
                      break label125;
                }
 
-               fishing4.b.d.a().c(fishing4.a.s.a(), 2131034113);
+               fishing4.b.d.a().c(GLRootView.getAppContext(), 2131034113);
             }
 
             fishing4.game.q.c = System.currentTimeMillis();
@@ -342,7 +345,7 @@ public final class aw extends aa {
                try {
                   if (fishing4.game.m.b(i) <= 2) {
                      fishing4.b.d.a().e();
-                     fishing4.b.d.a().c(fishing4.a.s.a(), 2131034114);
+                     fishing4.b.d.a().c(GLRootView.getAppContext(), 2131034114);
                      break label238;
                   }
                } catch (Exception var15) {
@@ -352,7 +355,7 @@ public final class aw extends aa {
 
                try {
                   fishing4.b.d.a().e();
-                  fishing4.b.d.a().c(fishing4.a.s.a(), 2131034115);
+                  fishing4.b.d.a().c(GLRootView.getAppContext(), 2131034115);
                } catch (Exception var14) {
                   var10001 = false;
                   break;
@@ -361,13 +364,13 @@ public final class aw extends aa {
 
             try {
                fishing4.b.d var23 = fishing4.b.d.a();
-               fishing4.a.s.a();
+               GLRootView.getAppContext();
                var23.a(2131034123);
                var23 = fishing4.b.d.a();
-               fishing4.a.s.a();
+               GLRootView.getAppContext();
                var23.a(2131034121);
                var23 = fishing4.b.d.a();
-               fishing4.a.s.a();
+               GLRootView.getAppContext();
                var23.a(2131034122);
             } catch (Exception var13) {
                var10001 = false;
@@ -416,7 +419,7 @@ public final class aw extends aa {
                            }
 
                            try {
-                              fishing4.b.d.a().c(fishing4.a.s.a(), 2131034132);
+                              fishing4.b.d.a().c(GLRootView.getAppContext(), 2131034132);
                               break label231;
                            } catch (Exception var8) {
                               var10001 = false;
@@ -425,7 +428,7 @@ public final class aw extends aa {
                         }
 
                         try {
-                           fishing4.b.d.a().c(fishing4.a.s.a(), 2131034132);
+                           fishing4.b.d.a().c(GLRootView.getAppContext(), 2131034132);
                            break label231;
                         } catch (Exception var7) {
                            var10001 = false;
@@ -434,7 +437,7 @@ public final class aw extends aa {
                      }
 
                      try {
-                        fishing4.b.d.a().c(fishing4.a.s.a(), 2131034113);
+                        fishing4.b.d.a().c(GLRootView.getAppContext(), 2131034113);
                         break label231;
                      } catch (Exception var6) {
                         var10001 = false;
@@ -443,7 +446,7 @@ public final class aw extends aa {
                   }
 
                   try {
-                     fishing4.b.d.a().c(fishing4.a.s.a(), 2131034113);
+                     fishing4.b.d.a().c(GLRootView.getAppContext(), 2131034113);
                      break label231;
                   } catch (Exception var5) {
                      var10001 = false;
@@ -452,7 +455,7 @@ public final class aw extends aa {
                }
 
                try {
-                  fishing4.b.d.a().c(fishing4.a.s.a(), 2131034113);
+                  fishing4.b.d.a().c(GLRootView.getAppContext(), 2131034113);
                } catch (Exception var4) {
                   var10001 = false;
                   return;
@@ -1275,9 +1278,9 @@ public final class aw extends aa {
             if (fishing4.game.j.a == 0) {
                this.J.a(var1, az.s, az.t, fishing4.a.e.a(75.0F, 25.0F));
                if (!bh.a()) {
-                  fishing4.a.m.a(var1, (float)(fishing4.a.m.a() - 85), 20.0F, 160.0F, 30.0F, fishing4.a.aa.a());
-                  fishing4.a.m.a(var1, az.s, (float)(fishing4.a.m.a() - 130), 20.0F, 794.0F, 576.0F, 140.0F, 66.0F, fishing4.a.g.a(0.35F));
-                  fishing4.a.ae.a(var1, ((ag)ad.h.get(ad.g)).g(), (float)(fishing4.a.m.a() - 80), 20.0F, 140.0F, 50.0F, 24.0F, 1);
+                  fishing4.a.m.a(var1, (float)(fishing4.a.m.getWidthPixels() - 85), 20.0F, 160.0F, 30.0F, RGBColor.black());
+                  fishing4.a.m.a(var1, az.s, (float)(fishing4.a.m.getWidthPixels() - 130), 20.0F, 794.0F, 576.0F, 140.0F, 66.0F, fishing4.a.g.a(0.35F));
+                  fishing4.a.ae.a(var1, ((ag)ad.h.get(ad.g)).g(), (float)(fishing4.a.m.getWidthPixels() - 80), 20.0F, 140.0F, 50.0F, 24.0F, 1);
                }
 
                if (ad.a != -1) {
@@ -1637,9 +1640,9 @@ public final class aw extends aa {
       int var5;
       if (l) {
          if (n < 46) {
-            var4 = fishing4.a.m.b() + 23 - n;
+            var4 = fishing4.a.m.getHeightPixels() + 23 - n;
          } else {
-            var4 = fishing4.a.m.b() - 23;
+            var4 = fishing4.a.m.getHeightPixels() - 23;
          }
 
          if (n < 100) {
@@ -1648,17 +1651,17 @@ public final class aw extends aa {
             var5 = 255 - (n - 100) * 25;
          }
 
-         fishing4.a.m.a(var1, az.s, fishing4.a.m.c(), (float)(var4 - 5), 0.0F, 527.0F, 332.0F, 46.0F, var5);
+         fishing4.a.m.a(var1, az.s, fishing4.a.m.getHalfWidthPixels(), (float)(var4 - 5), 0.0F, 527.0F, 332.0F, 46.0F, var5);
          if (globalConfig.languageId == 0) {
-            fishing4.a.ae.a(var1, "공인협회 " + fishing4.a.y.a(2131165318), fishing4.a.m.c(), (float)(var4 - 5), (float)var5);
+            fishing4.a.ae.a(var1, "공인협회 " + fishing4.a.y.a(2131165318), fishing4.a.m.getHalfWidthPixels(), (float)(var4 - 5), (float)var5);
          } else {
-            fishing4.a.ae.a(var1, "Public " + fishing4.a.y.a(2131165318), fishing4.a.m.c(), (float)(var4 - 5), (float)var5);
+            fishing4.a.ae.a(var1, "Public " + fishing4.a.y.a(2131165318), fishing4.a.m.getHalfWidthPixels(), (float)(var4 - 5), (float)var5);
          }
       } else if (m) {
          if (n < 46) {
-            var4 = fishing4.a.m.b() + 23 - n;
+            var4 = fishing4.a.m.getHeightPixels() + 23 - n;
          } else {
-            var4 = fishing4.a.m.b() - 23;
+            var4 = fishing4.a.m.getHeightPixels() - 23;
          }
 
          if (n < 100) {
@@ -1667,11 +1670,11 @@ public final class aw extends aa {
             var5 = 255 - (n - 100) * 25;
          }
 
-         fishing4.a.m.a(var1, az.s, fishing4.a.m.c(), (float)(var4 - 5), 0.0F, 527.0F, 332.0F, 46.0F, var5);
+         fishing4.a.m.a(var1, az.s, fishing4.a.m.getHalfWidthPixels(), (float)(var4 - 5), 0.0F, 527.0F, 332.0F, 46.0F, var5);
          if (globalConfig.languageId == 0) {
-            fishing4.a.ae.a(var1, "민간협회 " + fishing4.a.y.a(2131165318), fishing4.a.m.c(), (float)(var4 - 5), (float)var5);
+            fishing4.a.ae.a(var1, "민간협회 " + fishing4.a.y.a(2131165318), fishing4.a.m.getHalfWidthPixels(), (float)(var4 - 5), (float)var5);
          } else {
-            fishing4.a.ae.a(var1, "Private " + fishing4.a.y.a(2131165318), fishing4.a.m.c(), (float)(var4 - 5), (float)var5);
+            fishing4.a.ae.a(var1, "Private " + fishing4.a.y.a(2131165318), fishing4.a.m.getHalfWidthPixels(), (float)(var4 - 5), (float)var5);
          }
       }
 
@@ -1685,11 +1688,11 @@ public final class aw extends aa {
             float var2;
             float var3;
             if (globalConfig.j) {
-               var2 = fishing4.a.m.c();
+               var2 = fishing4.a.m.getHalfWidthPixels();
                var3 = 40.0F;
             } else {
                var2 = 40.0F;
-               var3 = (float)(fishing4.a.m.b() - 40);
+               var3 = (float)(fishing4.a.m.getHeightPixels() - 40);
             }
 
             short var13;
@@ -1787,13 +1790,13 @@ public final class aw extends aa {
                if (fishing4.a.z.a(100) < 35) {
                   switch (f) {
                      case 1:
-                        fishing4.b.d.a().b(fishing4.a.s.a(), 2131034121);
+                        fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034121);
                         break;
                      case 3:
-                        fishing4.b.d.a().b(fishing4.a.s.a(), 2131034123);
+                        fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034123);
                         break;
                      case 7:
-                        fishing4.b.d.a().b(fishing4.a.s.a(), 2131034122);
+                        fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034122);
                   }
                }
 

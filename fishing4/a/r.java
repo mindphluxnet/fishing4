@@ -96,16 +96,16 @@ public final class r implements Runnable {
    private void a(GL10 var1, String var2) {
       if (fishing4.game.z.b() != 2) {
          fishing4.game.am.a(var1, az.s, fishing4.a.m.e(), fishing4.a.g.a(18.0F));
-         fishing4.a.ae.a(var1, var2, fishing4.a.m.c(), fishing4.a.m.d() + 70.0F, 300.0F, 80.0F, 26.0F, 4);
+         fishing4.a.ae.a(var1, var2, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() + 70.0F, 300.0F, 80.0F, 26.0F, 4);
          if (globalConfig.languageId == 0) {
-            fishing4.a.ae.a(var1, "강제종료시 데이터가 손상될 수 있으니 절대 강제종료하지 마시기 바랍니다.", fishing4.a.m.c(), fishing4.a.m.d() - 100.0F, 300.0F, 90.0F, 24.0F, 4, fishing4.a.aa.c());
+            fishing4.a.ae.a(var1, "강제종료시 데이터가 손상될 수 있으니 절대 강제종료하지 마시기 바랍니다.", fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 100.0F, 300.0F, 90.0F, 24.0F, 4, RGBColor.red());
          } else {
-            fishing4.a.ae.a(var1, "Do not close the app\nsuddenly as it can \nresult data crash.", fishing4.a.m.c(), fishing4.a.m.d() - 100.0F, 300.0F, 90.0F, 24.0F, 4, fishing4.a.aa.c());
+            fishing4.a.ae.a(var1, "Do not close the app\nsuddenly as it can \nresult data crash.", fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 100.0F, 300.0F, 90.0F, 24.0F, 4, RGBColor.red());
          }
 
-         fishing4.a.m.a(var1, fishing4.a.m.c(), fishing4.a.m.d(), 324.0F, 10.0F, fishing4.a.aa.a(1.0F, 1.0F, 1.0F, 1.0F));
-         float var3 = fishing4.a.m.c();
-         fishing4.a.m.a(var1, (float)(this.w % 81 * 4 / 2) + (var3 - 160.0F), fishing4.a.m.d(), (float)(this.w % 81 * 4), 6.0F, fishing4.a.aa.a(0.0F, 0.0F, 1.0F, 1.0F));
+         fishing4.a.m.a(var1, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 324.0F, 10.0F, RGBColor.getColor(1.0F, 1.0F, 1.0F, 1.0F));
+         float var3 = fishing4.a.m.getHalfWidthPixels();
+         fishing4.a.m.a(var1, (float)(this.w % 81 * 4 / 2) + (var3 - 160.0F), fishing4.a.m.getHalfHeightPixels(), (float)(this.w % 81 * 4), 6.0F, RGBColor.getColor(0.0F, 0.0F, 1.0F, 1.0F));
       }
 
    }

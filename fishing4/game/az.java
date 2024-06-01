@@ -2,6 +2,9 @@ package fishing4.game;
 
 import javax.microedition.khronos.opengles.GL10;
 
+import fishing4.a.GLRootView;
+import fishing4.a.RGBColor;
+
 public final class az {
    public static fishing4.a.w A;
    public static fishing4.a.w B;
@@ -60,11 +63,11 @@ public final class az {
    }
 
    private static fishing4.a.e a(int var0, int var1) {
-      float var5 = (float)((fishing4.a.m.a() - 330) / 2);
-      float var2 = fishing4.a.m.d();
+      float var5 = (float)((fishing4.a.m.getWidthPixels() - 330) / 2);
+      float var2 = fishing4.a.m.getHalfHeightPixels();
       float var3 = (float)(var0 % 12 % 6 * 66);
       float var4 = (float)(var0 % 12 / 6 * 76);
-      return fishing4.a.e.a(var5 + var3 + (float)((var0 / 12 - var1) * fishing4.a.m.a()), var2 + 130.0F - var4);
+      return fishing4.a.e.a(var5 + var3 + (float)((var0 / 12 - var1) * fishing4.a.m.getWidthPixels()), var2 + 130.0F - var4);
    }
 
    public static void a() {
@@ -87,7 +90,7 @@ public final class az {
                fishing4.b.d.a().d();
             } else {
                for(var0 = 0; var0 < r.length; ++var0) {
-                  r[var0].b(fishing4.a.m.c(), fishing4.a.m.d());
+                  r[var0].b(fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels());
                }
 
                h = -1;
@@ -111,19 +114,19 @@ public final class az {
             var0 = var1;
             if (fishing4.game.z.b() == 4) {
                fishing4.b.d var2 = fishing4.b.d.a();
-               fishing4.a.s.a();
+               GLRootView.getAppContext();
                var2.a(2131034123);
                var2 = fishing4.b.d.a();
-               fishing4.a.s.a();
+               GLRootView.getAppContext();
                var2.a(2131034121);
                var2 = fishing4.b.d.a();
-               fishing4.a.s.a();
+               GLRootView.getAppContext();
                var2.a(2131034122);
                var0 = var1;
             }
 
             while(var0 < r.length) {
-               r[var0].b(fishing4.a.m.c(), fishing4.a.m.d());
+               r[var0].b(fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels());
                ++var0;
             }
          }
@@ -132,11 +135,11 @@ public final class az {
    }
 
    public static void a(float var0, fishing4.a.e var1) {
-      if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 160.0F, var0 + 220.0F), fishing4.a.h.a(75.0F, 75.0F), var1)) {
+      if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 160.0F, var0 + 220.0F), fishing4.a.h.a(75.0F, 75.0F), var1)) {
          n = (j + P - 1) % P;
          y = 0;
          z = 0;
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 160.0F, var0 + 220.0F), fishing4.a.h.a(75.0F, 75.0F), var1)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 160.0F, var0 + 220.0F), fishing4.a.h.a(75.0F, 75.0F), var1)) {
          n = (j + 1) % P;
          y = 0;
          z = 0;
@@ -211,131 +214,131 @@ public final class az {
       v = fishing4.a.w.a(var0, "img/town/fish_ui_02.png");
       w = fishing4.a.w.a(var0, "img/town/coinshop.png");
       x = fishing4.a.w.a(var0, "img/fish4_tapjoy.png");
-      fishing4.b.d.a().a(fishing4.a.s.a(), 2131034130);
-      fishing4.b.d.a().a(fishing4.a.s.a(), 2131034131);
-      fishing4.b.d.a().a(fishing4.a.s.a(), 2131034120);
-      fishing4.b.d.a().a(fishing4.a.s.a(), 2131034119);
+      fishing4.b.d.a().a(GLRootView.getAppContext(), 2131034130);
+      fishing4.b.d.a().a(GLRootView.getAppContext(), 2131034131);
+      fishing4.b.d.a().a(GLRootView.getAppContext(), 2131034120);
+      fishing4.b.d.a().a(GLRootView.getAppContext(), 2131034119);
       M = fishing4.a.ad.a(0);
    }
 
    public static void a(GL10 var0, float var1) {
-      fishing4.a.m.a(var0, s, fishing4.a.m.c() - 80.0F, var1 + 150.0F, 587.0F, 689.0F, 66.0F, 68.0F);
-      fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 + 170.0F, 662.0F, 501.0F, 52.0F, 18.0F);
+      fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels() - 80.0F, var1 + 150.0F, 587.0F, 689.0F, 66.0F, 68.0F);
+      fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels() + 80.0F, var1 + 170.0F, 662.0F, 501.0F, 52.0F, 18.0F);
       if (OptionsManager.a) {
-         fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 + 130.0F, 0.0F, 719.0F, 78.0F, 52.0F, fishing4.a.aa.c());
-         fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 + 130.0F, 928.0F, 814.0F, 42.0F, 22.0F, '\u0001');
+         fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels() + 80.0F, var1 + 130.0F, 0.0F, 719.0F, 78.0F, 52.0F, RGBColor.red());
+         fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels() + 80.0F, var1 + 130.0F, 928.0F, 814.0F, 42.0F, 22.0F, '\u0001');
       } else {
-         fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 + 130.0F, 0.0F, 719.0F, 78.0F, 52.0F);
-         fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 + 130.0F, 973.0F, 814.0F, 48.0F, 22.0F, '\u0001');
+         fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels() + 80.0F, var1 + 130.0F, 0.0F, 719.0F, 78.0F, 52.0F);
+         fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels() + 80.0F, var1 + 130.0F, 973.0F, 814.0F, 48.0F, 22.0F, '\u0001');
       }
 
-      fishing4.a.m.a(var0, s, fishing4.a.m.c() - 80.0F, var1 + 50.0F, 587.0F, 689.0F, 66.0F, 68.0F);
-      fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 + 70.0F, 680.0F, 478.0F, 118.0F, 16.0F);
+      fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels() - 80.0F, var1 + 50.0F, 587.0F, 689.0F, 66.0F, 68.0F);
+      fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels() + 80.0F, var1 + 70.0F, 680.0F, 478.0F, 118.0F, 16.0F);
       if (OptionsManager.b) {
-         fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 + 30.0F, 0.0F, 719.0F, 78.0F, 52.0F, fishing4.a.aa.c());
-         fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 + 30.0F, 928.0F, 814.0F, 42.0F, 22.0F, '\u0001');
+         fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels() + 80.0F, var1 + 30.0F, 0.0F, 719.0F, 78.0F, 52.0F, RGBColor.red());
+         fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels() + 80.0F, var1 + 30.0F, 928.0F, 814.0F, 42.0F, 22.0F, '\u0001');
       } else {
-         fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 + 30.0F, 0.0F, 719.0F, 78.0F, 52.0F);
-         fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 + 30.0F, 973.0F, 814.0F, 48.0F, 22.0F, '\u0001');
+         fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels() + 80.0F, var1 + 30.0F, 0.0F, 719.0F, 78.0F, 52.0F);
+         fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels() + 80.0F, var1 + 30.0F, 973.0F, 814.0F, 48.0F, 22.0F, '\u0001');
       }
 
-      fishing4.a.m.a(var0, s, fishing4.a.m.c() - 80.0F, var1 - 50.0F, 497.0F, 689.0F, 88.0F, 58.0F);
-      fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 - 30.0F, 727.0F, 886.0F, 122.0F, 18.0F);
+      fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels() - 80.0F, var1 - 50.0F, 497.0F, 689.0F, 88.0F, 58.0F);
+      fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels() + 80.0F, var1 - 30.0F, 727.0F, 886.0F, 122.0F, 18.0F);
       if (OptionsManager.c) {
-         fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 - 70.0F, 0.0F, 719.0F, 78.0F, 52.0F, fishing4.a.aa.c());
-         fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 - 70.0F, 928.0F, 814.0F, 42.0F, 22.0F, '\u0001');
+         fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels() + 80.0F, var1 - 70.0F, 0.0F, 719.0F, 78.0F, 52.0F, RGBColor.red());
+         fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels() + 80.0F, var1 - 70.0F, 928.0F, 814.0F, 42.0F, 22.0F, '\u0001');
       } else {
-         fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 - 70.0F, 0.0F, 719.0F, 78.0F, 52.0F);
-         fishing4.a.m.a(var0, s, fishing4.a.m.c() + 80.0F, var1 - 70.0F, 973.0F, 814.0F, 48.0F, 22.0F, '\u0001');
+         fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels() + 80.0F, var1 - 70.0F, 0.0F, 719.0F, 78.0F, 52.0F);
+         fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels() + 80.0F, var1 - 70.0F, 973.0F, 814.0F, 48.0F, 22.0F, '\u0001');
       }
 
    }
 
    public static void a(GL10 var0, float var1, int var2) {
       if (j == 0) {
-         fishing4.a.m.a(var0, s, fishing4.a.m.c(), var1 + 150.0F, 794.0F, 577.0F, 140.0F, 64.0F);
+         fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels(), var1 + 150.0F, 794.0F, 577.0F, 140.0F, 64.0F);
          if (globalConfig.languageId == 0) {
-            fishing4.a.m.a(var0, t, fishing4.a.m.c() - 25.0F, var1 + 100.0F, 385.0F, 488.0F, 46.0F, 20.0F);
-            fishing4.a.m.a(var0, t, 25.0F + fishing4.a.m.c(), var1 + 100.0F, 523.0F, 488.0F, 46.0F, 20.0F);
+            fishing4.a.m.a(var0, t, fishing4.a.m.getHalfWidthPixels() - 25.0F, var1 + 100.0F, 385.0F, 488.0F, 46.0F, 20.0F);
+            fishing4.a.m.a(var0, t, 25.0F + fishing4.a.m.getHalfWidthPixels(), var1 + 100.0F, 523.0F, 488.0F, 46.0F, 20.0F);
          } else {
-            fishing4.a.m.a(var0, t, fishing4.a.m.c() - 25.0F, var1 + 100.0F, 752.0F, 487.0F, 42.0F, 20.0F);
-            fishing4.a.m.a(var0, t, 25.0F + fishing4.a.m.c(), var1 + 100.0F, 882.0F, 486.0F, 52.0F, 20.0F);
+            fishing4.a.m.a(var0, t, fishing4.a.m.getHalfWidthPixels() - 25.0F, var1 + 100.0F, 752.0F, 487.0F, 42.0F, 20.0F);
+            fishing4.a.m.a(var0, t, 25.0F + fishing4.a.m.getHalfWidthPixels(), var1 + 100.0F, 882.0F, 486.0F, 52.0F, 20.0F);
          }
 
-         fishing4.a.m.a(var0, s, fishing4.a.m.c(), var1 - 50.0F, 821.0F, 645.0F, 112.0F, 86.0F);
+         fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels(), var1 - 50.0F, 821.0F, 645.0F, 112.0F, 86.0F);
          if (globalConfig.languageId == 0) {
-            fishing4.a.m.a(var0, t, fishing4.a.m.c() - 35.0F, var1 - 120.0F, 441.0F, 488.0F, 70.0F, 20.0F);
-            fishing4.a.m.a(var0, t, 30.0F + fishing4.a.m.c(), var1 - 120.0F, 523.0F, 488.0F, 46.0F, 20.0F);
+            fishing4.a.m.a(var0, t, fishing4.a.m.getHalfWidthPixels() - 35.0F, var1 - 120.0F, 441.0F, 488.0F, 70.0F, 20.0F);
+            fishing4.a.m.a(var0, t, 30.0F + fishing4.a.m.getHalfWidthPixels(), var1 - 120.0F, 523.0F, 488.0F, 46.0F, 20.0F);
          } else {
-            fishing4.a.m.a(var0, t, fishing4.a.m.c() - 35.0F, var1 - 120.0F, 803.0F, 486.0F, 60.0F, 20.0F);
-            fishing4.a.m.a(var0, t, 30.0F + fishing4.a.m.c(), var1 - 120.0F, 882.0F, 486.0F, 52.0F, 20.0F);
+            fishing4.a.m.a(var0, t, fishing4.a.m.getHalfWidthPixels() - 35.0F, var1 - 120.0F, 803.0F, 486.0F, 60.0F, 20.0F);
+            fishing4.a.m.a(var0, t, 30.0F + fishing4.a.m.getHalfWidthPixels(), var1 - 120.0F, 882.0F, 486.0F, 52.0F, 20.0F);
          }
       } else {
          float var3;
          int var4;
          int var5;
          int var6;
-         fishing4.a.aa var7;
+         RGBColor var7;
          fishing4.a.w var8;
          String var9;
          if (j >= 10 && j <= 12) {
             if (globalConfig.languageId == 0) {
-               fishing4.a.m.a(var0, t, fishing4.a.m.c() - 25.0F, var1 + 220.0F, 385.0F, 488.0F, 46.0F, 20.0F);
-               fishing4.a.m.a(var0, t, 25.0F + fishing4.a.m.c(), var1 + 220.0F, 523.0F, 488.0F, 46.0F, 20.0F);
+               fishing4.a.m.a(var0, t, fishing4.a.m.getHalfWidthPixels() - 25.0F, var1 + 220.0F, 385.0F, 488.0F, 46.0F, 20.0F);
+               fishing4.a.m.a(var0, t, 25.0F + fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 523.0F, 488.0F, 46.0F, 20.0F);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 10) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, var3 - 120.0F, var1 + 180.0F, 581.0F, 488.0F, 46.0F, 20.0F, var7);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 11) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, var3, var1 + 180.0F, 639.0F, 488.0F, 46.0F, 20.0F, var7);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 12) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, 120.0F + var3, var1 + 180.0F, 696.0F, 488.0F, 46.0F, 20.0F, var7);
             } else {
-               fishing4.a.m.a(var0, t, fishing4.a.m.c() - 25.0F, var1 + 220.0F, 752.0F, 487.0F, 42.0F, 20.0F);
-               fishing4.a.m.a(var0, t, 25.0F + fishing4.a.m.c(), var1 + 220.0F, 882.0F, 486.0F, 52.0F, 20.0F);
+               fishing4.a.m.a(var0, t, fishing4.a.m.getHalfWidthPixels() - 25.0F, var1 + 220.0F, 752.0F, 487.0F, 42.0F, 20.0F);
+               fishing4.a.m.a(var0, t, 25.0F + fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 882.0F, 486.0F, 52.0F, 20.0F);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 10) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, var3 - 120.0F, var1 + 180.0F, 765.0F, 467.0F, 30.0F, 16.0F, var7);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 11) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, var3, var1 + 180.0F, 837.0F, 465.0F, 32.0F, 18.0F, var7);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 12) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, 120.0F + var3, var1 + 180.0F, 911.0F, 466.0F, 42.0F, 18.0F, var7);
@@ -357,70 +360,70 @@ public final class az {
                   var9 = var5 + ". " + fishing4.game.m.c(var6);
                }
 
-               fishing4.a.ae.a(var0, var9, fishing4.a.m.c(), 70.0F + var1 - (float)(var4 * 50), 300.0F, 50.0F, 26.0F, 0);
-               fishing4.a.m.a(var0, s, fishing4.a.m.c(), 70.0F + var1 - 22.0F - (float)(var4 * 50), 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
+               fishing4.a.ae.a(var0, var9, fishing4.a.m.getHalfWidthPixels(), 70.0F + var1 - (float)(var4 * 50), 300.0F, 50.0F, 26.0F, 0);
+               fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels(), 70.0F + var1 - 22.0F - (float)(var4 * 50), 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
             }
 
-            fishing4.game.k.b(var0, fishing4.a.e.a(fishing4.a.m.c(), var1 - 40.0F), 160.0F, var2);
-            fishing4.a.ae.a(var0, fishing4.game.s.c + " / 187", fishing4.a.m.c(), var1 - 200.0F, 330.0F, 50.0F, 26.0F, 1, fishing4.a.aa.d());
+            fishing4.game.k.b(var0, fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var1 - 40.0F), 160.0F, var2);
+            fishing4.a.ae.a(var0, fishing4.game.s.c + " / 187", fishing4.a.m.getHalfWidthPixels(), var1 - 200.0F, 330.0F, 50.0F, 26.0F, 1, RGBColor.yellow());
          } else if (j >= 20 && j <= 22) {
             if (globalConfig.languageId == 0) {
-               fishing4.a.m.a(var0, t, fishing4.a.m.c() - 35.0F, var1 + 220.0F, 441.0F, 488.0F, 70.0F, 20.0F);
-               fishing4.a.m.a(var0, t, 30.0F + fishing4.a.m.c(), var1 + 220.0F, 523.0F, 488.0F, 46.0F, 20.0F);
+               fishing4.a.m.a(var0, t, fishing4.a.m.getHalfWidthPixels() - 35.0F, var1 + 220.0F, 441.0F, 488.0F, 70.0F, 20.0F);
+               fishing4.a.m.a(var0, t, 30.0F + fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 523.0F, 488.0F, 46.0F, 20.0F);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 20) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, var3 - 120.0F, var1 + 180.0F, 581.0F, 488.0F, 46.0F, 20.0F, var7);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 21) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, var3, var1 + 180.0F, 639.0F, 488.0F, 46.0F, 20.0F, var7);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 22) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, 120.0F + var3, var1 + 180.0F, 696.0F, 488.0F, 46.0F, 20.0F, var7);
             } else {
-               fishing4.a.m.a(var0, t, fishing4.a.m.c() - 35.0F, var1 + 220.0F, 803.0F, 486.0F, 60.0F, 20.0F);
-               fishing4.a.m.a(var0, t, 30.0F + fishing4.a.m.c(), var1 + 220.0F, 882.0F, 486.0F, 52.0F, 20.0F);
+               fishing4.a.m.a(var0, t, fishing4.a.m.getHalfWidthPixels() - 35.0F, var1 + 220.0F, 803.0F, 486.0F, 60.0F, 20.0F);
+               fishing4.a.m.a(var0, t, 30.0F + fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 882.0F, 486.0F, 52.0F, 20.0F);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 20) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, var3 - 120.0F, var1 + 180.0F, 765.0F, 467.0F, 30.0F, 16.0F, var7);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 21) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, var3, var1 + 180.0F, 837.0F, 465.0F, 32.0F, 18.0F, var7);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 22) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, 120.0F + var3, var1 + 180.0F, 911.0F, 466.0F, 42.0F, 18.0F, var7);
@@ -442,12 +445,12 @@ public final class az {
                   var9 = var5 + ". " + fishing4.game.m.c(var6);
                }
 
-               fishing4.a.ae.a(var0, var9, fishing4.a.m.c(), 70.0F + var1 - (float)(var4 * 50), 300.0F, 50.0F, 26.0F, 0);
-               fishing4.a.m.a(var0, s, fishing4.a.m.c(), 70.0F + var1 - 22.0F - (float)(var4 * 50), 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
+               fishing4.a.ae.a(var0, var9, fishing4.a.m.getHalfWidthPixels(), 70.0F + var1 - (float)(var4 * 50), 300.0F, 50.0F, 26.0F, 0);
+               fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels(), 70.0F + var1 - 22.0F - (float)(var4 * 50), 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
             }
 
-            fishing4.game.k.b(var0, fishing4.a.e.a(fishing4.a.m.c(), var1 - 40.0F), 160.0F, var2);
-            fishing4.a.ae.a(var0, fishing4.game.s.d + " / 187", fishing4.a.m.c(), var1 - 200.0F, 330.0F, 50.0F, 26.0F, 1, fishing4.a.aa.d());
+            fishing4.game.k.b(var0, fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var1 - 40.0F), 160.0F, var2);
+            fishing4.a.ae.a(var0, fishing4.game.s.d + " / 187", fishing4.a.m.getHalfWidthPixels(), var1 - 200.0F, 330.0F, 50.0F, 26.0F, 1, RGBColor.yellow());
          }
       }
 
@@ -458,60 +461,60 @@ public final class az {
       float var5;
       if (globalConfig.languageId == 0) {
          if (var2 == 0) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165921), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165922), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165921), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165922), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 1) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165923), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165924), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165923), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165924), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 2) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165925), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165926), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165925), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165926), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 3) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165927), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165928), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165927), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165928), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 4) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165929), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165930), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165929), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165930), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 5) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165931), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165932), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165931), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165932), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 6) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165933), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165934), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165933), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165934), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 7) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165935), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165936), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165935), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165936), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 8) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165937), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165938), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165937), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165938), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 9) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165939), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165940), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165939), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165940), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 10) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165941), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165942), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165941), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165942), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 11) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165943), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165944), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165943), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165944), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 12) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165945), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165946), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165945), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165946), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 13) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165947), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165948), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165947), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165948), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 14) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165949), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165951), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165949), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165951), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 15) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165952), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165953), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165952), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165953), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 16) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165954), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165955), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165954), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165955), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 17) {
             fishing4.game.k.q();
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165957), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165958), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165957), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165958), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 18) {
             fishing4.game.k.q();
             fishing4.game.k.q();
@@ -519,16 +522,16 @@ public final class az {
                F = fishing4.a.w.a(var0, "img/ui/info.png");
             }
 
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165959), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.m.a(var0, F, fishing4.a.m.c(), var1);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165959), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.m.a(var0, F, fishing4.a.m.getHalfWidthPixels(), var1);
          } else if (var2 == 19) {
             fishing4.game.k.q();
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165960), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165961) + "1.0.5", fishing4.a.m.c(), var1, 24.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165960), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165961) + "1.0.5", fishing4.a.m.getHalfWidthPixels(), var1, 24.0F, 4);
          } else if (var2 == 20) {
             fishing4.game.k.q();
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165962), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165963), fishing4.a.m.c(), var1 + 160.0F, 20.0F, 9);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165962), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165963), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 20.0F, 9);
          }
 
          if (z == 0 && fishing4.a.ae.k * fishing4.a.ae.a(24.0F) > 390 || z < 350) {
@@ -545,75 +548,75 @@ public final class az {
                   var4 = 390.0F;
                }
 
-               var5 = fishing4.a.m.c() + 200.0F;
+               var5 = fishing4.a.m.getHalfWidthPixels() + 200.0F;
                var4 = 190.0F + var1 - var4;
-               fishing4.a.m.a(var0, var5, var4, 6.0F, 10.0F, fishing4.a.aa.a(0.75F, 0.75F, 0.75F, 1.0F));
-               fishing4.a.m.a(var0, var5, var4, 4.0F, 12.0F, fishing4.a.aa.a(0.75F, 0.75F, 0.75F, 1.0F));
+               fishing4.a.m.a(var0, var5, var4, 6.0F, 10.0F, RGBColor.getColor(0.75F, 0.75F, 0.75F, 1.0F));
+               fishing4.a.m.a(var0, var5, var4, 4.0F, 12.0F, RGBColor.getColor(0.75F, 0.75F, 0.75F, 1.0F));
             }
          }
 
-         fishing4.game.k.a(var0, fishing4.a.e.a(fishing4.a.m.c(), 220.0F + var1), 160.0F, var3);
-         fishing4.game.k.a(var0, var2 + 1, fishing4.a.e.a(fishing4.a.m.c(), var1 - 220.0F), 4);
+         fishing4.game.k.a(var0, fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), 220.0F + var1), 160.0F, var3);
+         fishing4.game.k.a(var0, var2 + 1, fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var1 - 220.0F), 4);
       } else {
          if (var2 == 0) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165921), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165922), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165921), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165922), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 1) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165923), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165924), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165923), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165924), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 2) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165925), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165926), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165925), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165926), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 3) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165927), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165928), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165927), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165928), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 4) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165929), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165930), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165929), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165930), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 5) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165931), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165932), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165931), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165932), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 6) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165933), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165934), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165933), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165934), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 7) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165935), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165936), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165935), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165936), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 8) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165937), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165938), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165937), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165938), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 9) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165939), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165940), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165939), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165940), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 10) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165941), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165942), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165941), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165942), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 11) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165943), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165944), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165943), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165944), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 12) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165945), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165946), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165945), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165946), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 13) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165947), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165948), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165947), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165948), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 14) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165949), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165951), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165949), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165951), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 15) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165952), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165953), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165952), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165953), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 16) {
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165954), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165955), fishing4.a.m.c(), var1 + 160.0F, 24.0F, 5);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165954), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165955), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 24.0F, 5);
          } else if (var2 == 17) {
             fishing4.game.k.q();
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165960), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165961) + "1.0.5", fishing4.a.m.c(), var1, 24.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165960), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165961) + "1.0.5", fishing4.a.m.getHalfWidthPixels(), var1, 24.0F, 4);
          } else if (var2 == 18) {
             fishing4.game.k.q();
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165962), fishing4.a.m.c(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165963), fishing4.a.m.c(), var1 + 160.0F, 20.0F, 9);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165962), fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 350.0F, 390.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165963), fishing4.a.m.getHalfWidthPixels(), var1 + 160.0F, 20.0F, 9);
          }
 
          if (z == 0 && fishing4.a.ae.k * fishing4.a.ae.a(24.0F) > 390 || z < 350) {
@@ -630,21 +633,21 @@ public final class az {
                   var4 = 390.0F;
                }
 
-               var5 = fishing4.a.m.c() + 200.0F;
+               var5 = fishing4.a.m.getHalfWidthPixels() + 200.0F;
                var4 = 190.0F + var1 - var4;
-               fishing4.a.m.a(var0, var5, var4, 6.0F, 10.0F, fishing4.a.aa.a(0.75F, 0.75F, 0.75F, 1.0F));
-               fishing4.a.m.a(var0, var5, var4, 4.0F, 12.0F, fishing4.a.aa.a(0.75F, 0.75F, 0.75F, 1.0F));
+               fishing4.a.m.a(var0, var5, var4, 6.0F, 10.0F, RGBColor.getColor(0.75F, 0.75F, 0.75F, 1.0F));
+               fishing4.a.m.a(var0, var5, var4, 4.0F, 12.0F, RGBColor.getColor(0.75F, 0.75F, 0.75F, 1.0F));
             }
          }
 
-         fishing4.game.k.a(var0, fishing4.a.e.a(fishing4.a.m.c(), 220.0F + var1), 160.0F, var3);
-         fishing4.game.k.a(var0, var2 + 1, fishing4.a.e.a(fishing4.a.m.c(), var1 - 220.0F), 4);
+         fishing4.game.k.a(var0, fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), 220.0F + var1), 160.0F, var3);
+         fishing4.game.k.a(var0, var2 + 1, fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var1 - 220.0F), 4);
       }
 
    }
 
    public static void a(GL10 glContext, int var1) {
-      fishing4.a.m.a(glContext, fishing4.a.m.c(), fishing4.a.m.d(), (float)fishing4.a.m.a(), (float)fishing4.a.m.b(), fishing4.a.aa.a(0.0F, 0.0F, 0.0F, 0.75F));
+      fishing4.a.m.a(glContext, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), (float)fishing4.a.m.getWidthPixels(), (float)fishing4.a.m.getHeightPixels(), RGBColor.getColor(0.0F, 0.0F, 0.0F, 0.75F));
       fishing4.game.k.c();
       c();
       if (g == 6) {
@@ -703,14 +706,14 @@ public final class az {
             }
          }
 
-         float var3 = fishing4.a.m.d() - 70.0F;
+         float var3 = fishing4.a.m.getHalfHeightPixels() - 70.0F;
          if (g == 2 || g == 3 || g == 4 || g == 5 || g == 7 || g == 8) {
             b(glContext, var3);
          }
 
          float var2;
          int var11;
-         fishing4.a.aa var12;
+         RGBColor var12;
          fishing4.a.w var13;
          ae var15;
          switch (g) {
@@ -786,46 +789,46 @@ public final class az {
                fishing4.a.m.a(glContext, s, b, fishing4.a.f.a(917.0F, 793.0F, 104.0F, 20.0F));
                break;
             case 2:
-               fishing4.a.m.a(glContext, t, fishing4.a.m.c(), var3 + 352.0F, 0.0F, 300.0F, 70.0F, 32.0F);
+               fishing4.a.m.a(glContext, t, fishing4.a.m.getHalfWidthPixels(), var3 + 352.0F, 0.0F, 300.0F, 70.0F, 32.0F);
                var13 = s;
-               var2 = fishing4.a.m.c();
+               var2 = fishing4.a.m.getHalfWidthPixels();
                if (i == 0) {
-                  var12 = fishing4.a.aa.d();
+                  var12 = RGBColor.yellow();
                } else {
-                  var12 = fishing4.a.aa.b();
+                  var12 = RGBColor.white();
                }
 
                fishing4.a.m.a(glContext, var13, var2 - 138.0F, var3 + 280.0F, 57.0F, 843.0F, 76.0F, 18.0F, var12);
                var13 = s;
-               var2 = fishing4.a.m.c();
+               var2 = fishing4.a.m.getHalfWidthPixels();
                if (i == 1) {
-                  var12 = fishing4.a.aa.d();
+                  var12 = RGBColor.yellow();
                } else {
-                  var12 = fishing4.a.aa.b();
+                  var12 = RGBColor.white();
                }
 
                fishing4.a.m.a(glContext, var13, var2, var3 + 280.0F, 705.0F, 796.0F, 50.0F, 20.0F, var12);
                var13 = s;
-               var2 = fishing4.a.m.c();
+               var2 = fishing4.a.m.getHalfWidthPixels();
                if (i == 2) {
-                  var12 = fishing4.a.aa.d();
+                  var12 = RGBColor.yellow();
                } else {
-                  var12 = fishing4.a.aa.b();
+                  var12 = RGBColor.white();
                }
 
                fishing4.a.m.a(glContext, var13, 138.0F + var2, var3 + 280.0F, 218.0F, 843.0F, 86.0F, 18.0F, var12);
                fishing4.a.w var17;
                if (i == 0) {
                   if (globalConfig.languageId == 0) {
-                     fishing4.a.ae.a(glContext, fishing4.game.x.j(), fishing4.a.m.c(), var3 + 220.0F, 400.0F, 50.0F, 26.0F, 4, fishing4.a.aa.d());
-                     fishing4.a.ae.a(glContext, "명성 Exp", fishing4.a.m.c() - 115.0F, var3 + 185.0F, 400.0F, 40.0F, 24.0F, 4, fishing4.a.aa.e());
-                     fishing4.a.ae.a(glContext, fishing4.game.x.e(), 70.0F + fishing4.a.m.c(), var3 + 185.0F, 400.0F, 40.0F, 24.0F, 4, fishing4.a.aa.e());
-                     fishing4.a.ae.a(glContext, "숙련 Lv." + Integer.toString(fishing4.game.x.b(true)), fishing4.a.m.c() - 115.0F, var3 + 150.0F, 400.0F, 40.0F, 24.0F, 4, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
+                     fishing4.a.ae.a(glContext, fishing4.game.x.j(), fishing4.a.m.getHalfWidthPixels(), var3 + 220.0F, 400.0F, 50.0F, 26.0F, 4, RGBColor.yellow());
+                     fishing4.a.ae.a(glContext, "명성 Exp", fishing4.a.m.getHalfWidthPixels() - 115.0F, var3 + 185.0F, 400.0F, 40.0F, 24.0F, 4, RGBColor.green());
+                     fishing4.a.ae.a(glContext, fishing4.game.x.e(), 70.0F + fishing4.a.m.getHalfWidthPixels(), var3 + 185.0F, 400.0F, 40.0F, 24.0F, 4, RGBColor.green());
+                     fishing4.a.ae.a(glContext, "숙련 Lv." + Integer.toString(fishing4.game.x.b(true)), fishing4.a.m.getHalfWidthPixels() - 115.0F, var3 + 150.0F, 400.0F, 40.0F, 24.0F, 4, RGBColor.getColor(0.0F, 1.0F, 1.0F, 1.0F));
                   } else {
-                     fishing4.a.ae.a(glContext, fishing4.game.x.j(), fishing4.a.m.c(), var3 + 220.0F, 400.0F, 50.0F, 26.0F, 4, fishing4.a.aa.d());
-                     fishing4.a.ae.a(glContext, "Reputation ", fishing4.a.m.c() - 115.0F, var3 + 185.0F, 400.0F, 40.0F, 24.0F, 4, fishing4.a.aa.e());
-                     fishing4.a.ae.a(glContext, fishing4.game.x.e(), 70.0F + fishing4.a.m.c(), var3 + 185.0F, 400.0F, 40.0F, 24.0F, 4, fishing4.a.aa.e());
-                     fishing4.a.ae.a(glContext, "Experience Lv." + Integer.toString(fishing4.game.x.b(true)), fishing4.a.m.c() - 105.0F, var3 + 150.0F, 400.0F, 40.0F, 24.0F, 4, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
+                     fishing4.a.ae.a(glContext, fishing4.game.x.j(), fishing4.a.m.getHalfWidthPixels(), var3 + 220.0F, 400.0F, 50.0F, 26.0F, 4, RGBColor.yellow());
+                     fishing4.a.ae.a(glContext, "Reputation ", fishing4.a.m.getHalfWidthPixels() - 115.0F, var3 + 185.0F, 400.0F, 40.0F, 24.0F, 4, RGBColor.green());
+                     fishing4.a.ae.a(glContext, fishing4.game.x.e(), 70.0F + fishing4.a.m.getHalfWidthPixels(), var3 + 185.0F, 400.0F, 40.0F, 24.0F, 4, RGBColor.green());
+                     fishing4.a.ae.a(glContext, "Experience Lv." + Integer.toString(fishing4.game.x.b(true)), fishing4.a.m.getHalfWidthPixels() - 105.0F, var3 + 150.0F, 400.0F, 40.0F, 24.0F, 4, RGBColor.getColor(0.0F, 1.0F, 1.0F, 1.0F));
                   }
 
                   if (fishing4.game.x.f() > 0) {
@@ -835,95 +838,95 @@ public final class az {
                         var5 = fishing4.game.x.d() * 196 / fishing4.game.x.f();
                      }
 
-                     fishing4.a.m.a(glContext, 95.0F + fishing4.a.m.c(), var3 + 150.0F, 200.0F, 10.0F, fishing4.a.aa.a(1.0F, 1.0F, 1.0F, 1.0F));
-                     fishing4.a.m.a(glContext, fishing4.a.m.c() + 95.0F - (float)((196 - var5) / 2), var3 + 150.0F, (float)var5, 6.0F, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
+                     fishing4.a.m.a(glContext, 95.0F + fishing4.a.m.getHalfWidthPixels(), var3 + 150.0F, 200.0F, 10.0F, RGBColor.getColor(1.0F, 1.0F, 1.0F, 1.0F));
+                     fishing4.a.m.a(glContext, fishing4.a.m.getHalfWidthPixels() + 95.0F - (float)((196 - var5) / 2), var3 + 150.0F, (float)var5, 6.0F, RGBColor.getColor(0.0F, 1.0F, 1.0F, 1.0F));
                   } else {
-                     fishing4.a.m.a(glContext, 95.0F + fishing4.a.m.c(), var3 + 150.0F, 200.0F, 10.0F, fishing4.a.aa.a(1.0F, 1.0F, 1.0F, 1.0F));
-                     fishing4.a.m.a(glContext, 95.0F + fishing4.a.m.c(), var3 + 150.0F, 196.0F, 6.0F, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
+                     fishing4.a.m.a(glContext, 95.0F + fishing4.a.m.getHalfWidthPixels(), var3 + 150.0F, 200.0F, 10.0F, RGBColor.getColor(1.0F, 1.0F, 1.0F, 1.0F));
+                     fishing4.a.m.a(glContext, 95.0F + fishing4.a.m.getHalfWidthPixels(), var3 + 150.0F, 196.0F, 6.0F, RGBColor.getColor(0.0F, 1.0F, 1.0F, 1.0F));
                   }
 
-                  fishing4.a.m.a(glContext, s, fishing4.a.m.c(), var3 + 120.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
+                  fishing4.a.m.a(glContext, s, fishing4.a.m.getHalfWidthPixels(), var3 + 120.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
                   if (C == null) {
                      C = fishing4.a.w.a(glContext, "img/town/item.png");
                   }
 
                   if (ad.a == -1) {
-                     ac.a(glContext, C, fishing4.a.m.c() - 160.0F, 75.0F + var3, -1);
+                     ac.a(glContext, C, fishing4.a.m.getHalfWidthPixels() - 160.0F, 75.0F + var3, -1);
                   } else {
                      var5 = ((ac)ad.i.get(ad.a)).h() * 100 / ((ac)ad.i.get(ad.a)).j();
-                     ac.a(glContext, C, fishing4.a.m.c() - 160.0F, var3 + 75.0F, ((ac)ad.i.get(ad.a)).f(), var5);
+                     ac.a(glContext, C, fishing4.a.m.getHalfWidthPixels() - 160.0F, var3 + 75.0F, ((ac)ad.i.get(ad.a)).f(), var5);
                      if (globalConfig.languageId == 0) {
-                        fishing4.a.ae.a(glContext, ((ac)ad.i.get(ad.a)).u(), fishing4.a.m.c() - 60.0F, var3 + 75.0F, 120.0F, 60.0F, 22.0F, 4);
+                        fishing4.a.ae.a(glContext, ((ac)ad.i.get(ad.a)).u(), fishing4.a.m.getHalfWidthPixels() - 60.0F, var3 + 75.0F, 120.0F, 60.0F, 22.0F, 4);
                      } else {
-                        fishing4.a.ae.a(glContext, "FISHING ROD", fishing4.a.m.c() - 60.0F, var3 + 75.0F, 120.0F, 60.0F, 19.0F, 4);
+                        fishing4.a.ae.a(glContext, "FISHING ROD", fishing4.a.m.getHalfWidthPixels() - 60.0F, var3 + 75.0F, 120.0F, 60.0F, 19.0F, 4);
                      }
                   }
 
                   if (ad.c == -1) {
-                     ac.a(glContext, C, fishing4.a.m.c() - 160.0F, var3 - 5.0F, -1);
+                     ac.a(glContext, C, fishing4.a.m.getHalfWidthPixels() - 160.0F, var3 - 5.0F, -1);
                   } else {
-                     ac.a(glContext, C, fishing4.a.m.c() - 160.0F, var3 - 5.0F, ((ac)ad.j.get(ad.c)).f());
+                     ac.a(glContext, C, fishing4.a.m.getHalfWidthPixels() - 160.0F, var3 - 5.0F, ((ac)ad.j.get(ad.c)).f());
                      if (globalConfig.languageId == 0) {
-                        fishing4.a.ae.a(glContext, ((ac)ad.j.get(ad.c)).u(), fishing4.a.m.c() - 60.0F, var3 - 5.0F, 120.0F, 60.0F, 22.0F, 4);
+                        fishing4.a.ae.a(glContext, ((ac)ad.j.get(ad.c)).u(), fishing4.a.m.getHalfWidthPixels() - 60.0F, var3 - 5.0F, 120.0F, 60.0F, 22.0F, 4);
                      } else {
-                        fishing4.a.ae.a(glContext, "LURE", fishing4.a.m.c() - 60.0F, var3 - 5.0F, 120.0F, 60.0F, 22.0F, 4);
+                        fishing4.a.ae.a(glContext, "LURE", fishing4.a.m.getHalfWidthPixels() - 60.0F, var3 - 5.0F, 120.0F, 60.0F, 22.0F, 4);
                      }
                   }
 
                   if (ad.b == -1) {
-                     ac.a(glContext, C, fishing4.a.m.c() - 160.0F, var3 - 85.0F, -1);
+                     ac.a(glContext, C, fishing4.a.m.getHalfWidthPixels() - 160.0F, var3 - 85.0F, -1);
                   } else {
                      var5 = ((ac)ad.k.get(ad.b)).h() * 100 / ((ac)ad.k.get(ad.b)).j();
-                     ac.a(glContext, C, fishing4.a.m.c() - 160.0F, var3 - 85.0F, ((ac)ad.k.get(ad.b)).f(), var5);
+                     ac.a(glContext, C, fishing4.a.m.getHalfWidthPixels() - 160.0F, var3 - 85.0F, ((ac)ad.k.get(ad.b)).f(), var5);
                      if (globalConfig.languageId == 0) {
-                        fishing4.a.ae.a(glContext, ((ac)ad.k.get(ad.b)).u(), fishing4.a.m.c() - 60.0F, var3 - 85.0F, 120.0F, 60.0F, 22.0F, 4);
+                        fishing4.a.ae.a(glContext, ((ac)ad.k.get(ad.b)).u(), fishing4.a.m.getHalfWidthPixels() - 60.0F, var3 - 85.0F, 120.0F, 60.0F, 22.0F, 4);
                      } else {
-                        fishing4.a.ae.a(glContext, "FISHING LINE", fishing4.a.m.c() - 60.0F, var3 - 85.0F, 120.0F, 60.0F, 19.0F, 4);
+                        fishing4.a.ae.a(glContext, "FISHING LINE", fishing4.a.m.getHalfWidthPixels() - 60.0F, var3 - 85.0F, 120.0F, 60.0F, 19.0F, 4);
                      }
                   }
 
                   if (ad.f == -1) {
-                     ac.a(glContext, C, fishing4.a.m.c() + 40.0F, 75.0F + var3, -1);
+                     ac.a(glContext, C, fishing4.a.m.getHalfWidthPixels() + 40.0F, 75.0F + var3, -1);
                   } else {
                      var5 = ((ac)ad.m.get(ad.f)).h() * 100 / ((ac)ad.m.get(ad.f)).j();
-                     ac.a(glContext, C, 40.0F + fishing4.a.m.c(), var3 + 75.0F, ((ac)ad.m.get(ad.f)).f(), var5);
+                     ac.a(glContext, C, 40.0F + fishing4.a.m.getHalfWidthPixels(), var3 + 75.0F, ((ac)ad.m.get(ad.f)).f(), var5);
                      if (globalConfig.languageId == 0) {
-                        fishing4.a.ae.a(glContext, ((ac)ad.m.get(ad.f)).u(), 140.0F + fishing4.a.m.c(), var3 + 75.0F, 120.0F, 60.0F, 22.0F, 4);
+                        fishing4.a.ae.a(glContext, ((ac)ad.m.get(ad.f)).u(), 140.0F + fishing4.a.m.getHalfWidthPixels(), var3 + 75.0F, 120.0F, 60.0F, 22.0F, 4);
                      } else {
-                        fishing4.a.ae.a(glContext, "CAP", 140.0F + fishing4.a.m.c(), var3 + 75.0F, 120.0F, 60.0F, 22.0F, 4);
+                        fishing4.a.ae.a(glContext, "CAP", 140.0F + fishing4.a.m.getHalfWidthPixels(), var3 + 75.0F, 120.0F, 60.0F, 22.0F, 4);
                      }
                   }
 
                   if (ad.e == -1) {
-                     ac.a(glContext, C, fishing4.a.m.c() + 40.0F, var3 - 5.0F, -1);
+                     ac.a(glContext, C, fishing4.a.m.getHalfWidthPixels() + 40.0F, var3 - 5.0F, -1);
                   } else {
                      var5 = ((ac)ad.l.get(ad.e)).h() * 100 / ((ac)ad.l.get(ad.e)).j();
-                     ac.a(glContext, C, 40.0F + fishing4.a.m.c(), var3 - 5.0F, ((ac)ad.l.get(ad.e)).f(), var5);
+                     ac.a(glContext, C, 40.0F + fishing4.a.m.getHalfWidthPixels(), var3 - 5.0F, ((ac)ad.l.get(ad.e)).f(), var5);
                      if (globalConfig.languageId == 0) {
-                        fishing4.a.ae.a(glContext, ((ac)ad.l.get(ad.e)).u(), 140.0F + fishing4.a.m.c(), var3 - 5.0F, 120.0F, 60.0F, 22.0F, 4);
+                        fishing4.a.ae.a(glContext, ((ac)ad.l.get(ad.e)).u(), 140.0F + fishing4.a.m.getHalfWidthPixels(), var3 - 5.0F, 120.0F, 60.0F, 22.0F, 4);
                      } else {
-                        fishing4.a.ae.a(glContext, "SHIRT", 140.0F + fishing4.a.m.c(), var3 - 5.0F, 120.0F, 60.0F, 22.0F, 4);
+                        fishing4.a.ae.a(glContext, "SHIRT", 140.0F + fishing4.a.m.getHalfWidthPixels(), var3 - 5.0F, 120.0F, 60.0F, 22.0F, 4);
                      }
                   }
 
                   if (ad.d == -1) {
-                     ac.a(glContext, C, fishing4.a.m.c() + 40.0F, var3 - 85.0F, -1);
+                     ac.a(glContext, C, fishing4.a.m.getHalfWidthPixels() + 40.0F, var3 - 85.0F, -1);
                   } else {
                      var5 = ((ac)ad.n.get(ad.d)).h() * 100 / ((ac)ad.n.get(ad.d)).j();
-                     ac.a(glContext, C, 40.0F + fishing4.a.m.c(), var3 - 85.0F, ((ac)ad.n.get(ad.d)).f(), var5);
+                     ac.a(glContext, C, 40.0F + fishing4.a.m.getHalfWidthPixels(), var3 - 85.0F, ((ac)ad.n.get(ad.d)).f(), var5);
                      if (globalConfig.languageId == 0) {
-                        fishing4.a.ae.a(glContext, ((ac)ad.n.get(ad.d)).u(), 140.0F + fishing4.a.m.c(), var3 - 85.0F, 120.0F, 60.0F, 22.0F, 4);
+                        fishing4.a.ae.a(glContext, ((ac)ad.n.get(ad.d)).u(), 140.0F + fishing4.a.m.getHalfWidthPixels(), var3 - 85.0F, 120.0F, 60.0F, 22.0F, 4);
                      } else {
-                        fishing4.a.ae.a(glContext, "VEST", 140.0F + fishing4.a.m.c(), var3 - 85.0F, 120.0F, 60.0F, 22.0F, 4);
+                        fishing4.a.ae.a(glContext, "VEST", 140.0F + fishing4.a.m.getHalfWidthPixels(), var3 - 85.0F, 120.0F, 60.0F, 22.0F, 4);
                      }
                   }
 
-                  fishing4.a.m.a(glContext, s, fishing4.a.m.c(), var3 - 130.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
+                  fishing4.a.m.a(glContext, s, fishing4.a.m.getHalfWidthPixels(), var3 - 130.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
                   var15 = ad.o;
-                  fishing4.a.e var14 = fishing4.a.e.a(fishing4.a.m.c(), var3 - 160.0F);
+                  fishing4.a.e var14 = fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var3 - 160.0F);
                   var17 = s;
                   var15.a(glContext, var14, t);
-                  M.a(glContext, s, t, fishing4.a.e.a(fishing4.a.m.c(), var3 - 215.0F));
+                  M.a(glContext, s, t, fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var3 - 215.0F));
                } else if (i == 1) {
                   ag var18 = (ag)ad.h.get(k);
                   if (A == null) {
@@ -938,13 +941,13 @@ public final class az {
                      E = fishing4.a.w.a(glContext, "img/town/choice_icon.png");
                   }
 
-                  fishing4.a.ae.a(glContext, var18.u(), fishing4.a.m.c(), fishing4.a.m.d() - 70.0F, (float)fishing4.a.m.a(), 28.0F, 26.0F, 4, fishing4.a.aa.a(1.0F, 1.0F, 0.0F, 1.0F));
-                  fishing4.a.ae.a(glContext, fishing4.a.y.a(2131165235), 40.0F + fishing4.a.m.c(), fishing4.a.m.d() - 130.0F, 220.0F, 28.0F, 26.0F, 0);
-                  fishing4.a.ae.a(glContext, fishing4.a.y.a(2131165236), 40.0F + fishing4.a.m.c(), fishing4.a.m.d() - 160.0F, 220.0F, 28.0F, 26.0F, 0);
-                  fishing4.a.ae.a(glContext, var18.g(), 90.0F + fishing4.a.m.c(), fishing4.a.m.d() - 130.0F, 220.0F, 28.0F, 26.0F, 1, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
-                  fishing4.a.ae.a(glContext, var18.h(), 90.0F + fishing4.a.m.c(), fishing4.a.m.d() - 160.0F, 220.0F, 28.0F, 26.0F, 1, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
-                  fishing4.a.m.a(glContext, A, fishing4.a.m.c(), 60.0F + fishing4.a.m.d(), 2.0F, 2.0F, 306.0F, 192.0F);
-                  var18.a(glContext, A, E, fishing4.a.m.c(), fishing4.a.m.d() + 20.0F);
+                  fishing4.a.ae.a(glContext, var18.u(), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 70.0F, (float)fishing4.a.m.getWidthPixels(), 28.0F, 26.0F, 4, RGBColor.getColor(1.0F, 1.0F, 0.0F, 1.0F));
+                  fishing4.a.ae.a(glContext, fishing4.a.y.a(2131165235), 40.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 130.0F, 220.0F, 28.0F, 26.0F, 0);
+                  fishing4.a.ae.a(glContext, fishing4.a.y.a(2131165236), 40.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 160.0F, 220.0F, 28.0F, 26.0F, 0);
+                  fishing4.a.ae.a(glContext, var18.g(), 90.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 130.0F, 220.0F, 28.0F, 26.0F, 1, RGBColor.getColor(0.0F, 1.0F, 1.0F, 1.0F));
+                  fishing4.a.ae.a(glContext, var18.h(), 90.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 160.0F, 220.0F, 28.0F, 26.0F, 1, RGBColor.getColor(0.0F, 1.0F, 1.0F, 1.0F));
+                  fishing4.a.m.a(glContext, A, fishing4.a.m.getHalfWidthPixels(), 60.0F + fishing4.a.m.getHalfHeightPixels(), 2.0F, 2.0F, 306.0F, 192.0F);
+                  var18.a(glContext, A, E, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() + 20.0F);
                   if (var1 % 150 < 50) {
                      var5 = var1 % 50 * 255 / 50;
                   } else if (var1 % 150 < 100) {
@@ -953,93 +956,93 @@ public final class az {
                      var5 = 0;
                   }
 
-                  fishing4.a.m.a(glContext, A, fishing4.a.m.c() - 40.0F, 80.0F + fishing4.a.m.d(), 0.0F, 194.0F, 270.0F, 200.0F, '\u0005', var5);
-                  var18.a(glContext, B, fishing4.a.m.c() - 130.0F, fishing4.a.m.d() - 140.0F, var1);
+                  fishing4.a.m.a(glContext, A, fishing4.a.m.getHalfWidthPixels() - 40.0F, 80.0F + fishing4.a.m.getHalfHeightPixels(), 0.0F, 194.0F, 270.0F, 200.0F, '\u0005', var5);
+                  var18.a(glContext, B, fishing4.a.m.getHalfWidthPixels() - 130.0F, fishing4.a.m.getHalfHeightPixels() - 140.0F, var1);
                   if (ad.h.size() > 1) {
-                     fishing4.game.k.a(glContext, fishing4.a.e.a(fishing4.a.m.c(), fishing4.a.m.d() + 60.0F), 180.0F, var1);
+                     fishing4.game.k.a(glContext, fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() + 60.0F), 180.0F, var1);
                   }
 
-                  M.a(glContext, s, t, fishing4.a.e.a(fishing4.a.m.c(), var3 - 215.0F));
+                  M.a(glContext, s, t, fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var3 - 215.0F));
                } else if (i == 2) {
                   if (D == null) {
-                     fishing4.a.ae.a(glContext, "Loading..", fishing4.a.m.c(), var3, 400.0F, 50.0F, 26.0F, 4);
+                     fishing4.a.ae.a(glContext, "Loading..", fishing4.a.m.getHalfWidthPixels(), var3, 400.0F, 50.0F, 26.0F, 4);
                      D = fishing4.a.w.a(glContext, "img/archive/archive.png");
                   } else {
                      for(var5 = 0; var5 < 24; ++var5) {
                         if (k == var5) {
                            var17 = s;
-                           var2 = fishing4.a.m.c();
+                           var2 = fishing4.a.m.getHalfWidthPixels();
                            fishing4.a.m.a(glContext, var17, (float)(var5 % 5 * 75) + (var2 - 150.0F), 200.0F + var3 - (float)(var5 / 5 * 70), 701.0F, 587.0F, 76.0F, 76.0F, '\u0001');
                         }
 
                         if (fishing4.game.q.b[var5]) {
-                           fishing4.a.m.a(glContext, D, fishing4.a.m.c() - 150.0F + (float)(var5 % 5 * 75), 200.0F + var3 - (float)(var5 / 5 * 70), fishing4.a.f.a((float)(var5 % 6 * 64), (float)(var5 / 6 * 66), 56.0F, 56.0F));
+                           fishing4.a.m.a(glContext, D, fishing4.a.m.getHalfWidthPixels() - 150.0F + (float)(var5 % 5 * 75), 200.0F + var3 - (float)(var5 / 5 * 70), fishing4.a.f.a((float)(var5 % 6 * 64), (float)(var5 / 6 * 66), 56.0F, 56.0F));
                         } else {
                            var17 = D;
-                           var2 = fishing4.a.m.c();
-                           fishing4.a.m.a(glContext, var17, (float)(var5 % 5 * 75) + (var2 - 150.0F), 200.0F + var3 - (float)(var5 / 5 * 70), fishing4.a.f.a((float)(var5 % 6 * 64), (float)(var5 / 6 * 66), 56.0F, 56.0F), fishing4.a.aa.a(0.35F, 0.35F, 0.35F, 1.0F));
+                           var2 = fishing4.a.m.getHalfWidthPixels();
+                           fishing4.a.m.a(glContext, var17, (float)(var5 % 5 * 75) + (var2 - 150.0F), 200.0F + var3 - (float)(var5 / 5 * 70), fishing4.a.f.a((float)(var5 % 6 * 64), (float)(var5 / 6 * 66), 56.0F, 56.0F), RGBColor.getColor(0.35F, 0.35F, 0.35F, 1.0F));
                         }
                      }
 
-                     fishing4.a.ae.a(glContext, fishing4.game.q.a(k), fishing4.a.m.c(), var3 - 180.0F, 350.0F, 300.0F, 24.0F, 4);
+                     fishing4.a.ae.a(glContext, fishing4.game.q.a(k), fishing4.a.m.getHalfWidthPixels(), var3 - 180.0F, 350.0F, 300.0F, 24.0F, 4);
                   }
                }
                break;
             case 3:
             case 7:
             case 8:
-               fishing4.a.m.a(glContext, t, fishing4.a.m.c(), var3 + 352.0F, 73.0F, 300.0F, 86.0F, 32.0F);
+               fishing4.a.m.a(glContext, t, fishing4.a.m.getHalfWidthPixels(), var3 + 352.0F, 73.0F, 300.0F, 86.0F, 32.0F);
                var13 = t;
-               var2 = fishing4.a.m.c();
+               var2 = fishing4.a.m.getHalfWidthPixels();
                if (i == 0) {
-                  var12 = fishing4.a.aa.d();
+                  var12 = RGBColor.yellow();
                } else {
-                  var12 = fishing4.a.aa.b();
+                  var12 = RGBColor.white();
                }
 
                fishing4.a.m.a(glContext, var13, var2 - 34.0F - 68.0F - 68.0F, var3 + 280.0F, 343.0F, 140.0F, 36.0F, 34.0F, var12);
                var13 = t;
-               var2 = fishing4.a.m.c();
+               var2 = fishing4.a.m.getHalfWidthPixels();
                if (i == 1) {
-                  var12 = fishing4.a.aa.d();
+                  var12 = RGBColor.yellow();
                } else {
-                  var12 = fishing4.a.aa.b();
+                  var12 = RGBColor.white();
                }
 
                fishing4.a.m.a(glContext, var13, var2 - 34.0F - 68.0F, var3 + 280.0F, 381.0F, 140.0F, 38.0F, 26.0F, var12);
                var13 = t;
-               var2 = fishing4.a.m.c();
+               var2 = fishing4.a.m.getHalfWidthPixels();
                if (i == 2) {
-                  var12 = fishing4.a.aa.d();
+                  var12 = RGBColor.yellow();
                } else {
-                  var12 = fishing4.a.aa.b();
+                  var12 = RGBColor.white();
                }
 
                fishing4.a.m.a(glContext, var13, var2 - 34.0F, var3 + 280.0F, 503.0F, 141.0F, 36.0F, 32.0F, var12);
                var13 = t;
-               var2 = fishing4.a.m.c();
+               var2 = fishing4.a.m.getHalfWidthPixels();
                if (i == 3) {
-                  var12 = fishing4.a.aa.d();
+                  var12 = RGBColor.yellow();
                } else {
-                  var12 = fishing4.a.aa.b();
+                  var12 = RGBColor.white();
                }
 
                fishing4.a.m.a(glContext, var13, 34.0F + var2, var3 + 280.0F, 421.0F, 140.0F, 34.0F, 26.0F, var12);
                var13 = t;
-               var2 = fishing4.a.m.c();
+               var2 = fishing4.a.m.getHalfWidthPixels();
                if (i == 4) {
-                  var12 = fishing4.a.aa.d();
+                  var12 = RGBColor.yellow();
                } else {
-                  var12 = fishing4.a.aa.b();
+                  var12 = RGBColor.white();
                }
 
                fishing4.a.m.a(glContext, var13, 68.0F + var2 + 34.0F, var3 + 280.0F, 456.0F, 140.0F, 22.0F, 28.0F, var12);
                var13 = t;
-               var2 = fishing4.a.m.c();
+               var2 = fishing4.a.m.getHalfWidthPixels();
                if (i == 5) {
-                  var12 = fishing4.a.aa.d();
+                  var12 = RGBColor.yellow();
                } else {
-                  var12 = fishing4.a.aa.b();
+                  var12 = RGBColor.white();
                }
 
                fishing4.a.m.a(glContext, var13, 68.0F + var2 + 34.0F + 68.0F, var3 + 280.0F, 479.0F, 140.0F, 22.0F, 26.0F, var12);
@@ -1047,7 +1050,7 @@ public final class az {
                   C = fishing4.a.w.a(glContext, "img/town/item.png");
                }
 
-               fishing4.a.m.a(glContext, fishing4.a.f.a(fishing4.a.m.c() - 206.0F, 0.0F, 412.0F, (float)fishing4.a.m.b()));
+               fishing4.a.m.a(glContext, fishing4.a.f.a(fishing4.a.m.getHalfWidthPixels() - 206.0F, 0.0F, 412.0F, (float)fishing4.a.m.getHeightPixels()));
 
                for(var5 = 0; var5 < N.length; ++var5) {
                   float var4 = N[var5].a;
@@ -1133,66 +1136,66 @@ public final class az {
                if (i == 0) {
                   if (k < ad.i.size() && g == 3 && o == -1) {
                      var16 = (ac)ad.i.get(k);
-                     fishing4.a.ae.a(glContext, var16.u(), fishing4.a.m.c(), 75.0F + var3 - 45.0F, 400.0F, 50.0F, 26.0F, 4, fishing4.a.aa.d());
+                     fishing4.a.ae.a(glContext, var16.u(), fishing4.a.m.getHalfWidthPixels(), 75.0F + var3 - 45.0F, 400.0F, 50.0F, 26.0F, 4, RGBColor.yellow());
 
                      for(var5 = 0; var5 < ab.e(0) - 1; ++var5) {
-                        fishing4.a.m.a(glContext, s, fishing4.a.m.c(), var3 - (float)(var5 * 40) - 45.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
-                        fishing4.a.ae.a(glContext, ab.a(0, var5), fishing4.a.m.c(), 22.0F + var3 - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 0, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
-                        fishing4.a.ae.a(glContext, ab.a(var16, var5, false), fishing4.a.m.c(), 22.0F + var3 - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 1);
+                        fishing4.a.m.a(glContext, s, fishing4.a.m.getHalfWidthPixels(), var3 - (float)(var5 * 40) - 45.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
+                        fishing4.a.ae.a(glContext, ab.a(0, var5), fishing4.a.m.getHalfWidthPixels(), 22.0F + var3 - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 0, RGBColor.getColor(0.0F, 1.0F, 1.0F, 1.0F));
+                        fishing4.a.ae.a(glContext, ab.a(var16, var5, false), fishing4.a.m.getHalfWidthPixels(), 22.0F + var3 - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 1);
                      }
                   }
                } else if (i == 1) {
                   if (k < ad.j.size() && g == 3 && o == -1) {
                      var16 = (ac)ad.j.get(k);
-                     fishing4.a.ae.a(glContext, var16.u(), fishing4.a.m.c(), 75.0F + var3 - 45.0F, 400.0F, 50.0F, 26.0F, 4, fishing4.a.aa.d());
+                     fishing4.a.ae.a(glContext, var16.u(), fishing4.a.m.getHalfWidthPixels(), 75.0F + var3 - 45.0F, 400.0F, 50.0F, 26.0F, 4, RGBColor.yellow());
 
                      for(var5 = 0; var5 < ab.e(1) - 1; ++var5) {
-                        fishing4.a.m.a(glContext, s, fishing4.a.m.c(), var3 - (float)(var5 * 40) - 45.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
-                        fishing4.a.ae.a(glContext, ab.a(1, var5), fishing4.a.m.c(), 22.0F + var3 - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 0, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
-                        fishing4.a.ae.a(glContext, ab.a(var16, var5, false), fishing4.a.m.c(), 22.0F + var3 - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 1);
+                        fishing4.a.m.a(glContext, s, fishing4.a.m.getHalfWidthPixels(), var3 - (float)(var5 * 40) - 45.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
+                        fishing4.a.ae.a(glContext, ab.a(1, var5), fishing4.a.m.getHalfWidthPixels(), 22.0F + var3 - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 0, RGBColor.getColor(0.0F, 1.0F, 1.0F, 1.0F));
+                        fishing4.a.ae.a(glContext, ab.a(var16, var5, false), fishing4.a.m.getHalfWidthPixels(), 22.0F + var3 - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 1);
                      }
                   }
                } else if (i == 2) {
                   if (k < ad.k.size() && g == 3 && o == -1) {
                      var16 = (ac)ad.k.get(k);
-                     fishing4.a.ae.a(glContext, var16.u(), fishing4.a.m.c(), 75.0F + var3 - 45.0F, 400.0F, 50.0F, 26.0F, 4, fishing4.a.aa.d());
+                     fishing4.a.ae.a(glContext, var16.u(), fishing4.a.m.getHalfWidthPixels(), 75.0F + var3 - 45.0F, 400.0F, 50.0F, 26.0F, 4, RGBColor.yellow());
 
                      for(var5 = 0; var5 < ab.e(2) - 1; ++var5) {
-                        fishing4.a.m.a(glContext, s, fishing4.a.m.c(), 20.0F + var3 - (float)(var5 * 40) - 45.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
-                        fishing4.a.ae.a(glContext, ab.a(2, var5), fishing4.a.m.c(), 20.0F + var3 + 22.0F - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 0, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
-                        fishing4.a.ae.a(glContext, ab.a(var16, var5, false), fishing4.a.m.c(), 20.0F + var3 + 22.0F - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 1);
+                        fishing4.a.m.a(glContext, s, fishing4.a.m.getHalfWidthPixels(), 20.0F + var3 - (float)(var5 * 40) - 45.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
+                        fishing4.a.ae.a(glContext, ab.a(2, var5), fishing4.a.m.getHalfWidthPixels(), 20.0F + var3 + 22.0F - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 0, RGBColor.getColor(0.0F, 1.0F, 1.0F, 1.0F));
+                        fishing4.a.ae.a(glContext, ab.a(var16, var5, false), fishing4.a.m.getHalfWidthPixels(), 20.0F + var3 + 22.0F - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 1);
                      }
                   }
                } else if (i == 3) {
                   if (k < ad.m.size() && g == 3 && o == -1) {
                      var16 = (ac)ad.m.get(k);
-                     fishing4.a.ae.a(glContext, var16.u(), fishing4.a.m.c(), 75.0F + var3 - 45.0F, 400.0F, 50.0F, 26.0F, 4, fishing4.a.aa.d());
+                     fishing4.a.ae.a(glContext, var16.u(), fishing4.a.m.getHalfWidthPixels(), 75.0F + var3 - 45.0F, 400.0F, 50.0F, 26.0F, 4, RGBColor.yellow());
 
                      for(var5 = 0; var5 < ab.e(4) - 1; ++var5) {
-                        fishing4.a.m.a(glContext, s, fishing4.a.m.c(), var3 - (float)(var5 * 40) - 45.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
-                        fishing4.a.ae.a(glContext, ab.a(4, var5), fishing4.a.m.c(), 22.0F + var3 - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 0, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
-                        fishing4.a.ae.a(glContext, ab.a(var16, var5, false), fishing4.a.m.c(), 22.0F + var3 - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 1);
+                        fishing4.a.m.a(glContext, s, fishing4.a.m.getHalfWidthPixels(), var3 - (float)(var5 * 40) - 45.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
+                        fishing4.a.ae.a(glContext, ab.a(4, var5), fishing4.a.m.getHalfWidthPixels(), 22.0F + var3 - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 0, RGBColor.getColor(0.0F, 1.0F, 1.0F, 1.0F));
+                        fishing4.a.ae.a(glContext, ab.a(var16, var5, false), fishing4.a.m.getHalfWidthPixels(), 22.0F + var3 - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 1);
                      }
                   }
                } else if (i == 4) {
                   if (k < ad.l.size() && g == 3 && o == -1) {
                      var16 = (ac)ad.l.get(k);
-                     fishing4.a.ae.a(glContext, var16.u(), fishing4.a.m.c(), 75.0F + var3 - 45.0F, 400.0F, 50.0F, 26.0F, 4, fishing4.a.aa.d());
+                     fishing4.a.ae.a(glContext, var16.u(), fishing4.a.m.getHalfWidthPixels(), 75.0F + var3 - 45.0F, 400.0F, 50.0F, 26.0F, 4, RGBColor.yellow());
 
                      for(var5 = 0; var5 < ab.e(3) - 1; ++var5) {
-                        fishing4.a.m.a(glContext, s, fishing4.a.m.c(), var3 - (float)(var5 * 40) - 45.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
-                        fishing4.a.ae.a(glContext, ab.a(3, var5), fishing4.a.m.c(), 22.0F + var3 - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 0, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
-                        fishing4.a.ae.a(glContext, ab.a(var16, var5, false), fishing4.a.m.c(), 22.0F + var3 - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 1);
+                        fishing4.a.m.a(glContext, s, fishing4.a.m.getHalfWidthPixels(), var3 - (float)(var5 * 40) - 45.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
+                        fishing4.a.ae.a(glContext, ab.a(3, var5), fishing4.a.m.getHalfWidthPixels(), 22.0F + var3 - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 0, RGBColor.getColor(0.0F, 1.0F, 1.0F, 1.0F));
+                        fishing4.a.ae.a(glContext, ab.a(var16, var5, false), fishing4.a.m.getHalfWidthPixels(), 22.0F + var3 - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 1);
                      }
                   }
                } else if (i == 5 && k < ad.n.size() && g == 3 && o == -1) {
                   var16 = (ac)ad.n.get(k);
-                  fishing4.a.ae.a(glContext, var16.u(), fishing4.a.m.c(), 75.0F + var3 - 45.0F, 400.0F, 50.0F, 26.0F, 4, fishing4.a.aa.d());
+                  fishing4.a.ae.a(glContext, var16.u(), fishing4.a.m.getHalfWidthPixels(), 75.0F + var3 - 45.0F, 400.0F, 50.0F, 26.0F, 4, RGBColor.yellow());
 
                   for(var5 = 0; var5 < ab.e(5) - 1; ++var5) {
-                     fishing4.a.m.a(glContext, s, fishing4.a.m.c(), var3 - (float)(var5 * 40) - 45.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
-                     fishing4.a.ae.a(glContext, ab.a(5, var5), fishing4.a.m.c(), 22.0F + var3 - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 0, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
-                     fishing4.a.ae.a(glContext, ab.a(var16, var5, false), fishing4.a.m.c(), 22.0F + var3 - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 1);
+                     fishing4.a.m.a(glContext, s, fishing4.a.m.getHalfWidthPixels(), var3 - (float)(var5 * 40) - 45.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
+                     fishing4.a.ae.a(glContext, ab.a(5, var5), fishing4.a.m.getHalfWidthPixels(), 22.0F + var3 - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 0, RGBColor.getColor(0.0F, 1.0F, 1.0F, 1.0F));
+                     fishing4.a.ae.a(glContext, ab.a(var16, var5, false), fishing4.a.m.getHalfWidthPixels(), 22.0F + var3 - (float)(var5 * 40) - 45.0F, 300.0F, 50.0F, 24.0F, 1);
                   }
                }
 
@@ -1214,119 +1217,119 @@ public final class az {
                }
 
                if (j > 0) {
-                  fishing4.a.m.a(glContext, s, 25.0F - var2, fishing4.a.m.d() + 130.0F - 38.0F, 910.0F, 937.0F, 34.0F, 48.0F, '\u0001');
+                  fishing4.a.m.a(glContext, s, 25.0F - var2, fishing4.a.m.getHalfHeightPixels() + 130.0F - 38.0F, 910.0F, 937.0F, 34.0F, 48.0F, '\u0001');
                }
 
                if (j < 2) {
-                  fishing4.a.m.a(glContext, s, (float)(fishing4.a.m.a() - 25) + var2, fishing4.a.m.d() + 130.0F - 38.0F, 910.0F, 937.0F, 34.0F, 48.0F, fishing4.a.g.b(), '\u0001');
+                  fishing4.a.m.a(glContext, s, (float)(fishing4.a.m.getWidthPixels() - 25) + var2, fishing4.a.m.getHalfHeightPixels() + 130.0F - 38.0F, 910.0F, 937.0F, 34.0F, 48.0F, fishing4.a.g.b(), '\u0001');
                }
 
                fishing4.game.k.a(glContext, k / 12, 3, 75.0F + var3);
                var15 = ad.o;
-               var8 = fishing4.a.e.a(fishing4.a.m.c(), var3 - 175.0F);
+               var8 = fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var3 - 175.0F);
                fishing4.a.w var10 = s;
                var15.a(glContext, var8, t);
-               M.a(glContext, s, t, fishing4.a.e.a(fishing4.a.m.c(), var3 - 215.0F));
+               M.a(glContext, s, t, fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var3 - 215.0F));
                break;
             case 4:
-               fishing4.a.m.a(glContext, t, fishing4.a.m.c() - 65.0F, var3 + 352.0F, 162.0F, 300.0F, 90.0F, 32.0F);
-               fishing4.a.m.a(glContext, t, fishing4.a.m.c() - 10.0F, var3 + 352.0F, 372.0F, 300.0F, 30.0F, 32.0F);
-               fishing4.a.m.a(glContext, t, 63.0F + fishing4.a.m.c(), var3 + 352.0F, 0.0F, 335.0F, 126.0F, 32.0F);
+               fishing4.a.m.a(glContext, t, fishing4.a.m.getHalfWidthPixels() - 65.0F, var3 + 352.0F, 162.0F, 300.0F, 90.0F, 32.0F);
+               fishing4.a.m.a(glContext, t, fishing4.a.m.getHalfWidthPixels() - 10.0F, var3 + 352.0F, 372.0F, 300.0F, 30.0F, 32.0F);
+               fishing4.a.m.a(glContext, t, 63.0F + fishing4.a.m.getHalfWidthPixels(), var3 + 352.0F, 0.0F, 335.0F, 126.0F, 32.0F);
                if (globalConfig.languageId == 0) {
                   var13 = s;
-                  var2 = fishing4.a.m.c();
+                  var2 = fishing4.a.m.getHalfWidthPixels();
                   if (i == 0) {
-                     var12 = fishing4.a.aa.d();
+                     var12 = RGBColor.yellow();
                   } else {
-                     var12 = fishing4.a.aa.b();
+                     var12 = RGBColor.white();
                   }
 
                   fishing4.a.m.a(glContext, var13, var2 - 138.0F, 12.0F + 280.0F + var3, 0.0F, 772.0F, 102.0F, 22.0F, var12);
                   var13 = s;
-                  var2 = fishing4.a.m.c();
+                  var2 = fishing4.a.m.getHalfWidthPixels();
                   if (i == 0) {
-                     var12 = fishing4.a.aa.d();
+                     var12 = RGBColor.yellow();
                   } else {
-                     var12 = fishing4.a.aa.b();
+                     var12 = RGBColor.white();
                   }
 
                   fishing4.a.m.a(glContext, var13, var2 - 138.0F, 280.0F + var3 - 12.0F, 331.0F, 843.0F, 72.0F, 20.0F, var12);
                   var13 = s;
-                  var2 = fishing4.a.m.c();
+                  var2 = fishing4.a.m.getHalfWidthPixels();
                   if (i == 1) {
-                     var12 = fishing4.a.aa.d();
+                     var12 = RGBColor.yellow();
                   } else {
-                     var12 = fishing4.a.aa.b();
+                     var12 = RGBColor.white();
                   }
 
                   fishing4.a.m.a(glContext, var13, var2, 12.0F + 280.0F + var3, 0.0F, 796.0F, 100.0F, 20.0F, var12);
                   var13 = s;
-                  var2 = fishing4.a.m.c();
+                  var2 = fishing4.a.m.getHalfWidthPixels();
                   if (i == 1) {
-                     var12 = fishing4.a.aa.d();
+                     var12 = RGBColor.yellow();
                   } else {
-                     var12 = fishing4.a.aa.b();
+                     var12 = RGBColor.white();
                   }
 
                   fishing4.a.m.a(glContext, var13, var2, 280.0F + var3 - 12.0F, 331.0F, 843.0F, 72.0F, 20.0F, var12);
                   var13 = s;
-                  var2 = fishing4.a.m.c();
+                  var2 = fishing4.a.m.getHalfWidthPixels();
                   if (i == 2) {
-                     var12 = fishing4.a.aa.d();
+                     var12 = RGBColor.yellow();
                   } else {
-                     var12 = fishing4.a.aa.b();
+                     var12 = RGBColor.white();
                   }
 
                   fishing4.a.m.a(glContext, var13, 138.0F + var2, var3 + 280.0F, 486.0F, 820.0F, 48.0F, 20.0F, var12);
                } else {
                   var13 = s;
-                  var2 = fishing4.a.m.c();
+                  var2 = fishing4.a.m.getHalfWidthPixels();
                   if (i == 0) {
-                     var12 = fishing4.a.aa.d();
+                     var12 = RGBColor.yellow();
                   } else {
-                     var12 = fishing4.a.aa.b();
+                     var12 = RGBColor.white();
                   }
 
                   fishing4.a.m.a(glContext, var13, var2 - 138.0F, 12.0F + 280.0F + var3, 110.0F, 772.0F, 70.0F, 22.0F, var12);
                   var13 = s;
-                  var2 = fishing4.a.m.c();
+                  var2 = fishing4.a.m.getHalfWidthPixels();
                   if (i == 0) {
-                     var12 = fishing4.a.aa.d();
+                     var12 = RGBColor.yellow();
                   } else {
-                     var12 = fishing4.a.aa.b();
+                     var12 = RGBColor.white();
                   }
 
                   fishing4.a.m.a(glContext, var13, var2 - 138.0F, 280.0F + var3 - 12.0F, 415.0F, 843.0F, 65.0F, 20.0F, var12);
                   var13 = s;
-                  var2 = fishing4.a.m.c();
+                  var2 = fishing4.a.m.getHalfWidthPixels();
                   if (i == 1) {
-                     var12 = fishing4.a.aa.d();
+                     var12 = RGBColor.yellow();
                   } else {
-                     var12 = fishing4.a.aa.b();
+                     var12 = RGBColor.white();
                   }
 
                   fishing4.a.m.a(glContext, var13, var2, 12.0F + 280.0F + var3, 110.0F, 796.0F, 87.0F, 20.0F, var12);
                   var13 = s;
-                  var2 = fishing4.a.m.c();
+                  var2 = fishing4.a.m.getHalfWidthPixels();
                   if (i == 1) {
-                     var12 = fishing4.a.aa.d();
+                     var12 = RGBColor.yellow();
                   } else {
-                     var12 = fishing4.a.aa.b();
+                     var12 = RGBColor.white();
                   }
 
                   fishing4.a.m.a(glContext, var13, var2, 280.0F + var3 - 12.0F, 415.0F, 843.0F, 65.0F, 20.0F, var12);
                   var13 = s;
-                  var2 = fishing4.a.m.c();
+                  var2 = fishing4.a.m.getHalfWidthPixels();
                   if (i == 2) {
-                     var12 = fishing4.a.aa.d();
+                     var12 = RGBColor.yellow();
                   } else {
-                     var12 = fishing4.a.aa.b();
+                     var12 = RGBColor.white();
                   }
 
                   fishing4.a.m.a(glContext, var13, 138.0F + var2, var3 + 280.0F, 545.0F, 820.0F, 90.0F, 20.0F, var12);
                }
 
-               var8 = fishing4.a.e.a(fishing4.a.m.c(), 520.0F);
+               var8 = fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), 520.0F);
                int var7;
                if (i == 0) {
                   var5 = 0;
@@ -1390,7 +1393,7 @@ public final class az {
                   }
 
                   if (var5 == 0) {
-                     fishing4.a.ae.a(glContext, fishing4.a.y.a(2131165306), fishing4.a.m.c(), fishing4.a.m.d() - 35.0F, 400.0F, 50.0F, 26.0F, 4);
+                     fishing4.a.ae.a(glContext, fishing4.a.y.a(2131165306), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 35.0F, 400.0F, 50.0F, 26.0F, 4);
                   }
                } else if (i == 1) {
                   var5 = 0;
@@ -1454,11 +1457,11 @@ public final class az {
                   }
 
                   if (var5 == 0) {
-                     fishing4.a.ae.a(glContext, fishing4.a.y.a(2131165306), fishing4.a.m.c(), fishing4.a.m.d() - 35.0F, 400.0F, 50.0F, 26.0F, 4);
+                     fishing4.a.ae.a(glContext, fishing4.a.y.a(2131165306), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 35.0F, 400.0F, 50.0F, 26.0F, 4);
                   }
                } else if (i == 2) {
                   if (fishing4.game.r.a == 0) {
-                     fishing4.a.ae.a(glContext, fishing4.a.y.a(2131165307), fishing4.a.m.c(), fishing4.a.m.d() - 35.0F, 400.0F, 50.0F, 26.0F, 4);
+                     fishing4.a.ae.a(glContext, fishing4.a.y.a(2131165307), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 35.0F, 400.0F, 50.0F, 26.0F, 4);
                   } else if (fishing4.game.r.b <= 0 && fishing4.game.z.b() != 4) {
                      fishing4.a.m.a(glContext, s, var8.a, var8.b, 334.0F, 527.0F, 332.0F, 46.0F, (int)140);
                      if (fishing4.game.r.b().length() >= 17) {
@@ -1481,78 +1484,78 @@ public final class az {
                }
                break;
             case 5:
-               fishing4.a.m.a(glContext, t, fishing4.a.m.c(), var3 + 352.0F, 259.0F, 300.0F, 110.0F, 32.0F);
+               fishing4.a.m.a(glContext, t, fishing4.a.m.getHalfWidthPixels(), var3 + 352.0F, 259.0F, 300.0F, 110.0F, 32.0F);
                if (globalConfig.languageId == 0) {
                   var13 = t;
-                  var2 = fishing4.a.m.c();
+                  var2 = fishing4.a.m.getHalfWidthPixels();
                   if (i == 0) {
-                     var12 = fishing4.a.aa.d();
+                     var12 = RGBColor.yellow();
                   } else {
-                     var12 = fishing4.a.aa.b();
+                     var12 = RGBColor.white();
                   }
 
                   fishing4.a.m.a(glContext, var13, var2 - 52.0F - 104.0F, var3 + 280.0F, 443.0F, 345.0F, 82.0F, 18.0F, var12);
                   var13 = t;
-                  var2 = fishing4.a.m.c();
+                  var2 = fishing4.a.m.getHalfWidthPixels();
                   if (i == 1) {
-                     var12 = fishing4.a.aa.d();
+                     var12 = RGBColor.yellow();
                   } else {
-                     var12 = fishing4.a.aa.b();
+                     var12 = RGBColor.white();
                   }
 
                   fishing4.a.m.a(glContext, var13, var2 - 52.0F, var3 + 280.0F, 443.0F, 364.0F, 84.0F, 18.0F, var12);
                   var13 = t;
-                  var2 = fishing4.a.m.c();
+                  var2 = fishing4.a.m.getHalfWidthPixels();
                   if (i == 2) {
-                     var12 = fishing4.a.aa.d();
+                     var12 = RGBColor.yellow();
                   } else {
-                     var12 = fishing4.a.aa.b();
+                     var12 = RGBColor.white();
                   }
 
                   fishing4.a.m.a(glContext, var13, 52.0F + var2, var3 + 280.0F, 443.0F, 383.0F, 64.0F, 16.0F, var12);
                   var13 = t;
-                  var2 = fishing4.a.m.c();
+                  var2 = fishing4.a.m.getHalfWidthPixels();
                   if (i == 3) {
-                     var12 = fishing4.a.aa.d();
+                     var12 = RGBColor.yellow();
                   } else {
-                     var12 = fishing4.a.aa.b();
+                     var12 = RGBColor.white();
                   }
 
                   fishing4.a.m.a(glContext, var13, 104.0F + var2 + 52.0F, var3 + 280.0F, 443.0F, 401.0F, 82.0F, 18.0F, var12);
                } else {
                   var13 = t;
-                  var2 = fishing4.a.m.c();
+                  var2 = fishing4.a.m.getHalfWidthPixels();
                   if (i == 0) {
-                     var12 = fishing4.a.aa.d();
+                     var12 = RGBColor.yellow();
                   } else {
-                     var12 = fishing4.a.aa.b();
+                     var12 = RGBColor.white();
                   }
 
                   fishing4.a.m.a(glContext, var13, var2 - 52.0F - 104.0F, var3 + 280.0F, 530.0F, 345.0F, 73.0F, 18.0F, var12);
                   var13 = t;
-                  var2 = fishing4.a.m.c();
+                  var2 = fishing4.a.m.getHalfWidthPixels();
                   if (i == 1) {
-                     var12 = fishing4.a.aa.d();
+                     var12 = RGBColor.yellow();
                   } else {
-                     var12 = fishing4.a.aa.b();
+                     var12 = RGBColor.white();
                   }
 
                   fishing4.a.m.a(glContext, var13, var2 - 55.0F, var3 + 280.0F, 530.0F, 364.0F, 105.0F, 18.0F, var12);
                   var13 = t;
-                  var2 = fishing4.a.m.c();
+                  var2 = fishing4.a.m.getHalfWidthPixels();
                   if (i == 2) {
-                     var12 = fishing4.a.aa.d();
+                     var12 = RGBColor.yellow();
                   } else {
-                     var12 = fishing4.a.aa.b();
+                     var12 = RGBColor.white();
                   }
 
                   fishing4.a.m.a(glContext, var13, 52.0F + var2, var3 + 280.0F, 510.0F, 383.0F, 53.0F, 16.0F, var12);
                   var13 = t;
-                  var2 = fishing4.a.m.c();
+                  var2 = fishing4.a.m.getHalfWidthPixels();
                   if (i == 3) {
-                     var12 = fishing4.a.aa.d();
+                     var12 = RGBColor.yellow();
                   } else {
-                     var12 = fishing4.a.aa.b();
+                     var12 = RGBColor.white();
                   }
 
                   fishing4.a.m.a(glContext, var13, 104.0F + var2 + 52.0F, var3 + 280.0F, 530.0F, 401.0F, 58.0F, 18.0F, var12);
@@ -1581,7 +1584,7 @@ public final class az {
       boolean var2 = false;
       boolean var3 = false;
       boolean var4 = false;
-      if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), 150.0F + var0), fishing4.a.h.a(400.0F, 70.0F), var1)) {
+      if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), 150.0F + var0), fishing4.a.h.a(400.0F, 70.0F), var1)) {
          if (OptionsManager.a) {
             var2 = var4;
          } else {
@@ -1596,7 +1599,7 @@ public final class az {
          }
 
          OptionsManager.saveOptions();
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), 50.0F + var0), fishing4.a.h.a(400.0F, 70.0F), var1)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), 50.0F + var0), fishing4.a.h.a(400.0F, 70.0F), var1)) {
          if (!OptionsManager.b) {
             var2 = true;
          }
@@ -1609,7 +1612,7 @@ public final class az {
          }
 
          OptionsManager.saveOptions();
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), var0 - 50.0F), fishing4.a.h.a(400.0F, 70.0F), var1)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var0 - 50.0F), fishing4.a.h.a(400.0F, 70.0F), var1)) {
          if (OptionsManager.c) {
             var2 = var3;
          } else {
@@ -1623,7 +1626,7 @@ public final class az {
 
          OptionsManager.saveOptions();
       } else {
-         fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), var0 - 150.0F), fishing4.a.h.a(400.0F, 70.0F), var1);
+         fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var0 - 150.0F), fishing4.a.h.a(400.0F, 70.0F), var1);
       }
 
    }
@@ -1639,7 +1642,7 @@ public final class az {
       if (fishing4.game.z.d) {
          fishing4.game.z.d = false;
       } else {
-         float var1 = fishing4.a.m.d() - 70.0F;
+         float var1 = fishing4.a.m.getHalfHeightPixels() - 70.0F;
          fishing4.game.k.d();
          switch (g) {
             case 0:
@@ -1679,22 +1682,22 @@ public final class az {
                   } else if (i == 1) {
                      var2 = ((ag)ad.h.get(k)).b.size();
                      if (var2 > 1) {
-                        if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 190.0F, fishing4.a.m.d() - 35.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
+                        if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 190.0F, fishing4.a.m.getHalfHeightPixels() - 35.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
                            fishing4.game.m.g = false;
                            q = (p + 1) % var2;
-                        } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 190.0F, fishing4.a.m.d() - 35.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
+                        } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 190.0F, fishing4.a.m.getHalfHeightPixels() - 35.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
                            fishing4.game.m.g = false;
                            q = (p + var2 - 1) % var2;
                         }
                      }
                   }
-               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 120.0F, var1 + 280.0F), fishing4.a.h.a(136.0F, 70.0F), var0)) {
+               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 120.0F, var1 + 280.0F), fishing4.a.h.a(136.0F, 70.0F), var0)) {
                   o = 0;
                   m = 0;
-               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), var1 + 280.0F), fishing4.a.h.a(136.0F, 70.0F), var0)) {
+               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var1 + 280.0F), fishing4.a.h.a(136.0F, 70.0F), var0)) {
                   o = 0;
                   m = 1;
-               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 120.0F, var1 + 280.0F), fishing4.a.h.a(136.0F, 70.0F), var0)) {
+               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 120.0F, var1 + 280.0F), fishing4.a.h.a(136.0F, 70.0F), var0)) {
                   o = 0;
                   m = 2;
                } else if (i == 0) {
@@ -1706,14 +1709,14 @@ public final class az {
                      fishing4.game.m.g = false;
                      q = 0;
                      H = 40;
-                  } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 180.0F, fishing4.a.m.d() + 60.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
+                  } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 180.0F, fishing4.a.m.getHalfHeightPixels() + 60.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
                      o = (k + 1) % ad.h.size();
-                  } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 180.0F, fishing4.a.m.d() + 60.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
+                  } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 180.0F, fishing4.a.m.getHalfHeightPixels() + 60.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
                      o = (k + ad.h.size() - 1) % ad.h.size();
                   }
                } else if (i == 2) {
                   for(var2 = var3; var2 < 24; ++var2) {
-                     if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 150.0F + (float)(var2 % 5 * 75), 200.0F + var1 - (float)(var2 / 5 * 70)), fishing4.a.h.a(70.0F, 70.0F), var0)) {
+                     if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 150.0F + (float)(var2 % 5 * 75), 200.0F + var1 - (float)(var2 / 5 * 70)), fishing4.a.h.a(70.0F, 70.0F), var0)) {
                         o = var2;
                         return;
                      }
@@ -1727,48 +1730,48 @@ public final class az {
                   }
                } else if (M.a(var0, true)) {
                   a();
-               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 32.0F - 68.0F - 68.0F, var1 + 280.0F), fishing4.a.h.a(68.0F, 70.0F), var0)) {
+               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 32.0F - 68.0F - 68.0F, var1 + 280.0F), fishing4.a.h.a(68.0F, 70.0F), var0)) {
                   m = 0;
                   if (j > 0) {
                      n = 0;
                      g = 7;
                   }
-               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 32.0F - 68.0F, var1 + 280.0F), fishing4.a.h.a(68.0F, 70.0F), var0)) {
+               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 32.0F - 68.0F, var1 + 280.0F), fishing4.a.h.a(68.0F, 70.0F), var0)) {
                   m = 1;
                   if (j > 0) {
                      n = 0;
                      g = 7;
                   }
-               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 32.0F, var1 + 280.0F), fishing4.a.h.a(68.0F, 70.0F), var0)) {
+               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 32.0F, var1 + 280.0F), fishing4.a.h.a(68.0F, 70.0F), var0)) {
                   m = 2;
                   if (j > 0) {
                      n = 0;
                      g = 7;
                   }
-               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 32.0F, var1 + 280.0F), fishing4.a.h.a(68.0F, 70.0F), var0)) {
+               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 32.0F, var1 + 280.0F), fishing4.a.h.a(68.0F, 70.0F), var0)) {
                   m = 3;
                   if (j > 0) {
                      n = 0;
                      g = 7;
                   }
-               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 32.0F + 68.0F, var1 + 280.0F), fishing4.a.h.a(68.0F, 70.0F), var0)) {
+               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 32.0F + 68.0F, var1 + 280.0F), fishing4.a.h.a(68.0F, 70.0F), var0)) {
                   m = 4;
                   if (j > 0) {
                      n = 0;
                      g = 7;
                   }
-               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 32.0F + 68.0F + 68.0F, var1 + 280.0F), fishing4.a.h.a(68.0F, 70.0F), var0)) {
+               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 32.0F + 68.0F + 68.0F, var1 + 280.0F), fishing4.a.h.a(68.0F, 70.0F), var0)) {
                   m = 5;
                   if (j > 0) {
                      n = 0;
                      g = 7;
                   }
-               } else if (fishing4.a.f.a(fishing4.a.e.a(25.0F, fishing4.a.m.d() + 130.0F - 38.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
+               } else if (fishing4.a.f.a(fishing4.a.e.a(25.0F, fishing4.a.m.getHalfHeightPixels() + 130.0F - 38.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
                   if (j > 0) {
                      n = j - 1;
                      g = 7;
                   }
-               } else if (fishing4.a.f.a(fishing4.a.e.a((float)(fishing4.a.m.a() - 25), fishing4.a.m.d() + 130.0F - 38.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
+               } else if (fishing4.a.f.a(fishing4.a.e.a((float)(fishing4.a.m.getWidthPixels() - 25), fishing4.a.m.getHalfHeightPixels() + 130.0F - 38.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
                   if (j < 2) {
                      n = j + 1;
                      g = 8;
@@ -1896,18 +1899,18 @@ public final class az {
                   if (am.c.a(var0, true)) {
                      am.b();
                   }
-               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 120.0F, var1 + 280.0F), fishing4.a.h.a(136.0F, 70.0F), var0)) {
+               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 120.0F, var1 + 280.0F), fishing4.a.h.a(136.0F, 70.0F), var0)) {
                   m = 0;
-               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), var1 + 280.0F), fishing4.a.h.a(136.0F, 70.0F), var0)) {
+               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var1 + 280.0F), fishing4.a.h.a(136.0F, 70.0F), var0)) {
                   m = 1;
-               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 120.0F, var1 + 280.0F), fishing4.a.h.a(136.0F, 70.0F), var0)) {
+               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 120.0F, var1 + 280.0F), fishing4.a.h.a(136.0F, 70.0F), var0)) {
                   m = 2;
                } else {
-                  fishing4.a.e var5 = fishing4.a.e.a(fishing4.a.m.c(), 520.0F);
+                  fishing4.a.e var5 = fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), 520.0F);
                   if (i != 0) {
                      if (i == 1) {
                         for(var2 = var4; var2 < fishing4.game.v.c.size(); ++var2) {
-                           if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), var5.b - (float)(var2 * 54)), fishing4.a.h.a(332.0F, 46.0F), var0)) {
+                           if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var5.b - (float)(var2 * 54)), fishing4.a.h.a(332.0F, 46.0F), var0)) {
                               o = var2;
                               H = 112;
                               return;
@@ -1915,7 +1918,7 @@ public final class az {
                         }
 
                         for(var2 = fishing4.game.v.c.size(); var2 < fishing4.game.v.c.size() + fishing4.game.v.d.size(); ++var2) {
-                           if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), var5.b - (float)(var2 * 54)), fishing4.a.h.a(332.0F, 46.0F), var0)) {
+                           if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var5.b - (float)(var2 * 54)), fishing4.a.h.a(332.0F, 46.0F), var0)) {
                               o = var2;
                               H = 113;
                               return;
@@ -1923,12 +1926,12 @@ public final class az {
                         }
 
                         return;
-                     } else if (i == 2 && fishing4.game.r.a != 0 && fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), var5.b), fishing4.a.h.a(332.0F, 46.0F), var0)) {
+                     } else if (i == 2 && fishing4.game.r.a != 0 && fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var5.b), fishing4.a.h.a(332.0F, 46.0F), var0)) {
                         H = 114;
                      }
                   } else {
                      while(var2 < fishing4.game.w.c.size()) {
-                        if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), var5.b - (float)(var2 * 54)), fishing4.a.h.a(332.0F, 46.0F), var0)) {
+                        if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var5.b - (float)(var2 * 54)), fishing4.a.h.a(332.0F, 46.0F), var0)) {
                            o = var2;
                            H = 110;
                            return;
@@ -1938,7 +1941,7 @@ public final class az {
                      }
 
                      for(var2 = fishing4.game.w.c.size(); var2 < fishing4.game.w.c.size() + fishing4.game.w.d.size(); ++var2) {
-                        if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), var5.b - (float)(var2 * 54)), fishing4.a.h.a(332.0F, 46.0F), var0)) {
+                        if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var5.b - (float)(var2 * 54)), fishing4.a.h.a(332.0F, 46.0F), var0)) {
                            o = var2;
                            H = 111;
                            return;
@@ -1966,24 +1969,24 @@ public final class az {
                   } else if (am.c.a(var0, true)) {
                      am.b();
                   }
-               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 150.0F, var1 + 280.0F), fishing4.a.h.a(102.0F, 70.0F), var0)) {
+               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 150.0F, var1 + 280.0F), fishing4.a.h.a(102.0F, 70.0F), var0)) {
                   m = 0;
                   n = 0;
                   o = 0;
                   q = 0;
-               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 50.0F, var1 + 280.0F), fishing4.a.h.a(102.0F, 70.0F), var0)) {
+               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 50.0F, var1 + 280.0F), fishing4.a.h.a(102.0F, 70.0F), var0)) {
                   m = 1;
                   n = 0;
                   o = 0;
                   q = 0;
-               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 50.0F, var1 + 280.0F), fishing4.a.h.a(102.0F, 70.0F), var0)) {
+               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 50.0F, var1 + 280.0F), fishing4.a.h.a(102.0F, 70.0F), var0)) {
                   m = 2;
                   n = 0;
                   o = 0;
                   q = 0;
                   y = 0;
                   z = 0;
-               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 150.0F, var1 + 280.0F), fishing4.a.h.a(102.0F, 70.0F), var0)) {
+               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 150.0F, var1 + 280.0F), fishing4.a.h.a(102.0F, 70.0F), var0)) {
                   H = 150;
                } else if (i == 0) {
                   b(var1, var0);
@@ -1998,14 +2001,14 @@ public final class az {
    }
 
    private static void b(GL10 var0, float var1) {
-      am.a(var0, s, fishing4.a.e.a(fishing4.a.m.c(), 35.0F + var1), fishing4.a.g.b(18.9F, 22.0F));
-      fishing4.a.m.a(var0, s, fishing4.a.m.c(), var1 + 352.0F, 359.0F, 865.0F, 366.0F, 68.0F, fishing4.a.g.c());
-      fishing4.a.m.a(var0, s, fishing4.a.m.c(), var1 + 352.0F, 0.0F, 866.0F, 356.0F, 64.0F, fishing4.a.g.c(), '\u0002');
-      fishing4.a.m.a(var0, s, fishing4.a.m.c(), var1 + 352.0F, 0.0F, 866.0F, 356.0F, 64.0F, fishing4.a.g.c(), '\u0002');
-      fishing4.a.m.a(var0, s, fishing4.a.m.c(), var1 + 352.0F, 0.0F, 866.0F, 356.0F, 64.0F, fishing4.a.g.c(), '\u0002');
-      fishing4.a.m.a(var0, s, fishing4.a.m.c() - 201.0F, var1 - 6.0F, 948.0F, 6.0F, 10.0F, 492.0F, (int)150);
-      fishing4.a.m.a(var0, s, 201.0F + fishing4.a.m.c(), var1 - 6.0F, 1014.0F, 6.0F, 10.0F, 492.0F, (int)150);
-      fishing4.a.m.a(var0, s, fishing4.a.m.c(), var1 - 6.0F, 958.0F, 6.0F, 56.0F, 492.0F, fishing4.a.g.b(7.0F), (int)150);
+      am.a(var0, s, fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), 35.0F + var1), fishing4.a.g.b(18.9F, 22.0F));
+      fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels(), var1 + 352.0F, 359.0F, 865.0F, 366.0F, 68.0F, fishing4.a.g.c());
+      fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels(), var1 + 352.0F, 0.0F, 866.0F, 356.0F, 64.0F, fishing4.a.g.c(), '\u0002');
+      fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels(), var1 + 352.0F, 0.0F, 866.0F, 356.0F, 64.0F, fishing4.a.g.c(), '\u0002');
+      fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels(), var1 + 352.0F, 0.0F, 866.0F, 356.0F, 64.0F, fishing4.a.g.c(), '\u0002');
+      fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels() - 201.0F, var1 - 6.0F, 948.0F, 6.0F, 10.0F, 492.0F, (int)150);
+      fishing4.a.m.a(var0, s, 201.0F + fishing4.a.m.getHalfWidthPixels(), var1 - 6.0F, 1014.0F, 6.0F, 10.0F, 492.0F, (int)150);
+      fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels(), var1 - 6.0F, 958.0F, 6.0F, 56.0F, 492.0F, fishing4.a.g.b(7.0F), (int)150);
       float var2;
       float var3;
       int var4;
@@ -2019,7 +2022,7 @@ public final class az {
          case 4:
             for(var4 = 0; var4 < 3; ++var4) {
                var9 = s;
-               var2 = fishing4.a.m.c();
+               var2 = fishing4.a.m.getHalfWidthPixels();
                var3 = (float)((var4 - 1) * 138);
                var8 = fishing4.a.g.c(1.6521739F);
                if (var4 == i) {
@@ -2030,7 +2033,7 @@ public final class az {
 
                fishing4.a.m.a(var0, var9, var3 + (var2 - 64.0F), var1 + 278.0F, 105.0F, 677.0F, 10.0F, 46.0F, var8, (int)var5);
                var6 = s;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                var2 = (float)((var4 - 1) * 138);
                var7 = fishing4.a.g.c(1.6521739F);
                if (var4 == i) {
@@ -2041,7 +2044,7 @@ public final class az {
 
                fishing4.a.m.a(var0, var6, var2 + var3 + 64.0F, var1 + 278.0F, 196.0F, 677.0F, 10.0F, 46.0F, var7, (int)var5);
                var9 = s;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                var2 = (float)((var4 - 1) * 138);
                var8 = fishing4.a.g.b(1.475F, 1.6521739F);
                if (var4 == i) {
@@ -2059,7 +2062,7 @@ public final class az {
          case 8:
             for(var4 = 0; var4 < 6; ++var4) {
                var6 = s;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                var2 = (float)((var4 - 1) * 69);
                var7 = fishing4.a.g.c(1.6521739F);
                if (var4 == i) {
@@ -2070,7 +2073,7 @@ public final class az {
 
                fishing4.a.m.a(var0, var6, var2 + (var3 - 68.0F - 35.0F - 29.0F), var1 + 278.0F, 105.0F, 677.0F, 10.0F, 46.0F, var7, (int)var5);
                var6 = s;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                var2 = (float)((var4 - 1) * 69);
                var7 = fishing4.a.g.c(1.6521739F);
                if (var4 == i) {
@@ -2081,7 +2084,7 @@ public final class az {
 
                fishing4.a.m.a(var0, var6, var2 + var3 - 68.0F - 35.0F + 29.0F, var1 + 278.0F, 196.0F, 677.0F, 10.0F, 46.0F, var7, (int)var5);
                var6 = s;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                var2 = (float)((var4 - 1) * 69);
                var7 = fishing4.a.g.b(0.6F, 1.6521739F);
                if (var4 == i) {
@@ -2097,7 +2100,7 @@ public final class az {
          case 5:
             for(var4 = 0; var4 < 4; ++var4) {
                var6 = s;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                var2 = (float)((var4 - 1) * 104);
                var7 = fishing4.a.g.c(1.6521739F);
                if (var4 == i) {
@@ -2108,7 +2111,7 @@ public final class az {
 
                fishing4.a.m.a(var0, var6, var2 + (var3 - 52.0F - 46.0F), var1 + 278.0F, 105.0F, 677.0F, 10.0F, 46.0F, var7, (int)var5);
                var9 = s;
-               var2 = fishing4.a.m.c();
+               var2 = fishing4.a.m.getHalfWidthPixels();
                var3 = (float)((var4 - 1) * 104);
                var8 = fishing4.a.g.c(1.6521739F);
                if (var4 == i) {
@@ -2119,7 +2122,7 @@ public final class az {
 
                fishing4.a.m.a(var0, var9, var3 + var2 - 52.0F + 46.0F, var1 + 278.0F, 196.0F, 677.0F, 10.0F, 46.0F, var8, (int)var5);
                var9 = s;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                var2 = (float)((var4 - 1) * 104);
                var8 = fishing4.a.g.b(1.025F, 1.6521739F);
                if (var4 == i) {
@@ -2137,88 +2140,88 @@ public final class az {
 
    public static void b(GL10 var0, float var1, int var2) {
       if (j == 0) {
-         fishing4.a.m.a(var0, s, fishing4.a.m.c(), var1 + 150.0F, 794.0F, 577.0F, 140.0F, 64.0F);
+         fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels(), var1 + 150.0F, 794.0F, 577.0F, 140.0F, 64.0F);
          if (globalConfig.languageId == 0) {
-            fishing4.a.m.a(var0, t, fishing4.a.m.c() - 25.0F, var1 + 100.0F, 385.0F, 488.0F, 46.0F, 20.0F);
-            fishing4.a.m.a(var0, t, 25.0F + fishing4.a.m.c(), var1 + 100.0F, 523.0F, 488.0F, 46.0F, 20.0F);
+            fishing4.a.m.a(var0, t, fishing4.a.m.getHalfWidthPixels() - 25.0F, var1 + 100.0F, 385.0F, 488.0F, 46.0F, 20.0F);
+            fishing4.a.m.a(var0, t, 25.0F + fishing4.a.m.getHalfWidthPixels(), var1 + 100.0F, 523.0F, 488.0F, 46.0F, 20.0F);
          } else {
-            fishing4.a.m.a(var0, t, fishing4.a.m.c() - 25.0F, var1 + 100.0F, 752.0F, 487.0F, 42.0F, 20.0F);
-            fishing4.a.m.a(var0, t, 25.0F + fishing4.a.m.c(), var1 + 100.0F, 882.0F, 486.0F, 52.0F, 20.0F);
+            fishing4.a.m.a(var0, t, fishing4.a.m.getHalfWidthPixels() - 25.0F, var1 + 100.0F, 752.0F, 487.0F, 42.0F, 20.0F);
+            fishing4.a.m.a(var0, t, 25.0F + fishing4.a.m.getHalfWidthPixels(), var1 + 100.0F, 882.0F, 486.0F, 52.0F, 20.0F);
          }
 
-         fishing4.a.m.a(var0, s, fishing4.a.m.c(), var1 - 50.0F, 821.0F, 645.0F, 112.0F, 86.0F);
+         fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels(), var1 - 50.0F, 821.0F, 645.0F, 112.0F, 86.0F);
          if (globalConfig.languageId == 0) {
-            fishing4.a.m.a(var0, t, fishing4.a.m.c() - 35.0F, var1 - 120.0F, 441.0F, 488.0F, 70.0F, 20.0F);
-            fishing4.a.m.a(var0, t, 30.0F + fishing4.a.m.c(), var1 - 120.0F, 523.0F, 488.0F, 46.0F, 20.0F);
+            fishing4.a.m.a(var0, t, fishing4.a.m.getHalfWidthPixels() - 35.0F, var1 - 120.0F, 441.0F, 488.0F, 70.0F, 20.0F);
+            fishing4.a.m.a(var0, t, 30.0F + fishing4.a.m.getHalfWidthPixels(), var1 - 120.0F, 523.0F, 488.0F, 46.0F, 20.0F);
          } else {
-            fishing4.a.m.a(var0, t, fishing4.a.m.c() - 35.0F, var1 - 120.0F, 803.0F, 486.0F, 60.0F, 20.0F);
-            fishing4.a.m.a(var0, t, 30.0F + fishing4.a.m.c(), var1 - 120.0F, 882.0F, 486.0F, 52.0F, 20.0F);
+            fishing4.a.m.a(var0, t, fishing4.a.m.getHalfWidthPixels() - 35.0F, var1 - 120.0F, 803.0F, 486.0F, 60.0F, 20.0F);
+            fishing4.a.m.a(var0, t, 30.0F + fishing4.a.m.getHalfWidthPixels(), var1 - 120.0F, 882.0F, 486.0F, 52.0F, 20.0F);
          }
       } else {
          float var3;
          int var4;
          int var5;
          int var6;
-         fishing4.a.aa var7;
+         RGBColor var7;
          fishing4.a.w var8;
          if (j >= 10 && j <= 12) {
             if (globalConfig.languageId == 0) {
-               fishing4.a.m.a(var0, t, fishing4.a.m.c() - 25.0F, var1 + 220.0F, 385.0F, 488.0F, 46.0F, 20.0F);
-               fishing4.a.m.a(var0, t, 25.0F + fishing4.a.m.c(), var1 + 220.0F, 523.0F, 488.0F, 46.0F, 20.0F);
+               fishing4.a.m.a(var0, t, fishing4.a.m.getHalfWidthPixels() - 25.0F, var1 + 220.0F, 385.0F, 488.0F, 46.0F, 20.0F);
+               fishing4.a.m.a(var0, t, 25.0F + fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 523.0F, 488.0F, 46.0F, 20.0F);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 10) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, var3 - 120.0F, var1 + 180.0F, 581.0F, 488.0F, 46.0F, 20.0F, var7);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 11) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, var3, var1 + 180.0F, 639.0F, 488.0F, 46.0F, 20.0F, var7);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 12) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, 120.0F + var3, var1 + 180.0F, 696.0F, 488.0F, 46.0F, 20.0F, var7);
             } else {
-               fishing4.a.m.a(var0, t, fishing4.a.m.c() - 25.0F, var1 + 220.0F, 752.0F, 487.0F, 42.0F, 20.0F);
-               fishing4.a.m.a(var0, t, 25.0F + fishing4.a.m.c(), var1 + 220.0F, 882.0F, 486.0F, 52.0F, 20.0F);
+               fishing4.a.m.a(var0, t, fishing4.a.m.getHalfWidthPixels() - 25.0F, var1 + 220.0F, 752.0F, 487.0F, 42.0F, 20.0F);
+               fishing4.a.m.a(var0, t, 25.0F + fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 882.0F, 486.0F, 52.0F, 20.0F);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 10) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, var3 - 120.0F, var1 + 180.0F, 765.0F, 467.0F, 30.0F, 16.0F, var7);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 11) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, var3, var1 + 180.0F, 837.0F, 465.0F, 32.0F, 18.0F, var7);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 12) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, 120.0F + var3, var1 + 180.0F, 911.0F, 466.0F, 42.0F, 18.0F, var7);
@@ -2235,77 +2238,77 @@ public final class az {
 
                if (!fishing4.a.r.aa[k + var4].equals("11111111111") && !fishing4.a.r.aa[k + var4].equals("1111")) {
                   if (fishing4.game.m.c(var6).length() > 13) {
-                     fishing4.a.ae.a(var0, var5 + ". " + fishing4.game.m.c(var6).substring(0, 13) + "...", fishing4.a.m.c(), 70.0F + var1 - (float)(var4 * 50), 300.0F, 50.0F, 26.0F, 0);
+                     fishing4.a.ae.a(var0, var5 + ". " + fishing4.game.m.c(var6).substring(0, 13) + "...", fishing4.a.m.getHalfWidthPixels(), 70.0F + var1 - (float)(var4 * 50), 300.0F, 50.0F, 26.0F, 0);
                   } else {
-                     fishing4.a.ae.a(var0, var5 + ". " + fishing4.game.m.c(var6), fishing4.a.m.c(), 70.0F + var1 - (float)(var4 * 50), 300.0F, 50.0F, 26.0F, 0);
+                     fishing4.a.ae.a(var0, var5 + ". " + fishing4.game.m.c(var6), fishing4.a.m.getHalfWidthPixels(), 70.0F + var1 - (float)(var4 * 50), 300.0F, 50.0F, 26.0F, 0);
                   }
                } else {
-                  fishing4.a.ae.a(var0, var5 + ". ?????", fishing4.a.m.c(), 70.0F + var1 - (float)(var4 * 50), 300.0F, 50.0F, 26.0F, 0);
+                  fishing4.a.ae.a(var0, var5 + ". ?????", fishing4.a.m.getHalfWidthPixels(), 70.0F + var1 - (float)(var4 * 50), 300.0F, 50.0F, 26.0F, 0);
                }
 
-               fishing4.a.m.a(var0, s, fishing4.a.m.c(), 70.0F + var1 - 22.0F - (float)(var4 * 50), 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
+               fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels(), 70.0F + var1 - 22.0F - (float)(var4 * 50), 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
             }
 
-            fishing4.game.k.b(var0, fishing4.a.e.a(fishing4.a.m.c(), var1 - 40.0F), 160.0F, var2);
+            fishing4.game.k.b(var0, fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var1 - 40.0F), 160.0F, var2);
             fishing4.game.k.b();
          } else if (j >= 20 && j <= 22) {
             if (globalConfig.languageId == 0) {
-               fishing4.a.m.a(var0, t, fishing4.a.m.c() - 35.0F, var1 + 220.0F, 441.0F, 488.0F, 70.0F, 20.0F);
-               fishing4.a.m.a(var0, t, 30.0F + fishing4.a.m.c(), var1 + 220.0F, 523.0F, 488.0F, 46.0F, 20.0F);
+               fishing4.a.m.a(var0, t, fishing4.a.m.getHalfWidthPixels() - 35.0F, var1 + 220.0F, 441.0F, 488.0F, 70.0F, 20.0F);
+               fishing4.a.m.a(var0, t, 30.0F + fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 523.0F, 488.0F, 46.0F, 20.0F);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 20) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, var3 - 120.0F, var1 + 180.0F, 581.0F, 488.0F, 46.0F, 20.0F, var7);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 21) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, var3, var1 + 180.0F, 639.0F, 488.0F, 46.0F, 20.0F, var7);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 22) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, 120.0F + var3, var1 + 180.0F, 696.0F, 488.0F, 46.0F, 20.0F, var7);
             } else {
-               fishing4.a.m.a(var0, t, fishing4.a.m.c() - 35.0F, var1 + 220.0F, 803.0F, 486.0F, 60.0F, 20.0F);
-               fishing4.a.m.a(var0, t, 30.0F + fishing4.a.m.c(), var1 + 220.0F, 882.0F, 486.0F, 52.0F, 20.0F);
+               fishing4.a.m.a(var0, t, fishing4.a.m.getHalfWidthPixels() - 35.0F, var1 + 220.0F, 803.0F, 486.0F, 60.0F, 20.0F);
+               fishing4.a.m.a(var0, t, 30.0F + fishing4.a.m.getHalfWidthPixels(), var1 + 220.0F, 882.0F, 486.0F, 52.0F, 20.0F);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 20) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, var3 - 120.0F, var1 + 180.0F, 765.0F, 467.0F, 30.0F, 16.0F, var7);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 21) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, var3, var1 + 180.0F, 837.0F, 465.0F, 32.0F, 18.0F, var7);
                var8 = t;
-               var3 = fishing4.a.m.c();
+               var3 = fishing4.a.m.getHalfWidthPixels();
                if (j == 22) {
-                  var7 = fishing4.a.aa.d();
+                  var7 = RGBColor.yellow();
                } else {
-                  var7 = fishing4.a.aa.b();
+                  var7 = RGBColor.white();
                }
 
                fishing4.a.m.a(var0, var8, 120.0F + var3, var1 + 180.0F, 911.0F, 466.0F, 42.0F, 18.0F, var7);
@@ -2322,18 +2325,18 @@ public final class az {
 
                if (!fishing4.a.r.aa[k + var4].equals("11111111111") && !fishing4.a.r.aa[k + var4].equals("1111")) {
                   if (fishing4.game.m.c(var6).length() > 13) {
-                     fishing4.a.ae.a(var0, var5 + ". " + fishing4.game.m.c(var6).substring(0, 13) + "...", fishing4.a.m.c(), 70.0F + var1 - (float)(var4 * 50), 300.0F, 50.0F, 26.0F, 0);
+                     fishing4.a.ae.a(var0, var5 + ". " + fishing4.game.m.c(var6).substring(0, 13) + "...", fishing4.a.m.getHalfWidthPixels(), 70.0F + var1 - (float)(var4 * 50), 300.0F, 50.0F, 26.0F, 0);
                   } else {
-                     fishing4.a.ae.a(var0, var5 + ". " + fishing4.game.m.c(var6), fishing4.a.m.c(), 70.0F + var1 - (float)(var4 * 50), 300.0F, 50.0F, 26.0F, 0);
+                     fishing4.a.ae.a(var0, var5 + ". " + fishing4.game.m.c(var6), fishing4.a.m.getHalfWidthPixels(), 70.0F + var1 - (float)(var4 * 50), 300.0F, 50.0F, 26.0F, 0);
                   }
                } else {
-                  fishing4.a.ae.a(var0, var5 + ". ?????", fishing4.a.m.c(), 70.0F + var1 - (float)(var4 * 50), 300.0F, 50.0F, 26.0F, 0);
+                  fishing4.a.ae.a(var0, var5 + ". ?????", fishing4.a.m.getHalfWidthPixels(), 70.0F + var1 - (float)(var4 * 50), 300.0F, 50.0F, 26.0F, 0);
                }
 
-               fishing4.a.m.a(var0, s, fishing4.a.m.c(), 70.0F + var1 - 22.0F - (float)(var4 * 50), 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
+               fishing4.a.m.a(var0, s, fishing4.a.m.getHalfWidthPixels(), 70.0F + var1 - 22.0F - (float)(var4 * 50), 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
             }
 
-            fishing4.game.k.b(var0, fishing4.a.e.a(fishing4.a.m.c(), var1 - 40.0F), 160.0F, var2);
+            fishing4.game.k.b(var0, fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var1 - 40.0F), 160.0F, var2);
             fishing4.game.k.b();
          }
       }
@@ -2376,21 +2379,21 @@ public final class az {
    public static void c(float var0, fishing4.a.e var1) {
       int var2 = 0;
       if (j == 0) {
-         if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), 150.0F + var0), fishing4.a.h.a(180.0F, 110.0F), var1)) {
+         if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), 150.0F + var0), fishing4.a.h.a(180.0F, 110.0F), var1)) {
             n = 10;
-         } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), var0 - 50.0F), fishing4.a.h.a(180.0F, 120.0F), var1)) {
+         } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var0 - 50.0F), fishing4.a.h.a(180.0F, 120.0F), var1)) {
             n = 20;
          }
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 120.0F, var0 + 180.0F), fishing4.a.h.a(136.0F, 50.0F), var1)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 120.0F, var0 + 180.0F), fishing4.a.h.a(136.0F, 50.0F), var1)) {
          o = 0;
          n = j / 10 * 10;
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), var0 + 180.0F), fishing4.a.h.a(136.0F, 50.0F), var1)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var0 + 180.0F), fishing4.a.h.a(136.0F, 50.0F), var1)) {
          o = 0;
          n = j / 10 * 10 + 1;
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 120.0F, var0 + 180.0F), fishing4.a.h.a(136.0F, 50.0F), var1)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 120.0F, var0 + 180.0F), fishing4.a.h.a(136.0F, 50.0F), var1)) {
          o = 144;
          n = j / 10 * 10 + 2;
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), var0 - 40.0F + 160.0F), fishing4.a.h.a(50.0F, 50.0F), var1)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var0 - 40.0F + 160.0F), fishing4.a.h.a(50.0F, 50.0F), var1)) {
          if (j % 10 == 0) {
             if (k > 4) {
                o = k - 5;
@@ -2416,7 +2419,7 @@ public final class az {
                o = 144;
             }
          }
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), var0 - 40.0F - 160.0F), fishing4.a.h.a(50.0F, 50.0F), var1)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var0 - 40.0F - 160.0F), fishing4.a.h.a(50.0F, 50.0F), var1)) {
          if (j % 10 == 0) {
             if (k + 5 < 182) {
                o = k + 5;
@@ -2444,7 +2447,7 @@ public final class az {
          }
       } else {
          while(var2 < 5) {
-            if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), 70.0F + var0 - (float)(var2 * 50)), fishing4.a.h.a(300.0F, 50.0F), var1)) {
+            if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), 70.0F + var0 - (float)(var2 * 50)), fishing4.a.h.a(300.0F, 50.0F), var1)) {
                if (j >= 10 && j <= 12) {
                   if (fishing4.game.s.a[k + var2] != 0.0F) {
                      q = var2 + k;
@@ -2542,23 +2545,23 @@ public final class az {
    public static void d(float var0, fishing4.a.e var1) {
       int var2 = 0;
       if (j == 0) {
-         if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), 150.0F + var0), fishing4.a.h.a(180.0F, 110.0F), var1)) {
+         if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), 150.0F + var0), fishing4.a.h.a(180.0F, 110.0F), var1)) {
             fishing4.a.r.Y = 0;
             am.a(60);
-         } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), var0 - 50.0F), fishing4.a.h.a(180.0F, 120.0F), var1)) {
+         } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var0 - 50.0F), fishing4.a.h.a(180.0F, 120.0F), var1)) {
             fishing4.a.r.Y = 1;
             am.a(60);
          }
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 120.0F, var0 + 180.0F), fishing4.a.h.a(136.0F, 50.0F), var1)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 120.0F, var0 + 180.0F), fishing4.a.h.a(136.0F, 50.0F), var1)) {
          o = 0;
          n = j / 10 * 10;
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), var0 + 180.0F), fishing4.a.h.a(136.0F, 50.0F), var1)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var0 + 180.0F), fishing4.a.h.a(136.0F, 50.0F), var1)) {
          o = 0;
          n = j / 10 * 10 + 1;
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 120.0F, var0 + 180.0F), fishing4.a.h.a(136.0F, 50.0F), var1)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 120.0F, var0 + 180.0F), fishing4.a.h.a(136.0F, 50.0F), var1)) {
          o = 144;
          n = j / 10 * 10 + 2;
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), var0 - 40.0F + 160.0F), fishing4.a.h.a(50.0F, 50.0F), var1)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var0 - 40.0F + 160.0F), fishing4.a.h.a(50.0F, 50.0F), var1)) {
          if (j % 10 == 0) {
             if (k > 4) {
                o = k - 5;
@@ -2584,7 +2587,7 @@ public final class az {
                o = 144;
             }
          }
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), var0 - 40.0F - 160.0F), fishing4.a.h.a(50.0F, 50.0F), var1)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), var0 - 40.0F - 160.0F), fishing4.a.h.a(50.0F, 50.0F), var1)) {
          if (j % 10 == 0) {
             if (k + 5 < 182) {
                o = k + 5;
@@ -2612,7 +2615,7 @@ public final class az {
          }
       } else {
          while(var2 < 5) {
-            if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), 70.0F + var0 - (float)(var2 * 50)), fishing4.a.h.a(300.0F, 50.0F), var1)) {
+            if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), 70.0F + var0 - (float)(var2 * 50)), fishing4.a.h.a(300.0F, 50.0F), var1)) {
                if (j >= 10 && j <= 12) {
                   if (!fishing4.a.r.aa[k + var2].equals("11111111111") && !fishing4.a.r.aa[k + var2].equals("1111")) {
                      q = var2 + k;
@@ -2655,9 +2658,9 @@ public final class az {
    public static void e(fishing4.a.e var0) {
       if (am.c.a(var0, true)) {
          am.b();
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 190.0F, fishing4.a.m.d() - 35.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 190.0F, fishing4.a.m.getHalfHeightPixels() - 35.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
          h();
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 190.0F, fishing4.a.m.d() - 35.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 190.0F, fishing4.a.m.getHalfHeightPixels() - 35.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
          i();
       }
 
@@ -2682,9 +2685,9 @@ public final class az {
    public static void f(fishing4.a.e var0) {
       if (am.c.a(var0, true)) {
          am.b();
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 190.0F, fishing4.a.m.d() - 35.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 190.0F, fishing4.a.m.getHalfHeightPixels() - 35.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
          j();
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 190.0F, fishing4.a.m.d() - 35.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 190.0F, fishing4.a.m.getHalfHeightPixels() - 35.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
          k();
       }
 
@@ -2868,9 +2871,9 @@ public final class az {
    public static void i(fishing4.a.e var0) {
       if (am.c.a(var0, true)) {
          am.b();
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 190.0F, fishing4.a.m.d() - 35.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 190.0F, fishing4.a.m.getHalfHeightPixels() - 35.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
          l();
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 190.0F, fishing4.a.m.d() - 35.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 190.0F, fishing4.a.m.getHalfHeightPixels() - 35.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
          m();
       }
 

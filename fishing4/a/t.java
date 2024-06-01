@@ -195,7 +195,7 @@ public final class t {
 
    public static void a(GL10 var0) {
       if (e) {
-         fishing4.a.m.a(var0, f, 0.0F, (float)fishing4.a.m.b(), fishing4.a.d.b());
+         fishing4.a.m.a(var0, f, 0.0F, (float)fishing4.a.m.getHeightPixels(), fishing4.a.d.b());
       }
 
    }
@@ -205,7 +205,7 @@ public final class t {
       ConnectivityManager var3;
       String var4;
       if (e && (!g || A || l == 0) && var0 >= 0.0F && var0 < 150.0F && var1 >= 0.0F && var1 <= 40.0F) {
-         var3 = (ConnectivityManager)fishing4.a.s.a().getSystemService("connectivity");
+         var3 = (ConnectivityManager) GLRootView.getAppContext().getSystemService("connectivity");
          if (var3.getActiveNetworkInfo() != null && var3.getActiveNetworkInfo().isConnectedOrConnecting()) {
             x = true;
             var2 = true;
@@ -218,7 +218,7 @@ public final class t {
             var4 = "Check network connection.";
          }
 
-         Toast.makeText(fishing4.a.s.a(), var4, 0).show();
+         Toast.makeText(GLRootView.getAppContext(), var4, 0).show();
       }
 
       if (g && !A) {
@@ -230,7 +230,7 @@ public final class t {
             } else {
                if (var0 >= (float)(q - 5) && var0 < (float)(q + r + 5) && var1 >= (float)(n + p - 5) && var1 < (float)(n + p + s + 10)) {
                   if (l == 0) {
-                     var3 = (ConnectivityManager)fishing4.a.s.a().getSystemService("connectivity");
+                     var3 = (ConnectivityManager) GLRootView.getAppContext().getSystemService("connectivity");
                      if (var3.getActiveNetworkInfo() != null && var3.getActiveNetworkInfo().isConnectedOrConnecting()) {
                         w = true;
                         var2 = true;
@@ -243,7 +243,7 @@ public final class t {
                         var4 = "Check network connection.";
                      }
 
-                     Toast.makeText(fishing4.a.s.a(), var4, 0).show();
+                     Toast.makeText(GLRootView.getAppContext(), var4, 0).show();
                   } else if (l == 1) {
                      l = 3;
                      i = true;
@@ -457,10 +457,10 @@ public final class t {
 
       if (g && !A) {
          if (l != 0) {
-            fishing4.a.m.a(var0, j, (float)m, (float)(fishing4.a.m.b() - n), fishing4.a.d.b());
+            fishing4.a.m.a(var0, j, (float)m, (float)(fishing4.a.m.getHeightPixels() - n), fishing4.a.d.b());
          }
 
-         fishing4.a.m.a(var0, k, (float)q, (float)(fishing4.a.m.b() - (n + p)), fishing4.a.d.b());
+         fishing4.a.m.a(var0, k, (float)q, (float)(fishing4.a.m.getHeightPixels() - (n + p)), fishing4.a.d.b());
          int var1;
          if (l == 2) {
             var1 = n + 10;

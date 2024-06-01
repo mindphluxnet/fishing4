@@ -2,6 +2,9 @@ package fishing4.game;
 
 import javax.microedition.khronos.opengles.GL10;
 
+import fishing4.a.GLRootView;
+import fishing4.a.RGBColor;
+
 public final class ah {
    public static final fishing4.a.f a;
    public static final fishing4.a.f b;
@@ -40,9 +43,9 @@ public final class ah {
       }
 
       a = var0;
-      b = fishing4.a.f.a((float)(fishing4.a.m.a() / 2), a.a.b - 20.0F - 56.0F, 114.0F, 112.0F);
-      c = fishing4.a.f.a((float)(fishing4.a.m.a() / 2) - 126.0F, a.a.b - 20.0F - 56.0F, 106.0F, 112.0F);
-      d = fishing4.a.f.a((float)(fishing4.a.m.a() / 2) + 126.0F, a.a.b - 20.0F - 56.0F, 106.0F, 112.0F);
+      b = fishing4.a.f.a((float)(fishing4.a.m.getWidthPixels() / 2), a.a.b - 20.0F - 56.0F, 114.0F, 112.0F);
+      c = fishing4.a.f.a((float)(fishing4.a.m.getWidthPixels() / 2) - 126.0F, a.a.b - 20.0F - 56.0F, 106.0F, 112.0F);
+      d = fishing4.a.f.a((float)(fishing4.a.m.getWidthPixels() / 2) + 126.0F, a.a.b - 20.0F - 56.0F, 106.0F, 112.0F);
       e = fishing4.a.f.a(b.a.a, b.a.b, 114.0F, 112.0F);
       f = fishing4.a.f.a(c.a.a, c.a.b, 106.0F, 112.0F);
       g = fishing4.a.f.a(d.a.a, d.a.b, 106.0F, 112.0F);
@@ -119,7 +122,7 @@ public final class ah {
       this.p = new ai();
 
       for(this.y = new aj[2]; var5 < 2; ++var5) {
-         float var4 = fishing4.a.m.c();
+         float var4 = fishing4.a.m.getHalfWidthPixels();
          float var3 = a.b.a / 2.0F;
          float var2 = (float)fishing4.a.z.a((int)a.b.a - 100);
          this.y[var5] = aj.a(var4 - var3 + var2, a.a.b - (float)((var5 + 1) * 200));
@@ -132,7 +135,7 @@ public final class ah {
       this.u = fishing4.a.w.a(var1, "img/lure/Lure_Waveani_Top.png");
       this.v = fishing4.a.w.a(var1, "img/lure/Spray_Side.png");
       this.w = fishing4.a.w.a(var1, "img/lure/Spray_Top.png");
-      fishing4.b.d.a().a(fishing4.a.s.a(), 2131034140);
+      fishing4.b.d.a().a(GLRootView.getAppContext(), 2131034140);
    }
 
    public final void a() {
@@ -203,7 +206,7 @@ public final class ah {
             if (this.z) {
                this.z = false;
                var5 = fishing4.b.d.a();
-               fishing4.a.s.a();
+               GLRootView.getAppContext();
                var5.a(2131034140);
             }
 
@@ -212,7 +215,7 @@ public final class ah {
 
          if (o != 0) {
             var5 = fishing4.b.d.a();
-            fishing4.a.s.a();
+            GLRootView.getAppContext();
             var5.a(2131034140);
          }
       } else {
@@ -256,7 +259,7 @@ public final class ah {
       float var7 = a.a.a;
       float var8 = a.b.a / 2.0F;
       float var6 = a.a.b;
-      fishing4.a.m.a(var1, var8 + var7, a.b.b / 2.0F + var6, 4.0F + a.b.a, 4.0F + a.b.b, fishing4.a.aa.b());
+      fishing4.a.m.a(var1, var8 + var7, a.b.b / 2.0F + var6, 4.0F + a.b.a, 4.0F + a.b.b, RGBColor.white());
       fishing4.a.m.a(var1, h);
       int var9;
       int var10;
@@ -277,16 +280,16 @@ public final class ah {
 
       this.x.a(var1, 0, var10, var5);
       fishing4.a.w var14;
-      if (fishing4.a.m.c != 600 && fishing4.a.m.d != 600 && fishing4.a.m.d != 1232) {
+      if (fishing4.a.m.width != 600 && fishing4.a.m.height != 600 && fishing4.a.m.height != 1232) {
          var14 = this.q;
-         var6 = fishing4.a.m.c();
+         var6 = fishing4.a.m.getHalfWidthPixels();
          var7 = a.a.b;
          fishing4.a.m.a(var1, var14, var6, a.b.b / 2.0F + var7, 0.0F, 0.0F, 480.0F, 108.0F, fishing4.a.g.b(a.b.a / 480.0F, a.b.b / 108.0F), '\u0002');
       } else {
          var14 = this.q;
-         var7 = fishing4.a.m.c();
+         var7 = fishing4.a.m.getHalfWidthPixels();
          var6 = a.a.b;
-         fishing4.a.m.a(var1, var14, var7, a.b.b / 2.0F + var6, 0.0F, 0.0F, 480.0F, 108.0F, fishing4.a.g.b(a.b.a / 480.0F, (float)(fishing4.a.m.b() / 108)), '\u0002');
+         fishing4.a.m.a(var1, var14, var7, a.b.b / 2.0F + var6, 0.0F, 0.0F, 480.0F, 108.0F, fishing4.a.g.b(a.b.a / 480.0F, (float)(fishing4.a.m.getHeightPixels() / 108)), '\u0002');
       }
 
       ai var15 = this.p;
@@ -311,8 +314,8 @@ public final class ah {
       this.y[0].a(var1, var2, var5, var13);
       this.y[1].a(var1, var2, var5, var13);
       this.p.f.a(var1, this.q, this.s, this.t, this.u, this.v, this.w);
-      fishing4.game.k.a(var1, this.q, Integer.toString((int)(aw.h - this.p.c)) + 'm', fishing4.a.e.a(fishing4.a.m.c(), a.a.b + a.b.b - 50.0F));
-      fishing4.a.m.a(var1, this.p.f.c, this.p.f.d, fishing4.a.aa.b());
+      fishing4.game.k.a(var1, this.q, Integer.toString((int)(aw.h - this.p.c)) + 'm', fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), a.a.b + a.b.b - 50.0F));
+      fishing4.a.m.a(var1, this.p.f.c, this.p.f.d, RGBColor.white());
       fishing4.a.m.b(var1);
       var2 = this.q;
       var5 %= 6;
@@ -349,7 +352,7 @@ public final class ah {
 
          if (!this.z) {
             this.z = true;
-            fishing4.b.d.a().a(fishing4.a.s.a(), 2131034140, -1);
+            fishing4.b.d.a().a(GLRootView.getAppContext(), 2131034140, -1);
          }
       } else if (!am.e) {
          this.p.f.e();
@@ -360,7 +363,7 @@ public final class ah {
          if (this.z) {
             this.z = false;
             fishing4.b.d var17 = fishing4.b.d.a();
-            fishing4.a.s.a();
+            GLRootView.getAppContext();
             var17.a(2131034140);
          }
       }

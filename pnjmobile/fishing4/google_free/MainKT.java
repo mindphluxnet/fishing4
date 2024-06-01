@@ -20,6 +20,8 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
 import com.facebook.android.FacebookMainView;
+
+import fishing4.a.GLRootView;
 import fishing4.game.AgreementView;
 import fishing4.game.globalConfig;
 import fishing4.game.OptionsManager;
@@ -79,9 +81,9 @@ public class MainKT extends Activity implements View.OnTouchListener {
 
    public void onCreate(Bundle var1) {
       super.onCreate(var1);
-      fishing4.a.s.applicationContext = this.getApplicationContext();
+      GLRootView.applicationContext = this.getApplicationContext();
       boolean var2;
-      if (System.getInt(fishing4.a.s.a().getContentResolver(), "airplane_mode_on", 0) == 1) {
+      if (System.getInt(GLRootView.getAppContext().getContentResolver(), "airplane_mode_on", 0) == 1) {
          var2 = true;
       } else {
          var2 = false;
@@ -129,7 +131,7 @@ public class MainKT extends Activity implements View.OnTouchListener {
             }
 
             this.j = new GLSurfaceView(this);
-            this.j.setRenderer(new fishing4.a.s(this));
+            this.j.setRenderer(new GLRootView(this));
             this.j.setOnTouchListener(this);
             this.setContentView(this.j);
          }
@@ -207,7 +209,7 @@ public class MainKT extends Activity implements View.OnTouchListener {
       fishing4.b.d.a().c();
       if (fishing4.game.bg.b == 31) {
          fishing4.b.d var1 = fishing4.b.d.a();
-         fishing4.a.s.a();
+         GLRootView.getAppContext();
          var1.a(2131034143);
       }
 
@@ -216,7 +218,7 @@ public class MainKT extends Activity implements View.OnTouchListener {
    protected void onResume() {
       super.onResume();
       this.j = new GLSurfaceView(this);
-      this.j.setRenderer(new fishing4.a.s(this));
+      this.j.setRenderer(new GLRootView(this));
       this.j.setOnTouchListener(this);
       this.setContentView(this.j);
       this.j.onResume();
@@ -262,12 +264,12 @@ public class MainKT extends Activity implements View.OnTouchListener {
          if (var8 > 1 && fishing4.game.z.b() == 4 && fishing4.game.aw.c == 2) {
             var7 = var2.getAction();
             var4 = var2.getX(var8 - 1);
-            var3 = (float)fishing4.a.m.d - var2.getY(var8 - 1);
+            var3 = (float)fishing4.a.m.height - var2.getY(var8 - 1);
          } else if (fishing4.game.z.b() == 4 && fishing4.game.aw.c == 3 && fishing4.game.i.c) {
             var7 = var2.getAction();
             if (var8 == 1) {
                var4 = var2.getX();
-               var3 = (float)fishing4.a.m.d - var2.getY();
+               var3 = (float)fishing4.a.m.height - var2.getY();
                fishing4.a.o.g = false;
                fishing4.a.o.f = 0.0F;
                fishing4.a.o.e.a(fishing4.a.e.a());
@@ -279,11 +281,11 @@ public class MainKT extends Activity implements View.OnTouchListener {
                }
 
                var4 = var2.getX(var8 - 2);
-               var5 = (float)fishing4.a.m.d;
+               var5 = (float)fishing4.a.m.height;
                var3 = var2.getY(var8 - 2);
                fishing4.a.o.d.b(var4, var5 - var3);
                var4 = var2.getX(var8 - 1);
-               var3 = (float)fishing4.a.m.d - var2.getY(var8 - 1);
+               var3 = (float)fishing4.a.m.height - var2.getY(var8 - 1);
                fishing4.a.o.e.b(var4, var3);
                if (var7 != 2) {
                   var5 = fishing4.a.e.d(fishing4.a.o.d, fishing4.a.o.e);
@@ -299,14 +301,14 @@ public class MainKT extends Activity implements View.OnTouchListener {
          } else {
             var7 = var2.getAction();
             var4 = var2.getX();
-            var3 = (float)fishing4.a.m.d - var2.getY();
+            var3 = (float)fishing4.a.m.height - var2.getY();
          }
 
          float var6 = var3;
          var5 = var4;
-         if (fishing4.a.m.c != 480) {
-            var5 = var4 * (float)fishing4.a.m.a / (float)fishing4.a.m.c;
-            var6 = var3 * (float)fishing4.a.m.b / (float)fishing4.a.m.d;
+         if (fishing4.a.m.width != 480) {
+            var5 = var4 * (float)fishing4.a.m.widthPixels / (float)fishing4.a.m.width;
+            var6 = var3 * (float)fishing4.a.m.heightPixels / (float)fishing4.a.m.height;
          }
 
          if (var7 == 0 || var7 == 261) {
@@ -317,7 +319,7 @@ public class MainKT extends Activity implements View.OnTouchListener {
 
          if (var7 == 1 || var7 == 262) {
             ConnectivityManager var11;
-            if (fishing4.game.am.e && fishing4.game.am.b == 52 && fishing4.a.r.E == 1 && fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c(), 100.0F), fishing4.a.h.a(118.0F, 22.0F), fishing4.a.e.a(var5, var6))) {
+            if (fishing4.game.am.e && fishing4.game.am.b == 52 && fishing4.a.r.E == 1 && fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), 100.0F), fishing4.a.h.a(118.0F, 22.0F), fishing4.a.e.a(var5, var6))) {
                var11 = (ConnectivityManager)this.getSystemService("connectivity");
                if (var11.getActiveNetworkInfo() != null && var11.getActiveNetworkInfo() != null && var11.getActiveNetworkInfo().isConnectedOrConnecting()) {
                   this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://www.pnjmobile.com/l/fishing4")));
@@ -328,24 +330,24 @@ public class MainKT extends Activity implements View.OnTouchListener {
                String var10;
                String var12;
                String var13;
-               if (fishing4.game.am.e && fishing4.game.am.b == 121 && fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 175.0F, fishing4.a.m.d() - 35.0F - 240.0F), fishing4.a.h.a(60.0F, 60.0F), fishing4.a.e.a(var5, var6))) {
+               if (fishing4.game.am.e && fishing4.game.am.b == 121 && fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 175.0F, fishing4.a.m.getHalfHeightPixels() - 35.0F - 240.0F), fishing4.a.h.a(60.0F, 60.0F), fishing4.a.e.a(var5, var6))) {
                   var10 = new String(fishing4.game.m.c(fishing4.game.az.p));
                   var12 = new String(fishing4.game.m.a(fishing4.game.s.a[fishing4.game.az.p], fishing4.game.az.p) + "cm");
                   var13 = new String(fishing4.game.m.a(fishing4.game.s.a[fishing4.game.az.p]));
                   this.a(var10 + "(" + fishing4.game.m.e(fishing4.game.az.p) + ") / " + var12 + " / " + var13 + " / 월척도감");
-               } else if (fishing4.game.am.e && fishing4.game.am.b == 123 && fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 175.0F, fishing4.a.m.d() - 35.0F - 240.0F), fishing4.a.h.a(60.0F, 60.0F), fishing4.a.e.a(var5, var6))) {
+               } else if (fishing4.game.am.e && fishing4.game.am.b == 123 && fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 175.0F, fishing4.a.m.getHalfHeightPixels() - 35.0F - 240.0F), fishing4.a.h.a(60.0F, 60.0F), fishing4.a.e.a(var5, var6))) {
                   var12 = new String(fishing4.game.m.c(fishing4.game.az.p));
                   var13 = new String(fishing4.game.m.a(fishing4.game.s.b[fishing4.game.az.p], fishing4.game.az.p) + "cm");
                   var10 = new String(fishing4.game.m.a(fishing4.game.s.b[fishing4.game.az.p]));
                   this.a(var12 + "(" + fishing4.game.m.e(fishing4.game.az.p) + ") / " + var13 + " / " + var10 + " / 희귀어도감");
-               } else if (fishing4.game.am.e && fishing4.game.am.b >= 0 && fishing4.game.am.b <= 23 && fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 130.0F, fishing4.a.m.d() - 160.0F), fishing4.a.h.a(60.0F, 60.0F), fishing4.a.e.a(var5, var6))) {
+               } else if (fishing4.game.am.e && fishing4.game.am.b >= 0 && fishing4.game.am.b <= 23 && fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 130.0F, fishing4.a.m.getHalfHeightPixels() - 160.0F), fishing4.a.h.a(60.0F, 60.0F), fishing4.a.e.a(var5, var6))) {
                   this.a(new String(fishing4.a.y.a(2131165966 + fishing4.game.am.b) + " 업적 달성!! 축하해주세요~"));
-               } else if (fishing4.game.z.b() == 4 && fishing4.game.aw.c == 4 && fishing4.game.l.d == 43 && fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 175.0F, fishing4.a.m.d() - 35.0F - 240.0F), fishing4.a.h.a(60.0F, 60.0F), fishing4.a.e.a(var5, var6))) {
+               } else if (fishing4.game.z.b() == 4 && fishing4.game.aw.c == 4 && fishing4.game.l.d == 43 && fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 175.0F, fishing4.a.m.getHalfHeightPixels() - 35.0F - 240.0F), fishing4.a.h.a(60.0F, 60.0F), fishing4.a.e.a(var5, var6))) {
                   var13 = new String(fishing4.game.m.c(fishing4.game.i.b));
                   var12 = new String(fishing4.game.m.a(fishing4.game.aw.i, fishing4.game.i.b) + "cm");
                   var10 = new String(fishing4.game.m.a(fishing4.game.aw.i));
                   this.a(var13 + "(" + fishing4.game.m.e(fishing4.game.i.b) + ") / " + var12 + " / " + var10 + " / 낚시 성공");
-               } else if (fishing4.game.am.e && fishing4.game.am.b == 40 && fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 175.0F, fishing4.a.m.d() - 35.0F - 240.0F), fishing4.a.h.a(60.0F, 60.0F), fishing4.a.e.a(var5, var6))) {
+               } else if (fishing4.game.am.e && fishing4.game.am.b == 40 && fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 175.0F, fishing4.a.m.getHalfHeightPixels() - 35.0F - 240.0F), fishing4.a.h.a(60.0F, 60.0F), fishing4.a.e.a(var5, var6))) {
                   var3 = ((fishing4.game.m)((fishing4.game.ag)fishing4.game.ad.h.get(fishing4.game.az.k)).b.get(fishing4.game.az.p)).a();
                   var7 = ((fishing4.game.m)((fishing4.game.ag)fishing4.game.ad.h.get(fishing4.game.az.k)).b.get(fishing4.game.az.p)).b();
                   var12 = new String(fishing4.game.m.c(var7));
@@ -354,7 +356,7 @@ public class MainKT extends Activity implements View.OnTouchListener {
                   this.a(var12 + "(" + fishing4.game.m.e(var7) + ") / " + var13 + " / " + var10 + " / 선적 정보");
                } else {
                   if (fishing4.game.am.e && fishing4.game.am.b == 170) {
-                     if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 72.0F, fishing4.a.m.d() - 288.0F), fishing4.a.h.a(150.0F, 50.0F), fishing4.a.e.a(var5, var6))) {
+                     if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 72.0F, fishing4.a.m.getHalfHeightPixels() - 288.0F), fishing4.a.h.a(150.0F, 50.0F), fishing4.a.e.a(var5, var6))) {
                         OptionsManager.f = true;
                         OptionsManager.saveOptions();
                         fishing4.game.am.b();
@@ -364,7 +366,7 @@ public class MainKT extends Activity implements View.OnTouchListener {
                         } else {
                            Toast.makeText(this, "인터넷 연결 상태를 확인하세요.", 0).show();
                         }
-                     } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 72.0F, fishing4.a.m.d() - 288.0F), fishing4.a.h.a(150.0F, 50.0F), fishing4.a.e.a(var5, var6))) {
+                     } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 72.0F, fishing4.a.m.getHalfHeightPixels() - 288.0F), fishing4.a.h.a(150.0F, 50.0F), fishing4.a.e.a(var5, var6))) {
                         fishing4.game.am.b();
                      } else {
                         fishing4.a.e.a(var5, var6);

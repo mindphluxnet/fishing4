@@ -1,5 +1,7 @@
 package fishing4.game;
 
+import fishing4.a.GLRootView;
+
 public final class q {
    public static int[] a;
    public static boolean[] b;
@@ -15,7 +17,7 @@ public final class q {
          }
 
          if (b(var0)) {
-            fishing4.b.d.a().b(fishing4.a.s.a(), 2131034133);
+            fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034133);
             break;
          }
 

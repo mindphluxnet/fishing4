@@ -119,7 +119,7 @@ public final class aj {
             var5 = var12.b;
             var12.b = (float)(var10 + this.i + fishing4.a.z.a(3) + 2) + var5;
             if (this.f.b > fishing4.a.f.b(ah.a) + 50.0F) {
-               this.f = fishing4.a.e.a(fishing4.a.m.c() - ah.a.b.a / 2.0F + (float)fishing4.a.z.a((int)ah.a.b.a - 100), ah.a.a.b);
+               this.f = fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - ah.a.b.a / 2.0F + (float)fishing4.a.z.a((int)ah.a.b.a - 100), ah.a.a.b);
                this.i = fishing4.a.z.a(2) + 1;
             }
          } else {

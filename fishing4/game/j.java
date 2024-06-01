@@ -2,6 +2,8 @@ package fishing4.game;
 
 import javax.microedition.khronos.opengles.GL10;
 
+import fishing4.a.GLRootView;
+
 public final class j {
    public static int a;
    private float b;
@@ -23,12 +25,12 @@ public final class j {
       this.c = -45.0F;
       this.d = 0.0F;
       this.e = 0;
-      fishing4.b.d.a().a(fishing4.a.s.a(), 2131034142);
-      fishing4.b.d.a().a(fishing4.a.s.a(), 2131034112);
-      fishing4.b.d.a().a(fishing4.a.s.a(), 2131034139);
-      fishing4.b.d.a().a(fishing4.a.s.a(), 2131034124);
-      fishing4.b.d.a().a(fishing4.a.s.a(), 2131034136);
-      fishing4.b.d.a().a(fishing4.a.s.a(), 2131034134);
+      fishing4.b.d.a().a(GLRootView.getAppContext(), 2131034142);
+      fishing4.b.d.a().a(GLRootView.getAppContext(), 2131034112);
+      fishing4.b.d.a().a(GLRootView.getAppContext(), 2131034139);
+      fishing4.b.d.a().a(GLRootView.getAppContext(), 2131034124);
+      fishing4.b.d.a().a(GLRootView.getAppContext(), 2131034136);
+      fishing4.b.d.a().a(GLRootView.getAppContext(), 2131034134);
    }
 
    private void a(GL10 var1, fishing4.a.e var2, fishing4.a.e var3) {
@@ -127,7 +129,7 @@ public final class j {
             }
             break;
          case 2:
-            fishing4.a.m.a(var1, var3, (float)(fishing4.a.m.a() - 96), 99.0F, 0.0F, 0.0F, 192.0F, 198.0F, '\b', 204);
+            fishing4.a.m.a(var1, var3, (float)(fishing4.a.m.getWidthPixels() - 96), 99.0F, 0.0F, 0.0F, 192.0F, 198.0F, '\b', 204);
             this.c = (float)(var5 % 60 - 30);
             if (this.c < 0.0F) {
                this.c -= 5.0F;
@@ -137,13 +139,13 @@ public final class j {
 
             this.c *= 2.0F;
             if (this.c < 0.0F) {
-               fishing4.a.m.a(var1, var3, (float)fishing4.a.m.a(), fishing4.a.f.a(262.0F, 204.0F, 46.0F, 148.0F), '\b', fishing4.a.d.a(0.5F, 1.0F, this.c));
+               fishing4.a.m.a(var1, var3, (float)fishing4.a.m.getWidthPixels(), fishing4.a.f.a(262.0F, 204.0F, 46.0F, 148.0F), '\b', fishing4.a.d.a(0.5F, 1.0F, this.c));
             } else {
-               fishing4.a.m.a(var1, var3, (float)fishing4.a.m.a(), fishing4.a.f.a(262.0F, 204.0F, 46.0F, 148.0F), '\b', fishing4.a.d.a(0.5F, 1.0F, -this.c));
+               fishing4.a.m.a(var1, var3, (float)fishing4.a.m.getWidthPixels(), fishing4.a.f.a(262.0F, 204.0F, 46.0F, 148.0F), '\b', fishing4.a.d.a(0.5F, 1.0F, -this.c));
             }
 
             if (((ag)ad.h.get(ad.g)).e == 5) {
-               this.a(var1, fishing4.a.e.a((float)fishing4.a.m.a(), 0.0F), this.f);
+               this.a(var1, fishing4.a.e.a((float)fishing4.a.m.getWidthPixels(), 0.0F), this.f);
             }
 
             if (bh.a() && bh.a == 22) {
@@ -167,16 +169,16 @@ public final class j {
             ++this.e;
             break;
          case 3:
-            fishing4.a.m.a(var1, var3, (float)(fishing4.a.m.a() - 96), 99.0F, 0.0F, 0.0F, 192.0F, 198.0F, (int)204);
+            fishing4.a.m.a(var1, var3, (float)(fishing4.a.m.getWidthPixels() - 96), 99.0F, 0.0F, 0.0F, 192.0F, 198.0F, (int)204);
             if (this.d() == 2) {
                if (this.e == 0) {
-                  fishing4.b.d.a().b(fishing4.a.s.a(), 2131034124);
+                  fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034124);
                }
 
                if (this.e < 20) {
-                  fishing4.a.m.a(var1, var4, fishing4.a.m.c(), (float)fishing4.a.m.b() * 0.75F + (float)this.e, fishing4.a.f.a(0.0F, 0.0F, 238.0F, 64.0F), 255 - this.e * 255 / 20);
+                  fishing4.a.m.a(var1, var4, fishing4.a.m.getHalfWidthPixels(), (float)fishing4.a.m.getHeightPixels() * 0.75F + (float)this.e, fishing4.a.f.a(0.0F, 0.0F, 238.0F, 64.0F), 255 - this.e * 255 / 20);
                   if (this.e < 10) {
-                     fishing4.a.m.a(var1, var3, (float)(fishing4.a.m.a() - 96), 99.0F, 195.0F, 0.0F, 192.0F, 198.0F, '\u0001', 150 - this.e * 50 / 10);
+                     fishing4.a.m.a(var1, var3, (float)(fishing4.a.m.getWidthPixels() - 96), 99.0F, 195.0F, 0.0F, 192.0F, 198.0F, '\u0001', 150 - this.e * 50 / 10);
                   }
 
                   ++this.e;
@@ -184,7 +186,7 @@ public final class j {
                   this.c();
                }
             } else if (this.e < 10) {
-               fishing4.a.m.a(var1, var3, (float)(fishing4.a.m.a() - 96), 99.0F, 195.0F, 0.0F, 192.0F, 198.0F, '\u0001', 150 - this.e * 50 / 10);
+               fishing4.a.m.a(var1, var3, (float)(fishing4.a.m.getWidthPixels() - 96), 99.0F, 195.0F, 0.0F, 192.0F, 198.0F, '\u0001', 150 - this.e * 50 / 10);
                ++this.e;
             } else {
                this.c();
@@ -206,11 +208,11 @@ public final class j {
             }
 
             if (this.c < 0.0F) {
-               fishing4.a.m.a(var1, var3, (float)fishing4.a.m.a(), fishing4.a.f.a(166.0F, 201.0F, 90.0F, 272.0F), '\b', fishing4.a.d.a(0.5F, 1.0F, this.c));
-               fishing4.a.m.a(var1, var3, (float)fishing4.a.m.a(), fishing4.a.f.a(82.0F, 474.0F - var6, 80.0F, var6), fishing4.a.d.a(0.5F, 1.0F, this.c));
+               fishing4.a.m.a(var1, var3, (float)fishing4.a.m.getWidthPixels(), fishing4.a.f.a(166.0F, 201.0F, 90.0F, 272.0F), '\b', fishing4.a.d.a(0.5F, 1.0F, this.c));
+               fishing4.a.m.a(var1, var3, (float)fishing4.a.m.getWidthPixels(), fishing4.a.f.a(82.0F, 474.0F - var6, 80.0F, var6), fishing4.a.d.a(0.5F, 1.0F, this.c));
             } else {
-               fishing4.a.m.a(var1, var3, (float)fishing4.a.m.a(), fishing4.a.f.a(166.0F, 201.0F, 90.0F, 272.0F), '\b', fishing4.a.d.a(0.5F, 1.0F, -this.c));
-               fishing4.a.m.a(var1, var3, (float)fishing4.a.m.a(), fishing4.a.f.a(82.0F, 474.0F - var6, 80.0F, var6), fishing4.a.d.a(0.5F, 1.0F, -this.c));
+               fishing4.a.m.a(var1, var3, (float)fishing4.a.m.getWidthPixels(), fishing4.a.f.a(166.0F, 201.0F, 90.0F, 272.0F), '\b', fishing4.a.d.a(0.5F, 1.0F, -this.c));
+               fishing4.a.m.a(var1, var3, (float)fishing4.a.m.getWidthPixels(), fishing4.a.f.a(82.0F, 474.0F - var6, 80.0F, var6), fishing4.a.d.a(0.5F, 1.0F, -this.c));
             }
 
             if (bh.a() && bh.a != 51 && this.d >= 48.0F && this.d <= 52.0F) {
@@ -231,9 +233,9 @@ public final class j {
             if (this.e == 0) {
                var5 = this.e();
                if (var5 == 0) {
-                  fishing4.b.d.a().b(fishing4.a.s.a(), 2131034136);
+                  fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034136);
                } else if (var5 == 1) {
-                  fishing4.b.d.a().b(fishing4.a.s.a(), 2131034134);
+                  fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034134);
                }
 
                if (this.c < 0.0F) {
@@ -317,14 +319,14 @@ public final class j {
 
             if (this.e < var11) {
                if (var10 == 0) {
-                  fishing4.a.m.a(var1, var2, fishing4.a.m.c(), (float)fishing4.a.m.b() * 0.75F + (float)this.e, fishing4.a.f.a(140.0F, 410.0F, 340.0F, 60.0F), 255 - this.e * 255 / 10);
+                  fishing4.a.m.a(var1, var2, fishing4.a.m.getHalfWidthPixels(), (float)fishing4.a.m.getHeightPixels() * 0.75F + (float)this.e, fishing4.a.f.a(140.0F, 410.0F, 340.0F, 60.0F), 255 - this.e * 255 / 10);
                   if (this.c < 0.0F) {
-                     fishing4.a.m.a(var1, var3, (float)fishing4.a.m.a(), fishing4.a.f.a(1.0F, 206.0F, 80.0F, 268.0F), '\u0001', fishing4.a.d.a(0.5F, 1.0F, this.c));
+                     fishing4.a.m.a(var1, var3, (float)fishing4.a.m.getWidthPixels(), fishing4.a.f.a(1.0F, 206.0F, 80.0F, 268.0F), '\u0001', fishing4.a.d.a(0.5F, 1.0F, this.c));
                   } else {
-                     fishing4.a.m.a(var1, var3, (float)fishing4.a.m.a(), fishing4.a.f.a(1.0F, 206.0F, 80.0F, 268.0F), '\u0001', fishing4.a.d.a(0.5F, 1.0F, -this.c));
+                     fishing4.a.m.a(var1, var3, (float)fishing4.a.m.getWidthPixels(), fishing4.a.f.a(1.0F, 206.0F, 80.0F, 268.0F), '\u0001', fishing4.a.d.a(0.5F, 1.0F, -this.c));
                   }
                } else if (var10 == 1) {
-                  fishing4.a.m.a(var1, var2, fishing4.a.m.c(), (float)fishing4.a.m.b() * 0.75F + (float)this.e, fishing4.a.f.a(288.0F, 344.0F, 192.0F, 64.0F), 255 - this.e * 255 / 10);
+                  fishing4.a.m.a(var1, var2, fishing4.a.m.getHalfWidthPixels(), (float)fishing4.a.m.getHeightPixels() * 0.75F + (float)this.e, fishing4.a.f.a(288.0F, 344.0F, 192.0F, 64.0F), 255 - this.e * 255 / 10);
                }
 
                if (this.d < 50.0F) {
@@ -334,13 +336,13 @@ public final class j {
                }
 
                if (this.c < 0.0F) {
-                  fishing4.a.m.a(var1, var3, (float)fishing4.a.m.a(), fishing4.a.f.a(166.0F, 201.0F, 90.0F, 272.0F), '\b', fishing4.a.d.a(0.5F, 1.0F, this.c));
-                  fishing4.a.m.a(var1, var3, (float)fishing4.a.m.a(), fishing4.a.f.a(82.0F, 474.0F - var6, 80.0F, var6), '\u0001', fishing4.a.d.a(0.5F, 1.0F, this.c));
-                  fishing4.a.m.a(var1, var3, (float)fishing4.a.m.a(), fishing4.a.f.a(350.0F, 530.0F, 99.0F, 280.0F), '\u0001', fishing4.a.d.a(0.5F, 1.0F, this.c));
+                  fishing4.a.m.a(var1, var3, (float)fishing4.a.m.getWidthPixels(), fishing4.a.f.a(166.0F, 201.0F, 90.0F, 272.0F), '\b', fishing4.a.d.a(0.5F, 1.0F, this.c));
+                  fishing4.a.m.a(var1, var3, (float)fishing4.a.m.getWidthPixels(), fishing4.a.f.a(82.0F, 474.0F - var6, 80.0F, var6), '\u0001', fishing4.a.d.a(0.5F, 1.0F, this.c));
+                  fishing4.a.m.a(var1, var3, (float)fishing4.a.m.getWidthPixels(), fishing4.a.f.a(350.0F, 530.0F, 99.0F, 280.0F), '\u0001', fishing4.a.d.a(0.5F, 1.0F, this.c));
                } else {
-                  fishing4.a.m.a(var1, var3, (float)fishing4.a.m.a(), fishing4.a.f.a(166.0F, 201.0F, 90.0F, 272.0F), '\b', fishing4.a.d.a(0.5F, 1.0F, -this.c));
-                  fishing4.a.m.a(var1, var3, (float)fishing4.a.m.a(), fishing4.a.f.a(82.0F, 474.0F - var6, 80.0F, var6), '\u0001', fishing4.a.d.a(0.5F, 1.0F, -this.c));
-                  fishing4.a.m.a(var1, var3, (float)fishing4.a.m.a(), fishing4.a.f.a(350.0F, 530.0F, 99.0F, 280.0F), '\u0001', fishing4.a.d.a(0.5F, 1.0F, -this.c));
+                  fishing4.a.m.a(var1, var3, (float)fishing4.a.m.getWidthPixels(), fishing4.a.f.a(166.0F, 201.0F, 90.0F, 272.0F), '\b', fishing4.a.d.a(0.5F, 1.0F, -this.c));
+                  fishing4.a.m.a(var1, var3, (float)fishing4.a.m.getWidthPixels(), fishing4.a.f.a(82.0F, 474.0F - var6, 80.0F, var6), '\u0001', fishing4.a.d.a(0.5F, 1.0F, -this.c));
+                  fishing4.a.m.a(var1, var3, (float)fishing4.a.m.getWidthPixels(), fishing4.a.f.a(350.0F, 530.0F, 99.0F, 280.0F), '\u0001', fishing4.a.d.a(0.5F, 1.0F, -this.c));
                }
 
                ++this.e;
@@ -364,15 +366,15 @@ public final class j {
       switch (a) {
          case 0:
             this.b = (float)(fishing4.a.z.a(50) + 20);
-            float var1 = (float)fishing4.a.m.a();
+            float var1 = (float)fishing4.a.m.getWidthPixels();
             fishing4.a.e var2 = fishing4.a.e.a(var1, 0.0F);
             this.f = fishing4.a.e.a(fishing4.a.e.a(var1 * 0.2F, 0.0F), var2, (float)Math.toRadians((double)(this.b * -1.0F)));
             this.d = 0.0F;
-            fishing4.b.d.a().b(fishing4.a.s.a(), 2131034142);
+            fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034142);
             a = 1;
             break;
          case 1:
-            fishing4.b.d.a().b(fishing4.a.s.a(), 2131034112);
+            fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034112);
             a = 2;
             break;
          case 2:
@@ -380,7 +382,7 @@ public final class j {
             break;
          case 3:
             a = 4;
-            fishing4.b.d.a().b(fishing4.a.s.a(), 2131034139);
+            fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034139);
             break;
          case 4:
             a = 5;

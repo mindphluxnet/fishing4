@@ -86,12 +86,12 @@ public final class ad {
          fishing4.b.d var4;
          if (var2 && this.k) {
             var4 = fishing4.b.d.a();
-            s.a();
+            GLRootView.getAppContext();
             var4.a(2131034130);
             var4 = fishing4.b.d.a();
-            s.a();
+            GLRootView.getAppContext();
             var4.a(2131034131);
-            fishing4.b.d.a().b(s.a(), 2131034131);
+            fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034131);
             this.k = false;
             var2 = var3;
             return var2;
@@ -99,12 +99,12 @@ public final class ad {
 
          if (!var2) {
             var4 = fishing4.b.d.a();
-            s.a();
+            GLRootView.getAppContext();
             var4.a(2131034130);
             var4 = fishing4.b.d.a();
-            s.a();
+            GLRootView.getAppContext();
             var4.a(2131034131);
-            fishing4.b.d.a().b(s.a(), 2131034130);
+            fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034130);
             this.k = true;
             var2 = false;
             return var2;

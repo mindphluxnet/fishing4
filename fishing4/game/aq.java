@@ -296,17 +296,17 @@ public final class aq {
    }
 
    public static void b(fishing4.a.e var0) {
-      if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 80.0F, fishing4.a.m.d() + 70.0F + 64.0F - 50.0F), fishing4.a.h.a(128.0F, 128.0F), var0, true)) {
+      if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 80.0F, fishing4.a.m.getHalfHeightPixels() + 70.0F + 64.0F - 50.0F), fishing4.a.h.a(128.0F, 128.0F), var0, true)) {
          am.a(185);
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 80.0F, fishing4.a.m.d() + 70.0F + 64.0F - 50.0F), fishing4.a.h.a(128.0F, 128.0F), var0, true)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 80.0F, fishing4.a.m.getHalfHeightPixels() + 70.0F + 64.0F - 50.0F), fishing4.a.h.a(128.0F, 128.0F), var0, true)) {
          am.a(186);
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 80.0F, fishing4.a.m.d() - 50.0F), fishing4.a.h.a(128.0F, 128.0F), var0, true)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 80.0F, fishing4.a.m.getHalfHeightPixels() - 50.0F), fishing4.a.h.a(128.0F, 128.0F), var0, true)) {
          am.a(187);
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 80.0F, fishing4.a.m.d() - 50.0F), fishing4.a.h.a(128.0F, 128.0F), var0, true)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 80.0F, fishing4.a.m.getHalfHeightPixels() - 50.0F), fishing4.a.h.a(128.0F, 128.0F), var0, true)) {
          am.a(188);
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 80.0F, fishing4.a.m.d() - 70.0F - 64.0F - 50.0F), fishing4.a.h.a(128.0F, 128.0F), var0, true)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 80.0F, fishing4.a.m.getHalfHeightPixels() - 70.0F - 64.0F - 50.0F), fishing4.a.h.a(128.0F, 128.0F), var0, true)) {
          am.a(189);
-      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 80.0F, fishing4.a.m.d() - 70.0F - 64.0F - 50.0F), fishing4.a.h.a(128.0F, 128.0F), var0, true)) {
+      } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 80.0F, fishing4.a.m.getHalfHeightPixels() - 70.0F - 64.0F - 50.0F), fishing4.a.h.a(128.0F, 128.0F), var0, true)) {
          am.a(190);
       }
 
@@ -432,23 +432,23 @@ public final class aq {
                   }
                }
             } else if (am.b == 81) {
-               if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 190.0F, fishing4.a.m.d() + 100.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
+               if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 190.0F, fishing4.a.m.getHalfHeightPixels() + 100.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
                   az.d((az.p + ad.h.size() - 1) % ad.h.size());
-               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 190.0F, fishing4.a.m.d() + 100.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
+               } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 190.0F, fishing4.a.m.getHalfHeightPixels() + 100.0F), fishing4.a.h.a(50.0F, 50.0F), var0)) {
                   az.d((az.p + 1) % ad.h.size());
                }
             }
          } else {
             k.d();
-            if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() + 140.0F, 70.0F), fishing4.a.h.a(130.0F, 130.0F), var0, true)) {
+            if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 140.0F, 70.0F), fishing4.a.h.a(130.0F, 130.0F), var0, true)) {
                b = 16;
                k.o();
-            } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.c() - 140.0F, 70.0F), fishing4.a.h.a(130.0F, 130.0F), var0, true)) {
+            } else if (fishing4.a.f.a(fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() - 140.0F, 70.0F), fishing4.a.h.a(130.0F, 130.0F), var0, true)) {
                com.tapjoy.f.a();
                com.tapjoy.f.b();
             } else {
                while(var1 < 24) {
-                  if (fishing4.a.f.a(fishing4.a.e.a((float)((fishing4.a.m.a() - 330) / 2) + (float)(var1 % 6 * 66), 600.0F - (float)(var1 / 6 * 76)), bg.c.b, var0)) {
+                  if (fishing4.a.f.a(fishing4.a.e.a((float)((fishing4.a.m.getWidthPixels() - 330) / 2) + (float)(var1 % 6 * 66), 600.0F - (float)(var1 / 6 * 76)), bg.c.b, var0)) {
                      if (az.k == var1) {
                         if (var1 < 23) {
                            am.a(70);

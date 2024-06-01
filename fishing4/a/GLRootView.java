@@ -15,34 +15,34 @@ import fishing4.game.bh;
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
-public final class s extends GLSurfaceView implements GLSurfaceView.Renderer {
+public final class GLRootView extends GLSurfaceView implements GLSurfaceView.Renderer {
    public static Context applicationContext;
    public static boolean b = false;
-   public static long c = 35L;
+   public static long drawDelayMs = 35L;
 
-   public s(Context var1) {
-      super(var1);
+   public GLRootView(Context context) {
+      super(context);
       this.setDebugFlags(3);
       this.setFocusableInTouchMode(true);
       this.setKeepScreenOn(true);
-      DisplayMetrics var2 = new DisplayMetrics();
-      ((WindowManager)var1.getSystemService("window")).getDefaultDisplay().getMetrics(var2);
-      m.a = var2.widthPixels;
-      m.b = var2.heightPixels;
+      DisplayMetrics displayMetrics = new DisplayMetrics();
+      ((WindowManager)context.getSystemService("window")).getDefaultDisplay().getMetrics(displayMetrics);
+      m.widthPixels = displayMetrics.widthPixels;
+      m.heightPixels = displayMetrics.heightPixels;
    }
 
-   public static Context a() {
+   public static Context getAppContext() {
       return applicationContext;
    }
 
-   public final void onDrawFrame(GL10 var1) {
-      long var2;
+   public final void onDrawFrame(GL10 glContext) {
+      long ms;
       if (r.h) {
          Instrumentation var7 = new Instrumentation();
-         var2 = SystemClock.uptimeMillis();
+         ms = SystemClock.uptimeMillis();
          long var4 = SystemClock.uptimeMillis();
-         MotionEvent var8 = MotionEvent.obtain(var2, var4, 0, 0.0F, 200.0F, 0);
-         MotionEvent var6 = MotionEvent.obtain(var2, var4, 1, 0.0F, 200.0F, 0);
+         MotionEvent var8 = MotionEvent.obtain(ms, var4, 0, 0.0F, 200.0F, 0);
+         MotionEvent var6 = MotionEvent.obtain(ms, var4, 1, 0.0F, 200.0F, 0);
          var7.sendPointerSync(var8);
          var7.sendPointerSync(var6);
          r.h = false;
@@ -53,17 +53,17 @@ public final class s extends GLSurfaceView implements GLSurfaceView.Renderer {
       } else if (!az.f && az.I) {
          az.d();
       } else {
-         var1.glClearColor(1.0F, 1.0F, 1.0F, 1.0F);
-         var1.glClear(16640);
-         var2 = System.currentTimeMillis();
-         fishing4.game.z.a(var1);
-         fishing4.game.z.b(var1);
-         var2 = c - (System.currentTimeMillis() - var2);
-         if (var2 > 0L) {
+         glContext.glClearColor(1.0F, 1.0F, 1.0F, 1.0F);
+         glContext.glClear(16640);
+         ms = System.currentTimeMillis();
+         fishing4.game.z.a(glContext);
+         fishing4.game.z.b(glContext);
+         ms = drawDelayMs - (System.currentTimeMillis() - ms);
+         if (ms > 0L) {
             try {
-               Thread.sleep(var2);
-            } catch (InterruptedException var9) {
-               var9.printStackTrace();
+               Thread.sleep(ms);
+            } catch (InterruptedException ex) {
+               ex.printStackTrace();
             }
          }
 
@@ -74,29 +74,29 @@ public final class s extends GLSurfaceView implements GLSurfaceView.Renderer {
 
    }
 
-   public final void onSurfaceChanged(GL10 var1, int var2, int var3) {
+   public final void onSurfaceChanged(GL10 glContext, int width, int height) {
       if (az.I) {
          az.d();
       } else {
-         DisplayMetrics var4 = new DisplayMetrics();
-         ((WindowManager) applicationContext.getSystemService("window")).getDefaultDisplay().getMetrics(var4);
-         m.a = var4.widthPixels;
-         m.b = var4.heightPixels;
-         m.a(var1);
-         az.a = e.a(m.c(), m.d() + 120.0F);
-         az.b = e.a(m.c(), m.d() - 120.0F);
-         az.c = e.a(m.c() - 150.0F, m.d());
-         az.d = e.a(m.c() + 150.0F, m.d());
+         DisplayMetrics displayMetrics = new DisplayMetrics();
+         ((WindowManager) applicationContext.getSystemService("window")).getDefaultDisplay().getMetrics(displayMetrics);
+         m.widthPixels = displayMetrics.widthPixels;
+         m.heightPixels = displayMetrics.heightPixels;
+         m.a(glContext);
+         az.a = e.a(m.getHalfWidthPixels(), m.getHalfHeightPixels() + 120.0F);
+         az.b = e.a(m.getHalfWidthPixels(), m.getHalfHeightPixels() - 120.0F);
+         az.c = e.a(m.getHalfWidthPixels() - 150.0F, m.getHalfHeightPixels());
+         az.d = e.a(m.getHalfWidthPixels() + 150.0F, m.getHalfHeightPixels());
       }
 
    }
 
-   public final void onSurfaceCreated(GL10 var1, EGLConfig var2) {
+   public final void onSurfaceCreated(GL10 glContext, EGLConfig eglConfig) {
       if (az.I) {
          az.d();
       } else {
          if (!b) {
-            fishing4.game.k.a(var1, applicationContext);
+            fishing4.game.k.a(glContext, applicationContext);
             b = true;
          } else if (fishing4.game.z.b() == 3) {
             if (fishing4.game.aa.c == 1 && aq.a == 3 && !az.e && am.b == -1 && !bh.a()) {
@@ -116,8 +116,8 @@ public final class s extends GLSurfaceView implements GLSurfaceView.Renderer {
             }
          }
 
-         w.b(var1);
-         w.c(var1);
+         w.b(glContext);
+         w.c(glContext);
       }
 
    }

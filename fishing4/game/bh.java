@@ -2,6 +2,9 @@ package fishing4.game;
 
 import javax.microedition.khronos.opengles.GL10;
 
+import fishing4.a.GLRootView;
+import fishing4.a.RGBColor;
+
 public final class bh {
    public static int a;
    public static int b;
@@ -220,7 +223,7 @@ public final class bh {
             case 21:
                if (b < 60) {
                   if (b % 20 < 10) {
-                     fishing4.a.m.a(var0, 85.0F, 180.0F, 140.0F, 200.0F, fishing4.a.aa.a(1.0F, 0.0F, 0.0F, 0.5F));
+                     fishing4.a.m.a(var0, 85.0F, 180.0F, 140.0F, 200.0F, RGBColor.getColor(1.0F, 0.0F, 0.0F, 0.5F));
                   }
 
                   var1 = b + 1;
@@ -344,7 +347,7 @@ public final class bh {
          ad.o.c(10000L);
          OptionsManager.i = 2;
          OptionsManager.b();
-         fishing4.b.d.a().b(fishing4.a.s.a(), 2131034133);
+         fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034133);
          am.a(96);
       }
 

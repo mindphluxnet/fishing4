@@ -8,6 +8,7 @@ import java.net.URL;
 import java.util.Locale;
 import javax.microedition.khronos.opengles.GL10;
 
+import fishing4.a.RGBColor;
 import fishing4.a.SaveLoadManager;
 import pnjmobile.fishing4.google_free.Main;
 
@@ -224,12 +225,12 @@ public final class k {
    }
 
    public static void a(GL10 var0) {
-      fishing4.a.m.a(var0, fishing4.a.m.c(), fishing4.a.m.d(), (float)fishing4.a.m.a(), (float)fishing4.a.m.b(), fishing4.a.aa.a());
-      fishing4.a.ae.a(var0, "LOADING...", (float)(fishing4.a.m.a() - 175), 50.0F, 175.0F, 50.0F, 30.0F, 4);
+      fishing4.a.m.a(var0, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), (float)fishing4.a.m.getWidthPixels(), (float)fishing4.a.m.getHeightPixels(), RGBColor.black());
+      fishing4.a.ae.a(var0, "LOADING...", (float)(fishing4.a.m.getWidthPixels() - 175), 50.0F, 175.0F, 50.0F, 30.0F, 4);
    }
 
    public static void a(GL10 var0, int var1, int var2, float var3) {
-      float var4 = fishing4.a.m.c() - (float)((var2 - 1) * 15);
+      float var4 = fishing4.a.m.getHalfWidthPixels() - (float)((var2 - 1) * 15);
 
       for(int var5 = 0; var5 < var2; ++var5) {
          if (var1 == var5) {
@@ -1184,7 +1185,7 @@ public final class k {
       }
 
       am.a();
-      fishing4.a.t.a(var1, fishing4.a.m.a(), fishing4.a.m.b());
+      fishing4.a.t.a(var1, fishing4.a.m.getWidthPixels(), fishing4.a.m.getHeightPixels());
       fishing4.a.t.b(var0);
       fishing4.a.t.a();
       q.c(22);

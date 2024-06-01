@@ -98,20 +98,20 @@ public final class au extends aa {
 
             var2 = 255 - var2 * 25;
             if (c == 0) {
-               fishing4.a.m.a(var1, this.h, fishing4.a.m.c(), fishing4.a.m.d(), var2);
+               fishing4.a.m.a(var1, this.h, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), var2);
             } else {
-               fishing4.a.m.a(var1, this.h, fishing4.a.m.c(), fishing4.a.m.d(), 1.0F, 1.0F, this.h.c.a - 2.0F, this.h.c.b - 2.0F, var2);
+               fishing4.a.m.a(var1, this.h, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 1.0F, 1.0F, this.h.c.a - 2.0F, this.h.c.b - 2.0F, var2);
             }
          } else if (var2 < 10) {
             if (c == 0) {
-               fishing4.a.m.a(var1, this.h, fishing4.a.m.c(), fishing4.a.m.d(), var2 * 25);
+               fishing4.a.m.a(var1, this.h, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), var2 * 25);
             } else {
-               fishing4.a.m.a(var1, this.h, fishing4.a.m.c(), fishing4.a.m.d(), 1.0F, 1.0F, this.h.c.a - 2.0F, this.h.c.b - 2.0F, var2 * 25);
+               fishing4.a.m.a(var1, this.h, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 1.0F, 1.0F, this.h.c.a - 2.0F, this.h.c.b - 2.0F, var2 * 25);
             }
          } else if (c == 0) {
-            fishing4.a.m.a(var1, this.h, fishing4.a.m.c(), fishing4.a.m.d());
+            fishing4.a.m.a(var1, this.h, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels());
          } else {
-            fishing4.a.m.a(var1, this.h, fishing4.a.m.c(), fishing4.a.m.d(), 1.0F, 1.0F, this.h.c.a - 2.0F, this.h.c.b - 2.0F);
+            fishing4.a.m.a(var1, this.h, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 1.0F, 1.0F, this.h.c.a - 2.0F, this.h.c.b - 2.0F);
          }
       }
 

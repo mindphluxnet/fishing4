@@ -11,7 +11,7 @@ public final class ax {
    }
 
    private void a() {
-      this.a = fishing4.a.e.a((float)fishing4.a.z.a(fishing4.a.m.a()), (float)(fishing4.a.z.a(240) + 180));
+      this.a = fishing4.a.e.a((float)fishing4.a.z.a(fishing4.a.m.getWidthPixels()), (float)(fishing4.a.z.a(240) + 180));
       this.b = 0;
    }
 

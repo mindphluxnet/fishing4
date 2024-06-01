@@ -4,6 +4,9 @@ import android.util.Log;
 import java.text.DecimalFormat;
 import javax.microedition.khronos.opengles.GL10;
 
+import fishing4.a.GLRootView;
+import fishing4.a.RGBColor;
+
 public final class am {
    public static int a;
    public static int b = -1;
@@ -127,12 +130,12 @@ public final class am {
       l.a(1.0F, 1.0F);
       f = true;
       if (i == -1) {
-         fishing4.b.d.a().b(fishing4.a.s.a(), 2131034138);
+         fishing4.b.d.a().b(GLRootView.getAppContext(), 2131034138);
       } else {
          if (i == 2131034143) {
-            fishing4.b.d.a().a(fishing4.a.s.a(), i, -1);
+            fishing4.b.d.a().a(GLRootView.getAppContext(), i, -1);
          } else {
-            fishing4.b.d.a().b(fishing4.a.s.a(), i);
+            fishing4.b.d.a().b(GLRootView.getAppContext(), i);
          }
 
          i = -1;
@@ -141,20 +144,20 @@ public final class am {
    }
 
    public static void a(GL10 var0, float var1, int var2) {
-      if (fishing4.a.m.c == 720) {
-         fishing4.a.m.a(var0, az.u, fishing4.a.m.c(), var1 + 150.0F + 93.0F - 60.0F, 0.0F, 860.0F, 380.0F, 120.0F);
-         fishing4.a.m.a(var0, az.u, fishing4.a.m.c(), 2.0F + var1 + 150.0F - 93.0F + 33.0F, 0.0F, (float)(var2 * 66), 380.0F, 66.0F);
-         fishing4.a.m.a(var0, az.v, fishing4.a.m.c(), var1 + 150.0F + 93.0F - 45.0F + 1.0F, 0.0F, (float)(var2 / 2 * 90), 380.0F, 88.0F, '\u0001');
+      if (fishing4.a.m.width == 720) {
+         fishing4.a.m.a(var0, az.u, fishing4.a.m.getHalfWidthPixels(), var1 + 150.0F + 93.0F - 60.0F, 0.0F, 860.0F, 380.0F, 120.0F);
+         fishing4.a.m.a(var0, az.u, fishing4.a.m.getHalfWidthPixels(), 2.0F + var1 + 150.0F - 93.0F + 33.0F, 0.0F, (float)(var2 * 66), 380.0F, 66.0F);
+         fishing4.a.m.a(var0, az.v, fishing4.a.m.getHalfWidthPixels(), var1 + 150.0F + 93.0F - 45.0F + 1.0F, 0.0F, (float)(var2 / 2 * 90), 380.0F, 88.0F, '\u0001');
       }
 
-      if (fishing4.a.m.d == 1232) {
-         fishing4.a.m.a(var0, az.u, fishing4.a.m.c(), var1 + 150.0F + 93.0F - 60.0F, 0.0F, 860.0F, 380.0F, 120.0F);
-         fishing4.a.m.a(var0, az.u, fishing4.a.m.c(), var1 + 150.0F - 93.0F + 33.0F + 1.0F, 0.0F, (float)(var2 * 66), 380.0F, 65.0F);
-         fishing4.a.m.a(var0, az.v, fishing4.a.m.c(), var1 + 150.0F + 93.0F - 45.0F + 1.0F, 0.0F, (float)(var2 / 2 * 90), 380.0F, 88.0F, '\u0001');
+      if (fishing4.a.m.height == 1232) {
+         fishing4.a.m.a(var0, az.u, fishing4.a.m.getHalfWidthPixels(), var1 + 150.0F + 93.0F - 60.0F, 0.0F, 860.0F, 380.0F, 120.0F);
+         fishing4.a.m.a(var0, az.u, fishing4.a.m.getHalfWidthPixels(), var1 + 150.0F - 93.0F + 33.0F + 1.0F, 0.0F, (float)(var2 * 66), 380.0F, 65.0F);
+         fishing4.a.m.a(var0, az.v, fishing4.a.m.getHalfWidthPixels(), var1 + 150.0F + 93.0F - 45.0F + 1.0F, 0.0F, (float)(var2 / 2 * 90), 380.0F, 88.0F, '\u0001');
       } else {
-         fishing4.a.m.a(var0, az.u, fishing4.a.m.c(), var1 + 150.0F + 93.0F - 60.0F, 0.0F, 860.0F, 380.0F, 120.0F);
-         fishing4.a.m.a(var0, az.u, fishing4.a.m.c(), var1 + 150.0F - 93.0F + 33.0F + 1.0F, 0.0F, (float)(var2 * 66), 380.0F, 66.0F);
-         fishing4.a.m.a(var0, az.v, fishing4.a.m.c(), var1 + 150.0F + 93.0F - 45.0F + 1.0F, 0.0F, (float)(var2 / 2 * 90), 380.0F, 88.0F, '\u0001');
+         fishing4.a.m.a(var0, az.u, fishing4.a.m.getHalfWidthPixels(), var1 + 150.0F + 93.0F - 60.0F, 0.0F, 860.0F, 380.0F, 120.0F);
+         fishing4.a.m.a(var0, az.u, fishing4.a.m.getHalfWidthPixels(), var1 + 150.0F - 93.0F + 33.0F + 1.0F, 0.0F, (float)(var2 * 66), 380.0F, 66.0F);
+         fishing4.a.m.a(var0, az.v, fishing4.a.m.getHalfWidthPixels(), var1 + 150.0F + 93.0F - 45.0F + 1.0F, 0.0F, (float)(var2 / 2 * 90), 380.0F, 88.0F, '\u0001');
       }
 
    }
@@ -174,10 +177,10 @@ public final class am {
                   if (az.D == null) {
                      az.D = fishing4.a.w.a(glContext, "img/archive/archive.png");
                   } else {
-                     fishing4.a.m.a(glContext, az.D, fishing4.a.m.c(), fishing4.a.m.d() + 150.0F, fishing4.a.f.a((float)(b % 6 * 64), (float)(b / 6 * 66), 56.0F, 56.0F));
+                     fishing4.a.m.a(glContext, az.D, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() + 150.0F, fishing4.a.f.a((float)(b % 6 * 64), (float)(b / 6 * 66), 56.0F, 56.0F));
                   }
 
-                  fishing4.a.m.a(glContext, az.t, fishing4.a.m.c() - 130.0F, fishing4.a.m.d() - 160.0F, 585.0F, 250.0F, 56.0F, 56.0F);
+                  fishing4.a.m.a(glContext, az.t, fishing4.a.m.getHalfWidthPixels() - 130.0F, fishing4.a.m.getHalfHeightPixels() - 160.0F, 585.0F, 250.0F, 56.0F, 56.0F);
                }
             } else if (globalConfig.languageId == 0) {
                a(glContext, fishing4.a.y.a(2131165966 + b) + "\n\n\n" + fishing4.a.y.a(2131165990 + b) + "\n\n(도전중)", fishing4.a.m.e(), az.s, az.t);
@@ -428,8 +431,8 @@ public final class am {
                } else if (b == 163) {
                   a(glContext, fishing4.a.y.a(2131165303), fishing4.a.m.e(), az.s, az.t);
                } else if (b == 170) {
-                  fishing4.a.m.a(glContext, fishing4.a.m.c(), fishing4.a.m.d(), (float)fishing4.a.m.a(), (float)fishing4.a.m.b(), fishing4.a.aa.a(0.0F, 0.0F, 0.0F, 0.75F));
-                  fishing4.a.m.a(glContext, bb.g, fishing4.a.m.c(), fishing4.a.m.d());
+                  fishing4.a.m.a(glContext, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), (float)fishing4.a.m.getWidthPixels(), (float)fishing4.a.m.getHeightPixels(), RGBColor.getColor(0.0F, 0.0F, 0.0F, 0.75F));
+                  fishing4.a.m.a(glContext, bb.g, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels());
                } else if (b == 171) {
                   if (globalConfig.languageId == 0) {
                      a(glContext, "전송을 실패하였습니다.", fishing4.a.m.e(), az.s, az.t);
@@ -851,7 +854,7 @@ public final class am {
 
    private static void a(GL10 var0, int var1, float var2, boolean var3, boolean var4, int var5, boolean var6, boolean var7, boolean var8, int var9) {
       if (!e()) {
-         fishing4.a.e var11 = fishing4.a.e.a(fishing4.a.m.c(), fishing4.a.m.d() - 35.0F);
+         fishing4.a.e var11 = fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 35.0F);
          if (l.a < m) {
             if (l.a < m - m * 0.5F) {
                l.a(l.a + m * 0.5F, l.b);
@@ -872,24 +875,24 @@ public final class am {
             a(var0, az.s, var11, l);
             int var10 = var5 / 2;
             a(var0, var11.b, var10 % 10);
-            fishing4.a.m.a(var0, az.v, fishing4.a.m.c() + 140.0F - 28.0F, 70.0F + var11.b + 150.0F, 350.0F, 458.0F, 20.0F, 44.0F, '\b');
-            fishing4.a.m.a(var0, az.v, fishing4.a.m.c() + 140.0F - 18.0F, 70.0F + var11.b + 150.0F, 372.0F, 458.0F, 20.0F, 44.0F, '\b');
-            fishing4.a.m.a(var0, az.v, fishing4.a.m.c() + 140.0F - 0.0F, 70.0F + var11.b + 150.0F, 396.0F, 458.0F, 20.0F, 44.0F, '\b');
-            fishing4.a.m.a(var0, az.v, 20.0F + fishing4.a.m.c() + 140.0F, 70.0F + var11.b + 150.0F, 420.0F, 458.0F, 24.0F, 44.0F, '\b');
-            fishing4.a.m.a(var0, az.v, 34.0F + fishing4.a.m.c() + 140.0F, 70.0F + var11.b + 150.0F, 446.0F, 458.0F, 32.0F, 44.0F, '\b');
-            fishing4.a.m.a(var0, az.v, fishing4.a.m.c(), 31.0F + (var11.b + 150.0F - 93.0F), 2.0F, 451.0F, 198.0F, 60.0F, '\u0002');
-            fishing4.game.m.a(var0, var1, var2, false, var3, var4, az.s, az.v, fishing4.a.m.c(), var11.b + 150.0F, var5);
-            fishing4.a.ae.a(var0, fishing4.game.m.c(var1), fishing4.a.m.c(), var11.b, 350.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
-            fishing4.a.m.a(var0, az.s, fishing4.a.m.c(), var11.b - 20.0F - 22.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
+            fishing4.a.m.a(var0, az.v, fishing4.a.m.getHalfWidthPixels() + 140.0F - 28.0F, 70.0F + var11.b + 150.0F, 350.0F, 458.0F, 20.0F, 44.0F, '\b');
+            fishing4.a.m.a(var0, az.v, fishing4.a.m.getHalfWidthPixels() + 140.0F - 18.0F, 70.0F + var11.b + 150.0F, 372.0F, 458.0F, 20.0F, 44.0F, '\b');
+            fishing4.a.m.a(var0, az.v, fishing4.a.m.getHalfWidthPixels() + 140.0F - 0.0F, 70.0F + var11.b + 150.0F, 396.0F, 458.0F, 20.0F, 44.0F, '\b');
+            fishing4.a.m.a(var0, az.v, 20.0F + fishing4.a.m.getHalfWidthPixels() + 140.0F, 70.0F + var11.b + 150.0F, 420.0F, 458.0F, 24.0F, 44.0F, '\b');
+            fishing4.a.m.a(var0, az.v, 34.0F + fishing4.a.m.getHalfWidthPixels() + 140.0F, 70.0F + var11.b + 150.0F, 446.0F, 458.0F, 32.0F, 44.0F, '\b');
+            fishing4.a.m.a(var0, az.v, fishing4.a.m.getHalfWidthPixels(), 31.0F + (var11.b + 150.0F - 93.0F), 2.0F, 451.0F, 198.0F, 60.0F, '\u0002');
+            fishing4.game.m.a(var0, var1, var2, false, var3, var4, az.s, az.v, fishing4.a.m.getHalfWidthPixels(), var11.b + 150.0F, var5);
+            fishing4.a.ae.a(var0, fishing4.game.m.c(var1), fishing4.a.m.getHalfWidthPixels(), var11.b, 350.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
+            fishing4.a.m.a(var0, az.s, fishing4.a.m.getHalfWidthPixels(), var11.b - 20.0F - 22.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
             if (globalConfig.languageId == 0) {
-               fishing4.a.ae.a(var0, "크기 : " + fishing4.game.m.a(var2, var1) + "cm (" + fishing4.game.m.e(var1) + "등급)", fishing4.a.m.c(), var11.b - 70.0F, 350.0F, 60.0F, 26.0F, 4);
+               fishing4.a.ae.a(var0, "크기 : " + fishing4.game.m.a(var2, var1) + "cm (" + fishing4.game.m.e(var1) + "등급)", fishing4.a.m.getHalfWidthPixels(), var11.b - 70.0F, 350.0F, 60.0F, 26.0F, 4);
             } else {
-               fishing4.a.ae.a(var0, "Length : " + k.format((double)fishing4.game.m.a(var2, var1) / 2.54) + "in. (Grade " + fishing4.game.m.e(var1) + ")", fishing4.a.m.c(), var11.b - 70.0F, 350.0F, 60.0F, 26.0F, 4);
+               fishing4.a.ae.a(var0, "Length : " + k.format((double)fishing4.game.m.a(var2, var1) / 2.54) + "in. (Grade " + fishing4.game.m.e(var1) + ")", fishing4.a.m.getHalfWidthPixels(), var11.b - 70.0F, 350.0F, 60.0F, 26.0F, 4);
             }
 
             if (var6) {
-               fishing4.a.ae.a(var0, fishing4.a.y.a(2131165238), fishing4.a.m.c(), var11.b - 110.0F, 300.0F, 50.0F, 24.0F, 0);
-               fishing4.a.ae.a(var0, fishing4.game.m.i(var1), fishing4.a.m.c(), var11.b - 110.0F, 300.0F, 100.0F, 24.0F, 6, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
+               fishing4.a.ae.a(var0, fishing4.a.y.a(2131165238), fishing4.a.m.getHalfWidthPixels(), var11.b - 110.0F, 300.0F, 50.0F, 24.0F, 0);
+               fishing4.a.ae.a(var0, fishing4.game.m.i(var1), fishing4.a.m.getHalfWidthPixels(), var11.b - 110.0F, 300.0F, 100.0F, 24.0F, 6, RGBColor.getColor(0.0F, 1.0F, 1.0F, 1.0F));
             }
 
             if (var7 && (b != 40 || var9 > 1)) {
@@ -897,16 +900,16 @@ public final class am {
             }
 
             if (var8) {
-               at.a(var0, az.t, az.p + 1, ((ag)ad.h.get(az.k)).b.size(), fishing4.a.e.a(fishing4.a.m.c() + 180.0F, var11.b + 150.0F - 93.0F + 20.0F));
+               at.a(var0, az.t, az.p + 1, ((ag)ad.h.get(az.k)).b.size(), fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels() + 180.0F, var11.b + 150.0F - 93.0F + 20.0F));
             }
 
             a(var0, az.s, az.t, var11);
             if (b != 62 && b != 64) {
-               fishing4.a.m.a(var0, az.t, fishing4.a.m.c() - 175.0F, var11.b - 240.0F, 585.0F, 250.0F, 56.0F, 56.0F);
+               fishing4.a.m.a(var0, az.t, fishing4.a.m.getHalfWidthPixels() - 175.0F, var11.b - 240.0F, 585.0F, 250.0F, 56.0F, 56.0F);
             } else if (globalConfig.languageId == 0) {
-               fishing4.a.ae.a(var0, fishing4.a.r.aa[az.p] + "님\n(" + fishing4.game.t.a(fishing4.a.r.ab[az.p], false) + ")", fishing4.a.m.c() - 120.0F, var11.b - 160.0F, 200.0F, 60.0F, 24.0F, 4, fishing4.a.aa.d());
+               fishing4.a.ae.a(var0, fishing4.a.r.aa[az.p] + "님\n(" + fishing4.game.t.a(fishing4.a.r.ab[az.p], false) + ")", fishing4.a.m.getHalfWidthPixels() - 120.0F, var11.b - 160.0F, 200.0F, 60.0F, 24.0F, 4, RGBColor.yellow());
             } else {
-               fishing4.a.ae.a(var0, fishing4.a.r.aa[az.p] + "\n(" + fishing4.game.t.a(fishing4.a.r.ab[az.p], false) + ")", fishing4.a.m.c() - 120.0F, var11.b - 160.0F, 200.0F, 60.0F, 24.0F, 4, fishing4.a.aa.d());
+               fishing4.a.ae.a(var0, fishing4.a.r.aa[az.p] + "\n(" + fishing4.game.t.a(fishing4.a.r.ab[az.p], false) + ")", fishing4.a.m.getHalfWidthPixels() - 120.0F, var11.b - 160.0F, 200.0F, 60.0F, 24.0F, 4, RGBColor.yellow());
             }
          }
       }
@@ -935,36 +938,36 @@ public final class am {
          } else {
             a(var0, az.s, var3, l);
             if (globalConfig.languageId == 0) {
-               fishing4.a.ae.a(var0, "축하합니다. 강화에 성공했습니다.", fishing4.a.m.c(), 80.0F + fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-               fishing4.a.ae.a(var0, "[결과]", fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
+               fishing4.a.ae.a(var0, "축하합니다. 강화에 성공했습니다.", fishing4.a.m.getHalfWidthPixels(), 80.0F + fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+               fishing4.a.ae.a(var0, "[결과]", fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
                if (var1 == 0) {
-                  fishing4.a.ae.a(var0, "강화\n힘", fishing4.a.m.c() - 85.0F, fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d() - 1) + "\n" + var2.f(var2.d() - 1), fishing4.a.m.c(), fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d()) + "\n" + var2.q(), 100.0F + fishing4.a.m.c(), fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
-                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 65.0F, 824.0F, 477.0F, 16.0F, 16.0F);
-                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 65.0F - 30.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+                  fishing4.a.ae.a(var0, "강화\n힘", fishing4.a.m.getHalfWidthPixels() - 85.0F, fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d() - 1) + "\n" + var2.f(var2.d() - 1), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d()) + "\n" + var2.q(), 100.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
+                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 65.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 65.0F - 30.0F, 824.0F, 477.0F, 16.0F, 16.0F);
                } else if (var1 == 2) {
-                  fishing4.a.ae.a(var0, "강화\n텐션", fishing4.a.m.c() - 85.0F, fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d() - 1) + "\n" + var2.h(var2.d() - 1), fishing4.a.m.c(), fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d()) + "\n" + var2.t(), 100.0F + fishing4.a.m.c(), fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
-                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 65.0F, 824.0F, 477.0F, 16.0F, 16.0F);
-                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 65.0F - 30.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+                  fishing4.a.ae.a(var0, "강화\n텐션", fishing4.a.m.getHalfWidthPixels() - 85.0F, fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d() - 1) + "\n" + var2.h(var2.d() - 1), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d()) + "\n" + var2.t(), 100.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
+                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 65.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 65.0F - 30.0F, 824.0F, 477.0F, 16.0F, 16.0F);
                }
             } else {
-               fishing4.a.ae.a(var0, "Upgrade Successful!", fishing4.a.m.c(), 80.0F + fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-               fishing4.a.ae.a(var0, "[Result]", fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
+               fishing4.a.ae.a(var0, "Upgrade Successful!", fishing4.a.m.getHalfWidthPixels(), 80.0F + fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+               fishing4.a.ae.a(var0, "[Result]", fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
                if (var1 == 0) {
-                  fishing4.a.ae.a(var0, "Upgrade\nPower", fishing4.a.m.c() - 85.0F, fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d() - 1) + "\n" + var2.f(var2.d() - 1), fishing4.a.m.c(), fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d()) + "\n" + var2.q(), 100.0F + fishing4.a.m.c(), fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
-                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 65.0F, 824.0F, 477.0F, 16.0F, 16.0F);
-                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 65.0F - 30.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+                  fishing4.a.ae.a(var0, "Upgrade\nPower", fishing4.a.m.getHalfWidthPixels() - 85.0F, fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d() - 1) + "\n" + var2.f(var2.d() - 1), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d()) + "\n" + var2.q(), 100.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
+                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 65.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 65.0F - 30.0F, 824.0F, 477.0F, 16.0F, 16.0F);
                } else if (var1 == 2) {
-                  fishing4.a.ae.a(var0, "Upgrade\nTension", fishing4.a.m.c() - 85.0F, fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d() - 1) + "\n" + var2.h(var2.d() - 1), fishing4.a.m.c(), fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d()) + "\n" + var2.t(), 100.0F + fishing4.a.m.c(), fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
-                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 65.0F, 824.0F, 477.0F, 16.0F, 16.0F);
-                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 65.0F - 30.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+                  fishing4.a.ae.a(var0, "Upgrade\nTension", fishing4.a.m.getHalfWidthPixels() - 85.0F, fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d() - 1) + "\n" + var2.h(var2.d() - 1), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d()) + "\n" + var2.t(), 100.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
+                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 65.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 65.0F - 30.0F, 824.0F, 477.0F, 16.0F, 16.0F);
                }
             }
 
@@ -997,60 +1000,60 @@ public final class am {
             a(var0, az.s, var3, l);
             if (var1 == 71) {
                if (globalConfig.languageId == 0) {
-                  fishing4.a.ae.a(var0, "선적을 개조하시겠습니까?", fishing4.a.m.c(), 120.0F + fishing4.a.m.d(), 325.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "[개조]", fishing4.a.m.c(), 50.0F + fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "레벨\n선적", fishing4.a.m.c() - 85.0F, fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.c) + "\n" + var2.j(), fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.c + 1) + "\n" + var2.d(var2.c + 1), 100.0F + fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
-                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), 15.0F + fishing4.a.m.d(), 824.0F, 477.0F, 16.0F, 16.0F);
-                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 15.0F, 824.0F, 477.0F, 16.0F, 16.0F);
-                  fishing4.a.ae.a(var0, "개조비용 " + var2.j(var2.c + 1), fishing4.a.m.c(), fishing4.a.m.d() - 70.0F, 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
+                  fishing4.a.ae.a(var0, "선적을 개조하시겠습니까?", fishing4.a.m.getHalfWidthPixels(), 120.0F + fishing4.a.m.getHalfHeightPixels(), 325.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "[개조]", fishing4.a.m.getHalfWidthPixels(), 50.0F + fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "레벨\n선적", fishing4.a.m.getHalfWidthPixels() - 85.0F, fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.c) + "\n" + var2.j(), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.c + 1) + "\n" + var2.d(var2.c + 1), 100.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
+                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), 15.0F + fishing4.a.m.getHalfHeightPixels(), 824.0F, 477.0F, 16.0F, 16.0F);
+                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 15.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+                  fishing4.a.ae.a(var0, "개조비용 " + var2.j(var2.c + 1), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 70.0F, 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
                   if (var2.a != 88) {
-                     fishing4.a.ae.a(var0, "소지금 " + ad.o.d(), fishing4.a.m.c(), fishing4.a.m.d() - 100.0F, 300.0F, 60.0F, 26.0F, 4);
+                     fishing4.a.ae.a(var0, "소지금 " + ad.o.d(), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 100.0F, 300.0F, 60.0F, 26.0F, 4);
                   }
                } else {
-                  fishing4.a.ae.a(var0, "Do you want to upgrade this ship?", fishing4.a.m.c(), 120.0F + fishing4.a.m.d(), 325.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "[Upgrade]", fishing4.a.m.c(), 50.0F + fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "Level\nShipment", fishing4.a.m.c() - 85.0F, fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.c) + "\n" + var2.j(), fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.c + 1) + "\n" + var2.d(var2.c + 1), 100.0F + fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
-                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), 15.0F + fishing4.a.m.d(), 824.0F, 477.0F, 16.0F, 16.0F);
-                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 15.0F, 824.0F, 477.0F, 16.0F, 16.0F);
-                  fishing4.a.ae.a(var0, "Upgrade cost " + var2.j(var2.c + 1), fishing4.a.m.c(), fishing4.a.m.d() - 70.0F, 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
+                  fishing4.a.ae.a(var0, "Do you want to upgrade this ship?", fishing4.a.m.getHalfWidthPixels(), 120.0F + fishing4.a.m.getHalfHeightPixels(), 325.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "[Upgrade]", fishing4.a.m.getHalfWidthPixels(), 50.0F + fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "Level\nShipment", fishing4.a.m.getHalfWidthPixels() - 85.0F, fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.c) + "\n" + var2.j(), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.c + 1) + "\n" + var2.d(var2.c + 1), 100.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
+                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), 15.0F + fishing4.a.m.getHalfHeightPixels(), 824.0F, 477.0F, 16.0F, 16.0F);
+                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 15.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+                  fishing4.a.ae.a(var0, "Upgrade cost " + var2.j(var2.c + 1), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 70.0F, 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
                   if (var2.a != 88) {
-                     fishing4.a.ae.a(var0, "Gold " + ad.o.d(), fishing4.a.m.c(), fishing4.a.m.d() - 100.0F, 300.0F, 60.0F, 26.0F, 4);
+                     fishing4.a.ae.a(var0, "Gold " + ad.o.d(), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 100.0F, 300.0F, 60.0F, 26.0F, 4);
                   }
                }
             } else if (var1 == 76) {
                if (globalConfig.languageId == 0) {
-                  fishing4.a.ae.a(var0, "적재길이를 개조하시겠습니까?", fishing4.a.m.c(), 120.0F + fishing4.a.m.d(), 325.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "[개조]", fishing4.a.m.c(), 50.0F + fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "레벨\n길이", fishing4.a.m.c() - 120.0F, fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "Lv." + Integer.toString(var2.d) + "\n" + var2.h(), fishing4.a.m.c() - 20.0F, fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "Lv." + Integer.toString(var2.d + 1) + "\n" + var2.c(var2.d + 1), 120.0F + fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
-                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), 15.0F + fishing4.a.m.d(), 824.0F, 477.0F, 16.0F, 16.0F);
-                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 15.0F, 824.0F, 477.0F, 16.0F, 16.0F);
-                  fishing4.a.ae.a(var0, "개조비용 " + var2.j(var2.d + 1), fishing4.a.m.c(), fishing4.a.m.d() - 70.0F, 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
+                  fishing4.a.ae.a(var0, "적재길이를 개조하시겠습니까?", fishing4.a.m.getHalfWidthPixels(), 120.0F + fishing4.a.m.getHalfHeightPixels(), 325.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "[개조]", fishing4.a.m.getHalfWidthPixels(), 50.0F + fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "레벨\n길이", fishing4.a.m.getHalfWidthPixels() - 120.0F, fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "Lv." + Integer.toString(var2.d) + "\n" + var2.h(), fishing4.a.m.getHalfWidthPixels() - 20.0F, fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "Lv." + Integer.toString(var2.d + 1) + "\n" + var2.c(var2.d + 1), 120.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
+                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), 15.0F + fishing4.a.m.getHalfHeightPixels(), 824.0F, 477.0F, 16.0F, 16.0F);
+                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 15.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+                  fishing4.a.ae.a(var0, "개조비용 " + var2.j(var2.d + 1), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 70.0F, 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
                   if (var2.a != 88) {
-                     fishing4.a.ae.a(var0, "소지금 " + ad.o.d(), fishing4.a.m.c(), fishing4.a.m.d() - 100.0F, 300.0F, 60.0F, 26.0F, 4);
+                     fishing4.a.ae.a(var0, "소지금 " + ad.o.d(), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 100.0F, 300.0F, 60.0F, 26.0F, 4);
                   }
                } else {
-                  fishing4.a.ae.a(var0, "Do you want to upgrade this ship's length?", fishing4.a.m.c(), 120.0F + fishing4.a.m.d(), 325.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "[Upgrade]", fishing4.a.m.c(), 50.0F + fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "Level\nLength", fishing4.a.m.c() - 120.0F, fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "Lv." + Integer.toString(var2.d) + "\n" + var2.h(), fishing4.a.m.c() - 20.0F, fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "Lv." + Integer.toString(var2.d + 1) + "\n" + var2.c(var2.d + 1), 120.0F + fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
-                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), 15.0F + fishing4.a.m.d(), 824.0F, 477.0F, 16.0F, 16.0F);
-                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 15.0F, 824.0F, 477.0F, 16.0F, 16.0F);
-                  fishing4.a.ae.a(var0, "Upgrade cost " + var2.j(var2.d + 1), fishing4.a.m.c(), fishing4.a.m.d() - 70.0F, 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
+                  fishing4.a.ae.a(var0, "Do you want to upgrade this ship's length?", fishing4.a.m.getHalfWidthPixels(), 120.0F + fishing4.a.m.getHalfHeightPixels(), 325.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "[Upgrade]", fishing4.a.m.getHalfWidthPixels(), 50.0F + fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "Level\nLength", fishing4.a.m.getHalfWidthPixels() - 120.0F, fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "Lv." + Integer.toString(var2.d) + "\n" + var2.h(), fishing4.a.m.getHalfWidthPixels() - 20.0F, fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "Lv." + Integer.toString(var2.d + 1) + "\n" + var2.c(var2.d + 1), 120.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
+                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), 15.0F + fishing4.a.m.getHalfHeightPixels(), 824.0F, 477.0F, 16.0F, 16.0F);
+                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 15.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+                  fishing4.a.ae.a(var0, "Upgrade cost " + var2.j(var2.d + 1), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 70.0F, 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
                   if (var2.a != 88) {
-                     fishing4.a.ae.a(var0, "Gold " + ad.o.d(), fishing4.a.m.c(), fishing4.a.m.d() - 100.0F, 300.0F, 60.0F, 26.0F, 4);
+                     fishing4.a.ae.a(var0, "Gold " + ad.o.d(), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 100.0F, 300.0F, 60.0F, 26.0F, 4);
                   }
                }
             }
 
             if (var2.a == 88) {
-               aq.b(var0, fishing4.a.m.c());
+               aq.b(var0, fishing4.a.m.getHalfWidthPixels());
             }
 
             a(var0, az.s, az.t, var3);
@@ -1081,9 +1084,9 @@ public final class am {
          } else {
             a(var0, az.s, var4, l);
             int var3 = var1 / 2;
-            a(var0, fishing4.a.m.d(), var3 % 10);
-            fishing4.game.m.b(var0, fishing4.a.m.c(), fishing4.a.m.d() + 200.0F - 93.0F + 31.0F, var1);
-            fishing4.a.ae.a(var0, var2, fishing4.a.m.c(), fishing4.a.m.d() + 30.0F, 380.0F, 235.0F, 24.0F, 9);
+            a(var0, fishing4.a.m.getHalfHeightPixels(), var3 % 10);
+            fishing4.game.m.b(var0, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() + 200.0F - 93.0F + 31.0F, var1);
+            fishing4.a.ae.a(var0, var2, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() + 30.0F, 380.0F, 235.0F, 24.0F, 9);
             a(var0, az.s, az.t, var4);
             fishing4.game.k.b();
          }
@@ -1113,11 +1116,11 @@ public final class am {
          } else {
             a(var0, az.s, var5, l);
             int var4 = var1 / 2;
-            a(var0, fishing4.a.m.d(), var4 % 10);
-            fishing4.game.m.a(var0, fishing4.a.m.c(), fishing4.a.m.d() + 150.0F - 93.0F + 31.0F + 100.0F, var1);
-            fishing4.a.ae.a(var0, var2, fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
-            fishing4.a.m.a(var0, az.s, fishing4.a.m.c(), fishing4.a.m.d() - 20.0F - 22.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
-            fishing4.a.ae.a(var0, var3, fishing4.a.m.c(), fishing4.a.m.d() - 130.0F, 350.0F, 200.0F, 26.0F, 4);
+            a(var0, fishing4.a.m.getHalfHeightPixels(), var4 % 10);
+            fishing4.game.m.a(var0, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() + 150.0F - 93.0F + 31.0F + 100.0F, var1);
+            fishing4.a.ae.a(var0, var2, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
+            fishing4.a.m.a(var0, az.s, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 20.0F - 22.0F, 493.0F, 496.0F, 352.0F, 4.0F, '\u0001');
+            fishing4.a.ae.a(var0, var3, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 130.0F, 350.0F, 200.0F, 26.0F, 4);
             a(var0, az.s, az.t, var5);
          }
       }
@@ -1146,18 +1149,18 @@ public final class am {
          } else {
             a(var0, az.s, var3, l);
             if (globalConfig.languageId == 0) {
-               fishing4.a.ae.a(var0, "개수를 입력하세요", fishing4.a.m.c(), 50.0F + fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
+               fishing4.a.ae.a(var0, "개수를 입력하세요", fishing4.a.m.getHalfWidthPixels(), 50.0F + fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
             } else {
-               fishing4.a.ae.a(var0, "Enter the quantity", fishing4.a.m.c(), 50.0F + fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
+               fishing4.a.ae.a(var0, "Enter the quantity", fishing4.a.m.getHalfWidthPixels(), 50.0F + fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
             }
 
-            fishing4.a.ae.a(var0, Long.toString(var1), fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-            fishing4.a.m.a(var0, az.s, fishing4.a.m.c() - 80.0F, fishing4.a.m.d(), 736.0F, 172.0F, 16.0F, 30.0F);
-            fishing4.a.m.a(var0, az.s, fishing4.a.m.c() - 140.0F - 10.0F, fishing4.a.m.d(), 736.0F, 172.0F, 16.0F, 30.0F);
-            fishing4.a.m.a(var0, az.s, 10.0F + (fishing4.a.m.c() - 140.0F), fishing4.a.m.d(), 736.0F, 172.0F, 16.0F, 30.0F);
-            fishing4.a.m.a(var0, az.s, 80.0F + fishing4.a.m.c(), fishing4.a.m.d(), 736.0F, 172.0F, 16.0F, 30.0F, fishing4.a.g.b());
-            fishing4.a.m.a(var0, az.s, fishing4.a.m.c() + 140.0F - 10.0F, fishing4.a.m.d(), 736.0F, 172.0F, 16.0F, 30.0F, fishing4.a.g.b());
-            fishing4.a.m.a(var0, az.s, 10.0F + fishing4.a.m.c() + 140.0F, fishing4.a.m.d(), 736.0F, 172.0F, 16.0F, 30.0F, fishing4.a.g.b());
+            fishing4.a.ae.a(var0, Long.toString(var1), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+            fishing4.a.m.a(var0, az.s, fishing4.a.m.getHalfWidthPixels() - 80.0F, fishing4.a.m.getHalfHeightPixels(), 736.0F, 172.0F, 16.0F, 30.0F);
+            fishing4.a.m.a(var0, az.s, fishing4.a.m.getHalfWidthPixels() - 140.0F - 10.0F, fishing4.a.m.getHalfHeightPixels(), 736.0F, 172.0F, 16.0F, 30.0F);
+            fishing4.a.m.a(var0, az.s, 10.0F + (fishing4.a.m.getHalfWidthPixels() - 140.0F), fishing4.a.m.getHalfHeightPixels(), 736.0F, 172.0F, 16.0F, 30.0F);
+            fishing4.a.m.a(var0, az.s, 80.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 736.0F, 172.0F, 16.0F, 30.0F, fishing4.a.g.b());
+            fishing4.a.m.a(var0, az.s, fishing4.a.m.getHalfWidthPixels() + 140.0F - 10.0F, fishing4.a.m.getHalfHeightPixels(), 736.0F, 172.0F, 16.0F, 30.0F, fishing4.a.g.b());
+            fishing4.a.m.a(var0, az.s, 10.0F + fishing4.a.m.getHalfWidthPixels() + 140.0F, fishing4.a.m.getHalfHeightPixels(), 736.0F, 172.0F, 16.0F, 30.0F, fishing4.a.g.b());
             a(var0, az.s, az.t, var3);
          }
       }
@@ -1184,8 +1187,8 @@ public final class am {
             a(var0, var1, fishing4.a.m.e(), l);
          } else {
             a(var0, var1, fishing4.a.m.e(), l);
-            fishing4.a.m.a(var0, az.w, fishing4.a.m.c(), fishing4.a.m.d() - 50.0F, 0.0F, 5.0F, 288.0F, 400.0F);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165325), fishing4.a.m.c(), 200.0F + fishing4.a.m.d(), w.b.a * m - 30.0F, w.b.b * n - 30.0F, 26.0F, 4);
+            fishing4.a.m.a(var0, az.w, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 50.0F, 0.0F, 5.0F, 288.0F, 400.0F);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165325), fishing4.a.m.getHalfWidthPixels(), 200.0F + fishing4.a.m.getHalfHeightPixels(), w.b.a * m - 30.0F, w.b.b * n - 30.0F, 26.0F, 4);
          }
       }
 
@@ -1238,13 +1241,13 @@ public final class am {
             a(var0, var1, var10, l);
          } else {
             a(var0, var1, var10, l);
-            fishing4.a.ae.a(var0, ab.c(var6.a), fishing4.a.m.c(), fishing4.a.m.d() - 30.0F, (float)fishing4.a.m.a(), 28.0F, 26.0F, 4, fishing4.a.aa.a(1.0F, 1.0F, 0.0F, 1.0F));
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165235), 40.0F + fishing4.a.m.c(), fishing4.a.m.d() - 90.0F, 220.0F, 28.0F, 26.0F, 0);
-            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165236), 40.0F + fishing4.a.m.c(), fishing4.a.m.d() - 120.0F, 220.0F, 28.0F, 26.0F, 0);
-            fishing4.a.ae.a(var0, var6.g(), 90.0F + fishing4.a.m.c(), fishing4.a.m.d() - 90.0F, 220.0F, 28.0F, 26.0F, 1, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
-            fishing4.a.ae.a(var0, var6.h(), 90.0F + fishing4.a.m.c(), fishing4.a.m.d() - 120.0F, 220.0F, 28.0F, 26.0F, 1, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
-            fishing4.a.m.a(var0, var3, fishing4.a.m.c(), fishing4.a.m.d() + 100.0F, 2.0F, 2.0F, 306.0F, 192.0F);
-            var6.a(var0, var3, var5, fishing4.a.m.c(), fishing4.a.m.d() + 60.0F);
+            fishing4.a.ae.a(var0, ab.c(var6.a), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 30.0F, (float)fishing4.a.m.getWidthPixels(), 28.0F, 26.0F, 4, RGBColor.getColor(1.0F, 1.0F, 0.0F, 1.0F));
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165235), 40.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 90.0F, 220.0F, 28.0F, 26.0F, 0);
+            fishing4.a.ae.a(var0, fishing4.a.y.a(2131165236), 40.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 120.0F, 220.0F, 28.0F, 26.0F, 0);
+            fishing4.a.ae.a(var0, var6.g(), 90.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 90.0F, 220.0F, 28.0F, 26.0F, 1, RGBColor.getColor(0.0F, 1.0F, 1.0F, 1.0F));
+            fishing4.a.ae.a(var0, var6.h(), 90.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 120.0F, 220.0F, 28.0F, 26.0F, 1, RGBColor.getColor(0.0F, 1.0F, 1.0F, 1.0F));
+            fishing4.a.m.a(var0, var3, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() + 100.0F, 2.0F, 2.0F, 306.0F, 192.0F);
+            var6.a(var0, var3, var5, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() + 60.0F);
             int var9;
             if (var7 % 150 < 50) {
                var9 = var7 % 50 * 255 / 50;
@@ -1254,10 +1257,10 @@ public final class am {
                var9 = 0;
             }
 
-            fishing4.a.m.a(var0, var3, fishing4.a.m.c() - 40.0F, fishing4.a.m.d() + 120.0F, 0.0F, 194.0F, 270.0F, 200.0F, '\u0005', var9);
-            var6.a(var0, var4, fishing4.a.m.c() - 130.0F, fishing4.a.m.d() - 100.0F, var7);
+            fishing4.a.m.a(var0, var3, fishing4.a.m.getHalfWidthPixels() - 40.0F, fishing4.a.m.getHalfHeightPixels() + 120.0F, 0.0F, 194.0F, 270.0F, 200.0F, '\u0005', var9);
+            var6.a(var0, var4, fishing4.a.m.getHalfWidthPixels() - 130.0F, fishing4.a.m.getHalfHeightPixels() - 100.0F, var7);
             if (ad.h.size() > 1 && var8) {
-               fishing4.game.k.a(var0, fishing4.a.e.a(fishing4.a.m.c(), fishing4.a.m.d() + 100.0F), 190.0F, var7);
+               fishing4.game.k.a(var0, fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() + 100.0F), 190.0F, var7);
             }
 
             a(var0, var1, var2, var10);
@@ -1288,36 +1291,36 @@ public final class am {
          } else {
             a(var0, az.s, var2, l);
             if (globalConfig.languageId == 0) {
-               fishing4.a.ae.a(var0, var1.u() + " 강화하시겠습니까?", fishing4.a.m.c(), 120.0F + fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-               fishing4.a.ae.a(var0, "[강화]", fishing4.a.m.c(), 50.0F + fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-               fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), 15.0F + fishing4.a.m.d(), 824.0F, 477.0F, 16.0F, 16.0F);
-               fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 15.0F, 824.0F, 477.0F, 16.0F, 16.0F);
-               fishing4.a.ae.a(var0, "강화비용 " + ac.c(var1), fishing4.a.m.c(), fishing4.a.m.d() - 70.0F, 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
-               fishing4.a.ae.a(var0, "소지금 " + ad.o.d(), fishing4.a.m.c(), fishing4.a.m.d() - 100.0F, 300.0F, 60.0F, 26.0F, 4);
+               fishing4.a.ae.a(var0, var1.u() + " 강화하시겠습니까?", fishing4.a.m.getHalfWidthPixels(), 120.0F + fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+               fishing4.a.ae.a(var0, "[강화]", fishing4.a.m.getHalfWidthPixels(), 50.0F + fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+               fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), 15.0F + fishing4.a.m.getHalfHeightPixels(), 824.0F, 477.0F, 16.0F, 16.0F);
+               fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 15.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+               fishing4.a.ae.a(var0, "강화비용 " + ac.c(var1), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 70.0F, 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
+               fishing4.a.ae.a(var0, "소지금 " + ad.o.d(), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 100.0F, 300.0F, 60.0F, 26.0F, 4);
                if (var1.s() == 0) {
-                  fishing4.a.ae.a(var0, "강화\n힘", fishing4.a.m.c() - 85.0F, fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var1.d()) + "\n" + var1.q(), fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var1.d() + 1) + "\n" + var1.f(var1.d() + 1), 100.0F + fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
+                  fishing4.a.ae.a(var0, "강화\n힘", fishing4.a.m.getHalfWidthPixels() - 85.0F, fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var1.d()) + "\n" + var1.q(), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var1.d() + 1) + "\n" + var1.f(var1.d() + 1), 100.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
                } else if (var1.s() == 2) {
-                  fishing4.a.ae.a(var0, "강화\n텐션", fishing4.a.m.c() - 85.0F, fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var1.d()) + "\n" + var1.t(), fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var1.d() + 1) + "\n" + var1.h(var1.d() + 1), 100.0F + fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
+                  fishing4.a.ae.a(var0, "강화\n텐션", fishing4.a.m.getHalfWidthPixels() - 85.0F, fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var1.d()) + "\n" + var1.t(), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var1.d() + 1) + "\n" + var1.h(var1.d() + 1), 100.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
                }
             } else {
-               fishing4.a.ae.a(var0, var1.u() + "\nDo you want to upgrade this?", fishing4.a.m.c(), 150.0F + fishing4.a.m.d(), 300.0F, 90.0F, 26.0F, 4);
-               fishing4.a.ae.a(var0, "[Upgrade]", fishing4.a.m.c(), 50.0F + fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-               fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), 15.0F + fishing4.a.m.d(), 824.0F, 477.0F, 16.0F, 16.0F);
-               fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 15.0F, 824.0F, 477.0F, 16.0F, 16.0F);
-               fishing4.a.ae.a(var0, "Upgrade cost " + ac.c(var1), fishing4.a.m.c(), fishing4.a.m.d() - 70.0F, 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
-               fishing4.a.ae.a(var0, "Gold " + ad.o.d(), fishing4.a.m.c(), fishing4.a.m.d() - 120.0F, 300.0F, 60.0F, 26.0F, 4);
+               fishing4.a.ae.a(var0, var1.u() + "\nDo you want to upgrade this?", fishing4.a.m.getHalfWidthPixels(), 150.0F + fishing4.a.m.getHalfHeightPixels(), 300.0F, 90.0F, 26.0F, 4);
+               fishing4.a.ae.a(var0, "[Upgrade]", fishing4.a.m.getHalfWidthPixels(), 50.0F + fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+               fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), 15.0F + fishing4.a.m.getHalfHeightPixels(), 824.0F, 477.0F, 16.0F, 16.0F);
+               fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 15.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+               fishing4.a.ae.a(var0, "Upgrade cost " + ac.c(var1), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 70.0F, 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
+               fishing4.a.ae.a(var0, "Gold " + ad.o.d(), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 120.0F, 300.0F, 60.0F, 26.0F, 4);
                if (var1.s() == 0) {
-                  fishing4.a.ae.a(var0, "Upgrade\nPower", fishing4.a.m.c() - 85.0F, fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var1.d()) + "\n" + var1.q(), fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var1.d() + 1) + "\n" + var1.f(var1.d() + 1), 100.0F + fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
+                  fishing4.a.ae.a(var0, "Upgrade\nPower", fishing4.a.m.getHalfWidthPixels() - 85.0F, fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var1.d()) + "\n" + var1.q(), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var1.d() + 1) + "\n" + var1.f(var1.d() + 1), 100.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
                } else if (var1.s() == 2) {
-                  fishing4.a.ae.a(var0, "Upgrade\nTension", fishing4.a.m.c() - 85.0F, fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var1.d()) + "\n" + var1.t(), fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var1.d() + 1) + "\n" + var1.h(var1.d() + 1), 100.0F + fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
+                  fishing4.a.ae.a(var0, "Upgrade\nTension", fishing4.a.m.getHalfWidthPixels() - 85.0F, fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var1.d()) + "\n" + var1.t(), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var1.d() + 1) + "\n" + var1.h(var1.d() + 1), 100.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
                }
             }
 
@@ -1347,38 +1350,38 @@ public final class am {
             a(var0, az.s, fishing4.a.m.e(), l);
          } else {
             a(var0, az.s, fishing4.a.m.e(), l);
-            ac.a(var0, az.C, fishing4.a.m.c() - 150.0F, fishing4.a.m.d() + 220.0F, var1.d);
-            fishing4.a.ae.a(var0, var1.g, 50.0F + fishing4.a.m.c(), 220.0F + fishing4.a.m.d(), 360.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
+            ac.a(var0, az.C, fishing4.a.m.getHalfWidthPixels() - 150.0F, fishing4.a.m.getHalfHeightPixels() + 220.0F, var1.d);
+            fishing4.a.ae.a(var0, var1.g, 50.0F + fishing4.a.m.getHalfWidthPixels(), 220.0F + fishing4.a.m.getHalfHeightPixels(), 360.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
             int var2;
             if (var1.b[1] == -1 && var1.c[0] == 1) {
                if (var1.b[0] == 50) {
-                  fishing4.a.ae.a(var0, "Lv : Lv.5\n\nWave. L. : 10", fishing4.a.m.c(), 100.0F + fishing4.a.m.d(), 300.0F, 100.0F, 24.0F, 4, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
+                  fishing4.a.ae.a(var0, "Lv : Lv.5\n\nWave. L. : 10", fishing4.a.m.getHalfWidthPixels(), 100.0F + fishing4.a.m.getHalfHeightPixels(), 300.0F, 100.0F, 24.0F, 4, RGBColor.getColor(0.0F, 1.0F, 1.0F, 1.0F));
                } else {
                   ac var4 = ac.a(var1.b[0]);
                   int var3 = ab.e(ab.d(var1.b[0]));
 
                   for(var2 = 0; var2 < var3 - 1; ++var2) {
-                     fishing4.a.m.a(var0, az.s, fishing4.a.m.c(), fishing4.a.m.d() + 100.0F - (float)(var2 * 40) - 22.0F, 493.0F, 496.0F, 352.0F, 4.0F, fishing4.a.g.b(1.0F), '\u0001');
-                     fishing4.a.ae.a(var0, ab.a(ab.d(var1.b[0]), var2), fishing4.a.m.c(), fishing4.a.m.d() + 100.0F - (float)(var2 * 40), 300.0F, 200.0F, 24.0F, 0, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
-                     fishing4.a.ae.a(var0, ab.a(var4, var2, true), fishing4.a.m.c(), fishing4.a.m.d() + 100.0F - (float)(var2 * 40), 300.0F, 200.0F, 24.0F, 1);
+                     fishing4.a.m.a(var0, az.s, fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() + 100.0F - (float)(var2 * 40) - 22.0F, 493.0F, 496.0F, 352.0F, 4.0F, fishing4.a.g.b(1.0F), '\u0001');
+                     fishing4.a.ae.a(var0, ab.a(ab.d(var1.b[0]), var2), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() + 100.0F - (float)(var2 * 40), 300.0F, 200.0F, 24.0F, 0, RGBColor.getColor(0.0F, 1.0F, 1.0F, 1.0F));
+                     fishing4.a.ae.a(var0, ab.a(var4, var2, true), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() + 100.0F - (float)(var2 * 40), 300.0F, 200.0F, 24.0F, 1);
                   }
                }
             } else {
                for(var2 = 0; var2 < 5 && var1.b[var2] != -1; ++var2) {
-                  ac.a(var0, az.C, fishing4.a.m.c() - 150.0F, fishing4.a.m.d() + 150.0F - (float)(var2 * 40), var1.b[var2], fishing4.a.g.a(0.5F));
-                  fishing4.a.ae.a(var0, ab.c(var1.b[var2]), 25.0F + fishing4.a.m.c(), fishing4.a.m.d() + 150.0F - (float)(var2 * 40), 280.0F, 50.0F, 24.0F, 0, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
-                  fishing4.a.ae.a(var0, "x" + Integer.toString(var1.c[var2]), 25.0F + fishing4.a.m.c(), fishing4.a.m.d() + 150.0F - (float)(var2 * 40), 280.0F, 50.0F, 24.0F, 1, fishing4.a.aa.a(0.0F, 1.0F, 1.0F, 1.0F));
+                  ac.a(var0, az.C, fishing4.a.m.getHalfWidthPixels() - 150.0F, fishing4.a.m.getHalfHeightPixels() + 150.0F - (float)(var2 * 40), var1.b[var2], fishing4.a.g.a(0.5F));
+                  fishing4.a.ae.a(var0, ab.c(var1.b[var2]), 25.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() + 150.0F - (float)(var2 * 40), 280.0F, 50.0F, 24.0F, 0, RGBColor.getColor(0.0F, 1.0F, 1.0F, 1.0F));
+                  fishing4.a.ae.a(var0, "x" + Integer.toString(var1.c[var2]), 25.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() + 150.0F - (float)(var2 * 40), 280.0F, 50.0F, 24.0F, 1, RGBColor.getColor(0.0F, 1.0F, 1.0F, 1.0F));
                }
             }
 
-            fishing4.a.ae.a(var0, var1.h + ab.b(var1.f), fishing4.a.m.c(), fishing4.a.m.d() - 130.0F, 360.0F, 200.0F, 26.0F, 4);
+            fishing4.a.ae.a(var0, var1.h + ab.b(var1.f), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 130.0F, 360.0F, 200.0F, 26.0F, 4);
             a(var0, az.s, az.t, fishing4.a.m.e());
             if (var1.d == 61) {
-               fishing4.a.m.a(var0, az.C, fishing4.a.m.c(), 100.0F + fishing4.a.m.d(), 604.0F, 388.0F, 210.0F, 124.0F);
+               fishing4.a.m.a(var0, az.C, fishing4.a.m.getHalfWidthPixels(), 100.0F + fishing4.a.m.getHalfHeightPixels(), 604.0F, 388.0F, 210.0F, 124.0F);
             } else if (var1.d == 62) {
-               fishing4.a.m.a(var0, az.C, fishing4.a.m.c(), 100.0F + fishing4.a.m.d(), 814.0F, 262.0F, 210.0F, 124.0F);
+               fishing4.a.m.a(var0, az.C, fishing4.a.m.getHalfWidthPixels(), 100.0F + fishing4.a.m.getHalfHeightPixels(), 814.0F, 262.0F, 210.0F, 124.0F);
             } else if (var1.d == 63) {
-               fishing4.a.m.a(var0, az.C, fishing4.a.m.c(), 100.0F + fishing4.a.m.d(), 814.0F, 388.0F, 210.0F, 124.0F);
+               fishing4.a.m.a(var0, az.C, fishing4.a.m.getHalfWidthPixels(), 100.0F + fishing4.a.m.getHalfHeightPixels(), 814.0F, 388.0F, 210.0F, 124.0F);
             }
          }
       }
@@ -1406,9 +1409,9 @@ public final class am {
          } else {
             a(glContext, var3, var2, l);
             if (a == 3) {
-               fishing4.a.m.a(glContext, var3, fishing4.a.e.a(fishing4.a.m.c(), fishing4.a.m.d() + 90.0F), fishing4.a.f.a(0.0F, 527.0F, 332.0F, 46.0F), fishing4.a.g.b(0.8F), 190);
-               fishing4.a.m.a(glContext, var3, fishing4.a.e.a(fishing4.a.m.c(), fishing4.a.m.d()), fishing4.a.f.a(0.0F, 527.0F, 332.0F, 46.0F), fishing4.a.g.b(0.8F), 190);
-               fishing4.a.m.a(glContext, var3, fishing4.a.e.a(fishing4.a.m.c(), fishing4.a.m.d() - 90.0F), fishing4.a.f.a(0.0F, 527.0F, 332.0F, 46.0F), fishing4.a.g.b(0.8F), 190);
+               fishing4.a.m.a(glContext, var3, fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() + 90.0F), fishing4.a.f.a(0.0F, 527.0F, 332.0F, 46.0F), fishing4.a.g.b(0.8F), 190);
+               fishing4.a.m.a(glContext, var3, fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels()), fishing4.a.f.a(0.0F, 527.0F, 332.0F, 46.0F), fishing4.a.g.b(0.8F), 190);
+               fishing4.a.m.a(glContext, var3, fishing4.a.e.a(fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 90.0F), fishing4.a.f.a(0.0F, 527.0F, 332.0F, 46.0F), fishing4.a.g.b(0.8F), 190);
             }
 
             fishing4.a.ae.a(glContext, message, var2.a, var2.b, w.b.a * m - 40.0F, w.b.b * n - 40.0F, 26.0F, 4);
@@ -1454,38 +1457,38 @@ public final class am {
             a(var0, az.s, var3, l);
             if (globalConfig.languageId == 0) {
                if (var1 == 73) {
-                  fishing4.a.ae.a(var0, "선적이 개조되었습니다.", fishing4.a.m.c(), fishing4.a.m.d() + 80.0F, 325.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "[결과]", fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "레벨\n선적", fishing4.a.m.c() - 85.0F, fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.c - 1) + "\n" + var2.d(var2.c - 1), fishing4.a.m.c(), fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.c) + "\n" + var2.j(), 100.0F + fishing4.a.m.c(), fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
-                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 65.0F, 824.0F, 477.0F, 16.0F, 16.0F);
-                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 65.0F - 30.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+                  fishing4.a.ae.a(var0, "선적이 개조되었습니다.", fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() + 80.0F, 325.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "[결과]", fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "레벨\n선적", fishing4.a.m.getHalfWidthPixels() - 85.0F, fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.c - 1) + "\n" + var2.d(var2.c - 1), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.c) + "\n" + var2.j(), 100.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
+                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 65.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 65.0F - 30.0F, 824.0F, 477.0F, 16.0F, 16.0F);
                } else if (var1 == 78) {
-                  fishing4.a.ae.a(var0, "적재길이가 개조되었습니다.", fishing4.a.m.c(), fishing4.a.m.d() + 80.0F, 325.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "[결과]", fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "레벨\n길이", fishing4.a.m.c() - 120.0F, fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d - 1) + "\n" + var2.c(var2.d - 1), fishing4.a.m.c() - 20.0F, fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
-                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d) + "\n" + var2.h(), 120.0F + fishing4.a.m.c(), fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
-                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 65.0F, 824.0F, 477.0F, 16.0F, 16.0F);
-                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 65.0F - 30.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+                  fishing4.a.ae.a(var0, "적재길이가 개조되었습니다.", fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() + 80.0F, 325.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "[결과]", fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "레벨\n길이", fishing4.a.m.getHalfWidthPixels() - 120.0F, fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d - 1) + "\n" + var2.c(var2.d - 1), fishing4.a.m.getHalfWidthPixels() - 20.0F, fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
+                  fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d) + "\n" + var2.h(), 120.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
+                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 65.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+                  fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 65.0F - 30.0F, 824.0F, 477.0F, 16.0F, 16.0F);
                }
             } else if (var1 == 73) {
-               fishing4.a.ae.a(var0, "Ship Upgrade Successful!", fishing4.a.m.c(), fishing4.a.m.d() + 80.0F, 325.0F, 60.0F, 26.0F, 4);
-               fishing4.a.ae.a(var0, "[Result]", fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-               fishing4.a.ae.a(var0, "Level\nShipment", fishing4.a.m.c() - 85.0F, fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
-               fishing4.a.ae.a(var0, "+" + Integer.toString(var2.c - 1) + "\n" + var2.d(var2.c - 1), fishing4.a.m.c(), fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
-               fishing4.a.ae.a(var0, "+" + Integer.toString(var2.c) + "\n" + var2.j(), 100.0F + fishing4.a.m.c(), fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
-               fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 65.0F, 824.0F, 477.0F, 16.0F, 16.0F);
-               fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 65.0F - 30.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+               fishing4.a.ae.a(var0, "Ship Upgrade Successful!", fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() + 80.0F, 325.0F, 60.0F, 26.0F, 4);
+               fishing4.a.ae.a(var0, "[Result]", fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+               fishing4.a.ae.a(var0, "Level\nShipment", fishing4.a.m.getHalfWidthPixels() - 85.0F, fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
+               fishing4.a.ae.a(var0, "+" + Integer.toString(var2.c - 1) + "\n" + var2.d(var2.c - 1), fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
+               fishing4.a.ae.a(var0, "+" + Integer.toString(var2.c) + "\n" + var2.j(), 100.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
+               fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 65.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+               fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 65.0F - 30.0F, 824.0F, 477.0F, 16.0F, 16.0F);
             } else if (var1 == 78) {
-               fishing4.a.ae.a(var0, "Length Upgrade Successful!", fishing4.a.m.c(), fishing4.a.m.d() + 80.0F, 325.0F, 60.0F, 26.0F, 4);
-               fishing4.a.ae.a(var0, "[Result]", fishing4.a.m.c(), fishing4.a.m.d(), 300.0F, 60.0F, 26.0F, 4);
-               fishing4.a.ae.a(var0, "Level\nLength", fishing4.a.m.c() - 120.0F, fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
-               fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d - 1) + "\n" + var2.c(var2.d - 1), fishing4.a.m.c() - 20.0F, fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
-               fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d) + "\n" + var2.h(), 120.0F + fishing4.a.m.c(), fishing4.a.m.d() - 80.0F, 300.0F, 60.0F, 26.0F, 4, fishing4.a.aa.d());
-               fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 65.0F, 824.0F, 477.0F, 16.0F, 16.0F);
-               fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.c(), fishing4.a.m.d() - 65.0F - 30.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+               fishing4.a.ae.a(var0, "Length Upgrade Successful!", fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() + 80.0F, 325.0F, 60.0F, 26.0F, 4);
+               fishing4.a.ae.a(var0, "[Result]", fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels(), 300.0F, 60.0F, 26.0F, 4);
+               fishing4.a.ae.a(var0, "Level\nLength", fishing4.a.m.getHalfWidthPixels() - 120.0F, fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
+               fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d - 1) + "\n" + var2.c(var2.d - 1), fishing4.a.m.getHalfWidthPixels() - 20.0F, fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4);
+               fishing4.a.ae.a(var0, "+" + Integer.toString(var2.d) + "\n" + var2.h(), 120.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 80.0F, 300.0F, 60.0F, 26.0F, 4, RGBColor.yellow());
+               fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 65.0F, 824.0F, 477.0F, 16.0F, 16.0F);
+               fishing4.a.m.a(var0, az.s, 50.0F + fishing4.a.m.getHalfWidthPixels(), fishing4.a.m.getHalfHeightPixels() - 65.0F - 30.0F, 824.0F, 477.0F, 16.0F, 16.0F);
             }
 
             a(var0, az.s, az.t, var3);

@@ -54,8 +54,8 @@ public final class bi {
 
       for(var2 = 0; var2 < this.b; ++var2) {
          for(var3 = 0; var3 < this.a; ++var3) {
-            float var6 = (float)((fishing4.a.m.a() - this.a * 128) / 2 + (var3 * 2 + 1) * 64);
-            float var5 = (float)((fishing4.a.m.b() - this.b * 128) / 2 + (var2 * 2 + 1) * 64);
+            float var6 = (float)((fishing4.a.m.getWidthPixels() - this.a * 128) / 2 + (var3 * 2 + 1) * 64);
+            float var5 = (float)((fishing4.a.m.getHeightPixels() - this.b * 128) / 2 + (var2 * 2 + 1) * 64);
             this.e.add(this.a * var2 + var3, fishing4.a.e.a(var6, var5));
          }
       }
