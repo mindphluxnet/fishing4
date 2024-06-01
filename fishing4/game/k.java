@@ -202,7 +202,7 @@ public final class k {
          var14 = "&location=en";
       }
 
-      StringBuilder var26 = (new StringBuilder(String.valueOf("http://wap.pnjmobile.co.kr/GameUserDataLog/Fishing4/Google_Fishing4_Free_Gobal_Log.php?".trim()))).append(var3).append(var25).append(var24).append(var15).append(var16).append(var6).append(var5).append(var8).append(var7).append(var9).append(var10).append(var11).append(var12).append(var13).append(var19).append(var17).append(var20).append(var18).append("&device=").append(fishing4.a.r.d).append("&OSVer=").append(fishing4.a.r.e).append("&jailbreak=");
+      StringBuilder var26 = (new StringBuilder(String.valueOf("http://wap.pnjmobile.co.kr/GameUserDataLog/Fishing4/Google_Fishing4_Free_Gobal_Log.php?".trim()))).append(var3).append(var25).append(var24).append(var15).append(var16).append(var6).append(var5).append(var8).append(var7).append(var9).append(var10).append(var11).append(var12).append(var13).append(var19).append(var17).append(var20).append(var18).append("&device=").append(fishing4.a.r.deviceModel).append("&OSVer=").append(fishing4.a.r.deviceBuildVersion).append("&jailbreak=");
       byte var23;
       if (fishing4.a.r.c) {
          var23 = 1;
@@ -1374,7 +1374,7 @@ public final class k {
          var15 = "&location=en";
       }
 
-      StringBuilder var23 = (new StringBuilder(String.valueOf("http://wap.pnjmobile.co.kr/GameUserDataLog/Fishing4/Google_Fishing4_Free_Gobal_Log.php?".trim()))).append(var3).append(var24).append(var25).append(var17).append(var16).append(var6).append(var7).append(var9).append(var8).append(var10).append(var11).append(var12).append(var13).append(var14).append(var21).append(var18).append(var20).append(var19).append("&device=").append(fishing4.a.r.d).append("&OSVer=").append(fishing4.a.r.e).append("&jailbreak=");
+      StringBuilder var23 = (new StringBuilder(String.valueOf("http://wap.pnjmobile.co.kr/GameUserDataLog/Fishing4/Google_Fishing4_Free_Gobal_Log.php?".trim()))).append(var3).append(var24).append(var25).append(var17).append(var16).append(var6).append(var7).append(var9).append(var8).append(var10).append(var11).append(var12).append(var13).append(var14).append(var21).append(var18).append(var20).append(var19).append("&device=").append(fishing4.a.r.deviceModel).append("&OSVer=").append(fishing4.a.r.deviceBuildVersion).append("&jailbreak=");
       byte var22;
       if (fishing4.a.r.c) {
          var22 = 1;
@@ -1490,7 +1490,7 @@ public final class k {
          var16 = "&location=en";
       }
 
-      StringBuilder var25 = (new StringBuilder(String.valueOf("http://wap.pnjmobile.co.kr/GameUserDataLog/Fishing4/Google_Fishing4_Free_Gobal_Log.php?".trim()))).append(var5).append(var26).append(var24).append(var18).append(var17).append(var7).append(var8).append(var10).append(var9).append(var11).append(var12).append(var13).append(var14).append(var15).append(var21).append(var20).append(var19).append(var22).append("&device=").append(fishing4.a.r.d).append("&OSVer=").append(fishing4.a.r.e).append("&jailbreak=");
+      StringBuilder var25 = (new StringBuilder(String.valueOf("http://wap.pnjmobile.co.kr/GameUserDataLog/Fishing4/Google_Fishing4_Free_Gobal_Log.php?".trim()))).append(var5).append(var26).append(var24).append(var18).append(var17).append(var7).append(var8).append(var10).append(var9).append(var11).append(var12).append(var13).append(var14).append(var15).append(var21).append(var20).append(var19).append(var22).append("&device=").append(fishing4.a.r.deviceModel).append("&OSVer=").append(fishing4.a.r.deviceBuildVersion).append("&jailbreak=");
       byte var23;
       if (fishing4.a.r.c) {
          var23 = 1;

@@ -11,8 +11,8 @@ final class s implements DialogInterface.OnClickListener {
 
    public final void onClick(DialogInterface var1, int var2) {
       var1.dismiss();
-      if (fishing4.a.r.J > 0) {
-         this.a.h().show();
+      if (fishing4.a.r.numGiftsWaiting > 0) {
+         this.a.displayReceivedGiftsDialog().show();
       }
 
    }

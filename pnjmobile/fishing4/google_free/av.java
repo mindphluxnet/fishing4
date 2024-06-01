@@ -11,7 +11,7 @@ final class av implements DialogInterface.OnClickListener {
 
    public final void onClick(DialogInterface var1, int var2) {
       var1.dismiss();
-      if (fishing4.a.r.J > 0) {
+      if (fishing4.a.r.numGiftsWaiting > 0) {
          this.a.b().show();
       }
 

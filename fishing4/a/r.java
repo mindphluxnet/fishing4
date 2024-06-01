@@ -20,7 +20,7 @@ public final class r implements Runnable {
    public static String G = "";
    public static boolean H = false;
    public static boolean I = false;
-   public static int J = 0;
+   public static int numGiftsWaiting = 0;
    public static int[] K;
    public static int[] L;
    public static AESUtils M = AESUtils.a();
@@ -53,8 +53,8 @@ public final class r implements Runnable {
    private static byte[] am;
    public static String deviceId = null;
    public static final boolean c = fishing4.a.u.a();
-   public static String d = null;
-   public static String e;
+   public static String deviceModel = null;
+   public static String deviceBuildVersion;
    public static int f;
    public static String g = "";
    public static boolean h = false;
@@ -452,7 +452,7 @@ public final class r implements Runnable {
 
    private static void l() {
       label116:
-      for(int var0 = 0; var0 < J; ++var0) {
+      for(int var0 = 0; var0 < numGiftsWaiting; ++var0) {
          int var1;
          switch (K[var0]) {
             case 0:

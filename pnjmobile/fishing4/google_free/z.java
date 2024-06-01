@@ -14,6 +14,6 @@ final class z implements DialogInterface.OnClickListener {
       Main var3 = this.a;
       Main.m();
       fishing4.game.k.f();
-      this.a.c(Main.l).show();
+      this.a.displayAttendanceDialog(Main.l).show();
    }
 }

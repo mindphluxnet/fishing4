@@ -473,7 +473,7 @@ public final class ba extends aa {
                      if (globalConfig.h.encrypt() > 0L) {
                         globalConfig.h.encryptLong(0L);
                         return;
-                     } else if (fishing4.a.r.J > 0) {
+                     } else if (fishing4.a.r.numGiftsWaiting > 0) {
                         am.a(54);
                         this.v = 0;
                         break;
@@ -998,7 +998,7 @@ public final class ba extends aa {
                         if (am.c.a(var1, true)) {
                            am.b();
                            if (fishing4.a.r.M.encrypt() > 0L) {
-                              fishing4.a.r.J = 0;
+                              fishing4.a.r.numGiftsWaiting = 0;
                               if (ad.p.b() + fishing4.a.r.M.encrypt() > 99999L) {
                                  globalConfig.h.encryptLong(99999L);
                               } else {

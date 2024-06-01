@@ -18,6 +18,6 @@ final class y implements DialogInterface.OnClickListener {
       Main.postGoogleAttendanceLog(var2);
       Main.l = 0;
       fishing4.game.k.f();
-      this.a.b(var2).show();
+      this.a.displayGoldReceivedDialog(var2).show();
    }
 }

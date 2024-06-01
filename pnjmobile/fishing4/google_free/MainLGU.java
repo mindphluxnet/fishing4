@@ -68,7 +68,7 @@ public class MainLGU extends Activity implements View.OnTouchListener {
    }
 
    public final AlertDialog b() {
-      return (new AlertDialog.Builder(this)).setCancelable(false).setTitle("선물 알림").setMessage("선물 " + fishing4.a.r.J + "개가 도착하였습니다.\n이벤트 메뉴에서 선물을 확인해 주세요.").setPositiveButton("확인", new ay(this)).create();
+      return (new AlertDialog.Builder(this)).setCancelable(false).setTitle("선물 알림").setMessage("선물 " + fishing4.a.r.numGiftsWaiting + "개가 도착하였습니다.\n이벤트 메뉴에서 선물을 확인해 주세요.").setPositiveButton("확인", new ay(this)).create();
    }
 
    protected void onActivityResult(int var1, int var2, Intent var3) {
@@ -78,7 +78,7 @@ public class MainLGU extends Activity implements View.OnTouchListener {
    public void onCreate(Bundle var1) {
       super.onCreate(var1);
       Window var2 = this.getWindow();
-      fishing4.a.s.a = this.getApplicationContext();
+      fishing4.a.s.applicationContext = this.getApplicationContext();
       this.setRequestedOrientation(1);
       var2.setFlags(1024, 1024);
       var2.addFlags(128);
@@ -139,7 +139,7 @@ public class MainLGU extends Activity implements View.OnTouchListener {
                var3 = globalConfig.j;
                break;
             case 1:
-               if (fishing4.a.r.J > 0) {
+               if (fishing4.a.r.numGiftsWaiting > 0) {
                   this.b().show();
                }
                break;
@@ -149,14 +149,14 @@ public class MainLGU extends Activity implements View.OnTouchListener {
             case 3:
                if (fishing4.a.r.D[0].equals("")) {
                   this.c().show();
-               } else if (fishing4.a.r.J > 0) {
+               } else if (fishing4.a.r.numGiftsWaiting > 0) {
                   this.b().show();
                }
                break;
             case 4:
                if (fishing4.a.r.D != null && fishing4.a.r.D[0] != null && !fishing4.a.r.D[0].equals("")) {
                   this.c().show();
-               } else if (fishing4.a.r.J > 0) {
+               } else if (fishing4.a.r.numGiftsWaiting > 0) {
                   this.b().show();
                }
          }

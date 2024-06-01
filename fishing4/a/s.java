@@ -16,7 +16,7 @@ import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
 
 public final class s extends GLSurfaceView implements GLSurfaceView.Renderer {
-   public static Context a;
+   public static Context applicationContext;
    public static boolean b = false;
    public static long c = 35L;
 
@@ -32,7 +32,7 @@ public final class s extends GLSurfaceView implements GLSurfaceView.Renderer {
    }
 
    public static Context a() {
-      return a;
+      return applicationContext;
    }
 
    public final void onDrawFrame(GL10 var1) {
@@ -79,7 +79,7 @@ public final class s extends GLSurfaceView implements GLSurfaceView.Renderer {
          az.d();
       } else {
          DisplayMetrics var4 = new DisplayMetrics();
-         ((WindowManager)a.getSystemService("window")).getDefaultDisplay().getMetrics(var4);
+         ((WindowManager) applicationContext.getSystemService("window")).getDefaultDisplay().getMetrics(var4);
          m.a = var4.widthPixels;
          m.b = var4.heightPixels;
          m.a(var1);
@@ -96,7 +96,7 @@ public final class s extends GLSurfaceView implements GLSurfaceView.Renderer {
          az.d();
       } else {
          if (!b) {
-            fishing4.game.k.a(var1, a);
+            fishing4.game.k.a(var1, applicationContext);
             b = true;
          } else if (fishing4.game.z.b() == 3) {
             if (fishing4.game.aa.c == 1 && aq.a == 3 && !az.e && am.b == -1 && !bh.a()) {

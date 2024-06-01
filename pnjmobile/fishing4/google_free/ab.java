@@ -15,8 +15,8 @@ final class ab implements DialogInterface.OnClickListener {
          this.a.i().show();
       } else {
          var1.dismiss();
-         if (fishing4.a.r.J > 0) {
-            this.a.h().show();
+         if (fishing4.a.r.numGiftsWaiting > 0) {
+            this.a.displayReceivedGiftsDialog().show();
          }
       }
 

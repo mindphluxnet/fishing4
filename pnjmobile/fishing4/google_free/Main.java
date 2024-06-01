@@ -3,7 +3,6 @@ package pnjmobile.fishing4.google_free;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.Instrumentation;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -43,7 +42,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.text.DecimalFormat;
@@ -81,7 +79,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
    public static boolean t = false;
    public static Context context;
    public static boolean w = false;
-   static View x;
+   static View view;
    static RelativeLayout z;
    LinearLayout.LayoutParams D;
    final Runnable E = new l(this);
@@ -90,7 +88,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
    public Handler J = new v(this);
    DialogInterface.OnKeyListener P = new an(this);
    fishing4.a.ab S;
-   private GLSurfaceView T;
+   private GLSurfaceView glSurfaceView;
    private Handler U;
    private ao V;
    private com.android.vending.licensing.g X = null;
@@ -98,7 +96,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
    private String Z = "AQ00001110";
    private boolean aa = false;
    private int ab;
-   private boolean ac = true;
+   private boolean isLoading = true;
    private Handler ad = new ai(this);
    final String f = "0faf65f6-b8ba-4387-8184-075214d63502";
    final String g = "6ahYoU1UCshal8OTIkyk";
@@ -190,7 +188,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
    static void a(Main var0) {
       if (var0.y) {
          A.removeAllViews();
-         A.addView(x, 0);
+         A.addView(view, 0);
          if (C) {
             z.removeView(B);
             C = false;
@@ -204,12 +202,12 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
 
    // $FF: synthetic method
    static void b(Main var0) {
-      var0.ac = false;
+      var0.isLoading = false;
    }
 
    // $FF: synthetic method
    static boolean c(Main var0) {
-      return var0.ac;
+      return var0.isLoading;
    }
 
    // $FF: synthetic method
@@ -626,9 +624,9 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
    }
 
    public final void a(View var1) {
-      x = var1;
+      view = var1;
       int var3 = var1.getLayoutParams().width;
-      int var5 = x.getLayoutParams().height;
+      int var5 = view.getLayoutParams().height;
       int var4 = this.getWindowManager().getDefaultDisplay().getWidth();
       this.getWindowManager().getDefaultDisplay().getHeight();
       int var2 = var4;
@@ -637,7 +635,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       }
 
       this.D = new LinearLayout.LayoutParams(-1, var2 * var5 / var3);
-      x.setLayoutParams(this.D);
+      view.setLayoutParams(this.D);
       this.y = true;
       this.U.post(this.E);
    }
@@ -651,20 +649,19 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       Log.i("", "서버에서 받은 텝코인.. 실패.");
    }
 
-   public final AlertDialog b(int var1) {
-      new String();
-      LinearLayout var3 = (LinearLayout)View.inflate(this, 2130903041, (ViewGroup)null);
-      TextView var2 = (TextView)var3.findViewById(2131099658);
-      String var4;
+   public final AlertDialog displayGoldReceivedDialog(int goldAmount) {
+      LinearLayout linearLayout = (LinearLayout)View.inflate(this, 2130903041, (ViewGroup)null);
+      TextView textView = (TextView)linearLayout.findViewById(2131099658);
+      String buttonText;
       if (globalConfig.languageId == 0) {
-         var2.setText(var1 + " 골드를 얻었습니다.");
-         var4 = "확인";
+         textView.setText(goldAmount + " 골드를 얻었습니다.");
+         buttonText = "확인";
       } else {
-         var2.setText("You received " + var1 + " gold.");
-         var4 = "Confirm";
+         textView.setText("You received " + goldAmount + " gold.");
+         buttonText = "Confirm";
       }
 
-      return (new AlertDialog.Builder(this)).setCancelable(false).setView(var3).setPositiveButton(var4, new r(this)).create();
+      return (new AlertDialog.Builder(this)).setCancelable(false).setView(linearLayout).setPositiveButton(buttonText, new r(this)).create();
    }
 
    public final void b() {
@@ -694,41 +691,40 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
 
    }
 
-   public final AlertDialog c(int var1) {
-      new String();
-      LinearLayout var3 = (LinearLayout)View.inflate(this, 2130903041, (ViewGroup)null);
-      TextView var2 = (TextView)var3.findViewById(2131099658);
-      String var4;
+   public final AlertDialog displayAttendanceDialog(int day) {
+      LinearLayout linearLayout = (LinearLayout)View.inflate(this, 2130903041, (ViewGroup)null);
+      TextView textView = (TextView)linearLayout.findViewById(2131099658);
+      String buttonText;
       if (globalConfig.languageId == 0) {
-         var2.setText(var1 + "일차 출석하셨습니다. 내일 더 많은 골드를 받아가세요~");
-         var4 = "확인";
+         textView.setText(day + "일차 출석하셨습니다. 내일 더 많은 골드를 받아가세요~");
+         buttonText = "확인";
       } else {
-         var2.setText("You attended the " + var1 + " day. Get more gold tomorrow!");
-         var4 = "Confirm";
+         textView.setText("You attended the " + day + " day. Get more gold tomorrow!");
+         buttonText = "Confirm";
       }
 
-      return (new AlertDialog.Builder(this)).setCancelable(false).setView(var3).setPositiveButton(var4, new s(this)).create();
+      return (new AlertDialog.Builder(this)).setCancelable(false).setView(linearLayout).setPositiveButton(buttonText, new s(this)).create();
    }
 
-   public final void c() {
+   public final void openGooglePlayLink() {
       this.startActivity(new Intent("android.intent.action.VIEW", Uri.parse("http://wap.pnjmobile.co.kr/Link/Google_play/?game=Fishing4_Google_Free")));
    }
 
-   public final AlertDialog h() {
-      String var1;
-      String var2;
-      String var3;
+   public final AlertDialog displayReceivedGiftsDialog() {
+      String line1;
+      String line2;
+      String buttonText;
       if (globalConfig.languageId == 0) {
-         var2 = "선물 알림";
-         var3 = "선물 " + fishing4.a.r.J + "개가 도착하였습니다.\n이벤트 메뉴에서 선물을 확인해 주세요.";
-         var1 = "확인";
+         line2 = "선물 알림";
+         buttonText = "선물 " + fishing4.a.r.numGiftsWaiting + "개가 도착하였습니다.\n이벤트 메뉴에서 선물을 확인해 주세요.";
+         line1 = "확인";
       } else {
-         var2 = "Gift arrival!";
-         var3 = "You received " + fishing4.a.r.J + " gift(s)!\nCheck your gift in Event menu.";
-         var1 = "Confirm";
+         line2 = "Gift arrival!";
+         buttonText = "You received " + fishing4.a.r.numGiftsWaiting + " gift(s)!\nCheck your gift in Event menu.";
+         line1 = "Confirm";
       }
 
-      return (new AlertDialog.Builder(this)).setCancelable(false).setTitle(var2).setMessage(var3).setPositiveButton(var1, new o(this)).create();
+      return (new AlertDialog.Builder(this)).setCancelable(false).setTitle(line2).setMessage(buttonText).setPositiveButton(line1, new o(this)).create();
    }
 
    public final AlertDialog i() {
@@ -796,10 +792,10 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
    protected void onActivityResult(int var1, int var2, Intent var3) {
    }
 
-   public void onCreate(Bundle var1) {
-      super.onCreate(var1);
+   public void onCreate(Bundle bundle) {
+      super.onCreate(bundle);
       Window window = this.getWindow();
-      x = new View(this);
+      view = new View(this);
       context = this;
       com.tapjoy.f.requestTapjoyConnect(this, "0faf65f6-b8ba-4387-8184-075214d63502", "6ahYoU1UCshal8OTIkyk");
       com.tapjoy.f.a();
@@ -820,15 +816,15 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       billingService.a((Context)this);
       bh.a((bf)this.V);
       c.a();
-      fishing4.a.s.a = this.getApplicationContext();
+      fishing4.a.s.applicationContext = this.getApplicationContext();
       this.setRequestedOrientation(1);
       window.setFlags(1024, 1024);
       window.addFlags(128);
       this.requestWindowFeature(1);
       this.requestWindowFeature(2);
       WifiInfo wifiInfo = ((WifiManager)this.getSystemService("wifi")).getConnectionInfo();
-      fishing4.a.r.d = Build.MODEL.replace(" ", "").trim();
-      fishing4.a.r.e = VERSION.RELEASE;
+      fishing4.a.r.deviceModel = Build.MODEL.replace(" ", "").trim();
+      fishing4.a.r.deviceBuildVersion = VERSION.RELEASE;
       TelephonyManager telephonyManager = (TelephonyManager)this.getSystemService("phone");
       String phoneNumber = telephonyManager.getLine1Number();
       String deviceId = telephonyManager.getDeviceId();
@@ -894,17 +890,17 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
             this.startActivity(new Intent(this, userIDview.class));
          }
 
-         RelativeLayout var12 = new RelativeLayout(this);
-         z = var12;
-         var12.setLayoutParams(new LinearLayout.LayoutParams(-1, -1));
-         LinearLayout var13 = new LinearLayout(this);
-         A = var13;
-         var13.setLayoutParams(new LinearLayout.LayoutParams(-1, -2));
+         RelativeLayout relativeLayout = new RelativeLayout(this);
+         z = relativeLayout;
+         relativeLayout.setLayoutParams(new LinearLayout.LayoutParams(-1, -1));
+         LinearLayout linearLayout = new LinearLayout(this);
+         A = linearLayout;
+         linearLayout.setLayoutParams(new LinearLayout.LayoutParams(-1, -2));
          A.setOrientation(1);
-         this.T = new GLSurfaceView(this);
-         this.T.setRenderer(new fishing4.a.s(this));
-         this.T.setOnTouchListener(this);
-         this.setContentView(this.T);
+         this.glSurfaceView = new GLSurfaceView(this);
+         this.glSurfaceView.setRenderer(new fishing4.a.s(this));
+         this.glSurfaceView.setOnTouchListener(this);
+         this.setContentView(this.glSurfaceView);
          this.addContentView(z, new LinearLayout.LayoutParams(-1, -1));
          this.addContentView(A, new LinearLayout.LayoutParams(-1, -2));
          e();
@@ -960,8 +956,8 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
                var3 = globalConfig.j;
                break;
             case 1:
-               if (fishing4.a.r.J > 0) {
-                  this.h().show();
+               if (fishing4.a.r.numGiftsWaiting > 0) {
+                  this.displayReceivedGiftsDialog().show();
                }
                break;
             case 2:
@@ -977,8 +973,8 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
 
                   if (m) {
                      this.i().show();
-                  } else if (fishing4.a.r.J > 0) {
-                     this.h().show();
+                  } else if (fishing4.a.r.numGiftsWaiting > 0) {
+                     this.displayReceivedGiftsDialog().show();
                   }
                }
                break;
@@ -1010,8 +1006,8 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
 
                   if (m) {
                      this.i().show();
-                  } else if (fishing4.a.r.J > 0) {
-                     this.h().show();
+                  } else if (fishing4.a.r.numGiftsWaiting > 0) {
+                     this.displayReceivedGiftsDialog().show();
                   }
                }
          }
@@ -1055,7 +1051,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
 
    protected void onResume() {
       super.onResume();
-      this.ac = true;
+      this.isLoading = true;
       pnjmobile.fishing4.google_free.k.a(context);
       Thread thread = new Thread(new n(this));
       thread.setDaemon(true);
@@ -1069,14 +1065,14 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
          }
       }
 
-      this.T = new GLSurfaceView(this);
-      this.T.setRenderer(new fishing4.a.s(this));
-      this.T.setOnTouchListener(this);
-      this.setContentView(this.T);
+      this.glSurfaceView = new GLSurfaceView(this);
+      this.glSurfaceView.setRenderer(new fishing4.a.s(this));
+      this.glSurfaceView.setOnTouchListener(this);
+      this.setContentView(this.glSurfaceView);
       this.addContentView(z, new LinearLayout.LayoutParams(-1, -1));
       this.addContentView(A, new LinearLayout.LayoutParams(-1, -2));
       boolean var1 = globalConfig.j;
-      this.T.onResume();
+      this.glSurfaceView.onResume();
       if (fishing4.game.z.b() == 3) {
          if (fishing4.game.aa.c == 1 && fishing4.game.az.e) {
             return;
@@ -1117,7 +1113,7 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
       com.tapjoy.f.a();
       com.tapjoy.f.a((com.tapjoy.ab)this);
       Log.i("", "ISLOADING FALSE!!!!!");
-      this.ac = false;
+      this.isLoading = false;
    }
 
    protected void onStart() {

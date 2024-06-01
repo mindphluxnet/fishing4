@@ -264,9 +264,9 @@ public final class i implements Runnable {
                try {
                   var5 = new StringBuilder("sms20:서버에서 응답이 있을까??type:");
                   Log.i("", var5.append(var2).toString());
-                  fishing4.a.r.J = fishing4.a.y.a(var13, 1);
+                  fishing4.a.r.numGiftsWaiting = fishing4.a.y.a(var13, 1);
                   var5 = new StringBuilder("sms20:서버에서 응답이 있을까??NetworkManager.myPresentCount:");
-                  Log.i("", var5.append(fishing4.a.r.J).toString());
+                  Log.i("", var5.append(fishing4.a.r.numGiftsWaiting).toString());
                } catch (Exception var10) {
                   var10001 = false;
                   break label64;

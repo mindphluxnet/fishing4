@@ -659,12 +659,12 @@ public final class am {
                   var1 = var3;
                }
 
-               while(var1 < fishing4.a.r.J) {
+               while(var1 < fishing4.a.r.numGiftsWaiting) {
                   if (var1 >= 7) {
                      if (globalConfig.languageId == 0) {
-                        var8 = var8 + "\n..외에 " + (fishing4.a.r.J - var1) + "종류를 선물받았습니다.";
+                        var8 = var8 + "\n..외에 " + (fishing4.a.r.numGiftsWaiting - var1) + "종류를 선물받았습니다.";
                      } else {
-                        var8 = var8 + "\n..You received following item(s) " + (fishing4.a.r.J - var1);
+                        var8 = var8 + "\n..You received following item(s) " + (fishing4.a.r.numGiftsWaiting - var1);
                      }
                      break;
                   }

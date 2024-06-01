@@ -10,7 +10,7 @@ final class ay implements DialogInterface.OnClickListener {
    }
 
    public final void onClick(DialogInterface var1, int var2) {
-      fishing4.a.r.J = 0;
+      fishing4.a.r.numGiftsWaiting = 0;
       var1.dismiss();
    }
 }

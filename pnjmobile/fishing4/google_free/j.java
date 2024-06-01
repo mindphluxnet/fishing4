@@ -165,7 +165,7 @@ public final class j implements Runnable {
 
                label67: {
                   try {
-                     fishing4.a.r.J = fishing4.a.y.a(var15, 1);
+                     fishing4.a.r.numGiftsWaiting = fishing4.a.y.a(var15, 1);
                      if (fishing4.a.r.I) {
                         break label67;
                      }

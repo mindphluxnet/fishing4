@@ -16,7 +16,7 @@ final class p implements DialogInterface.OnClickListener {
    public final void onClick(DialogInterface var1, int var2) {
       ConnectivityManager var3 = (ConnectivityManager)this.a.getSystemService("connectivity");
       if (var3.getActiveNetworkInfo() != null && var3.getActiveNetworkInfo().isConnectedOrConnecting()) {
-         this.a.c();
+         this.a.openGooglePlayLink();
       } else {
          String var4;
          if (globalConfig.a == 0) {
