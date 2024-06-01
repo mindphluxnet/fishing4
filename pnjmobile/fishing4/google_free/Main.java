@@ -293,19 +293,6 @@ public class Main extends Activity implements View.OnTouchListener, com.tapjoy.a
 
    }
 
-   public static void f() {
-      fishing4.game.k.j = 2;
-      (new Instrumentation()).sendKeyDownUpSync(57);
-   }
-
-   public static void g() {
-      if (!fishing4.a.r.H) {
-         fishing4.game.k.j = 4;
-         (new Instrumentation()).sendKeyDownUpSync(57);
-      }
-
-   }
-
    public static void k() {
       fishing4.game.k.l();
       if (fishing4.game.aq.b >= 10 && fishing4.game.aq.b <= 15) {
